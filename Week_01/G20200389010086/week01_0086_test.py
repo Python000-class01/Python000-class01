@@ -1,1 +1,1 @@
-print('test push remote')
+print('test push ')
