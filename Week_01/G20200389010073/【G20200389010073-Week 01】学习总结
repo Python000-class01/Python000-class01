@@ -1,0 +1,61 @@
+python 第1周学习总结
+作业1的内容：
+1.安装并使用 requests、bs4 库;
+
+  操作系统 Windows 7 64位
+  工具库下载指令如下：
+     python -m pip install requests
+     python -m pip install bs4
+
+2.爬取豆瓣电影 Top250 的电影名称、评分、短评数量和前 5 条热门短评;
+  
+  2.1 爬取前需要用导入fake_useragent工具库，随机获取headers
+  
+      from fake_useragent import UserAgent
+      useragent = UserAgent()
+      # 随机获取headers
+      useragent.random
+      
+  2.2 豆瓣访问时的cookie伪造
+      jar = requests.cookies.RequestsCookieJar()
+      jar.set('bid', 'ehjk9OLdwha', domain='.douban.com', path='/')
+      jar.set('11', '25678', domain='.douban.com', path='/')
+  
+  2.3 用get方式获取网页信息
+      response = requests.get(myurl,
+                            headers={'user-agent': useragent.random},
+                            cookies=jar)
+      
+  2.4 用bs4解析网页信息
+      bs_info = bs(response.text, 'html.parser')
+  
+  
+3.并以 UTF-8 字符集保存到 csv 格式的文件中。
+
+  3.1 保存解析数据
+      def writefile_AllMovies_csv(str_info):
+      """ 写入csv文件记录信息 """
+      with open('Informations_of_Top250_movies.csv', 'a',
+                              encoding='utf-8') as file_1:
+           file_1.write(f'{str_info}\n')
+
+
+作业2内容
+1.使用 requests 库对 http://httpbin.org/ 分别用 get 和 post 方式访问，并将返回信息转换为 JSON。
+
+  def get_url_info(str_url, str_mode="get"):
+    """ 获取网页信息 """
+    if str_mode == "get":
+        user_agent = 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.163 Safari/535.1'
+        header = {}
+        header['user-agent'] = user_agent
+        response = requests.get(str_url + 'get', headers=header, timeout=2)
+    else:
+        user_agent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'
+        header = {}
+        header['user-agent'] = user_agent
+        response = requests.post(str_url + 'post', headers=header, timeout=2)
+    if response.content:
+        print(response.json())
+
+
