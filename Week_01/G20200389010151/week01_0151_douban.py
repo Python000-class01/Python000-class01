@@ -29,12 +29,10 @@ def main():
     # 分别获取每部电影的 url, 并写入 csv
     for movie_url in tqdm.tqdm(movie_urls):
         movie = getCurrentMovieInfo(movie_url)
-        print(movie)
         # 将电影清洗并整理格式
         movie_info = dataClean(movie)
-        print(movie_info)
         # 写入 csv
-        # writeCsv(CSV_FILE, movie_info, 'a')
+        writeCsv(CSV_FILE, movie_info, 'a')
         time.sleep(1)
 
 
@@ -58,7 +56,7 @@ def getCurrentMovieInfo(movie_url):
     movie_name = e_html.xpath('//*[@id="content"]/h1/span[1]/text()')
     movie_score = e_html.xpath('//*[@id="interest_sectl"]/div[1]/div[2]/strong/text()')
     movie_comments_count = e_html.xpath('//*[@id="comments-section"]/div[1]/h2/span/a/text()')
-    movie_comments = e_html.xpath('//*[@id="hot-comments"]/div/div/p/span/text()')
+    movie_comments = e_html.xpath('//*[@id="hot-comments"]/div/div/p/span[@class="short"]/text()')
     movie = {
         'name': movie_name[0],
         'score': movie_score[0],
@@ -71,11 +69,9 @@ def getCurrentMovieInfo(movie_url):
 def dataClean(movie):
     # 把具体的短评数提取出来
     comments_num = re.findall('\d+', movie['comments_count'])
-    # 清洗掉 comment 里的歧义逗号
-    comments_contents = [comment.replace(',', '，') for comment in movie['comments']]
     # 将电影信息拼成行
-    movie_info = [movie['name'], movie['score'], comments_num]
-    movie_info.extend(comments_contents)
+    movie_info = [movie['name'], movie['score'], comments_num[0]]
+    movie_info.extend(movie['comments'])
     return movie_info
 
 # 将电影信息导入 csv
