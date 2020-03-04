@@ -11,21 +11,25 @@ import os, sys
 import time, random, datetime
 import csv
 import pandas as pd
+from fake_useragent import UserAgent
 
 debug=False
 
 class DoubanMovieSpider():
     def __init__(self):
-        self.headers = {
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36'
-            }
+        # self.headers = {
+        #     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36'
+        #     }
         self.timeout = (3.05, 10)
         self.session = requests.session()
-        self.session.headers.update(self.headers)
+        # self.session.headers.update(self.headers)
 
     def get_req(self, url, params=None):
+        headers= {'User-Agent': UserAgent().random}
+        self.session.headers.update(headers)
+
         try:
-            with self.session.get(url=url, params=params ,headers=self.headers, timeout=self.timeout) as response:
+            with self.session.get(url=url, params=params, headers=headers, timeout=self.timeout) as response:
                 if debug:
                     print('General:', '-' * 30)
                     print('Request URL:', response.request.url)
@@ -160,13 +164,13 @@ def main():
     f1 = './douban1.csv'
     s = DoubanMovieSpider()
 
-    # tabheader = ['排名', '电影名称', '电影详情url', '评分', '评价人数']
-    # with open(f1, 'w', encoding='utf-8', newline='') as f:
-    #     w = csv.writer(f)
-    #     w.writerow(tabheader)
-    # for page in range(0, 10):
-    #     s.get_summary(page, f1)
-    #     time.sleep(random.randint(5, 10))
+    tabheader = ['排名', '电影名称', '电影详情url', '评分', '评价人数']
+    with open(f1, 'w', encoding='utf-8', newline='') as f:
+        w = csv.writer(f)
+        w.writerow(tabheader)
+    for page in range(0, 10):
+        s.get_summary(page, f1)
+        time.sleep(random.randint(5, 10))
 
     s.save_quote(f1)
 
