@@ -33,7 +33,7 @@ score_pattern = '<strong class="ll rating_num" property="v:average">(\d+\.\d+)</
 # 短评数量匹配
 short_evaluate_pattern = '<a href="https://movie.douban.com/subject/\d+?/comments\?status=P">全部 (\d*) 条</a>'
 # 前五热评
-# TODO 肖申克的正则有问题，先限定一下字符
+# TODO 肖申克的正则有问题，先限定一下字符数量
 top5_evaluate_pattern = '<span class="short">([\s\S]{1,300}?)</span>'
 
 
