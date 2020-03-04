@@ -15,6 +15,7 @@ def get_db_url(url):
     for tags in bs_info.find_all('div', attrs={'class', 'pl2'}):
         for tag in tags.find_all('a', ):
             get_movie_info(tag.get('href'))
+            sleep(6)
 
 
 def get_movie_info(movie_url):
