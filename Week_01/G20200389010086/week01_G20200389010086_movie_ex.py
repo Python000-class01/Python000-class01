@@ -9,14 +9,13 @@ HEADER = {
                   'Chrome/78.0.3904.108 Safari/537.36 '
 }
 
+
 def get_db_url(url):
     response = requests.get(url, headers=HEADER)
     bs_info = BeautifulSoup(response.text, 'lxml')
-
     for tags in bs_info.find_all('div', attrs={'class', 'hd'}):
         for tag in tags.find_all('a', ):
             get_movie_info(tag.get('href'))
-            sleep(3)
 
 
 def get_movie_info(movie_url):
