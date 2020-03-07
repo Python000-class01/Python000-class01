@@ -1,0 +1,1 @@
+{"args": {}, "headers": {"Accept": "*/*", "Accept-Encoding": "gzip, deflate", "Cache-Control": "no-cache", "Host": "httpbin.org", "User-Agent": "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36", "X-Amzn-Trace-Id": "Root=1-5e63cb0d-3f43c47bd5be9fc1c6e70622"}, "origin": "114.244.83.0", "url": "https://httpbin.org/get"}
