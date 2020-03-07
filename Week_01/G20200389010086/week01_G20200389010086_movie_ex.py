@@ -31,8 +31,8 @@ def get_movie_info(movie_url):
         hot_top5_contents += movie_hot_top5_comments[index] + '|'
 
     f = open('test.csv', 'a', encoding='utf-8')
-    f.write(
-        '电影名：%s, 评分：%s , 热评数:%s, 前5热评：%s' % (movie_name, movie_star, movie_comment_number, hot_top5_contents) + '\n')
+    str = '电影名：%s, 评分：%s , 热评数:%s, 前5热评：%s' % (movie_name, movie_star, movie_comment_number, hot_top5_contents) + '\n'
+    f.write(str)
     f.close()
 
 
