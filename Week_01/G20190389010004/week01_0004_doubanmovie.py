@@ -3,7 +3,6 @@ from bs4 import BeautifulSoup as bs
 import re
 import lxml.etree
 import pandas as pd
-import numpy as np
 
 user_agent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'
 header = {}
@@ -64,7 +63,7 @@ def get_hot_comments(url):
     
     return '...\n'.join(comment_list)
 
-urls = tuple(f'https://movie.douban.com/top250?start={ page * 25} & filter='for page in range(2))
+urls = tuple(f'https://movie.douban.com/top250?start={ page * 25} & filter='for page in range(10))
 
 ## 推导式功能, 相当于
 ## for page in range(10)：
