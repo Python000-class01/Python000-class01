@@ -43,6 +43,7 @@ def get_url_name(myurl):
 
 def get_hot_comments(url):
     res = requests.get(url, headers=header)
+    sleep(1)
 
     # comments = lxml.etree.HTML(res.text)
     # comment1 = comments.xpath('//*[@id="hot-comments"]/div[1]/div/p/span/text()')
@@ -61,9 +62,9 @@ def get_hot_comments(url):
         if (i == 5):
             break
     
-    return '...\n'.join(comment_list)
+    return '\n'.join(comment_list)
 
-urls = tuple(f'https://movie.douban.com/top250?start={ page * 25} & filter='for page in range(10))
+urls = tuple(f'https://movie.douban.com/top250?start={ page * 25}&filter='for page in range(10))
 
 ## 推导式功能, 相当于
 ## for page in range(10)：
