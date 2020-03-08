@@ -46,7 +46,6 @@ class App():
             info_attr = self.target_config['info_attr']
             bs_info = self.crawler.get_parser_response(pageUrl)
             item_blocks = bs_info.findAll(item_type, attrs={'class': item_attr})
-            print(bs_info)
             for item_block in item_blocks:
                 info = item_block.find('div', attrs={'class': info_attr})
                 detail_url = info.find('a').get('href')
