@@ -71,7 +71,10 @@ class App():
             selector = self.crawler.get_parser_response(url, parser='lxml')
             item = {}
             for property in self.target_config['item_properties']:
-                item[property['name']] = self._handle_property(selector, property)
+                if property['name'] == "Link": 
+                    item[property['name']] = url
+                else:
+                    item[property['name']] = self._handle_property(selector, property)
             items.append(item)
         except Exception as e:
             self.logger.error(f"Exception occurred on url: {url}.", e)

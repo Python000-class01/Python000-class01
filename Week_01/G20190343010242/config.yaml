@@ -33,6 +33,8 @@ targets:
       xpath: "[@id=\"interest_sectl\"]/div/div[2]/div/div[2]/a/span/text()"
     - name: HotComments
       xpath: "[@id=\"hot-comments\"]/div[@class=\"comment-item\"]/div/p/span//text()" 
+    - name: Link
+      xpath: ~
 
   douban_book:
     url: https://book.douban.com/top250
@@ -57,3 +59,5 @@ targets:
       xpath: "[@id=\"interest_sectl\"]/div[1]/div[2]/div[1]/div[2]/span/a/span/text()"
     - name: HotComments
       xpath: "[@id=\"comments\"]/ul/li[@class=\"comment-item\"]/div/p/span//text()" 
+    - name: Link
+      xpath: ~
