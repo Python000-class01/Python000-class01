@@ -13,7 +13,8 @@ import csv
 import pandas as pd
 from fake_useragent import UserAgent
 
-debug=False
+DEBUG = False
+OUTPUT = './douban_top250.csv'
 
 class DoubanMovieSpider():
     def __init__(self):
@@ -30,7 +31,7 @@ class DoubanMovieSpider():
 
         try:
             with self.session.get(url=url, params=params, headers=headers, timeout=self.timeout) as response:
-                if debug:
+                if DEBUG:
                     print('General:', '-' * 30)
                     print('Request URL:', response.request.url)
                     print('Request Method:', response.request.method)
@@ -58,7 +59,7 @@ class DoubanMovieSpider():
         except :
             print('url失败')
             return
-    def get_summary(self, page, output):
+    def get_summary(self, page):
         """
         获取概要信息：电影名称、评分、短评数量
         """
@@ -71,7 +72,7 @@ class DoubanMovieSpider():
             }
 
         text = self.get_req(url, params)
-        if debug: print(type(text), text)
+        if DEBUG: print(type(text), text)
 
         lxmHtml = etree.HTML(text)
         movieTitles = lxmHtml.xpath('//*[@id="content"]/div/div[1]/ol/li[*]/div/div[2]/div[1]/a/span[1]/text()')
@@ -79,7 +80,7 @@ class DoubanMovieSpider():
         movieAverage = lxmHtml.xpath('//*[@id="content"]/div/div[1]/ol/li[*]/div/div[2]/div[2]/div/span[2]/text()')
         movieQuoteCount = lxmHtml.xpath('//*[@id="content"]/div/div[1]/ol/li[*]/div/div[2]/div[2]/div/span[4]/text()')
         movieQuoteCount = [ str(i).replace('人评价', '') for i in movieQuoteCount]
-        if debug:
+        if DEBUG:
             print(movieTitles)
             print(movieUrls)
             print(movieAverage)
@@ -96,7 +97,7 @@ class DoubanMovieSpider():
             r = (int( page * 25 + j + 1), movieTitles[j], movieUrls[j], movieAverage[j], movieQuoteCount[j])
             results.append(r)
         for i in results: print(i)
-        self.save_data(results, output)
+        self.save_data(results)
 
     def get_details(self, url):
         """
@@ -125,26 +126,26 @@ class DoubanMovieSpider():
 
         return result
 
-    def save_data(self, data, output):
+    def save_data(self, data):
         """
         保存数据
         """
-        with open(output, 'a', encoding='utf-8', newline='') as f:
+        with open(OUTPUT, 'a', encoding='utf-8', newline='') as f:
             w = csv.writer(f)
             w.writerows(data)
 
-    def save_quote(self, file):
+    def save_quote(self):
         """
         保存详情信息
         """
-        df = pd.read_csv(file)
+        df = pd.read_csv(OUTPUT)
         df['评论top1'] = ''
         df['评论top2'] = ''
         df['评论top3'] = ''
         df['评论top4'] = ''
         df['评论top5'] = ''
         df['采集成功'] = ''
-        df.to_csv(file, index=False)
+        df.to_csv(OUTPUT, index=False)
         urls = df['电影详情url']
         print(f'开始采集 共 {len(urls)} 条: {"-" * 50}')
         for i, url in enumerate(urls):
@@ -157,22 +158,25 @@ class DoubanMovieSpider():
             df.at[i, '评论top4'] = quoteTop5[3]
             df.at[i, '评论top5'] = quoteTop5[4]
             df.at[i, '采集成功']  = quoteTop5[5]
-            df.to_csv(file, index=False)
+            df.to_csv(OUTPUT, index=False)
             time.sleep(random.randint(3, 10))
 
 def main():
-    f1 = './douban1.csv'
-    s = DoubanMovieSpider()
 
     tabheader = ['排名', '电影名称', '电影详情url', '评分', '评价人数']
-    with open(f1, 'w', encoding='utf-8', newline='') as f:
+    with open(OUTPUT, 'w', encoding='utf-8', newline='') as f:
         w = csv.writer(f)
         w.writerow(tabheader)
+
+
+    s = DoubanMovieSpider()
+    # 概要采集
     for page in range(0, 10):
-        s.get_summary(page, f1)
+        s.get_summary(page)
         time.sleep(random.randint(5, 10))
 
-    s.save_quote(f1)
+    # 详情
+    s.save_quote()
 
 
 if __name__ == "__main__":
