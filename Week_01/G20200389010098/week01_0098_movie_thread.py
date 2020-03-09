@@ -10,19 +10,20 @@ from time import sleep
 from fake_useragent import UserAgent
 import time
 import hashlib
+
 #python的hash()，不能对字符串，所以用md5加密url作为缓存的key
-# 由于多并发读取，统一由写入队列消费，不能保证顺序，所以多读一个排名字段，供业务使用
+#由于多并发读取，统一由写入队列消费，不能保证顺序，所以多读一个排名字段，供业务使用
 
 
 class Douban():
     def __init__(self):
         pass
-
+    #链接转key
     def md5_convert(self, string):
         m = hashlib.md5()
         m.update(string.encode())
         return m.hexdigest()
-
+    #请求链接，若有缓存返回缓存
     def getHttp(self, url):
         # 缓存文件夹，多线程同时访问时可能都判断到不存在，并尝试创建
         dir = "cache"
@@ -32,7 +33,6 @@ class Douban():
                 os.makedirs(dir)
             dirExist = True
 
-        # 缓存文件夹，多线程同时访问时可能都判断到不存在，并尝试创建
         url_md5 = self.md5_convert(url)
         key = dir + "/" + url_md5
 
@@ -60,6 +60,7 @@ class Douban():
                 return html.read()
                 #return bs(html.read(), 'lxml')
 
+    # 获取评论页最热5条
     def getComment(self, url):
         restext = self.getHttp(url + 'comments?sort=new_score&status=P')
         #bs_info=bs(restext, 'lxml')
@@ -67,7 +68,7 @@ class Douban():
         #comment = [re.sub(r'\s+', '', x.text) for x in bs_info.find_all('span', {'class': 'short'}, limit=5)]
         comment = selector.xpath('//*[@class="short"]//text()')[0:5]
         return comment
-
+    # 获取列表页数据
     def maker(self, url):
         # global num
         print(url)
@@ -105,7 +106,7 @@ class Douban():
             print(f'{title[i]}评论读取完毕')
         return True
 
-
+# 生产数据，放入队列
 class ProducerThread(Thread):
     def run(self):
         global pages
@@ -117,7 +118,7 @@ class ProducerThread(Thread):
             if (pages.empty()):
                 break
 
-
+# 负责写入
 class ConsumerTheard(Thread):
     def run(self):
         global queue
@@ -136,7 +137,9 @@ class ConsumerTheard(Thread):
 
 
 if __name__ == '__main__':
+    # 缓存文件夹不存在时，多个队列同时创建可能会造成冲突，用全局变量加锁
     dirExist = False
+    #待采集链接队列
     pages = Queue(11)
     urls = tuple(
         [f'https://movie.douban.com/top250?start={str(x)}' for x in range(0, 226, 25)])
@@ -145,7 +148,7 @@ if __name__ == '__main__':
     # http://192.168.3.23/lab/movie/douban_
     for i in urls:
         pages.put(i)
-
+    #待写入数据队列
     queue = Queue(35)
 
     p1 = ProducerThread(name='p1')
