@@ -22,7 +22,7 @@ def get_html_bs(url):
     return bs_info
 
 
-# 获取每页电影的URL列表
+# 获取每页电影详情页的URL列表
 def get_movie_urls(entry_url):
     bs_info = get_html_bs(entry_url)
     
@@ -32,6 +32,7 @@ def get_movie_urls(entry_url):
             movie_urls_eachpage.append(atag.get('href'))
     
     return movie_urls_eachpage
+
 
 # 在电影详情页获取电影名称，评分，总评论数，top5评论等信息
 def get_movie_attrs(movie_url):
@@ -59,21 +60,20 @@ def get_movie_attrs(movie_url):
 
 
 # 将获取的电影名称，评分，总评论数，top5评论等信息保存为csv文件
-def save2csv(csv_file, columns_name, movie_attrs):
-    df = pd.DataFrame(columns=columns_name, data=movie_attrs, index=[0])
+def save2csv(csv_file, movie_attrs):
+    df = pd.DataFrame(data=movie_attrs, index=[0])
     if os.path.exists(csv_file):
         df.to_csv(csv_file, encoding='utf-8', header=False, mode='a', index=False)
     else:
         df.to_csv(csv_file, encoding='utf-8', mode='a', index=False)
 
 if __name__ == '__main__':
-    entry_urls = tuple(f'https://movie.douban.com/top250?start={page * 25}' for page in range(2))
+    entry_urls = tuple(f'https://movie.douban.com/top250?start={page * 25}' for page in range(10))
     csv_file = './movie_top250.csv'
-    columns_name = ['电影名称', '评分', '总评论数', 'top5评论']
 
     for entry_url in entry_urls:
         movie_urls_eachpage = get_movie_urls(entry_url)
         for movie_url in movie_urls_eachpage:
             movie_attrs = get_movie_attrs(movie_url)
-            save2csv(csv_file, columns_name, movie_attrs)
+            save2csv(csv_file, movie_attrs)
             sleep(10)
