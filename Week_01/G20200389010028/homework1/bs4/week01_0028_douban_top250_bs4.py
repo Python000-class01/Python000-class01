@@ -4,6 +4,10 @@
 并以 UTF-8 字符集保存到 csv 格式的文件中。
 """
 
+
+"""
+method1: 使用Beautifulsoup解析，存储为csv文件
+"""
 import requests, bs4
 import csv
 import numpy as np
@@ -51,7 +55,3 @@ for i in range (10):
         writer.writerow(results) # 将电影名称、评分、短评数量、热门短评等信息写进csv文件
 
 csv_file.close()
-
-        
-
-
