@@ -21,10 +21,9 @@ def get_url_name(myurl):
         href = detail.find('a').get('href')
         comfive = []
         comfive.append(five_comment(href))
-        print(comfive)
+        #print(comfive)
         writer.writerow((NumberTag,name,Stars,comnum,comfive))
 
-    print('finish')
 
 def five_comment(urls):
     res = requests.get(urls, headers=header)
