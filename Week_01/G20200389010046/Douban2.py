@@ -5,14 +5,11 @@ import pandas as pd
 import json
 
 
-def getcontent(myurl):
-
-    url  = myurl
+def getcontent(url):
     user_agent = 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36'
     headers = {}
     headers['user-agent'] = user_agent
     response = requests.get(url,headers=headers).text
-
     return response
 
 def parsebooklist(htmltext):
