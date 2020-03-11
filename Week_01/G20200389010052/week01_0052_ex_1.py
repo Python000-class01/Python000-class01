@@ -31,14 +31,7 @@ def get_movieInfo(url):
         df.to_csv('data.csv', encoding='utf-8', mode='a', header=False, index=0, sep=',')
 
 
-def json_test():
-    """
-    使用 requests 库对 http://httpbin.org/ 分别用 get 和 post 方式访问，并将返回信息转换为 JSON
-    """
-    response_get = requests.get('http://httpbin.org/get')
-    response_post = requests.post('http://httpbin.org/post', data={'k': 'v'})
-    print(response_get.json())
-    print(response_post.json())
+
 
 
 if __name__ == '__main__':
@@ -46,4 +39,3 @@ if __name__ == '__main__':
     for url in urls:
         get_movieInfo(url)
         sleep(5)
-    json_test()
