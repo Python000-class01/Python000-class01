@@ -3,7 +3,7 @@ from fake_useragent import UserAgent
 from bs4 import BeautifulSoup as bs
 from time import sleep
 import pandas as pd
-
+# 豆瓣爬去数据
 herf = []
 names = []
 grade = []

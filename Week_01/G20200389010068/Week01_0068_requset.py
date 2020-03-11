@@ -1,5 +1,6 @@
 import requests as re
 import pandas as pd
+# get与post
 def _get_(url):
     r=re.get(url,params=name)
     r.json()
