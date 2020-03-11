@@ -31,9 +31,6 @@ def get_movieInfo(url):
         df.to_csv('data.csv', encoding='utf-8', mode='a', header=False, index=0, sep=',')
 
 
-
-
-
 if __name__ == '__main__':
     urls = tuple(f'https://movie.douban.com/top250?start={page * 25}&filter=' for page in range(10))
     for url in urls:
