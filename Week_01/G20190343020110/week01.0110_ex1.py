@@ -4,9 +4,9 @@ import requests as req
 from bs4 import BeautifulSoup as bs
 import csv
 
-
 def get_url_name(myurl, csv_writer):
-    #设置header
+
+   #设置header
     user_agent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'
     header = {}
     header['user-agent'] = user_agent
@@ -18,7 +18,12 @@ def get_url_name(myurl, csv_writer):
         list1 = []
         infoTag = tags.find_next('div', class_='info')
         #print("详情链接",infoTag.find_next('a').get('href'))
-        list1.append(infoTag.find_next('a').get('href'))
+        #list1.append(infoTag.find_next('a').get('href'))
+        info_href = infoTag.find_next('a').get('href')
+        list1.append(info_href)
+        #print(info_href)
+        list1.append(get_Info(info_href))
+        sleep(5)
         #print('标题',infoTag.find_next('span', class_='title').get_text())
         list1.append(infoTag.find_next('span', class_='title').get_text())
         #print('评分',infoTag.find_next('span', class_='rating_num').get_text())
@@ -31,6 +36,22 @@ def get_url_name(myurl, csv_writer):
         # 写行
         csv_writer.writerow(list1)
    
+
+def get_Info(info_url):
+    #设置header
+    user_agent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'
+    header = {}
+    header['user-agent'] = user_agent
+    response = req.get(info_url, headers=header)
+    #print(response)
+    bs_info = bs(response.text, 'html.parser')
+    list1 = ''
+    for tags in bs_info.find_all('div', class_='comment-item',limit=5):
+        infotag = tags.find_next('span', class_='comment-info')
+        list1 = list1 + infotag.find_next('span', class_='short').get_text()
+    return list1
+        
+
 
 
 urls = tuple(
