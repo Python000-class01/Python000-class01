@@ -1,0 +1,75 @@
+#week01_0198_task1.py
+
+1037306人评价
+爱是一种力量，让我们超越时空感知它的存在。
+https://movie.douban.com/subject/1292213/
+大话西游之大圣娶亲
+ / 西遊記大結局之仙履奇緣
+ / 西游记完结篇仙履奇缘  /  齐天大圣西游记
+[可播放]
+
+9.2
+
+1013416人评价
+一生所爱。
+https://movie.douban.com/subject/5912992/
+熔炉
+ / 도가니
+ / 无声呐喊(港)  /  漩涡
+
+9.3
+
+620945人评价
+我们一路奋战不是为了改变世界，而是为了不让世界改变我们。
+https://movie.douban.com/subject/25662329/
+疯狂动物城
+ / Zootopia
+ / 优兽大都会(港)  /  动物方城市(台)
+[可播放]
+
+9.2
+
+1200451人评价
+迪士尼给我们营造的乌托邦就是这样，永远善良勇敢，永远出乎意料。
+https://movie.douban.com/subject/1307914/
+无间道
+ / 無間道
+ / Infernal Affairs  /  Mou gaan dou
+[可播放]
+
+9.2
+
+827160人评价
+香港电影史上永不过时的杰作。
+https://movie.douban.com/subject/1291560/
+龙猫
+ / となりのトトロ
+ / 邻居托托罗  /  邻家的豆豆龙
+[可播放]
+
+9.2
+
+865421人评价
+人人心中都有个龙猫，童年就永远不会消失。
+https://movie.douban.com/subject/1291841/
+教父
+ / The Godfather
+ / Mario Puzo's The Godfather
+[可播放]
+
+9.3
+
+634715人评价
+千万不要记恨你的对手，这样会让你失去理智。
+https://movie.douban.com/subject/1849031/
+当幸福来敲门
+ / The Pursuit of Happyness
+ / 寻找快乐的故事(港)  /  追求快乐
+[可播放]
+
+#week01_0198_task2.py#####################################################################################################
+
+λ python week01_0198_task2.py
+{'args': {}, 'headers': {'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate', 'Host': 'httpbin.org', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36', 'X-Amzn-Trace-Id': 'Root=1-5e68d6bf-7cf726f6fe2c802b922100bf'}, 'origin': '103.69.155.91', 'url': 'http://httpbin.org/get'}
+{'args': {}, 'data': '', 'files': {}, 'form': {}, 'headers': {'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate', 'Content-Length': '0', 'Host': 'httpbin.org', 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36', 'X-Amzn-Trace-Id': 'Root=1-5e68d6c0-be776fd498fd2d8914cbedfd'}, 'json': None, 'origin': '103.69.155.91', 'url': 'http://httpbin.org/post'}
+
