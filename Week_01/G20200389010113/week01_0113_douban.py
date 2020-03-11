@@ -19,7 +19,7 @@ def request_url(url):
 
 
 def get_movie_info():
-    urls_tuple = tuple(['https://movie.douban.com/top250?start='+str(25*i) for i in range(1)])
+    urls_tuple = tuple(['https://movie.douban.com/top250?start='+str(25*i) for i in range(25)])
 
     total_movie_info = []
     column_name = ['Movie_Name', 'Rating_Num', 'Rating_Count', 'Comment_1', 'Comment_2', 'Comment_3', 'Comment_4', 'Comment_5']
@@ -27,7 +27,7 @@ def get_movie_info():
     for url in urls_tuple:
         all_info = request_url(url)
 
-        for info_tag in all_info.find_all('div', attrs={'class': 'info'}, limit=1):
+        for info_tag in all_info.find_all('div', attrs={'class': 'info'}):
             movie_info = []
 
             for span_tag in info_tag.find_all('span', attrs={'class': 'title'}):
