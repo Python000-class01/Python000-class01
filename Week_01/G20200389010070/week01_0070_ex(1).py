@@ -18,7 +18,7 @@ def get_mv_info(url):
     bs_info = bs(response.text, 'html.parser')
     movie_infos = []
 
-    for tags in bs_info.find_all('div', attrs={'class': 'info'})[:2]:
+    for tags in bs_info.find_all('div', attrs={'class': 'info'})[:]:
         movie_info = []
         for hd_tags in tags.find_all('div', attrs={'class': 'hd'}):
             link_page_url = ''
@@ -63,9 +63,7 @@ def get_hot_comment(url):
 
 
 # 遍历豆瓣top250每一页
-# urls = tuple(f'https://movie.douban.com/top250?start=0')
-url_list = [f'https://movie.douban.com/top250?start=0']
-# {page * 25}&filter=' for page in range(10))
+url_list = [f'https://movie.douban.com/top250?start={page * 25}&filter=' for page in range(10)]
 
 # 通过name属性=main方法，主动调用get_my_url()方法，传入url
 if __name__ == '__main__':
