@@ -42,9 +42,9 @@ def get_myurl(scow_url):
     
 
 
-def func(listTemp, n):
-    for i in range(0, len(listTemp), n):
-        yield listTemp[i:i + n]
+#def func(listTemp, n):
+#    for i in range(0, len(listTemp), n):
+#        yield listTemp[i:i + n]
 
 
 urls = tuple(f'https://movie.douban.com/top250?start={page *25}&filter=' for page in range(10))
@@ -54,15 +54,18 @@ if __name__ == '__main__':
     for page in urls:
         get_myurl(page)
         sleep(5)
-temp = func(comment_list,5)
-short = list(temp)
-d=[]
-d = zip(movie_list,rate_list,commnet_num_list,short)
+#temp = func(comment_list,5)
+c1=comment_list[0:len(comment_list):5]
+c2=comment_list[1:len(comment_list):5]
+c3=comment_list[2:len(comment_list):5]
+c4=comment_list[3:len(comment_list):5]
+c5=comment_list[4:len(comment_list):5]
+d = zip(movie_list,rate_list,commnet_num_list,c1,c2,c3,c4,c5)
 data_list = list(d)
 
-csv_file = open('/Users/liximing/Documents/Testing-Python/GeekBang_python/week1/TOP250.csv','w',newline='', encoding= 'utf-8')
+csv_file = open('/Users/liximing/Documents/Testing-Python/GeekBang_python/Week 01/TOP250_v1.csv','w',newline='', encoding= 'utf-8')
 writer=csv.writer(csv_file)
-writer.writerow(['电影名称','评分','短评数量','热门短评'])
+writer.writerow(['电影名称','评分','短评数量','热门短评1','热门短评2','热门短评3','热门短评4','热门短评5'])
 for i in data_list:
     writer.writerow(i)
 
