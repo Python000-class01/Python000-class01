@@ -5,6 +5,7 @@
 操作系统：winddows10
 Python: 3.8.2
 编辑器：vscode
+源文件：day0305.py
 
 1.实现
 1.1 使用webdriver的firefox浏览器打开页面，获取cookie
@@ -26,6 +27,7 @@ Python: 3.8.2
 
 作业2：Json作业
 0.环境
+源文件：day0307.py
 与作业1相同
 1.实现
 1.1 request.get request.post带数据参数调用
