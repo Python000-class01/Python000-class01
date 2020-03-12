@@ -22,7 +22,7 @@
 
 ## 作业 2
 
-[week01_0137_hping.py](./week01_0137_hping.py)
+[week01_0137_hping.py](./week01_0137_hbin.py)
 
 ## 第一周学习笔记
 
