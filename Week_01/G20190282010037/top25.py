@@ -1,4 +1,4 @@
-# Python 训练营 第一周作业 第一部分 20200304 00:36 @纪如军
+# Python 训练营 第一周作业 第一部分 20200304 00:36 
 import requests
 from bs4 import BeautifulSoup as bs
 from time import sleep
