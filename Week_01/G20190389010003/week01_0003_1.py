@@ -63,7 +63,7 @@ for my_url in url:
     get_douban_movie_top250(my_url)
 
 # 输出csv文件
-with open('hw1-dbMovie250.csv', 'a', encoding='utf-8', newline='')as csvfile:
+with open('dbMovie250.csv', 'a', encoding='utf-8', newline='')as csvfile:
     write = csv.writer(csvfile)
     for my_line in my_data:
         write.writerow(my_line)
