@@ -1,0 +1,43 @@
+import re
+import requests
+from bs4 import BeautifulSoup
+    
+def getHTMLText(url, code="utf-8"):
+    try:
+        user_agent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'
+        header = {}
+        header['user-agent'] = user_agent
+        r = requests.get(url,headers=header)
+        r.raise_for_status()
+        r.encoding = code
+        return r.text
+    except:
+        return "爬取出错！"
+ 
+def parseText(text, movieInfo):
+    soup = BeautifulSoup(text, 'html.parser')
+    olTag = soup.find('ol', class_='grid_view')
+    details = olTag.find_all('li')
+    for detail in details:
+        movieRank = detail.find('em').text    #电影排名
+        movieName = '《' + detail.find('span', class_='title').text + '》'    #电影名称
+        movieScore = detail.find('span', class_='rating_num').text + '分'    #评分
+        movieCommentNum = detail.find(text=re.compile('\d+人评价')).string     #短评数量
+        #movieReview = '"' + detail.find('span', class_='inq').text + '"'    #电影短评
+        # 将爬取的信息存入列表    
+        movieInfo.append([movieRank, movieName, movieScore, movieCommentNum])
+ 
+def writeFile(fpath, movieInfo):
+    with open(fpath, 'w', encoding='utf-8') as f:
+        for info in movieInfo:
+            f.write(','.join(info) + '\n')
+ 
+if __name__ == '__main__':
+    movieInfo = [['电影排名', '电影名称','电影评分', '短评数量']]
+    for i in range(0, 250, 25):
+        url = 'https://movie.douban.com/top250?start=' + str(i)
+        text = getHTMLText(url)
+        print(text)
+        parseText(text, movieInfo)
+    writeFile('movie_top250.csv', movieInfo)
+    print('爬取完成！')
