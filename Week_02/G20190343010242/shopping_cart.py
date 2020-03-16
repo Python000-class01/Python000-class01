@@ -11,9 +11,9 @@ class ShoppingCart:
 
     def __init__(self, customer_id):
         super().__init__()
-        self._customer_id = customer_id
-        self._customer = Customer.get_customer(customer_id)
-        if not self._customer:
+        self.__customer_id = customer_id
+        self.__customer = Customer.get_customer(customer_id)
+        if not self.__customer:
             raise Exception("Customer is not found.")
         self.vip_discount = float(getConfig().get('vip_discount', '0.8'))
         self.vip_threshold = float(getConfig().get('vip_threshold', '200.0'))
@@ -23,14 +23,14 @@ class ShoppingCart:
         self.generic_threshold = float(getConfig().get('generic_threshold', '200.0'))
     
     def get_customer_id(self):
-        return self._customer_id
+        return self.__customer_id
 
     def get_customer(self):
-        return self._customer
+        return self.__customer
     
     def get_order_entries(self):
         all_entries = [self.OrderEntry(**oe) for oe in Utils.get_data("order_entries.csv")]
-        return list(filter((lambda oe : oe.customer_id == self._customer_id), all_entries))
+        return list(filter((lambda oe : oe.customer_id == self.__customer_id), all_entries))
 
     def checkout(self):
         total_qty = 0
@@ -41,11 +41,11 @@ class ShoppingCart:
             goods = Goods.get_goods(order_entry.goods_id)
             total_price += goods.get_price() * order_entry.qty
         # Discounts
-        if self._customer.get_customer_type() == CustomerType.GENERIC.value:
+        if self.__customer.get_customer_type() == CustomerType.GENERIC.value:
             if total_price >= self.generic_threshold:
                 total_price = total_price * self.generic_discount
                 discount = float(round(Decimal(1.0 - self.generic_discount), 2))
-        elif self._customer.get_customer_type() == CustomerType.VIP.value:
+        elif self.__customer.get_customer_type() == CustomerType.VIP.value:
             if total_price >= self.vip_threshold:
                 total_price = total_price * self.vip_discount
                 discount = float(round(Decimal(1.0 - self.vip_discount), 2))
@@ -55,8 +55,8 @@ class ShoppingCart:
         return total_price, discount
 
     def print_orders(self):
-        user_category = "VIP" if self._customer.get_customer_type() == CustomerType.VIP.value else "Generic"
-        print(f"***** Orders for User {self._customer.get_username()}, User category: {user_category} *****")
+        user_category = "VIP" if self.__customer.get_customer_type() == CustomerType.VIP.value else "Generic"
+        print(f"***** Orders for User {self.__customer.get_username()}, User category: {user_category} *****")
         print()
         t = PrettyTable(['Goods Code', 'Goods Name', 'Unit Price', 'Qty'])
         for entry in self.get_order_entries():

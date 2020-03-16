@@ -3,29 +3,26 @@ from utils import Utils
 
 
 class Goods:
-    __slots__ = ['_goods_id', '_name', '_price']
+    __slots__ = ['__goods_id', '__name', '__price']
 
     def __init__(self, **kwargs):
         for key, value in kwargs.items():
-            setattr(self, "_" + key, value)
+            setattr(self, "_Goods__" + key, value)
 
     def get_id(self):
-        return self._goods_id
-
-    def set_id(self, goods_id):
-        self._goods_id = goods_id
+        return self.__goods_id
 
     def get_name(self):
-        return self._name
+        return self.__name
 
     def set_name(self, name):
-        self._name = name
+        self.__name = name
 
     def get_price(self):
-        return self._price    
+        return self.__price    
     
     def set_price(self, price):
-        self._price = float(round(Decimal(price), 2))
+        self.__price = float(round(Decimal(price), 2))
 
     @staticmethod
     def get_all_goods():

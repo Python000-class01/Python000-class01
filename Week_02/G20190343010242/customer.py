@@ -4,33 +4,30 @@ from utils import Utils
 
 class Customer:
 
-    __slots__ = ['_customer_id', '_username', '_customer_type']
+    __slots__ = ['__customer_id', '__username', '__customer_type']
 
     def __init__(self, **kwargs):
         for key, value in kwargs.items():
             if key == 'customer_type' and value not in [t.value for t in CustomerType]:
                 raise Exception("Invalid customer type.")
-            setattr(self, "_" + key, value)
+            setattr(self, "_Customer__" + key, value)
 
     def get_id(self):
-        return self._customer_id
-
-    def set_id(self, customer_id):
-        self._customer_id = customer_id
+        return self.__customer_id
 
     def get_username(self):
-        return self._username
-    
+        return self.__username
+
     def set_username(self, username):
-        self._username = username
+        self.__username = username
 
     def get_customer_type(self):
-        return self._customer_type
+        return self.__customer_type
     
     def set_customer_type(self, customer_type):
         if customer_type not in [t.value for t in CustomerType]:
             raise Exception("Invalid customer type.")
-        self._customer_type = customer_type
+        self.__customer_type = customer_type
     
     @staticmethod
     def get_all_customers():
