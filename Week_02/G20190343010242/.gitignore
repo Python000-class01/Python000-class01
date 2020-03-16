@@ -1,0 +1,5 @@
+venv3.7
+.vscode
+.idea
+.DS_Store
+__pycache__
