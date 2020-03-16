@@ -32,7 +32,7 @@ class ShoppingCart:
         all_entries = [self.OrderEntry(**oe) for oe in Utils.get_data("order_entries.csv")]
         return list(filter((lambda oe : oe.customer_id == self._customer_id), all_entries))
 
-    def get_total_price(self):
+    def checkout(self):
         total_qty = 0
         total_price = 0.0
         discount = 0.0
@@ -65,7 +65,7 @@ class ShoppingCart:
         print(t)
         print()
         print()
-        total_price, discount = self.get_total_price()
+        total_price, discount = self.checkout()
         if discount > 0.0:
             print(f"Discount:  {int(discount * 100)}% off")
         print(f"Total price: {Utils.printed_currency(total_price)}")
