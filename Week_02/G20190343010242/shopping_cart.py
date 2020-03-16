@@ -78,5 +78,3 @@ class ShoppingCart:
             for key, value in kwargs.items():
                 setattr(self, key, value)
 
-sc = ShoppingCart(5)
-sc.print_orders()
