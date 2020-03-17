@@ -25,6 +25,10 @@ class consumer(object):
     @property
     def cart(self):
         return self._cart
+
+    @cart.deleter
+    def cart(self):
+        self._cart.clear()
     
     @property
     def role(self):
@@ -51,10 +55,36 @@ class consumer(object):
         else:
             print("Something wrong in input.")
 
-    
-    
-    def remove(self, good, number):
-        pass
+    def remove(self, *args, **kargs):
+        '''
+        从购物车中移除指定数量的指定商品
+        如果指定数量少于购物车中指定商品存在的数量，则移除指定数量，并输出提示
+        如果指定数量多于购物车中指定商品存在的数量，则移除该商品，并输出提示
+        '''
+        if len(args) == 1:
+            for item in args[0]:
+                if item not in self._cart:
+                    print(f"remove 0 {args[0]} from {self.name}'s cart, now 0 {args[0]} exits.")
+                else:
+                    if args[0][item] < self._cart[item]:
+                        self._cart[item] -= args[0][item]
+                        print(f"remove {args[0][item]} {item} from {self.name}'s cart, now {self._cart[item]} {item} exits.")
+                    else:
+                        num = self._cart.pop(item)
+                        print(f"remove {num} {args[0]} from {self.name}'s cart, now 0 {args[0]} exits.")
+        elif len(args) == 2:
+            if args[0] in self._cart:
+                if args[1] < self._cart[args[0]]:
+                    self._cart[args[0]] -= args[1]
+                    print(f"remove {args[1]} {args[0]} from {self.name}'s cart, now {self._cart[args[0]]} {args[0]} exits.")
+                else:
+                    num = self._cart.pop(args[0])
+                    print(f"remove {num} {args[0]} from {self.name}'s cart, now 0 {args[0]} exits.")
+
+            elif args[0] not in self._cart:
+                print(f"remove 0 {args[0]} from {self.name}'s cart, now 0 {args[0]} exits.")
+        else:
+            print("Something wrong in input.")
 
 class shop(object):
     '''
@@ -88,23 +118,31 @@ class shop(object):
         '''
         折扣都是在原价上进行，所以先算原价，再根据不同情况对金额运算
         '''
-        total = 0
-        count = 0
+        total = 0   # 记录总消费金额
+        count = 0   # 记录商品件数
+        # 计算购物车商品总价
         for item in consumer.cart:
             count += consumer.cart[item]
             total += self._goods[item] * consumer.cart[item]
+        # 普通用户计算优惠
         if consumer.role == "ordinary":
             if total >= 200:
                 total *= 0.9
+        
+        # vip用户计算优惠
         elif consumer.role == "vip":
+            # 满200元的折扣力度最大，所以最先计算该情况
             if total >= 200:
                 total *= 0.8
             elif count >= 10:
                 total *= 0.85
-        print(f"996 Shop Receipt for {consumer.name}({consumer.role}):\nAmounts\t\tItems\t")
+        # 打印票据
+        print(f"996 Shop Receipt for {consumer.name}({consumer.role}):\nAmounts\tunit price\tItems\t")
         for item in consumer.cart:
-            print(f"{consumer.cart[item]}\t\t\t\t\t{item}")
+            print(f"{consumer.cart[item]}\t{self._goods[item]}\t\t{item}")
         print(f"\nTotal: ${total}")
+        # 结算完成，清空用户购物车
+        del consumer.cart
         return total
 
 
@@ -144,3 +182,4 @@ if __name__ == '__main__':
 
     # 消费者在996商店进行购买并结算
     Myshop.account(ruo)
+    print(f"After accountting, ruo's cart:\n{ruo.cart}")
