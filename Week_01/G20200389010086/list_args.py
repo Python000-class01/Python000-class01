@@ -2,6 +2,7 @@ class Custom(object):
     # 顾客
     def __init__(self, name, goods=None):
         self.name = name
+
         if goods is None:
             goods = []
         self.goods = goods
