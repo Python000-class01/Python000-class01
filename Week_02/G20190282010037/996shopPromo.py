@@ -19,11 +19,16 @@ class cusPromo(Promotion):
 # VIP用户0.8折
 class vip1Promo(Promotion):
     def discount(self,customer):
-        return 0.8 if customer.amount>200 else 1
+        if(customer.vip):
+            return 0.8 if customer.amount>200 else 1
+        return 1
+
 # VIP用户0.85折
 class vip2Promo(Promotion):
     def discount(self,customer):
-        return 0.85 if customer.quantity>10 else 1
+        if(customer.vip):
+            return 0.85 if customer.quantity>10 else 1
+        return 1
 # 最优折扣计算
 class BestDiscount(Promotion):
     def discount(self,customer):
