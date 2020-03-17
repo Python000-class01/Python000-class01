@@ -67,72 +67,86 @@ if __name__ == '__main__':
 
 
 #优雅的方式，从菜单中自动售货
-'''import pands as  pd
+import pandas as pd
+import numpy as np
 
-class Food():
-    def Food_list(self):
-        Food_list =pd.DataFrom [
-            {'name': '青菜', 'price': '10'},
-            {'name': '白菜', 'price': '10'},
-            {'name': '萝卜', 'price': '10'},
-            {'name': '地瓜', 'price': '10'},
-            {'name': '番茄', 'price': '10'}
-        ]
-        return Food_list
-
-
+list = pd.DataFrame(data=[['青菜', 10], ['白菜', 10], ['萝卜', 10], ['花菜', 10]], columns=['商品名', '价格'], index=[1, 2, 3, 4])
+#偷懒了 可以定义一个类 方便增加减少
 
 class Shop():
-    def __init__(self, name,vip=False):
+    def __init__(self, name):
         self.name = name
-        self.vip = vip
-        self.allcount = 0
-        self.zongjia = 0
-        
 
+    def buy(self):
+        self.price = 0
+        self.allcount = 0
+        while True:
+            print("欢迎来到996超市,请选择你要购买的商品编号")
+            print(list)
+            num = int(input('请输入购买商品的编号：'))
+            count = int(input('请输入购买商品的数量：'))
+            self.price += list.iloc[num - 1, 1] * count
+            self.allcount += count
+            # print("你购买了{}件商品，总价是{}元".format(allcount,zongjia))
+            choice = input("继续添加请输入1，结算请输入2：")
+            if choice == '2':
+                # print("你购买了{}件商品，总价是{}元".format(self.allcount,self.price))
+                break
+            else:
+                continue
+
+
+class Not_vip(Shop):
+    def __init__(self, name):
+        super(Shop, self).__init__()
 
     def pay(self):
-        if self.vip == False:
-            print('您是普通会员，考虑办卡么')
-            if zongjia < 200:
-                zongjia = zongjia
+        print('您是普通会员，考虑办卡么')
+        if self.price < 200:
+            price = self.price
+        else:
+            price = 0.9 * self.price
+        print("你购买了{}件商品，总价是{}元".format(self.allcount, price))
+        print('欢迎下次光临')
+
+
+class Vip(Shop):
+    def __init__(self, name):
+        super(Shop, self).__init__()
+
+    def pay(self):
+        print('欢迎尊敬的VIP用户')
+        if self.price > 200 and self.allcount > 10:
+            zongjia1 = 0.8 * self.price
+            zongjia2 = 0.85 * self.price
+            if zongjia1 > zongjia2:
+                zongjia = zongjia2
             else:
-                zongjia = 0.9 * zongjia
-            elif self.vip == True:  # 这里需要改一下因为85折肯定多于8折  改成75折比较好。
-                print('欢迎尊敬的VIP用户')
-                if zongjia > 200 and allcount > 10:
-                    zongjia1 = 0.8 * zongjia
-                    zongjia2 = 0.85 * zongjia
-                    if zongjia1 > zongjia2:
-                        zongjia = zongjia2
-                    else:
-                        zongjia = zongjia1
-                elif zongjia > 200 and allcount < 10:
-                    zongjia = 0.8 * zongjia
-                elif allcount > 10:
-                    zongjia = 0.85 * zongjia
-                else:
-                    zongjia = zongjia
-                print("你购买了{}件商品，总价是{}元".format(allcount, zongjia))
-                print('欢迎下次光临')
-                else:
-                    pass
+                zongjia = zongjia1
+        elif self.price > 200 and self.allcount < 10:
+            zongjia = 0.8 * self.price
+        elif self.allcount > 10:
+            zongjia = 0.85 * self.price
+        else:
+            zongjia = self.price
+        print("你购买了{}件商品，总价是{}元".format(self.allcount, zongjia))
+        print('欢迎下次光临')
 
 
+def main(name):
+    chooice = int(input('会员请输入1，不是会员请输入2：'))
+    if chooice == 1:
+        a = Vip(name)
+        print(a.buy())
+        print(a.pay())
+    else:
+        a = Not_vip(name)
+        print(a.buy())
+        print(a.pay())
 
-
-
-def main():
-    name = '小红'
-    print('欢迎来到996超市！')
-    print('选择你需要购买的蔬菜：')
-    foods = Food()
-    foods_list = foods.Food_list()
-    for k,v in foods_list:
-   
 
 
 if __name__ == '__main__':
-    main()'''
+    main('小方')
 
 
