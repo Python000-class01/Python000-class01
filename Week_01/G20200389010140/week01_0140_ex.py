@@ -20,7 +20,7 @@ def get_url_name(myurl):
    for tags in bs_info.find_all('div', attrs={'class': 'pl2'}):
        for atag in tags.find_all('a',):
            # 获取所有链接
-           data = (atag.get('href'))+(atag.get('title'))
+           data = (atag.get('href').strip())+(atag.get('title').strip())
            print(data)
            record_in_csv(data)
 
