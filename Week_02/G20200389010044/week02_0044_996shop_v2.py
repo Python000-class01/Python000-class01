@@ -107,37 +107,40 @@ class shop(object):
         print(f"\nTotal: ${total}")
         return total
 
-# 开一家名为996的商店
-Myshop = shop("996")
 
-# 给996商店进货
-goodsList = {
-    "cola" : 3,
-    "chips" : 5,
-    "milktea" : 20,
-    "coffee" : 20,
-    "steak" : 50,
-    "python" : 2000,
-    "fox" : 2000
-}
-# for goods in goodsList:
-#     Myshop.purchase(goods, goodsList[goods])
 
-Myshop.purchase(goodsList)
-Myshop.purchase("lamp", 40)
+if __name__ == '__main__':
+    # 开一家名为996的商店
+    Myshop = shop("996")
 
-# 出现消费者
-andrew = consumer("andrew")
-anderson = consumer("anderson")
-ruo = consumer("ruo", "vip")
+    # 给996商店进货
+    goodsList = {
+        "cola" : 3,
+        "chips" : 5,
+        "milktea" : 20,
+        "coffee" : 20,
+        "steak" : 50,
+        "python" : 2000,
+        "fox" : 2000
+    }
+    # for goods in goodsList:
+    #     Myshop.purchase(goods, goodsList[goods])
 
-# 消费者产生消费意向
-ruoList = {
-    "cola" : 6,
-    "chips" : 5
-}
-ruo.buy(ruoList)        # 往购物车里放一堆 - 传入字典
-ruo.buy("python", 2)    # 往购物车里放一样
+    Myshop.purchase(goodsList)
+    Myshop.purchase("lamp", 40)
 
-# 消费者在996商店进行购买并结算
-Myshop.account(ruo)
+    # 出现消费者
+    andrew = consumer("andrew")
+    anderson = consumer("anderson")
+    ruo = consumer("ruo", "vip")
+
+    # 消费者产生消费意向
+    ruoList = {
+        "cola" : 6,
+        "chips" : 5
+    }
+    ruo.buy(ruoList)        # 往购物车里放一堆 - 传入字典
+    ruo.buy("python", 2)    # 往购物车里放一样
+
+    # 消费者在996商店进行购买并结算
+    Myshop.account(ruo)
