@@ -58,15 +58,15 @@ class MyMall:
                     temp = np.around(total - np.around(total * 0.85, 2))
                     if temp > discount_fee:
                         discount_fee = temp
-            names = [goods[x['gid']]['goods_name'] for x in ret]
-            info = [[goods[x['gid']]['price'], x['num'], np.around(x['num'] * goods[x['gid']]['price'], 2)] for x in
+            names = [self.findGoods(x['gid'])['goods_name'] for x in ret]
+            info = [[self.findGoods(x['gid'])['price'], x['num'], np.around(x['num'] * self.findGoods(x['gid'])['price'], 2)] for x in
                     ret]
             names.append('-' * 10)
             info.append(['-' * 10, '-' * 10, '-' * 10])
             names.append("discount")
             info.append(['', '', -1*discount_fee])
             names.append("sum")
-            info.append(['', count, total])
+            info.append(['', count, total-1*discount_fee])
             df = pd.DataFrame(info, index=names, columns=['price', 'num', 'sum'])  # 生成6行4列位置
             return df
         return inner
