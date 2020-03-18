@@ -19,14 +19,28 @@
 from time import ctime,sleep
 def outer_arg(bar):
     def outer(func):
+        print("在装饰foo，并不是foo 方法执行前")
         def inner(*args,**kwargs):
-            print("%s called at %s"%(func.__name__,ctime()))
+            print("foo 方法执行前")
             ret = func(*args,**kwargs)
-            print(bar)
+            # print(bar)
+            print("foo 方法执行后")
             return ret
-        print(inner)
+        #print(inner)
         return inner
     return outer
+
+@outer_arg('foo_arg')
+def foo(a,b,c):
+    print('foo 在调用')
+    return (a+b+c)
+
+# foo(1,3,5)
+
+# outer_returned = outer_arg()
+# inner_returned = outer_returned(foo)
+# inner_returned(1,2,3)
+
 
 # 相当于outer_arg('foo_arg')(foo)()
 # 装饰器带参数，其实外加一层函数outer_arg，让装饰器的参数bar执行，定义函数装饰器本身outer且带原函数名foo来作参数，再返回装饰器本身outer函数对象，
@@ -41,12 +55,9 @@ def outer_arg(bar):
 # 为什么执行原函数foo的逻辑喜欢写在 inner 里面而不是外层的 outer 呢, 是不是两者都可以
 # 为什么 foo 明明换了inner 函数对象，而 inner 里面的却能执行原始的函数foo呢
 # 因为 inner 函数定义是 执行的foo还是原地址的foo, 外层foo因为装饰器原因被换了地址 [foo = outer_arg('foo_arg')(foo)]
-@outer_arg('foo_arg')
-def foo(a,b,c):
-    return (a+b+c)
+
     
-foo(1,3,5)
-print(foo.__name__)
+
 
 
 # import functools
@@ -149,6 +160,6 @@ print(foo.__name__)
 # for i in range(5):
 #     six.display()
 
-def a():
-    pass
-print(a)
+# def a():
+#     pass
+# print(a)
