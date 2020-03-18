@@ -50,10 +50,6 @@ class VIPCustomer(Customer):
         return 'VIP客户'
     
 
-def checkout(customer, money, goods_count):
-    print(f'{customer}结账，折扣为{customer.discount}，原价{money}，折扣价为{money*customer.discount}')
-
-
 if __name__ == '__main__':
     # 普通客户结账演示
     one_guy = OrdinaryCustomer(50)
