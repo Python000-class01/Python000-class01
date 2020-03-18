@@ -7,7 +7,6 @@ class Accounts(object):
 
 class NormalUser(Accounts):
 
-	@property
 	def pay(self):
 		if self.totalPrice < 200:
 			return self.totalPrice
@@ -17,7 +16,6 @@ class NormalUser(Accounts):
 
 class VipUser(Accounts):
 
-	@property
 	def pay(self):
 		if self.totalPrice >= 200:
 			return self.totalPrice * 0.8
@@ -25,6 +23,15 @@ class VipUser(Accounts):
 			return self.totalPrice * 0.85
 		else:
 			return self.totalPrice
+
+
+class Factory:
+
+	def getPay(self, order, user):
+		if user == 'NormalUser':
+			return NormalUser(order).pay()
+		if user == 'VipUser':
+			return VipUser(order).pay()
 
 
 def main():
@@ -37,10 +44,11 @@ def main():
 		[20, 100],
 		[1, 30],
 	]
-	nu = NormalUser(order1)
-	vip = VipUser(order2)
-	print(nu.pay)
-	print(vip.pay)
+	# nu = NormalUser(order1)
+	# vip = VipUser(order2)
+	factory = Factory()
+	print(factory.getPay(order1, 'NormalUser'))
+	print(factory.getPay(order2, 'VipUser'))
 
 
 if __name__ == '__main__':
