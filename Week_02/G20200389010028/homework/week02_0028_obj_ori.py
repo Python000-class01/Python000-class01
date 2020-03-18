@@ -64,8 +64,8 @@ def main():
     quan = int(input('请输入您的购物总件数：'))
     sta = iden[enter]
     payment = Payment()
-    pay_final = payment.get_Pay(sta, pri, sta)
-    print(f'您是{sta}客户，您最终需要付 {str(pay_final.2f)} 元.')
+    pay_final = payment.get_Pay(sta, pri, quan)
+    print('您是 %s 客户，您需要付 %.2f 元' % (sta, pay_final))
 
 
 if __name__ == '__main__':
