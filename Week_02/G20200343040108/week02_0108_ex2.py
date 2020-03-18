@@ -43,31 +43,5 @@ def new_tips(argv):
 def add_v2(a, b):
     print(a + b)
 
-
 print(add_v2(3, 4))
 
-
-def outer(clss):  # 类装饰器
-    class Inner(object):
-        msg = 'test_msg'
-
-        def __init__(self):
-            self.clss = clss()
-
-        def __getattr__(self, attr):
-            return getattr(self.clss, attr)
-
-        def __call__(self):
-            self.name = 'warp'
-
-    return Inner
-
-
-@outer
-class TestClass(object):
-    def __init__(self):
-        pass
-
-
-test = TestClass()
-print(test.msg)

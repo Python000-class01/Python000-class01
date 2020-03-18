@@ -25,7 +25,7 @@ class Shop996():
     discount_nums = {1: 1, 2: 0.85}
 
     # 价格列表
-    price_list = {'book':15, 'phone':90, 'cup':80}
+    price_list = {'book': 15, 'phone': 90, 'cup': 80}
 
     def __init__(self, username, goods=None):
         self.username = username
@@ -53,6 +53,7 @@ class Shop996():
             total_nums += good['goods_num']
 
         print("username: %s 总共花了 %s " % (self.username, total_price))
+
 
 # vip 用户
 class VipUser(Shop996):
@@ -115,21 +116,21 @@ class CommonUser(Shop996):
 
 print("vip用户")
 vip1 = VipUser('test')
-vip1.buy('book',3)
-vip1.buy('phone',1)
+vip1.buy('book', 3)
+vip1.buy('phone', 1)
 vip1.pay_up()
 
 vip2 = VipUser('test2')
-vip2.buy('book',30)
-vip2.buy('phone',3)
+vip2.buy('book', 30)
+vip2.buy('phone', 3)
 vip2.pay_up()
 
 print("\n普通用户")
 common1 = CommonUser('tom')
-common1.buy('book',21)
+common1.buy('book', 21)
 common1.pay_up()
 
 common2 = CommonUser('tom2')
-common2.buy('cup',2)
-common2.buy('book',1)
+common2.buy('cup', 2)
+common2.buy('book', 1)
 common2.pay_up()
