@@ -13,6 +13,7 @@ class Order():
         self.customer = customer
         self.shopping_cart = shopping_cart
     
+    # 商品总价
     @property
     def total_price(self):
         total_price = 0
@@ -20,6 +21,7 @@ class Order():
             total_price += self.shopping_cart[item]
         return total_price
     
+    # 商品数量
     @property
     def goods_account(self):
         return len(self.shopping_cart)
@@ -63,14 +65,19 @@ class Cashier():
             return self.__vip_checkout()
         return self.__normal_checkout()
 
-
+# 普通用户
 c1 = Customer('Jack', False)
+# VIP用户
 c2 = Customer('Lucy', True)
 
-s_price100 = {'good1': 100}
-s_price200 = {'good1': 200}
-s_account10 = {f'good{i}':i for i in range(1,11)}
-s_price200_account10 = {f'good{i}':i*5 for i in range(1,11)}
+# 总价不足200
+s_price100 = {'goods1': 100}
+# 总价满200
+s_price200 = {'goods1': 200}
+# 商品数满10件
+s_account10 = {f'goods{i}':i for i in range(1,11)}
+# 总价满200，且商品数满10件
+s_price200_account10 = {f'goods{i}':i*5 for i in range(1,11)}
 
 
 # 普通用户消费满200元打九折
