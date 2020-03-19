@@ -23,7 +23,7 @@ class Order():
     
     # 商品数量
     @property
-    def goods_account(self):
+    def goods_count(self):
         return len(self.shopping_cart)
         
         
@@ -40,7 +40,7 @@ class Cashier():
         
     def __init__(self, order):
         self.total_price = order.total_price
-        self.goods_account = order.goods_account
+        self.goods_count = order.goods_count
         self.is_vip = order.customer.is_vip
     
     
@@ -53,7 +53,7 @@ class Cashier():
     def __vip_checkout(self):
         if self.total_price >= 200:
             return self.total_price * 0.8
-        elif self.goods_account >= 10:
+        elif self.goods_count >= 10:
 #            print('check')
             return self.total_price * 0.85
         else:
@@ -75,9 +75,9 @@ s_price100 = {'goods1': 100}
 # 总价满200
 s_price200 = {'goods1': 200}
 # 商品数满10件
-s_account10 = {f'goods{i}':i for i in range(1,11)}
+s_count10 = {f'goods{i}':i for i in range(1,11)}
 # 总价满200，且商品数满10件
-s_price200_account10 = {f'goods{i}':i*5 for i in range(1,11)}
+s_price200_count10 = {f'goods{i}':i*5 for i in range(1,11)}
 
 
 # 普通用户消费满200元打九折
@@ -90,10 +90,10 @@ o2 = Order(c1, s_price100)
 o3 = Order(c2, s_price200)
 
 # VIP会员满10件商品打八五折 
-o4 = Order(c2, s_account10)
+o4 = Order(c2, s_count10)
 
 # VIP会员满200元,满10件商品,打八折 
-o5 = Order(c2, s_price200_account10) 
+o5 = Order(c2, s_price200_count10) 
 
 # VIP会员无折扣，原价付费 
 o6 = Order(c2, s_price100)
