@@ -1,5 +1,5 @@
 class moneyspent(object):
-    def __init__(self, vip=false, totalboughtquantity, moneytotalcost ):
+    def __init__(self, totalboughtquantity, moneytotalcost, vip=False):
         self.vip = vip
         self.totalboughtquantity = totalboughtquantity
         self.moneytotalcost = moneytotalcost
