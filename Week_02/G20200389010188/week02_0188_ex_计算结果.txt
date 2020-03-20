@@ -1,0 +1,111 @@
+
+用装饰器装饰所有的计算折扣的函数，作用是将这些函数统一注册到一个列表里，当订单过来后会遍历所有的折扣策略函数，计算出符合条件的最低折扣值。
+
+def discount_register(self, func):
+        print("Add ", func.__name__, " into discounts")  
+        self.discounts.append(func)
+        @functools.wraps(func)
+        def calc_discount(*args, **kwargs):                   
+            return func(*args, **kwargs)
+        return calc_discount
+
+
+@dm.discount_register
+def common_pay_full_200_discount(isvip, pay, quantity):
+    '''普通用户满200打9折'''
+    disc = 1
+    if isvip == False and pay >= 200:
+        disc = 0.9
+    print(f'common_pay_full_200_discount policy discount is {disc:.2f}')
+    return disc
+
+
+Mongo里的数据库：
+
+> db.customer.find()
+{ "_id" : ObjectId("5e709766d1a94d40d2d2ff44"), "name" : "Gene", "mobile" : "13512345678", "level" : "vip", "expiry" : "2020-12-31", "points" : 200, "active" : "true" }
+{ "_id" : ObjectId("5e70b1e8d1a94d40d2d2ff46"), "name" : "Onomah", "mobile" : "13500000001", "level" : "vip", "expiry" : "2020-12-31", "points" : 200, "active" : "true" }
+
+
+> db.product.find()
+{ "_id" : ObjectId("5e70a930d1a94d40d2d2ff45"), "name" : "apple", "price" : 4.3 }
+{ "_id" : ObjectId("5e70b230d1a94d40d2d2ff47"), "name" : "orange", "price" : 7.5 }
+{ "_id" : ObjectId("5e70b230d1a94d40d2d2ff48"), "name" : "banana", "price" : 3.5 }
+{ "_id" : ObjectId("5e70b230d1a94d40d2d2ff49"), "name" : "strawberry", "price" : 16.2 }
+{ "_id" : ObjectId("5e70b231d1a94d40d2d2ff4a"), "name" : "pineapple", "price" : 7 }
+
+
+
+
+
+Python运行结果：
+
+*********************************第一个订单*****************************************
+"""准备订单"""
+    """1st type: vip用户数量和价格均达到，此时应该是8折"""
+    Onomah = order.Customer('Onomah', '13500000001')
+    cart1  = [order.Product('apple', '2'), order.Product('orange', '30'), order.Product('pineapple', '10')]
+    order1 = order.Order(Onomah, cart1)
+
+    sm.pay(order1)
+	
+运行结果：
+Add  vip_pay_full_200_discount  into discounts
+Add  vip_quantity_full_10_discount  into discounts
+common_pay_full_200_discount policy discount is 1.00
+vip_pay_full_200_discount policy discount is 0.80
+vip_quantity_full_10_discount policy discount is 0.85
+price is 303.60, discount is 0.80, so final price is 242.88元
+
+
+*********************************第二个订单*****************************************
+"""2nd type: vip用户数量达到，价格没有达到，此时应该85折"""
+    Gene = order.Customer('Gene', '13500000001')
+    cart2 = [order.Product('banana', '10'), order.Product('strawberry', '2')]
+    order2 = order.Order(Gene, cart2)
+
+    sm.pay(order2)
+
+
+Add  common_pay_full_200_discount  into discounts
+Add  vip_pay_full_200_discount  into discounts
+Add  vip_quantity_full_10_discount  into discounts
+common_pay_full_200_discount policy discount is 1.00
+vip_pay_full_200_discount policy discount is 1.00
+vip_quantity_full_10_discount policy discount is 0.85
+price is 67.40, discount is 0.85, so final price is 57.29元
+
+
+*********************************第三个订单*****************************************
+"""3rd type: 非vip用户价格达到，此时应该9折"""
+    Kuki = order.Customer('Kuki', '13500000002')
+    cart3 = [order.Product('banana', '10'), order.Product('strawberry', '20')]
+    order3 = order.Order(Kuki, cart3)
+
+    sm.pay(order3)
+
+Add  common_pay_full_200_discount  into discounts
+Add  vip_pay_full_200_discount  into discounts
+Add  vip_quantity_full_10_discount  into discounts
+common_pay_full_200_discount policy discount is 0.90
+vip_pay_full_200_discount policy discount is 1.00
+vip_quantity_full_10_discount policy discount is 1.00
+price is 359.00, discount is 0.90, so final price is 323.10元
+
+
+
+*********************************第四个订单*****************************************
+Cavaleiro = order.Customer('Cavaleiro', '13500000003')
+    cart4 = [order.Product('strawberry', '2')]
+    order4 = order.Order(Cavaleiro, cart4)
+
+    sm.pay(order4)
+
+
+Add  common_pay_full_200_discount  into discounts
+Add  vip_pay_full_200_discount  into discounts
+Add  vip_quantity_full_10_discount  into discounts
+common_pay_full_200_discount policy discount is 1.00
+vip_pay_full_200_discount policy discount is 1.00
+vip_quantity_full_10_discount policy discount is 1.00
+price is 32.40, discount is 1.00, so final price is 32.40元

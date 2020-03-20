@@ -1,0 +1,65 @@
+# 为“996 便利店”设计一套销售系统的结算模块，
+# 结算模块要求对不同类型的用户
+# （普通用户、VIP 用户）的单次消费进行区分并按照不同的购买金额、
+# 不同的用户身份进行结账：
+
+# 要求：
+# 请使用面向对象编程实现结算功能。
+# 由于 VIP 会员存在两种折扣方式，需自动根据最优惠的价格进行结算。
+
+# 定义一个支付类
+class Pay():
+    def __init__(self, name, consume_money, goods_counts):
+        self.name = name
+        self.consume_money = consume_money
+        self.goods_counts = goods_counts
+
+    # 定义结算方法
+    def user_pay(self):
+        # 判断输入是vip还是普通用户
+        if self.name == 'user':
+            # 普通用户结算：
+            # 消费不足 200 元，无折扣，原价付费；
+            if self.consume_money < 200:
+                # return self.consume_money
+                print('应支付： %s' % (self.consume_money))
+            # 消费满 200 元打九折；
+            else:
+                print('应支付： %s' % (self.consume_money * 0.9))
+                # return self.consume_money * 0.9
+        # vip用户结算：
+        else:
+            # 满200元,不足10件商品，打8折；
+            if self.consume_money >= 200 and self.goods_counts < 10:
+                print('应支付： %s' % (self.consume_money * 0.8))
+                # return consume_moneys
+            # 不满200元，但满10件商品打85折
+            elif self.consume_money < 200 and self.goods_counts > 10:
+                print('应支付： %s' % (self.consume_money * 0.85))
+                # return consume_moneys
+            # 满200元，且满10件商品的，去最小值
+            else:
+                consume_200_moneys = self.consume_money * 0.8
+                consume_10_moneys = self.consume_money * 0.85
+                if consume_200_moneys > consume_10_moneys:
+                    print('应支付： %s' % (consume_10_moneys))
+                    # return consume_10_moneys
+                elif consume_200_moneys < consume_10_moneys:
+                    print('应支付： %s' % (consume_200_moneys))
+                    # return consume_200_moneys
+                else:
+                    print('应支付： %s' % (consume_200_moneys))
+                    # return consume_200_moneys
+
+
+user_1 = Pay('user', 200, 5)
+user_2 = Pay('user', 190, 5)
+user_3 = Pay('vipuser', 200, 5)
+user_4 = Pay('vipuser', 180, 11)
+user_5 = Pay('vipuser', 250, 11)
+
+user_1.user_pay()
+user_2.user_pay()
+user_3.user_pay()
+user_4.user_pay()
+user_5.user_pay()
