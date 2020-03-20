@@ -1,4 +1,5 @@
 class moneyspent(object):
+    #update the commit desc.
     def __init__(self, totalboughtquantity, moneytotalcost, vip=False):
         self.vip = vip
         self.totalboughtquantity = totalboughtquantity
