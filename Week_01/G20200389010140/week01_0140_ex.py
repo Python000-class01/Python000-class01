@@ -1,9 +1,12 @@
+# -*- coding: utf-8 -*-
+
 import requests
 import csv
 from time import sleep
 from bs4 import BeautifulSoup as bs
 
 def record_in_csv(datas):
+    
     with open('result2.csv','a+') as file:
         csv_file = csv.writer(file)
         csv_file.writerow(datas)
