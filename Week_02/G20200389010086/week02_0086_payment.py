@@ -63,6 +63,6 @@ class OrdinaryPay(Custom):
 # 执行入口
 # 商品参数  商品名、单价、数量
 if __name__ == '__main__':
-    CustomObj = Custom('张三', 0)
-    CustomObj.buy([['Apple', 5.3, 6], ['Banana', 4.2, 4]])
-    CustomObj.pay()
+    customObj = Custom('张三', 0)
+    customObj.buy([['Apple', 5.3, 6], ['Banana', 4.2, 4]])
+    customObj.pay()

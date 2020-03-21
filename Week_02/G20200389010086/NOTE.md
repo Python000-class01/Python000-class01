@@ -85,6 +85,45 @@ print(c.year,c.month,c.day)
 # 可以根据原理改造 __getattribute__ 实现 __getattr__
 # 如果同时存在，执行顺序是 __getattribute__ > __getattr__ > __dict__
 
+# MRO
+# 多重继承，方法解析顺序
+# C3 算法
+# 钻石继承 使用C3 算法
+
+# 钻石继承
+class BaseClass(object):
+    num_base_calls = 0
+    def call_me(self):
+        print ("Calling method on Base Class")
+        self.num_base_calls += 1
+
+class LeftSubclass(BaseClass):
+    num_left_calls = 0
+    def call_me(self):
+        print ("Calling method on Left Subclass")
+        self.num_left_calls += 1
+
+class RightSubclass(object):
+    num_right_calls = 0
+    def call_me(self):
+        print("Calling method on Right Subclass")
+        self.num_right_calls += 1
+
+class Subclass(LeftSubclass,RightSubclass):
+    num_sub_calls = 0
+    def call_me(self):
+        print("Calling method on Subclass")
+        self.num_sub_calls += 1
+
+Subclass.mro()
+# 广度优先， 另外Python3 中不加(object)也是新式类，但是为了代码不会误运行在python2下产生意外结果，仍然建议增加
+# >>> Subclass.mro()
+# [<class '__main__.Subclass'>, <class '__main__.LeftSubclass'>, <class '__main__.RightSubclass'>, <class '__main__.BaseClass'>, <class 'object'>]
+
+#  修改RightSubclass 的 父类为 Object
+>>> Subclass.mro()
+# [<class '__main__.Subclass'>, <class '__main__.LeftSubclass'>, <class '__main__.BaseClass'>, <class '__main__.RightSubclass'>, <class 'object'>]
+
 
 
 
