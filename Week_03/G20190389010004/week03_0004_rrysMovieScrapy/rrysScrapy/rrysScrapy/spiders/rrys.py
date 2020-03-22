@@ -28,7 +28,7 @@ class RrysSpider(scrapy.Spider):
             item['title'] = title
             # item['link'] = link
             # print(title)
-            print(link)
+            # print(link)
             yield scrapy.Request(url=link, meta={'item':item}, callback=self.parseDetail)
         
     def parseDetail(self, response):
@@ -45,5 +45,6 @@ class RrysSpider(scrapy.Spider):
         item['level'] = level[0].upper()+'级'
         item['views'] = views[1]
         item['coverInfo'] = coverInfo[0]
+        # print(item)
         yield item
 
