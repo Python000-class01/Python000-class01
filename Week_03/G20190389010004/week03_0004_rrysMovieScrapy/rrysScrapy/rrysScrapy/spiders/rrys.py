@@ -27,7 +27,7 @@ class RrysSpider(scrapy.Spider):
             item = RrysscrapyItem()            
             item['title'] = title
             # item['link'] = link
-            # print(title)
+            print(title)
             # print(link)
             yield scrapy.Request(url=link, meta={'item':item}, callback=self.parseDetail)
         

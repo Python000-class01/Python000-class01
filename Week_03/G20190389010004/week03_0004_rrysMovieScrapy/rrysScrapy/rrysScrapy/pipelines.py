@@ -21,7 +21,8 @@ class RrysscrapyPipeline(object):
         coverInfo = item['coverInfo']
 
         output = f'{title}\t{rank}\t{level}\t{views}\t{coverInfo}\n\n'
-        self.article.writelines(output)
-        self.article.close()
+        # self.article = open('./rrysHotDownloadedMovies.txt', 'a+', encoding='utf-8')
+        self.article.write(output)
+        # self.article.close()
         
         return item
