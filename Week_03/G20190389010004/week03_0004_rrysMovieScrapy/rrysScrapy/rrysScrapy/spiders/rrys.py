@@ -34,7 +34,7 @@ class RrysSpider(scrapy.Spider):
     def parseDetail(self, response):
         rank = Selector(response=response).xpath('//p[@class="f4"]/text()').re('\d+')
         # print(rank[0])
-        level = Selector(response=response).xpath('//div[@class="level-item"]/img/@src').re('.*\/*([a-e])-big*')
+        level = Selector(response=response).xpath('//div[@class="level-item"]/img/@src').re('.*\/*([a-z])-big*')
         # print(level[0].upper())
         views = Selector(response=response).xpath('//*[@id="score_list"]/div[1]').re('\d+')
         # print(views[1])        
