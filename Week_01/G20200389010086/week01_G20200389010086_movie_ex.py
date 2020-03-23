@@ -23,6 +23,7 @@ def get_movie_info(movie_url):
     # 处理 电影名、评分、短频数量、热评等
     selector = lxml.etree.HTML(response.text)
     movie_name = selector.xpath('//*[@id="content"]/h1/span[1]/text()')[0]
+
     movie_star = selector.xpath('//*[@id="interest_sectl"]/div[1]/div[2]/strong/text()')[0]
     movie_comment_number = selector.xpath('//*[@id="comments-section"]/div[1]/h2/span/a/text()')[0]
     movie_hot_top5_comments = selector.xpath(' //*[@id="hot-comments"]/div/div/p/span/text()')
