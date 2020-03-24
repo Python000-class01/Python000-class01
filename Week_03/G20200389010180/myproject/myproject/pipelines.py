@@ -14,7 +14,7 @@ from scrapy.exporters import CsvItemExporter
 class CsvPipeline(object):
     def __init__(self):
         self.file = open("rrys_output.csv", 'wb')
-        self.exporter = CsvItemExporter(self.file, encoding='gb18030')
+        self.exporter = CsvItemExporter(self.file, encoding='utf-8')
 
     def close_spider(self, spider):
         self.exporter.finish_exporting()
