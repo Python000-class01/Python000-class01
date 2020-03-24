@@ -1,0 +1,24 @@
+3770	http://js.jstucdn.com/images/level-icon/e-big-1.png	[]
+
+2304	http://js.jstucdn.com/images/level-icon/e-big-1.png	[]
+
+73	http://js.jstucdn.com/images/level-icon/d-big-1.png	[]
+
+109	http://js.jstucdn.com/images/level-icon/b-big-1.png	[]
+
+26	http://js.jstucdn.com/images/level-icon/c-big-1.png	[]
+
+7	http://js.jstucdn.com/images/level-icon/d-big-1.png	[]
+
+2245	http://js.jstucdn.com/images/level-icon/a-big-1.png	[]
+
+4133	http://js.jstucdn.com/images/level-icon/d-big-1.png	[]
+
+7470	http://js.jstucdn.com/images/level-icon/c-big-1.png	[]
+
+9794	http://js.jstucdn.com/images/level-icon/c-big-1.png	[]
+
+9	http://js.jstucdn.com/images/level-icon/e-big-1.png	[]
+
+58	http://js.jstucdn.com/images/level-icon/e-big-1.png	[]
+
