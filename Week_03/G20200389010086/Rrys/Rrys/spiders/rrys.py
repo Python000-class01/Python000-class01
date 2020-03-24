@@ -53,7 +53,7 @@ class RrysSpider(scrapy.Spider):
         item['rank'] = rank[0]
         item['views'] = views[1]
         item['cover_info'] = cover_info[0]
-        level = level[0].upper()
+        level = level[0].upper() + '级'
         item['level'] = level
 
         yield item

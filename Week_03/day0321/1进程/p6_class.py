@@ -9,12 +9,13 @@ class NewProcess(Process):  # 继承Process类创建一个新类
         self.num = num
         super().__init__()
 
+    # 用类创建多进程时， 一定要重写run 方法
     def run(self):  # 重写Process类中的run方法.
         while True:
             print(f'我是进程 {self.num} , 我的pid是: {os.getpid()}')
             time.sleep(1)
 
-
+#  创建 2个进程
 for i in range(2):
     p = NewProcess(i)
     p.start()

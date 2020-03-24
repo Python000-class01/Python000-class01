@@ -5,7 +5,7 @@
 # 现在有这样一个需求：我们有两个进程，一个进程负责写(write)一个进程负责读(read)。
 # 当写的进程写完某部分以后要把数据交给读的进程进行使用
 # write()将写完的数据交给队列，再由队列交给read()
-# 从 multiprocessing 导入的 Queue 是进程安全
+# 从 multiprocessing 导出的 Queue 是进程安全
 from multiprocessing import Process, Queue
 
 def f(q):
