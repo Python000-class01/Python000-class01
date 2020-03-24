@@ -1,0 +1,88 @@
+{
+    "result": [
+        {
+            "IP": "192.168.189.190",
+            "PING": "Ping is not reachable"
+        },
+        {
+            "IP": "192.168.189.191",
+            "PING": "Ping is not reachable"
+        },
+        {
+            "IP": "192.168.189.193",
+            "PING": "2 packets transmitted, 2 packets received, 0.0% packet loss"
+        },
+        {
+            "IP": "192.168.189.192",
+            "PING": "2 packets transmitted, 2 packets received, 0.0% packet loss"
+        },
+        {
+            "IP": "192.168.189.194",
+            "PING": "2 packets transmitted, 2 packets received, 0.0% packet loss"
+        },
+        {
+            "IP": "192.168.189.195",
+            "PING": "Ping is not reachable"
+        },
+        {
+            "IP": "192.168.189.196",
+            "PING": "Ping is not reachable"
+        },
+        {
+            "IP": "192.168.189.197",
+            "PING": "2 packets transmitted, 2 packets received, 0.0% packet loss"
+        },
+        {
+            "IP": "192.168.189.198",
+            "PING": "Ping is not reachable"
+        },
+        {
+            "IP": "192.168.189.199",
+            "PING": "Ping is not reachable"
+        },
+        {
+            "IP": "192.168.189.200",
+            "PING": "Ping is not reachable"
+        },
+        {
+            "53000": "OPEN",
+            "IP": "192.168.189.190"
+        },
+        {
+            "53002": "CLOSE",
+            "IP": "192.168.189.190"
+        },
+        {
+            "53003": "CLOSE",
+            "IP": "192.168.189.190"
+        },
+        {
+            "53001": "CLOSE",
+            "IP": "192.168.189.190"
+        },
+        {
+            "53004": "CLOSE",
+            "IP": "192.168.189.190"
+        },
+        {
+            "53005": "CLOSE",
+            "IP": "192.168.189.190"
+        },
+        {
+            "53006": "CLOSE",
+            "IP": "192.168.189.190"
+        },
+        {
+            "53007": "CLOSE",
+            "IP": "192.168.189.190"
+        },
+        {
+            "53008": "CLOSE",
+            "IP": "192.168.189.190"
+        },
+        {
+            "53009": "CLOSE",
+            "IP": "192.168.189.190"
+        }
+    ]
+}
