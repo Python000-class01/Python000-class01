@@ -4,7 +4,7 @@ import socket
 import json
 
 
-# 创建多线程
+# 创建线程池
 def create_threadPoll(n):
     Poll = ThreadPoll(n)
     return Poll
@@ -44,7 +44,6 @@ def socket_connect(ip, port):
 
 
 if __name__ == "__main__":
-
     n = int(input('请输入并发连接数'))
     t = str(input('请输入类型'))
     ip = input('请输入ip')
