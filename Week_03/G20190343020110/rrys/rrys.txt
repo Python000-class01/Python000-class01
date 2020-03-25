@@ -1,24 +1,24 @@
-3770	http://js.jstucdn.com/images/level-icon/e-big-1.png	[]
+9	e	7031264
 
-2304	http://js.jstucdn.com/images/level-icon/e-big-1.png	[]
+42	b	1359791
 
-73	http://js.jstucdn.com/images/level-icon/d-big-1.png	[]
+9709	c	57243
 
-109	http://js.jstucdn.com/images/level-icon/b-big-1.png	[]
+4813	c	10415
 
-26	http://js.jstucdn.com/images/level-icon/c-big-1.png	[]
+72	d	753565
 
-7	http://js.jstucdn.com/images/level-icon/d-big-1.png	[]
+38	c	2433487
 
-2245	http://js.jstucdn.com/images/level-icon/a-big-1.png	[]
+106	a	7709
 
-4133	http://js.jstucdn.com/images/level-icon/d-big-1.png	[]
+4113	d	115339
 
-7470	http://js.jstucdn.com/images/level-icon/c-big-1.png	[]
+7571	c	42860
 
-9794	http://js.jstucdn.com/images/level-icon/c-big-1.png	[]
+1660	a	53670
 
-9	http://js.jstucdn.com/images/level-icon/e-big-1.png	[]
+4384	c	19344
 
-58	http://js.jstucdn.com/images/level-icon/e-big-1.png	[]
+999999	c	25813
 
