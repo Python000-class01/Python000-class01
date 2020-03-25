@@ -18,7 +18,5 @@ class RrysPipeline(object):
         df.to_csv(f"{path}/rrys.csv", columns=columns, index=False,encoding="utf-8")
 
     def process_item(self, item, spider):
-        if spider.name == 'rrys':
-            self.data.append(dict(item))
-            return item
-        return None
+        self.data.append(dict(item))
+        return item
