@@ -9,7 +9,8 @@ class RrysPipeline(object):
 
     def close_spider(self, spider):
         columns = ['seq', 'title', 'link', 'ranking', 'classification', 'favorites', 'cover']
-        df = pandas.DataFrame(self.data, columns=columns)
+        sorted_data = sorted(self.data, key=lambda item: item['seq'])
+        df = pandas.DataFrame(sorted_data, columns=columns)
         ROOT_DIR = os.getcwd()
         path = os.path.join(ROOT_DIR, "output")
         if not os.path.exists(path):
