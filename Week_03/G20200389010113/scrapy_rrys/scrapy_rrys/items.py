@@ -12,3 +12,6 @@ class ScrapyRrysItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
     link = scrapy.Field()
+    title = scrapy.Field()
+    score = scrapy.Field()
+    # count = scrapy.Field()
