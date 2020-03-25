@@ -8,7 +8,7 @@
 
 class HomeworkPipeline(object):
     def __init__(self):
-        self.article = open('./rrysDownload.txt','a+',encoding='utf-8')
+        self.article = open('./MovieDownload.txt','a+',encoding='utf-8')
 
     def process_item(self, item, spider):
         title = item['title']
