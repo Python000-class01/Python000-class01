@@ -26,7 +26,7 @@ def ping_check(host, ping_result):
     ping_result[host] = status
     
 
-def port_check(host, port, port_result):
+def tcp_check(host, port, port_result):
     
     try:
         s = socket(AF_INET, SOCK_STREAM)
@@ -38,6 +38,15 @@ def port_check(host, port, port_result):
         s.close()
     except:
         pass
+
+
+def write2json(output_file, result):
+
+    try:
+        with open(output_file, 'w', encoding='utf-8') as fs:
+            json.dump(result, fs)
+    except IOError as e:
+        print(e)
 
 
 def main():
@@ -53,7 +62,15 @@ def main():
     check_method = args.method
     output_file = args.output
     
-    host_list = args.hosts.split(',')
+    #host_list = args.hosts.split(',')
+
+    host_list = []
+    if args.hosts.find('-') == -1:
+        host_list.append(args.hosts)
+    else:
+        ip_start, ip_end = args.hosts.split('-')
+        host_list = IPRange(ip_start, ip_end)
+
 
     port_list = list(range(1, 1024))
    
@@ -62,7 +79,8 @@ def main():
     if check_method == 'ping':
         ping_result = {}
         for host in host_list:
-            t = threading.Thread(target=ping_check, args=(host, ping_result))
+            ip = host.__str__()
+            t = threading.Thread(target=ping_check, args=(ip, ping_result))
             threads.append(t)
             t.start()
 
@@ -70,33 +88,26 @@ def main():
                 t.join()
 
         if output_file.strip() != '':
-            try:
-                with open(output_file, 'w', encoding='utf-8') as fs:
-                    json.dump(ping_result, fs)
-            except IOError as e:
-                print(e)
+            write2json(output_file, ping_result)
 
     elif check_method == 'tcp':
         
         tcp_result = {}
         for host in host_list:
+            ip = host.__str__()
             port_result = []
             for p in port_list:
-                t = threading.Thread(target=port_check, args=(host, p, port_result))
+                t = threading.Thread(target=tcp_check, args=(ip, p, port_result))
                 threads.append(t)
                 t.start()     
             
             for t in threads:
                 t.join()
             
-            tcp_result[host] = port_result
+            tcp_result[ip] = port_result
 
         if output_file.strip() != '':
-            try:
-                with open(output_file, 'w', encoding='utf-8') as fs:
-                    json.dump(tcp_result, fs)
-            except IOError as e:
-                print(e)
+            write2json(output_file, tcp_result)
         
 
 if __name__ == '__main__':
