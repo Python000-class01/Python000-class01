@@ -1,0 +1,78 @@
+编写一个基于多进程或多线程模型的主机扫描器。
+
+scan TCP port，引入Telnetlib，利用Telnet工具来检测远端端口是否开放；
+scan IP, 直接用os.system来运行Ping指令，根据返回判定能否Ping通；
+
+引入argparse，解析输入参数；
+
+输出方面，如果定义了-w参数，则保存为json格式，否则将格式化打印出结果。
+
+
+验证结果：
+
+1，打开一个docker toolbox镜像，可以模拟一个开放的端口：
+
+ > docker-machine ls
+NAME      ACTIVE   DRIVER       STATE     URL                         SWARM   DOCKER        ERRORS
+default   -        virtualbox   Running   tcp://192.168.99.100:2376           v18.03.0-ce
+
+
+2，命令行运行程序：
+
+2.1 验证TCP端口
+
+>> python pmap.py -n 10 -f tcp -ip 192.168.99.100 -port 2370-2379 -w tcp.json
+
+arg list is {'n': '10', 'f': 'tcp', 'ip': '192.168.99.100', 'w': '', 'port': '2370-2379', 'mode': <MODE.TCP_MODE: 2>}
+
+创建了10个线程判断远端端口是否开放...
+call login_host with paras ip is 192.168.99.100 and port is 2370
+call login_host with paras ip is 192.168.99.100 and port is 2371
+call login_host with paras ip is 192.168.99.100 and port is 2373
+call login_host with paras ip is 192.168.99.100 and port is 2375
+call login_host with paras ip is 192.168.99.100 and port is 2377
+call login_host with paras ip is 192.168.99.100 and port is 2379
+call login_host with paras ip is 192.168.99.100 and port is 2374
+call login_host with paras ip is 192.168.99.100 and port is 2378
+call login_host with paras ip is 192.168.99.100 and port is 2376
+call login_host with paras ip is 192.168.99.100 and port is 2372
+
+Scan Result is:
+('192.168.99.100:2370', 'DOWN')
+('192.168.99.100:2371', 'DOWN')
+('192.168.99.100:2372', 'DOWN')
+('192.168.99.100:2373', 'DOWN')
+('192.168.99.100:2374', 'DOWN')
+('192.168.99.100:2375', 'DOWN')
+('192.168.99.100:2376', 'UP')
+('192.168.99.100:2377', 'DOWN')
+('192.168.99.100:2378', 'DOWN')
+('192.168.99.100:2379', 'DOWN')
+
+
+2.2 验证PING功能
+
+>> python pmap.py -n 10 -f ping -ip 192.168.99.95-192.168.99.101 -w ip.json
+
+arg list is {'n': '10', 'f': 'ping', 'ip': '192.168.99.95-192.168.99.101', 'w': '', 'port': '1024-65535', 'mode': <MODE.PING_MODE: 3>}
+
+创建了10个线程判断远端端口是否开放...
+call ping_host with ip is 192.168.99.95
+call ping_host with ip is 192.168.99.96
+call ping_host with ip is 192.168.99.98
+call ping_host with ip is 192.168.99.100
+call ping_host with ip is 192.168.99.97
+call ping_host with ip is 192.168.99.101
+call ping_host with ip is 192.168.99.99
+
+
+Scan Result is:
+('192.168.99.100', 'UP')
+('192.168.99.101', 'DOWN')
+('192.168.99.95', 'DOWN')
+('192.168.99.96', 'DOWN')
+('192.168.99.97', 'DOWN')
+('192.168.99.98', 'DOWN')
+('192.168.99.99', 'DOWN')
+PS D:\Work\Python\PythonCampus\课程\6th_0319>
+
