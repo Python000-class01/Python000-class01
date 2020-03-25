@@ -1,4 +1,3 @@
-
 from multiprocessing.dummy import Pool as ThreadPoll
 import os
 import socket
@@ -53,7 +52,6 @@ if __name__ == "__main__":
     if t == 'ping':
         ping_all_ip(ip, poll)
     elif t == 'tcp':
-
         max_ports = 65535
         scan_all_port(ip, max_ports, poll)
     else:
