@@ -22,7 +22,7 @@ threads_num = args.concurrency
 scan_type = args.scanType
 ip_address = args.ipAddress
 out_file = args.outFile
-print('threads_num: ', sthreads_num)
+print('threads_num: ', threads_num)
 print('scan_type: ', scan_type)
 print('ip_address:', ip_address)
 print('out_file:', out_file)
@@ -49,12 +49,10 @@ if (len(ipList) > 1):
         ips.append(start + str(i))
 else:
     ips.append(ip_address)
-print('ips: ', ips)
+# print('ips: ', ips)
 
 # 检测IP是否能ping通
 def pingIP(queue):
-    alive_ips = []
-    down_ips = []
     while not queue.empty():
         ip = queue.get()
         if platform.system() == "Linux":
@@ -64,10 +62,8 @@ def pingIP(queue):
         
         ret = subprocess.call(cmd, shell=True, stdout=open(out_file, 'a+', encoding='utf-8'), stderr=subprocess.STDOUT)
         if ret == 0:
-            alive_ips.append(ip)
             print('%s: is alive.' % ip)
         else:
-            down_ips.append(ip)
             print('%s: is down.' % ip)
         queue.task_done()
 
@@ -114,7 +110,6 @@ if __name__ == '__main__':
             t.start()
             threads.append(t)
         elif (scan_type == 'tcp'):
-
             t = Thread(target=scanPort, args=(queue, tcpQueue))
             t.start()
             threads.append(t)
