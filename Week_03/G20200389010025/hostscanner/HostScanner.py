@@ -30,17 +30,12 @@ if __name__ == '__main__':
     ap.add_argument('-w', help='写入文件名称')
     args = vars(ap.parse_args())
     print(args)
-    print(args['n'])
-    print(args['f'])
-    print(args['ip'])
-    hs = HostScanner(args['n'], args['f'], args['ip'])
+    # print(args['n'])
+    # print(args['f'])
+    # print(args['ip'])
+    hs = HostScanner(args['n'], args['f'], args['ip'], args['w'])
     hs.execute()
-    # hs.ping(args['ip'])
-    # print(hs.ping_ips())
-    # print(hs.ping_ip('192.168.1.4'))
-# # ping('127.0.0.1')
-# # print(find_tcpport('127.0.0.1', minport=1520, maxport=1530))
-# # read_param()
-# print('1234'[0])
+# -n 3 -f tcp -ip 127.0.0.1 -w result.json
+# -n 3 -f ping -ip 127.0.0.1-127.0.0.9
 
 

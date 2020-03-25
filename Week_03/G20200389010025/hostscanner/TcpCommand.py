@@ -1,6 +1,7 @@
 import socket
 import threading
 from multiprocessing.dummy import Pool as ThreadPool
+import json
 
 mutex = threading.Lock()
 
@@ -23,6 +24,7 @@ class TcpCommand(object):
         pool.join()
         print(f"Host {self.__ip}'s accessible port:")
         print(self.__ports)
+        self.save()
 
     def check_port(self, port):
         if mutex.acquire(1):
@@ -36,6 +38,19 @@ class TcpCommand(object):
                 ret = False
         mutex.release()
         return ret
+
+    def save(self):
+        if self.__w is None or len(self.__w) == 0:
+            return
+        if mutex.acquire(1):
+            fcontent ={'IP': self.__ip,
+                       'opened ports': self.__ports}
+            fjson = json.dumps(fcontent)
+            with open(self.__w, 'a+', newline='') as f:
+                f.write(fjson)
+        mutex.release()
+
+
 
 if __name__ == '__main__':
     tcp = TcpCommand('127.0.0.1',2,'result.json')
