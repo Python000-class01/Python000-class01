@@ -98,7 +98,6 @@ class Scanner:
         if self.output:
             ROOT_DIR = os.getcwd()
             path = os.path.join(ROOT_DIR, "task2", "output")
-            print(path)
             if not os.path.exists(path):
                 os.makedirs("task2/output")
             with open(os.path.join(path, self.output), 'w') as ot:
