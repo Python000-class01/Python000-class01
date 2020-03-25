@@ -1,0 +1,13 @@
+10	副本：义体置换	c	None	http://tu.jstucdn.com/ftp/2020/0324/1cd131086804f75a756ad90f15f77a93.png
+6	国土安全	c	None	http://tu.jstucdn.com/ftp/2019/1208/b8f9f5ad91da720b0a3077a3f99aaec6.jpg
+13	行尸走肉	d	None	http://tu.jstucdn.com/ftp/2019/1015/62597cbc56d8880cf48ec2718b7377b2.jpg
+5	狩猎	c	None	http://tu.jstucdn.com/ftp/2020/0323/33de53f25f59c81e3c2bcbbcbd744cc3.png
+4	绝命律师	c	None	http://tu.jstucdn.com/ftp/2020/0111/c7d822466cfdaae4668d38b6ffecedaa.jpg
+3	难以置信的怪物	c	None	http://tu.jstucdn.com/ftp/2020/0316/1c7697f89ffe780234013b4e533456be.jpg
+1	西部世界	e	None	http://tu.jstucdn.com/ftp/2020/0213/26697f9051288b01d15cadd23c69b0c4.jpg
+7	巢	c	None	http://tu.jstucdn.com/ftp/2020/0323/b3991bc374944ce7d8c1975717c7cfe0.jpg
+12	星球大战9：天行者崛起	b	None	http://tu.jstucdn.com/ftp/2019/1022/bba8b95c7ad8b6e6eb909e5856d03b4d.jpg
+2	可口vs百事：可乐之战	a	None	http://tu.jstucdn.com/ftp/2020/0324/1c22139678b3733c3482d3f3d1aaadf3.png
+9	隐形人	c	None	http://tu.jstucdn.com/ftp/2020/0323/e18cc5da4986f5748037fcf573481805.png
+11	李尸朝鲜	d	None	http://tu.jstucdn.com/ftp/2020/0227/289fa77de0962b95277e48abb3b313ac.jpg
+8	反美阴谋	d	None	http://tu.jstucdn.com/ftp/2020/0223/2e1a809acdcf85bfa1cb6b979d1a955f.jpg
