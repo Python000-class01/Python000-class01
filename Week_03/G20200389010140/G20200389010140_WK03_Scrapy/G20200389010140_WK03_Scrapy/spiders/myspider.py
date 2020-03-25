@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 import scrapy
 
+import sys
 import os
 import io
 
-sys.stdout = io.TestIOWrapper(sys.stdout.buffer, encoding = 'gb18030')
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding = 'gb18030')
 
 class MyspiderSpider(scrapy.Spider):
     name = 'myspider'
