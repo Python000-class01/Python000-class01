@@ -1,0 +1,49 @@
+#代码仍有问题，还未调试完毕>.<
+import requests
+import lxml.etree
+import re
+import pandas as pd
+from time import sleep
+
+def get_url_name(myurl):
+    user_agent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'
+    header = {}
+    header['user-agent'] = user_agent
+    response = requests.get(myurl,headers=header)
+    selector1 = lxml.etree.HTML(response.text)
+    for i in range(1,26):
+        #获取电影名称
+        name = selector1.xpath('//ol[@class="grid_view"]/li[%s]//div[@class="hd"]/a/span[1]/text()' %i)
+        #获取电影评分
+        score = selector1.xpath('//ol[@class="grid_view"]/li[%s]//span[@class="rating_num"]/text()' %i)
+        #获取短评数量
+        num1 = selector1.xpath('//ol[@class="grid_view"]/li[%s]//div[@class="star"]/span[4]/text()' %i)
+        num = re.findall("\d+",str(num1))
+        #获取电影链接
+        movieurl = selector1.xpath('//ol[@class="grid_view"]/li[%s]//div[@class="hd"]/a/@href' %i)
+        #获取热门短评前5
+        comments = []
+        movie = requests.get(movieurl[0],headers=header)
+        selector2 = lxml.etree.HTML(movie.text)
+        for j in range(1,6):
+            onecomment = selector2.xpath('//div[@id="hot-comments"]/div[%s]//span[@class="short"]/text()'%j)
+            print(onecomment)
+            comments = comments.append(onecomment)
+            return comments
+        #保存到csv格式的文件中
+        mylist = [name,score,num,comments[0],comments[1],comments[2],comments[3],comments[4]]
+        columns_name = ['电影名称','评分','短评数量','短评1','短评2','短评3','短评4','短评5']
+        book1 = pd.DataFrame(columns = columns_name,data = mylist)
+        book1.to_csv('./movieTop250.csv',encoding='gbk')
+
+urls = tuple(f'https://movie.douban.com/top250?start={ page * 25}' for page in range(2))
+## 推导式功能, 相当于
+## for page in range(10)：
+##     astring = 'https://book.douban.com/top250?start={ page * 25}'
+##     urls = tuple(astring)
+
+## 单独执行 python 文件的一般入口
+if __name__ == '__main__':
+    for page in urls:
+        get_url_name(page)
+        sleep(5)

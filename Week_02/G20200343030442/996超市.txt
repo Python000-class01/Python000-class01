@@ -1,0 +1,84 @@
+#--*--coding:utf-8--*--
+"""
+996超市
+设计一套销售系统的结算模块，结算模块要求对不同类型的用户（普通用户、VIP 用户）的单次消费进行区分并按照不同的购买金额、不同的用户身份进行结账：
+普通用户消费不足 200 元，无折扣，原价付费；
+普通用户消费满 200 元打九折；
+VIP 会员满 200 元打八折；
+VIP 会员满 10 件商品打八五折。
+要求：
+请使用面向对象编程实现结算功能。
+由于 VIP 会员存在两种折扣方式，需自动根据最优惠的价格进行结算。
+
+"""
+# custname :顾客姓名，goods_list ：购买商品列表
+class SetCount():
+    def __init__(self, custname, goods_list):
+
+        self.custname = custname
+        self.goods_list = goods_list
+        self.total_price = 0
+
+    def custbaseinfo(self, custname):   #客户基本信息表
+        cust_type = {'张三':'vip','李四':'common'}
+        return cust_type[custname]
+
+    def goodsinfo(self, gname):  #商品基本信息表
+        goods_price = {'apple':15.8,'pear':14.2,'banana':5,'pineapple':2.00,'beer':5.00,'sugar':10.00,'smoke':18.00,'drinks':10.00,'egg':10.00,'milk':10}
+        return goods_price[gname]
+
+    def is_vip(self,custname):  # 判断客户类型
+        if self.custbaseinfo(custname) == 'vip':
+            return True
+        else:
+            return False
+
+    def discount(func):   # 客户折扣计算
+    
+        def inner(self, custname, goods_list):
+
+            count = len(goods_list)
+            total_value = func(self, custname, goods_list)
+
+            if not self.is_vip(custname) :  #普通客户
+                if total_value < 200:
+                    return total_value
+                else:
+                    return total_value * 0.90
+            else:                           #vip 客户
+                if total_value >= 200:
+                    return total_value * 0.80
+                elif count >= 10:
+                    return total_value * 0.85
+                else:
+                    return total_value
+        return inner
+
+    @discount
+    def settleAccounts(self, custname, goods_list):  #计算客户商品总价格
+        for gname in goods_list:
+            res_mid = float(self.goodsinfo(gname)) * float(goods_list[gname])
+            self.total_price += res_mid
+        return self.total_price
+
+# 执行入口
+# 顾客姓名、购买商品名单 
+
+if __name__ == '__main__':
+    goodslist = SetCount('张三', {'apple':1,'pear':1,'banana':1,'pineapple':1,'beer':1,'sugar':1,'smoke':1,'drinks':1,'egg':1})
+    total_price = goodslist.settleAccounts('张三', {'apple':1,'pear':1,'banana':1,'pineapple':1,'beer':1,'sugar':1,'smoke':1,'drinks':1,'egg':1})
+    print('顾客您好，你购买的商品总金额为：%0.2f' %total_price)
+
+#测试案例
+custname_1 = '张三'
+custname_2 = '李四'
+goods_list_1 = {'apple':1,'pear':1,'banana':1,'pineapple':1,'beer':1,'sugar':1,'smoke':1,'drinks':1,'egg':1,'milk':1}
+goods_list_2 = {'apple':10,'pear':10,'banana':10,'pineapple':10,'beer':10,'sugar':10,'smoke':10,'drinks':10,'egg':10,'milk':10}
+goods_list_3 = {'apple':100}
+goods_list_4 = {'apple':2}
+
+# p = SetCount(custname_2, goods_list_1)
+# print(p.settleAccounts(custname_2, goods_list_1))
+
+
+

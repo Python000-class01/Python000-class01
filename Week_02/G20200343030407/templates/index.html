@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        table.gridtable {
+            font-family: verdana,arial,sans-serif;
+            font-size:15px;
+            color:#333333;
+            border-width: 1px;
+            border-color: #666666;
+            border-collapse: collapse;
+        }
+        table.gridtable th {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #dedede;
+        }
+        table.gridtable td {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #666666;
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+<div style="width:500;height:600;" align="center">
+    <form id="subForm" action="/check.do" method="post">
+        <table class="gridtable">
+            <tr>
+                <th>名称</th>
+                <th>单位</th>
+                <th>单价</th>
+                <th>数量</th>
+            </tr>
+            <tr>
+                <td><input type="text" name="name"  tyle="outline:none" value="苹果" readonly/></td>
+                <td>斤</td>
+                <td>11.2<input type="hidden" name="price" value="11.2"></td>
+                <td><input name="count" type="text" style="width:30px;" value="0"/></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="name"  tyle="outline:none" value="香蕉" readonly/></td>
+                <td>斤</td>
+                <td>6.8<input type="hidden" name="price" value="6.8"></td>
+                <td><input name="count" type="text" style="width:30px;"  value="0"/></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="name"  tyle="outline:none" value="梨" readonly/></td>
+                <td>斤</td>
+                <td>16.8<input type="hidden" name="price" value="16.8"></td>
+                <td><input name="count" type="text" style="width:30px;"  value="0"/></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="name"  tyle="outline:none" value="橘子" readonly/></td>
+                <td>斤</td>
+                <td>2.3<input type="hidden" name="price" value="2.3"></td>
+                <td><input name="count" type="text" style="width:30px;"  value="0" /></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="name"  tyle="outline:none" value="榴莲大魔王" readonly/></td>
+                <td>个</td>
+                <td>100.0<input type="hidden" name="price" value="100.0"></td>
+                <td><input name="count" type="text" style="width:30px;"  value="0"/></td>
+            </tr>
+            <tr>
+                <td>vip</td>
+                <td colspan="2" >
+                    是<input name="vip" type="radio" value="1" checked/>否<input name="vip" type="radio" value="0" />
+                </td>
+                <td align="right"><input type="button" value="结账" onclick="javascript:document.getElementById('subForm').submit();"></td>
+            </tr>
+        </table>
+    </form>
+</div>
+</html>
+</body>
+</html>
