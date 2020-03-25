@@ -11,4 +11,8 @@ import scrapy
 class Rrys2019HotmovieItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    pass
+    title = scrapy.Field()   # 名称
+    rank = scrapy.Field()   # 排行
+    level = scrapy.Field()  # 分级
+    count = scrapy.Field()  # 浏览次数
+    cover = scrapy.Field()  # 封面信息

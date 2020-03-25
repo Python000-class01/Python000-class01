@@ -4,8 +4,8 @@ from scrapy.selector import Selector
 from RRYS2019hotmovie.items import Rrys2019HotmovieItem
 
 
-class MoivespiderSpider(scrapy.Spider):
-    name = 'moivespider'
+class HotmovieSpider(scrapy.Spider):
+    name = 'hotmovie'
     allowed_domains = ['rrys2019.com']
     start_urls = ['http://rrys2019.com/']
 
@@ -35,7 +35,7 @@ class MoivespiderSpider(scrapy.Spider):
         item = response.meta['item']
         selector = Selector(response=response)
         item['rank'] = selector.xpath('//p[@class="f4"]/text()').re('\d+')[0]
-        item['count'] = selector.xpath('//*[@id="score_list"]/div[1]').re('\d+')
+        item['count'] = selector.xpath('//*[@id="score_list"]/div[1]').re('\d+')[1]
         item['level'] = selector.xpath('//div[@class="level-item"]/img/@src').re('.*\/*([a-e])-big*')[0].upper()
         item["cover"] = selector.xpath('//div[@class="imglink"]/a/img/@src').extract()[0]
         yield item
