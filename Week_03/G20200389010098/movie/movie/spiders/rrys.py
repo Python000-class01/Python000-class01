@@ -40,6 +40,6 @@ class RrysSpider(scrapy.Spider):
     def parse3(self, response):
         item = response.meta['item']
         item['hits']=js2py.eval_js(response.text+"; index_info").views
-        print (item)
+        #print (item)
         yield item
 
