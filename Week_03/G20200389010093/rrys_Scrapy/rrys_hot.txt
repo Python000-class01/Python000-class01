@@ -1,0 +1,13 @@
+1	喋血战士	movie	/resource/38944	38944	24977	4	c	http://tu.jstucdn.com/ftp/2019/1021/9fd3ed9de32a0e9d574d5d9db0dbeaee.jpg\n
+13	良医	tv	/resource/35493	35493	1360369	2	b	http://tu.jstucdn.com/ftp/2019/1008/3514ab662c02927d9cc4a7dc44cabe72.jpg\n
+12	弗洛伊德	tv	/resource/39714	39714	11068	8	e	http://tu.jstucdn.com/ftp/2020/0323/7d9ae659090ccacfe21e9d47b33a7777.jpg\n
+11	难以置信的怪物	movie	/resource/39662	39662	58024	9	c	http://tu.jstucdn.com/ftp/2020/0316/1c7697f89ffe780234013b4e533456be.jpg\n
+10	父亲委员会	tv	/resource/39561	39561	6805	6	a	http://tu.jstucdn.com/ftp/2020/0228/337982bb97d26d2cb227f42a7c647438.jpg\n
+9	绝命律师	tv	/resource/33190	33190	2434378	8	c	http://tu.jstucdn.com/ftp/2020/0111/c7d822466cfdaae4668d38b6ffecedaa.jpg\n
+8	李尸朝鲜	tv	/resource/37366	37366	754627	2	d	http://tu.jstucdn.com/ftp/2020/0227/289fa77de0962b95277e48abb3b313ac.jpg\n
+7	正义的慈悲	movie	/resource/39127	39127	8742	6	a	http://tu.jstucdn.com/ftp/2019/1203/73b6374741d82e5de3dea384c3ed5354.jpg\n
+6	反美阴谋	tv	/resource/39526	39526	116636	3	d	http://tu.jstucdn.com/ftp/2020/0223/2e1a809acdcf85bfa1cb6b979d1a955f.jpg\n
+5	隐形人	movie	/resource/39693	39693	44393	1	c	http://tu.jstucdn.com/ftp/2020/0323/e18cc5da4986f5748037fcf573481805.png\n
+4	可口vs百事：可乐之战	tv	/resource/39654	39654	55245	0	a	http://tu.jstucdn.com/ftp/2020/0324/1c22139678b3733c3482d3f3d1aaadf3.png\n
+3	副本：义体置换	movie	/resource/39716	39716	28477	9	c	http://tu.jstucdn.com/ftp/2020/0324/1cd131086804f75a756ad90f15f77a93.png\n
+2	西部世界	tv	/resource/33701	33701	7035077	9	e	http://tu.jstucdn.com/ftp/2020/0213/26697f9051288b01d15cadd23c69b0c4.jpg\n
