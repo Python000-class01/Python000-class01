@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
 import scrapy
 
+import os
+import io
+
+sys.stdout = io.TestIOWrapper(sys.stdout.buffer, encoding = 'gb18030')
 
 class MyspiderSpider(scrapy.Spider):
     name = 'myspider'
@@ -8,4 +12,6 @@ class MyspiderSpider(scrapy.Spider):
     start_urls = ['http://http://www.rrys2019.com//']
 
     def parse(self, response):
-        pass
+        #pass
+        print(response.txt)
+        print(response.url)
