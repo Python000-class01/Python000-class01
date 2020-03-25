@@ -5,6 +5,7 @@ import re
 import requests
 import json
 import jsonpath
+import urllib.request
 
 class MovieSpider(scrapy.Spider):
     name = 'movie'
@@ -44,14 +45,12 @@ class MovieSpider(scrapy.Spider):
         new_response = requests.get(new_url, headers = header)
         new_response.encoding = "utf-8"
         new_response_json = json.loads(new_response.text[15:])
-        viewer_number = jsonpath.jsonpath(new_response_json, '$..views')[0]
-
-    
+        viewer_number = jsonpath.jsonpath(new_response_json, '$..views')[0] 
         # print(viw_number)
 
 
         # 电影名字
-        # test = response.xpath('/html/body/div[2]/div/div[1]/div[1]/div[1]/h2/text()').get().strip()
+        name = response.xpath('/html/body/div[2]/div/div[1]/div[1]/div[1]/h2/text()').get().strip()
         # print(test)
 
         # 网站排名
@@ -71,6 +70,8 @@ class MovieSpider(scrapy.Spider):
         # 电影封面信息
         cover_info = response.xpath('//div[@class="imglink"]//a/@href').get()
         # print(cover_info)
+        # 将远程数据下载到本地，第二个参数就是要保存到本地的文件名
+        urllib.request.urlretrieve(cover_info, f'./{name}.jpg')
 
         item['ranking'] = ranking
         item['level'] = level
