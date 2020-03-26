@@ -11,11 +11,6 @@ class Merchandise:
         return cost
 
 
-@dataclass
-class Customer:
-    name: str
-    isVIP: bool
-
 class Store996:
     def __init__(self, typeCount):
         self.merchandises = list()
@@ -55,14 +50,12 @@ def main(store):
         if isVIP == 1:
             if totalCost >= 200:
                 totalCost *= 0.8
-            if totalCount >= 10:
+            elif totalCount >= 10:
                 totalCost *= 0.85
         else:
             if totalCost >= 200:
                 totalCost *= 0.9
-
         totalCost = round(totalCost, 1)
-        
         print(f'您一共购买 {totalCount} 件商品，共花费 {totalCost} 元')
 
     print('非常感谢您的惠顾，欢迎再次光临996便利店，祝您生活愉快！')
