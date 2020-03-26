@@ -11,4 +11,7 @@ import scrapy
 class MovieItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    pass
+    rank = scrapy.Field()
+    level = scrapy.Field() #排行
+    num = scrapy.Field()
+    cover = scrapy.Field()
