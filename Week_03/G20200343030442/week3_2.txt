@@ -1,0 +1,73 @@
+import os
+import json
+import socket
+from multiprocessing.dummy import Pool as ThreadPool
+import sys
+import argparse
+from multiprocessing import Queue
+from time import time
+
+
+ip=''
+open_socket={}
+
+#创建线程池
+def creat_threadPool(n):
+    pool = ThreadPool(n)
+    return pool
+
+
+def ping(ip):
+    return os.popen('ping %s' % ip).readlines()
+
+def ping_run(front,start,end,pool):
+    ips=[]
+    for p in range(start,end+1):
+        ips.append('%s%s' % (front,p))
+    results=pool.map(ping, ips)
+    pool.close()
+    pool.join()
+    print(results)
+    with open('result.json','w') as f:
+        json.dump(results,f,ensure_ascii=False)
+
+def runing_port(port):
+    s = socket.socket()
+    s.settimeout(10)
+    result = s.connect_ex((ip, port))  #connect_ex()方法，该方法如果链接成功会返回0，失败会返回errno库中的errorcode中的key
+    if result == 0:
+        open_socket[port]='开启'
+    s.close()
+
+def runing_port_res(ports,pool):
+    ports=[i for i in range(ports)]
+    pool.map(runing_port,ports)
+    pool.close()
+    pool.join()
+    print(open_socket)
+    with open('socket.json','w') as f:
+        json.dump(open_socket,f,ensure_ascii=False)
+
+if __name__ == '__main__':
+    nums = int(input('并发连接的数量：'))
+    check_type =input('你要监测ip还是端口，输入 ping 或 tcp ：')
+   # 创建线程池
+    pool = creat_threadPool(nums)
+    if check_type=='ping':
+        msg=input('请输入你想ping的ip地址的范围：')
+
+        # 拆分ip地址
+        ip_list = msg.split('-')
+        front = '.'.join(ip_list[0].split('.')[:-1]) + '.'
+        start = int(ip_list[0].split('.')[-1])
+        end = int(ip_list[1].split('.')[-1])
+        # ping所有目标ip
+        ping_run(front, start, end, pool)
+    else:
+        socket_ip = input('请输入要检测端口的ip：')
+
+        runing_port_res(1024,pool)
+
+
+
+
