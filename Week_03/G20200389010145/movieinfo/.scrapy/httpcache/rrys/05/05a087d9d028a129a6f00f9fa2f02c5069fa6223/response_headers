@@ -1,0 +1,10 @@
+Server: nginx
+Date: Wed, 25 Mar 2020 06:14:26 GMT
+Content-Type: text/html
+Vary: Accept-Encoding
+Vary: Accept-Encoding
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept
+Access-Control-Allow-Methods: GET, POST, OPTIONS
+Nginx-Cache: HIT
+Content-Encoding: gzip

@@ -1,0 +1,26 @@
+13	美好年代	b	7621	http://tu.jstucdn.com/ftp/2020/0310/b_a6909f635c8d46de4d28d16fc88f6963.jpg
+
+11	惊异传奇	c	250109	http://tu.jstucdn.com/ftp/2020/0304/b_def1bd57ebb032e43c874961b694af79.jpg
+
+10	血色旅程	e	65125	http://tu.jstucdn.com/ftp/2020/0309/b_7bbefee12be3a4edb082b7ef9c1279df.jpg
+
+6	李尸朝鲜	d	738090	http://tu.jstucdn.com/ftp/2020/0227/b_289fa77de0962b95277e48abb3b313ac.jpg
+
+9	星球大战9：天行者崛起	b	115969	http://tu.jstucdn.com/ftp/2019/1022/b_bba8b95c7ad8b6e6eb909e5856d03b4d.jpg
+
+4	行尸走肉	d	30018541	http://tu.jstucdn.com/ftp/2019/1015/b_62597cbc56d8880cf48ec2718b7377b2.jpg
+
+12	我真正的天才女友	a	32230	http://tu.jstucdn.com/ftp/2020/0317/b_f9baf92a444360721a6ad1aeb5729d32.jpg
+
+8	黑色星期一	e	122442	http://tu.jstucdn.com/ftp/2020/0319/b_b8d3fcdc1b10f6a2bc6b6daabb47daa7.jpg
+
+5	舍己救人	b	8524	http://tu.jstucdn.com/ftp/2020/0322/b_b02ca3f9ab6da0bf654753d13837728d.jpg
+
+7	反击	e	5937240	http://tu.jstucdn.com/ftp/2020/0228/b_75b18bb18bac27eef5359bf035e151c8.jpg
+
+2	难以置信的怪物	c	24550	http://tu.jstucdn.com/ftp/2020/0316/b_1c7697f89ffe780234013b4e533456be.jpg
+
+1	西部世界	e	6919325	http://tu.jstucdn.com/ftp/2020/0213/b_26697f9051288b01d15cadd23c69b0c4.jpg
+
+3	反美阴谋	d	94791	http://tu.jstucdn.com/ftp/2020/0223/b_2e1a809acdcf85bfa1cb6b979d1a955f.jpg
+
