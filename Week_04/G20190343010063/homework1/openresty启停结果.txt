@@ -1,0 +1,77 @@
+# grh @ GRHs-iMac in ~/Programming/PyCharmProjects/Leetcode/test/PythonXunLianYing/week4 [0:57:42]
+$ ansible-playbook start_openresty.yml
+[WARNING]: Unable to parse the plugin filter file /etc/ansible/plugin_filters.yml as module_blacklist is not a list. Skipping.
+
+PLAY [webservers] ***********************************************************************************************************************************************************************************************************
+
+TASK [Gathering Facts] ******************************************************************************************************************************************************************************************************
+ok: [192.168.3.155]
+ok: [192.168.3.156]
+ok: [192.168.3.144]
+
+TASK [start openresty nginx] ************************************************************************************************************************************************************************************************
+changed: [192.168.3.144]
+changed: [192.168.3.156]
+changed: [192.168.3.155]
+
+TASK [check nginx service exists] *******************************************************************************************************************************************************************************************
+changed: [192.168.3.155]
+changed: [192.168.3.144]
+changed: [192.168.3.156]
+
+TASK [show] *****************************************************************************************************************************************************************************************************************
+ok: [192.168.3.144] => {
+    "service_check_ret.stdout": "root      24527  0.0  0.0  42672  1292 ?        Ss   00:57   0:00 nginx: master process /usr/local/openresty/nginx/sbin/nginx\nnobody    24528  0.0  0.0  47460  4196 ?        S    00:57   0:00 nginx: worker process\nroot      24548  0.0  0.0   4624   776 pts/1    S+   00:57   0:00 /bin/sh -c ps -aux | grep nginx\nroot      24550  0.0  0.0  21532  1076 pts/1    S+   00:57   0:00 grep nginx"
+}
+ok: [192.168.3.155] => {
+    "service_check_ret.stdout": "root      30313  0.0  0.0  42672  1292 ?        Ss   00:57   0:00 nginx: master process /usr/local/openresty/nginx/sbin/nginx\nnobody    30314  0.0  0.0  47460  4344 ?        S    00:57   0:00 nginx: worker process\nroot      30334  0.0  0.0   4624   780 pts/2    S+   00:57   0:00 /bin/sh -c ps -aux | grep nginx\nroot      30336  0.0  0.0  21532  1064 pts/2    R+   00:57   0:00 grep nginx"
+}
+ok: [192.168.3.156] => {
+    "service_check_ret.stdout": "root      15176  0.0  0.0  42672  1292 ?        Ss   00:57   0:00 nginx: master process /usr/local/openresty/nginx/sbin/nginx\nnobody    15177  0.0  0.0  47460  4348 ?        S    00:57   0:00 nginx: worker process\nroot      15197  0.0  0.0   4624   772 pts/1    S+   00:57   0:00 /bin/sh -c ps -aux | grep nginx\nroot      15199  0.0  0.0  21532   984 pts/1    S+   00:57   0:00 grep nginx"
+}
+
+PLAY RECAP ******************************************************************************************************************************************************************************************************************
+192.168.3.144              : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+192.168.3.155              : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+192.168.3.156              : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+(/Users/grh/.conda/envs/Leetcode)
+# grh @ GRHs-iMac in ~/Programming/PyCharmProjects/Leetcode/test/PythonXunLianYing/week4 [0:58:00]
+$ ansible-playbook stop_openresty.yml
+[WARNING]: Unable to parse the plugin filter file /etc/ansible/plugin_filters.yml as module_blacklist is not a list. Skipping.
+
+PLAY [webservers] *******************************************************************************************************************************************************************************************************************
+
+TASK [Gathering Facts] **************************************************************************************************************************************************************************************************************
+ok: [192.168.3.155]
+ok: [192.168.3.156]
+ok: [192.168.3.144]
+
+TASK [start openresty nginx -s stop] ************************************************************************************************************************************************************************************************
+changed: [192.168.3.156]
+changed: [192.168.3.155]
+changed: [192.168.3.144]
+
+TASK [check nginx service exists] ***************************************************************************************************************************************************************************************************
+changed: [192.168.3.144]
+changed: [192.168.3.156]
+changed: [192.168.3.155]
+
+TASK [show] *************************************************************************************************************************************************************************************************************************
+ok: [192.168.3.144] => {
+    "service_check_ret.stdout": "root      24664  0.0  0.0   4624   820 pts/1    S+   00:58   0:00 /bin/sh -c ps -aux | grep nginx\nroot      24666  0.0  0.0  21532  1080 pts/1    S+   00:58   0:00 grep nginx"
+}
+ok: [192.168.3.155] => {
+    "service_check_ret.stdout": "root      30447  0.0  0.0   4624   808 pts/2    S+   00:58   0:00 /bin/sh -c ps -aux | grep nginx\nroot      30449  0.0  0.0  21532  1044 pts/2    S+   00:58   0:00 grep nginx"
+}
+ok: [192.168.3.156] => {
+    "service_check_ret.stdout": "root      15309  0.0  0.0   4624   776 pts/1    S+   00:58   0:00 /bin/sh -c ps -aux | grep nginx\nroot      15311  0.0  0.0  21532  1076 pts/1    S+   00:58   0:00 grep nginx"
+}
+
+PLAY RECAP **************************************************************************************************************************************************************************************************************************
+192.168.3.144              : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+192.168.3.155              : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+192.168.3.156              : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+(/Users/grh/.conda/envs/Leetcode)
+# grh @ GRHs-iMac in ~/Programming/PyCharmProjects/Leetcode/test/PythonXunLianYing/week4 [0:58:35]
