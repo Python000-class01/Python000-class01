@@ -9,7 +9,7 @@ Ansible will be installed as docker container, and start/stop nginx operations w
 #### Prerequisites
 
 - Unix like system. (Linux or MacOs)
-- Docker installed
+- Docker installed.
 
 #### Run task
 
@@ -32,4 +32,6 @@ You can start/stop the nginx service by passing action value.
 
 Finally, you can clean up everything if you don't need it by passing 'clean' action.
 
+#### To-Dos
 
+The task can only under local host, it hasn't been applied and tested on remote hosts which requires ssh setup.
