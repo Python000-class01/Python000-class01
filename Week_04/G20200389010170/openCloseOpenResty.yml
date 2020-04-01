@@ -1,0 +1,17 @@
+---
+- hosts: group1
+  remote_user: root
+  tasks:
+    - name: start OpenResty
+      shell: /usr/local/openresty/nginx/sbin/nginx
+    - name: check whether nginx is running
+      shell: ps ax | grep nginx
+
+
+---
+- hosts: group1
+  remote_user: root
+  tasks:
+    - name: stop OpenResty
+      shell: sudo /usr/local/openresty/nginx/sbin/nginx -s quit
+  
