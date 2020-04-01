@@ -2,7 +2,7 @@
 [webserver]
 112.41.62.96:22
 
-ÃüÁî£¨×Ô¼º·şÎñÆ÷ÉÏÏÖ³ÉµÄnginx£¬ÏÈÍê³É×÷Òµ£¬ÔÙÑĞ¾¿dockerºÍopenresty£¬Ğ­³ÌºÍpandas»¹Òª¸´Ï°£©
+å‘½ä»¤ï¼ˆè‡ªå·±æœåŠ¡å™¨ä¸Šç°æˆçš„nginxï¼Œå…ˆå®Œæˆä½œä¸šï¼Œå†ç ”ç©¶dockerå’Œopenrestyï¼Œåç¨‹å’Œpandasè¿˜è¦å¤ä¹ ï¼‰
 ansible webserver -m shell -a '/usr/local/nginx/sbin/nginx -s stop'
 ansible webserver -m shell -a '/usr/local/nginx/sbin/nginx'
 ansible webserver -m shell -a '/usr/local/nginx/sbin/nginx -s reload'
