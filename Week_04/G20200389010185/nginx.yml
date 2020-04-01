@@ -1,0 +1,9 @@
+---
+- hosts: web
+  sudo: yes
+  tasks: start nginx
+  - name: start nginx
+    command: "/usr/bin/nginx"
+
+  - name:stop nginx
+    shell: "pkill -9f nginx"
