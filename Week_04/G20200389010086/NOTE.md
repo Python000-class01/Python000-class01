@@ -20,7 +20,7 @@ async def py35_func():
  awaitable 对象有三类，使用多个协程 可以使用 Task
  1 协程 coroutine
  2 任务 Task
-3 未来对象 Future 
+ 3 未来对象 Future 
 4、使用协程， 需要引入 asyncio 库 
 coroutine 使用实例：
 async def main():
@@ -91,6 +91,10 @@ if __name__ == "__main__":
     
     
 # ansible 
+一个强大的自动化运维框架。参考了一些网上的资料
+有几个注意的地方：
+ansible如果要通过ssh的密码登录，需要安装sshpass，并且还要预先保存被管理服务器的指纹（ssh访问以后确认保存指纹）。还是通过证书登录，管理比较方便
+完成一套流程后，最好写成playbook，这样可以长久保存和重复使用
 
 # pandas 学习
 
