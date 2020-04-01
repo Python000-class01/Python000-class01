@@ -1,0 +1,4 @@
+hosts: all
+  remote-user : root
+  tasks:
+  - name : start openresty nginx
