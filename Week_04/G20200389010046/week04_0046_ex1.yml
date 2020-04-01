@@ -1,0 +1,10 @@
+---
+    - hosts: localhost
+      remote_user: root
+      tasks:
+        - name: 启动nginx
+            shell: brew services start nginx
+        - name: 等待10s
+            shell: sleep 10
+        - name: 停止nginx
+            shell: brew services stop nginx
