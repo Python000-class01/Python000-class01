@@ -20,19 +20,28 @@ class Pmap(object):
         exit_code = ping.wait()
         if exit_code != 0:
             print(f'{ipaddr} no ! ! !')
+            return False
         else:
             print(f'{ipaddr} is link now!')
+            return True
     
     @classmethod
-    def telnetport(self,ipaddr,port):
+    def telnetport(self,port):
+        ipaddr = self.ipaddress
         server = telnetlib.Telnet()
         try:
             server.open(ipaddr,port)
             print(f'{ipaddr} port {port} is open')
+            return True
         except Exception as err:
             print(f'{ipaddr} port {port} is not open')
+            return False
         finally:
             server.close()
+
+    @classmethod
+    def setIpaddr(self,ipaddr):
+        self.ipaddress = ipaddr
 
 def getipaddr(ipaddr):
         ipaddrcounts = []
@@ -52,33 +61,35 @@ def writeinfo(f,info):
     f.write(json.dumps(info))
 
     
-def check_ip(q,address):
+def check_ip(func,q,json_file,address):
     try:
         while True:
-            ip = q.get_nowait()
-            Pmap.ping(ip)
+            mapdata = q.get_nowait()
+            #results = func(mapdata)
+            writeinfo(json_file,{f'{mapdata}':f'{func(mapdata)}'})
     except queue.Empty as e:
         pass
 
-def check_port(q,ipaddr):
+'''
+def check_port(q,json_file,ipaddr):
     try:
         while True:
             port = q.get_nowait()
             Pmap.telnetport(ipaddr,port)
     except queue.Empty as e:
         pass
-
-def threadfunc(func,q,counts,address=None):
+'''
+def threadfunc(func,func2,q,json_file,counts,address=None):
     threads = []
     for i in range(counts):
-        t = threading.Thread(target=func,args=(q,address,))
+        t = threading.Thread(target=func,args=(func2,q,json_file,address,))
         t.start()
         threads.append(t)
     
     for t in threads:
         t.join()
 
-def pingthread(ipaddr,counts):
+def pingthread(ipaddr,counts,json_file):
     q = queue.Queue()
     iplist = getipaddr(ipaddr)
     ipfirst = iplist[0]
@@ -89,14 +100,15 @@ def pingthread(ipaddr,counts):
         q.put(f'{ipstart}{ipend}')
         ipend = ipend + 1
     
-    threadfunc(check_ip,q,counts)
+    threadfunc(check_ip,Pmap.ping,q,json_file,counts)
 
-def testportthread(ipaddr,counts):
+def testportthread(ipaddr,counts,json_file):
     q = queue.Queue()
     for i in range(0,65535):
         q.put(i)
-
-    threadfunc(check_port,q,counts,ipaddr)
+    
+    Pmap.setIpaddr(ipaddr)
+    threadfunc(check_ip,Pmap.telnetport,q,json_file,counts,ipaddr)
     
 
 
@@ -122,11 +134,12 @@ def main(argv):
          ipaddr = arg
          
    print(f'-n={counts}\t-f={testtype}\t-ip={ipaddr}')
-
-   if testtype == 'ping':
-       pingthread(ipaddr,counts)
-   elif testtype == 'tcp':
-       testportthread(ipaddr,counts) 
+   
+   with open(f'./{testtype}.json','w',encoding='utf-8') as json_file:
+        if testtype == 'ping':
+            pingthread(ipaddr,counts,json_file)
+        elif testtype == 'tcp':
+            testportthread(ipaddr,counts,json_file) 
        
 if __name__ == "__main__":
    main(sys.argv[1:])
