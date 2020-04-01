@@ -5,7 +5,6 @@ import numpy as np
 df_1 = pd.read_excel(f'1.xlsx')
 df_2 = pd.read_excel(f'2.xlsx')
 
-
 # select * from data limit(10)
 df_1.head(10)
 
