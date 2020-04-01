@@ -1,0 +1,17 @@
+
+- hosts: node
+  remote_user: root
+  tasks:
+  - name: start openresty background
+    shell: brew services start openresty/brew/openresty
+  - name: 启动openresty完毕
+    shell: echo "Successfully started `openresty` (label- homebrew.mxcl.openresty)"
+  - name: stop openresty
+    shell: brew services stop openresty
+  - name: 停止openresty完毕
+    shell: echo "Stopping `openresty`... (might take a while)"
+    shell: echo "Successfully stopped `openresty` (label- homebrew.mxcl.openresty)"
+  - name: restart openresty
+    shell: brew services restart openresty
+  - name: 重启openresty完毕
+    shell: echo "Successfully started `openresty` (label- homebrew.mxcl.openresty)"
