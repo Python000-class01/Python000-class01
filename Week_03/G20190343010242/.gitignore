@@ -1,0 +1,7 @@
+venv3.7
+.vscode
+.idea
+.DS_Store
+__pycache__
+task1/web_crawler/output
+task2/output

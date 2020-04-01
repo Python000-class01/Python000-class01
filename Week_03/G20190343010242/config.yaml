@@ -1,0 +1,5 @@
+rrys:
+  allowed_domains:
+    - "rrys2019.com"
+  start_urls:
+    - "http://www.rrys2019.com"

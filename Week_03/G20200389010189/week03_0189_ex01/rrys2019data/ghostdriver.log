@@ -1,0 +1,41 @@
+[INFO  - 2020-03-23T01:12:16.552Z] GhostDriver - Main - running on port 62302
+[INFO  - 2020-03-23T01:12:16.679Z] Session [560293e0-6ca3-11ea-9820-312e32fb26ff] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2020-03-23T01:12:16.679Z] Session [560293e0-6ca3-11ea-9820-312e32fb26ff] - page.customHeaders:  - {}
+[INFO  - 2020-03-23T01:12:16.679Z] Session [560293e0-6ca3-11ea-9820-312e32fb26ff] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-10-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2020-03-23T01:12:16.680Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 560293e0-6ca3-11ea-9820-312e32fb26ff
+[INFO  - 2020-03-23T01:13:40.347Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+ructor (evaluating '$("#ec-erweima").slider')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-03-23T01:12:27.603Z] Session [560293e0-6ca3-11ea-9820-312e32fb26ff] - page.onError - stack:
+  callback (https://www.vmall.com/help/faq-833.html?cid=10000090&wi=mid:147,fid:146,cid:10000090,wi:002m45643337740ee385:1841)
+  ready (https://res9.vmallres.com/20200122/js/common/jsapi.js?20141025:3)
+  success (https://res9.vmallres.com/20200122/js/common/jsapi.js?20141025:3)
+  s (https://res9.vmallres.com/20200122/js/common/jsapi.js?20141025:3)
+  onreadystatechange (https://res9.vmallres.com/20200122/js/common/jsapi.js?20141025:3)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-03-23T01:12:27.604Z] Session [560293e0-6ca3-11ea-9820-312e32fb26ff] - page.onError - msg: TypeError: undefined is not a constructor (evaluating '$("#search-kw").autocomplete({serviceUrl:"/search_keywords",minChars:1,maxHeight:400,deferRequestBy:100})')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-03-23T01:12:27.605Z] Session [560293e0-6ca3-11ea-9820-312e32fb26ff] - page.onError - stack:
+  callback (https://res9.vmallres.com/20200122/js/echannel/base.min.js?20200311:1)
+  ready (https://res9.vmallres.com/20200122/js/common/jsapi.js?20141025:3)
+  success (https://res9.vmallres.com/20200122/js/common/jsapi.js?20141025:3)
+  s (https://res9.vmallres.com/20200122/js/common/jsapi.js?20141025:3)
+  onreadystatechange (https://res9.vmallres.com/20200122/js/common/jsapi.js?20141025:3)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-03-23T01:12:27.649Z] Session [560293e0-6ca3-11ea-9820-312e32fb26ff] - page.onError - msg: TypeError: undefined is not a constructor (evaluating '$("#ec-erweima").slider')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-03-23T01:12:27.649Z] Session [560293e0-6ca3-11ea-9820-312e32fb26ff] - page.onError - stack:
+  callback (https://www.vmall.com/help/faq-833.html?cid=10000090&wi=mid:147,fid:146,cid:10000090,wi:002m45643337740ee385:3085)
+  ready (https://res9.vmallres.com/20200122/js/common/jsapi.js?20141025:3)
+  success (https://res9.vmallres.com/20200122/js/common/jsapi.js?20141025:3)
+  q (https://res9.vmallres.com/20200122/js/common/jsapi.js?20141025:3)
+
+  phantomjs://platform/console++.js:263 in error
+[INFO  - 2020-03-23T01:12:14.648Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2020-03-23T01:13:35.232Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2020-03-23T01:12:40.154Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
