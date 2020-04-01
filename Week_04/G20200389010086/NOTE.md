@@ -13,28 +13,28 @@ def sth():
     pass
 async def py35_func():
     await sth()
-    
-    
-# 注意： await 接收的对象必须是awaitable对象
-# awaitable 对象定义了__await__()方法
-# awaitable 对象有三类，使用多个协程 可以使用 Task
-# 1 协程 coroutine
-# 2 任务 Task
-# 3 未来对象 Future 
+       
+# 注意：
+ await 接收的对象必须是awaitable对象
+ awaitable 对象定义了__await__()方法
+ awaitable 对象有三类，使用多个协程 可以使用 Task
+ 1 协程 coroutine
+ 2 任务 Task
+3 未来对象 Future 
 4、使用协程， 需要引入 asyncio 库 
 coroutine 使用实例：
 async def main():
     print('hello')
     await asyncio.sleep(3)
     print('world')
-# 协程不能直接 直接运行， 需要交给 asyncio.run() 执行
-# asyncio.run()运行最高层级的conroutine
+协程不能直接 直接运行， 需要交给 asyncio.run() 执行
+ asyncio.run()运行最高层级的conroutine
 asyncio.run(main())
 
-Task 使用实例1
-# async 函数被调用后会创建一个coroutine
-# 这时候该协程并不会立即运行，
-# 需要通过 ensure_future 或 create_task 方法生成 Task 后才会被调度执行
+#Task 使用实例1
+async 函数被调用后会创建一个coroutine
+ 这时候该协程并不会立即运行，
+ 需要通过 ensure_future 或 create_task 方法生成 Task 后才会被调度执行
 async def mission(time):
     await asyncio.sleep(time)
 
@@ -96,15 +96,13 @@ if __name__ == "__main__":
 
 1、pandas 读取文件后， 默认自动添加索引  
 2、pandas.Series  为一维数据
-# import pandas as pd  
+3、import pandas as pd  
 s1 = pd.Series({'a':11, 'b':22, 'c':33})
-# 获取全部索引
+ 获取全部索引
 s1.index
-# 使用index会提升查询性能
-#    如果index唯一，pandas会使用哈希表优化，查询性能为O(1)
-#    如果index有序不唯一，pandas会使用二分查找算法，查询性能为O(logN)
-#    如果index完全随机，每次查询都要扫全表，查询性能为O(N)
-
+使用index会提升查询性能
+如果index唯一，pandas会使用哈希表优化，查询性能为O(1)
+如果index有序不唯一，pandas会使用二分查找算法，查询性能为O(logN)
+如果index完全随机，每次查询都要扫全表，查询性能为O(N)
 3、pandas.DataFrame 数据类似二维数据
-
 4、pandas 数据导入
