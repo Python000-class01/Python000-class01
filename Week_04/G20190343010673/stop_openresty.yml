@@ -1,0 +1,10 @@
+---
+- hosts: webservers
+  tasks:
+  - name: start openresty nginx -s stop
+    shell: /usr/local/openresty/nginx/sbin/nginx -s stop
+  - name: check nginx service exists
+    shell: ps -aux | grep nginx
+    register: service_check_ret
+  - name: show
+    debug: var=service_check_ret.stdout verbosity=0 
