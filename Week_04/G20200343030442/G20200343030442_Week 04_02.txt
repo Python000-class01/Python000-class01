@@ -1,0 +1,71 @@
+import pandas as pd
+import numpy as nu
+import matplotlib as plt
+
+# select * from data
+df = pd.read_csv('D:\\CodeProject\\PythonProjects\\0401\\book_utf8.csv')
+df.columns = ['level','score','comment ']
+print(df)
+
+# select * from data limit(10)
+df[1:11]
+print(df[1:11])
+print(df.head(10))
+
+# select id  from data  //id 是 data 表的特定一列
+print(df['id'])
+print(df['level'])
+
+
+# select count(id) from data
+df['id'].count()
+s = df['level'].count()
+print(s)
+
+level_to_number = {
+    '力荐': 5,
+    '推荐': 4,
+    '还行': 3,
+    '较差': 2,
+    '很差': 1,
+}
+
+df['new_level'] = df['level'].map(level_to_number)
+print(df)
+
+# select * from data where id <1000 and  age >30 
+
+df[(df['id'] < 1000 ) & (df['age'] > 30)]
+
+
+df['level'] == '力荐'
+s = df[df['level'] == '力荐']
+print(s)
+df['new_level'] > 3 
+df['score'] > 1
+print(df[df['new_level'] > 3 ])
+p = df[(df['new_level'] > 3 ) & (df['score'] > 0)]
+print(p)
+
+
+# select id , count(distinct orderid) from data group by id;
+print(df.groupby('id').agg({'orderid': pd.Series.nunique}))
+
+print(df.groupby('level').agg({'score': pd.Series.nunique}))
+
+
+# select * from table1 t1 inner_join table2 t2 on t1.id = t2.id
+
+pd.merge(table1,table2,on = 'id',how = 'inner')
+
+# select * from t1 union select * from t2
+pd.concat([t1,t2])
+
+# delete from t1 where id=10
+
+df[df['id'] != 10]
+df['score'] == '5'
+p = df[df['score'] != 5]
+
+# alter table t1 drop column name
+df.drop( df.columns['name'] ,axis = 1)
