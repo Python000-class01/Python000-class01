@@ -1,0 +1,21 @@
+##################
+# OpenRest安装在/usr/local/openresty目录下
+# 按照 http://openresty.org/cn/getting-started.html 流程编写启停playbook
+
+---
+- hosts: 192.168.101.55
+  remote_user: root
+
+  tasks:  
+    - name: creat a work directory 
+      file: name=/home/lulu/work state=directory
+    - name: creat a logs directory
+      file: name=/home/lulu/work/logs state=directory
+    - name: creat a conf directory
+      file: name=/home/lulu/work/conf state=directory
+    - name: copy init
+      copy: src=/Users/lulu/Downloads/nginx.conf  dest=/home/lulu/work/conf/nginx.conf
+    - name: start nginx
+      shell: cd /home/lulu/work;/usr/local/openresty/nginx/sbin/nginx -p `pwd`/ -c /home/lulu/work/conf/nginx.conf
+    - name: stop nginx
+      shell: cd /home/lulu/work;/usr/local/openresty/nginx/sbin/nginx -s stop -p `pwd`/ -c /home/lulu/work/conf/nginx.conf
