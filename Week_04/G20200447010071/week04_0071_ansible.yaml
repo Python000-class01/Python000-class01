@@ -1,0 +1,8 @@
+---
+- hosts: 192.168.123.205
+  remote_user: root
+  tasks:
+    - name: stop nginx
+      shell: nginx -s stop
+    - name: start nginx
+      shell: nginx
