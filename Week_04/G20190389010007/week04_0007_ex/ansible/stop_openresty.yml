@@ -1,0 +1,6 @@
+---
+- hosts: all
+  remote-user : root
+  tasks:
+  - name : stop openresty on docker
+    command : docker stop pc-opresty
