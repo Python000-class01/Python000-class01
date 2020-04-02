@@ -1,0 +1,51 @@
+root@Raspi:~/ansible# ansible-playbook -i hosts stop_ng.yml
+
+PLAY [testservers] **************************************************************************************************************************************************************************************************************************
+
+TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************************
+[DEPRECATION WARNING]: Distribution centos 17.01.2 on host 39.98.165.255 should use /usr/libexec/platform-python, but is using /usr/bin/python for backward compatibility with prior Ansible releases. A future Ansible release will default
+ to using the discovered platform python for this host. See https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information. This feature will be removed in version 2.12. Deprecation warnings
+can be disabled by setting deprecation_warnings=False in ansible.cfg.
+ok: [39.98.165.255]
+
+TASK [start openresty nginx -s stop] ********************************************************************************************************************************************************************************************************
+[WARNING]: Consider using the service module rather than running 'service'.  If you need to use command because service is insufficient you can add 'warn: false' to this command task or set 'command_warnings=False' in ansible.cfg to get
+rid of this message.
+changed: [39.98.165.255]
+
+TASK [check nginx service exists] ***********************************************************************************************************************************************************************************************************
+changed: [39.98.165.255]
+
+TASK [show] *********************************************************************************************************************************************************************************************************************************
+ok: [39.98.165.255] => {
+    "service_check_ret.stdout": "root      3848  0.0  0.5 117320  2748 pts/2    S+   00:30   0:00 /bin/sh -c ps -aux | grep nginx\nroot      3850  0.0  0.4 116864  2436 pts/2    S+   00:30   0:00 grep nginx"
+}
+
+PLAY RECAP **********************************************************************************************************************************************************************************************************************************
+39.98.165.255              : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+root@Raspi:~/ansible# ansible-playbook -i hosts start_ng.yml
+
+PLAY [testservers] **************************************************************************************************************************************************************************************************************************
+
+TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************************
+[DEPRECATION WARNING]: Distribution centos 17.01.2 on host 39.98.165.255 should use /usr/libexec/platform-python, but is using /usr/bin/python for backward compatibility with prior Ansible releases. A future Ansible release will default
+ to using the discovered platform python for this host. See https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html for more information. This feature will be removed in version 2.12. Deprecation warnings
+can be disabled by setting deprecation_warnings=False in ansible.cfg.
+ok: [39.98.165.255]
+
+TASK [start openresty nginx] ****************************************************************************************************************************************************************************************************************
+[WARNING]: Consider using the service module rather than running 'service'.  If you need to use command because service is insufficient you can add 'warn: false' to this command task or set 'command_warnings=False' in ansible.cfg to get
+rid of this message.
+changed: [39.98.165.255]
+
+TASK [check nginx service exists] ***********************************************************************************************************************************************************************************************************
+changed: [39.98.165.255]
+
+TASK [show] *********************************************************************************************************************************************************************************************************************************
+ok: [39.98.165.255] => {
+    "service_check_ret.stdout": "root      4110  0.0  0.5  37148  2852 ?        Ss   00:31   0:00 nginx: master process /usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf\nwww       4112  0.0  5.0  68928 25308 ?        S    00:31   0:00 nginx: worker process\nroot      4184  0.0  0.5 117320  2820 pts/2    S+   00:31   0:00 /bin/sh -c ps -aux | grep nginx\nroot      4186  0.0  0.4 116864  2332 pts/2    S+   00:31   0:00 grep nginx"
+}
+
+PLAY RECAP **********************************************************************************************************************************************************************************************************************************
+39.98.165.255              : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0

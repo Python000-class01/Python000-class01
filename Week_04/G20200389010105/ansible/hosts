@@ -1,0 +1,2 @@
+[testservers]
+39.98.165.255 ansible_connection=ssh ansible_ssh_user=root

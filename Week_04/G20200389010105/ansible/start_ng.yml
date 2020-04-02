@@ -1,0 +1,10 @@
+---
+- hosts: testservers
+  tasks:
+  - name: 启动nginx
+    shell: /usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf
+  - name: 检查nginx是否启动成功
+    shell: ps -aux | grep nginx
+    register: service_check_ret
+  - name: 输出debug信息
+    debug: var=service_check_ret.stdout verbosity=0
