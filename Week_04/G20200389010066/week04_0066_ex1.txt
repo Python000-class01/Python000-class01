@@ -1,0 +1,5 @@
+¿ªÆônginx£º
+ansible web1 -m service -a 'name=nginx state=started'
+
+Í£Ö¹ansible£º
+ansible web1 -m service -a 'name=nginx state=stopped'
