@@ -1,0 +1,11 @@
+- hosts: localhost
+  vars:
+     http_port: 80
+  tasks:
+  - name: update apk
+    command: apk update
+  - name: install nginx
+    command: apk add nginx
+  # nginx will start automatically once it's installed
+  - name: add nginx service
+    command: rc-update add nginx default
