@@ -1,0 +1,10 @@
+- hosts:Nginxgroup
+  remote_user: root
+  tasks:
+  - name: download nginx
+    yum: pkg=nginx state=latest
+  - name: restart nginx
+    service: name=nginx state=started
+  handlers:
+    - name: restart nginx
+      service:name = nginx state=restarted
