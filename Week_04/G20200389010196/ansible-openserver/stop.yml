@@ -1,0 +1,5 @@
+- hosts: openserver
+  remote_user: root
+  tasks:
+  - name: Start openresty
+    shell: "/usr/local/openresty/bin/openresty -s stop"

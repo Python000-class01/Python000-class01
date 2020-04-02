@@ -1,0 +1,7 @@
+hosts: group1
+remote_user: root
+tasks:
+  - name: stop nginx
+    shell: service nginx stop
+  - name: start nginx
+    shell: service nginx start  

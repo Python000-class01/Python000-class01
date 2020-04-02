@@ -1,0 +1,10 @@
+---
+- hosts: '{{ host_name }}'
+  tasks: 
+
+  - name: start OpenResty
+    shell: 
+      cmd: /usr/local/openresty/nginx/sbin/nginx -p `pwd`/ -c /home/work/conf/nginx.conf
+  - name: stop OpenResty
+    shell: 
+      cmd: /usr/local/openresty/nginx/sbin/nginx -p `pwd`/ -c /home/work/conf/nginx.conf -s stop

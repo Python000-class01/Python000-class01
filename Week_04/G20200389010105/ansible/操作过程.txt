@@ -1,0 +1,59 @@
+一、设置无密码登陆远程主机：
+
+为了避免Ansible下发指令时输入目标主机密码，通过证书签名达到SSH无密码是一个好的方案，推荐使用ssh-keygen与ssh-copy-id来实现快速证书的生成及公钥下发，其中ssh-keygen生成一对密钥，使用sshcopy-id来下发生成的公钥。
+
+1、：需要配置与目标设备的密钥认证支持。
+
+root@Raspi:~# ssh-keygen -t rsa
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa): ~/.ssh/id_rsa
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Saving key "~/.ssh/id_rsa" failed: No such file or directory
+root@Raspi:~# ssh-keygen -t rsa
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa):
+Created directory '/root/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /root/.ssh/id_rsa.
+Your public key has been saved in /root/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:wxyq0d6L932gSYzcAdhL4Y+lc9j/Zcby/jNl+psUPz0 root@Raspi
+The key's randomart image is:
++---[RSA 2048]----+
+|       o..       |
+|      ..+        |
+|       .oo.      |
+|     . +.O.      |
+|    . o.S++.   . |
+|     + .o++..  .*|
+|    . . .. o...EO|
+|       ...o. .+O+|
+|      ..... ...=X|
++----[SHA256]-----+
+
+私钥文件可以存放在默认路径“~/.ssh/id_rsa”。
+
+2、：接下来同步公钥文件id_rsa.pub到目标主机，推荐使用ssh-copy-id公钥拷贝工具
+
+ssh-copy-id -i /root/.ssh/id_rsa.pub root@39.98.165.255
+
+root@Raspi:~# ssh-copy-id -i /root/.ssh/id_rsa.pub root@39.98.165.255
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/root/.ssh/id_rsa.pub"
+The authenticity of host '39.98.165.255 (39.98.165.255)' can't be established.
+ECDSA key fingerprint is SHA256:O7gRlemD844Lx3sq9kQ1QXbm0ziqemVxfoV81jeKiOk.
+Are you sure you want to continue connecting (yes/no)? yes
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+root@39.98.165.255's password:
+
+Number of key(s) added: 1
+
+Now try logging into the machine, with:   "ssh 'root@39.98.165.255'"
+and check to make sure that only the key(s) you wanted were added.
+
+二、执行命令：
+cd /root/ansible/
+ansible-playbook -i hosts stop_ng.yml
+ansible-playbook -i hosts start_ng.yml

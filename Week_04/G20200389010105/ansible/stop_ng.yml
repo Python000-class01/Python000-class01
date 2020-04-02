@@ -1,0 +1,10 @@
+---
+- hosts: testservers
+  tasks:
+  - name: 关闭nginx
+    shell: service nginx stop
+  - name: 检查nginx是否关闭成功
+    shell: ps -aux | grep nginx
+    register: service_check_ret
+  - name: 输出debug信息
+    debug: var=service_check_ret.stdout verbosity=0

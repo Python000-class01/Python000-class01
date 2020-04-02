@@ -1,0 +1,4 @@
+[webservers]
+192.168.3.144 ansible_user=root http_port=80
+192.168.3.155 ansible_user=root http_port=80
+192.168.3.156 ansible_user=root http_port=80
