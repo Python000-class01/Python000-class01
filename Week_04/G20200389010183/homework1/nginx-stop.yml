@@ -1,0 +1,10 @@
+---
+- hosts: test
+  tasks:
+  - name: start nginx
+    shell: /usr/sbin/nginx -s stop
+  - name: check nginx status
+    shell: ps -aux | grep nginx
+    register: service_nginx_check
+  - name: log
+    debug: var=service_nginx_check.stdout verbosity=0
