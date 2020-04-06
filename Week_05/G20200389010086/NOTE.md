@@ -12,6 +12,12 @@ print('Search Mode: ' + '/'.join(list(result)))
 2、停止词，过略掉不想要的关键词；如下示例：
 `stop_words = r'stop_words.txt'
     jieba.analyse.set_stop_words(stop_words)`
+#mysql
+1、Python 3.7连接到MySQL数据库的模块推荐使用PyMySQL模块
+2、/usr/local/mysql/support-files/mysql.server start
+ 3、一般流程：
+ 开始-创建connection-获取cursor-CRUD(查询并获取数据)-关闭cursor-关闭connection-结束
+    
  
 
 
