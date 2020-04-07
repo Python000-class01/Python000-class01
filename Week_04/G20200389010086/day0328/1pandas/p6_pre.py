@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 x = pd.Series([ 1, 2, np.nan, 3, 4, 5, 6,np.nan, 8])
 #检验序列中是否存在缺失值
