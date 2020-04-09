@@ -3,12 +3,13 @@ import jieba.analyse
 import pprint
 from PIL import Image
 import matplotlib
+import pymysql
 import matplotlib.pyplot as plt
 plt.switch_backend('qt5agg')
 from wordcloud import WordCloud
+from snownlp import SnowNLP
 # from matplotlib.pyplot import imread
 # import random
-
 
 data = pd.read_csv("./comments.csv")
 text = ""
@@ -47,9 +48,37 @@ wc = WordCloud(
   max_font_size = 200,
   font_path=font)
 
-wc.generate_from_text(text_string)
-plt.imshow(wc, interpolation="bilinear")
-plt.axis('off')
-plt.tight_layout()
-wc.to_file("comments.png")
-plt.show()
+# wc.generate_from_text(text_string)
+# plt.imshow(wc, interpolation="bilinear")
+# plt.axis('off')
+# plt.tight_layout()
+# wc.to_file("comments.png")
+# plt.show()
+
+def _sentiment(text):
+    s = SnowNLP(text)
+    return s.sentiments
+
+data["sentiment"] = data.short.apply(_sentiment)
+print(data.sentiment.mean())
+
+db_info = {
+    'host': 'localhost',
+    'port': '3306',
+    'user': 'root',
+    'password': 'zhao',
+}
+
+con = pymysql.connect(host=db_info["host"], user=db_info["user"], passwd=db_info["password"])
+#
+cursor = con.cursor()
+
+cursor.execute("CREATE DATABASE IF NOT EXISTS test CHARACTER SET utf8mb4")
+
+cursor.execute("USE test")
+
+cursor.execute("CREATE TABLE IF NOT EXISTS`new` (`id` bigint(20) unsigned NOT NULL AUTO_INCREMENT, `short` varchar(10000)  DEFAULT NULL, PRIMARY KEY (`id`)) CHARACTER SET=utf8")
+
+insert_sql = 'INSERT INTO new (short) value ("test")'
+for index, row in data.iterrows():
+    cursor.execute(insert_sql)
