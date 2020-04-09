@@ -54,7 +54,7 @@ class DouBanSpider():
                 csv_writer.writerow(item.values())
 
     def main(self):
-        # 1. 获取 url 列表
+        # week04_0081_ex. 获取 url 列表
         url_list = self.get_url_list()
 
         for url in url_list:
