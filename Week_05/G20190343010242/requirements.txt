@@ -1,0 +1,13 @@
+jieba
+beautifulsoup4
+bs4
+yq
+requests
+lxml
+pandas
+numpy
+matplotlib
+wordcloud
+twisted
+pymysql
+snownlp
