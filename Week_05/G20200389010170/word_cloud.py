@@ -79,6 +79,6 @@ cursor.execute("USE test")
 
 cursor.execute("CREATE TABLE IF NOT EXISTS`new` (`id` bigint(20) unsigned NOT NULL AUTO_INCREMENT, `short` varchar(10000)  DEFAULT NULL, PRIMARY KEY (`id`)) CHARACTER SET=utf8")
 
-insert_sql = 'INSERT INTO new (short) value ("test")'
+insert_sql = 'INSERT INTO new (short) values ("%s")'
 for index, row in data.iterrows():
-    cursor.execute(insert_sql)
+    cursor.execute(insert_sql, (str(row['short'])))
