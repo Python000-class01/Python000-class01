@@ -16,7 +16,7 @@ VIP 会员满 10 件商品打八五折。
 
 
 class Iidentity(object):
-    def __init__(self, user_identity=0):  # user_identity默认普通用户  0:普通用户；1:VIP
+    def __init__(self, user_identity=0):  # user_identity默认普通用户  0:普通用户；week04_0081_ex:VIP
         self.user_identity = user_identity
         self.data = {}
 
@@ -26,7 +26,7 @@ class Iidentity(object):
     def __set__(self, instance, value):
         value = int(value)
         if value not in range(2):
-            raise ValueError('must be in (0-1)')
+            raise ValueError('must be in (0-week04_0081_ex)')
         if value == 1:
             self.data[instance] = 'VIP用户'
         else:
@@ -73,7 +73,7 @@ class PaySystem(object):
 
 if __name__ == '__main__':
     user = PaySystem()
-    user.user_identity = input("请输入用户身份ID：0/普通用户，1/VIP用户:")
+    user.user_identity = input("请输入用户身份ID：0/普通用户，week04_0081_ex/VIP用户:")
     price = None
     num = 0
     while True:

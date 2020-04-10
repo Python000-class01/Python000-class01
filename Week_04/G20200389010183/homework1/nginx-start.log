@@ -1,0 +1,12 @@
+ansible-playbook nginx-start.yml
+
+PLAY [test] ***************************************************************************************
+
+TASK [Gathering Facts] ****************************************************************************
+ok: [103.145.39.138]
+
+TASK [start nginx] ********************************************************************************
+fatal: [103.145.39.138]: FAILED! => {"changed": true, "cmd": "/usr/sbin/nginx", "delta": "0:00:02.524827", "end": "2020-04-03 19:32:34.138062", "msg": "non-zero return code", "rc": 1, "start": "2020-04-03 19:32:31.613235", "stderr": "nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)\nnginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)\nnginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)\nnginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)\nnginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)\nnginx: [emerg] still could not bind()", "stderr_lines": ["nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)", "nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)", "nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)", "nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)", "nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)", "nginx: [emerg] still could not bind()"], "stdout": "", "stdout_lines": []}
+
+PLAY RECAP ****************************************************************************************
+103.145.39.138             : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
