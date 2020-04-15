@@ -1,0 +1,77 @@
+{% extends "base_layout.html" %}
+
+{% block head %}
+
+    {{ super() }}
+  <!-- Custom styles for this page -->
+  <!-- <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet"> -->
+  <link href="{{ url_for('static', filename='vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
+
+{% endblock %}
+
+{% block pagecontent %}
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <h1 class="h3 mb-2 text-gray-800">Tables</h1>
+          <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
+
+          <!-- DataTales Example -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>id</th>
+                      <th>star</th>
+                      <th>评论</th>
+                      <th>情感倾向</th>
+                    </tr>
+                  </thead>
+                  <!-- <tfoot>
+                    <tr>
+                      <th>id</th>
+                      <th>star</th>
+                      <th>评论</th>
+                      <th>情感倾向</th>
+                    </tr>
+                  </tfoot> -->
+                  <tbody>
+                    {% for short in shorts %}
+                        <tr>
+                            <td>{{ short.id }}</td>
+                            <td>{{ short.n_star }}</td>
+                            <td>{{ short.short }}</td>
+                            <td>{{ short.sentiment }}</td>
+                        </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- /.container-fluid -->
+{% endblock %}
+
+
+{% block js %}
+
+    {{ super() }}
+  <!-- Page level plugins -->
+  <!-- <script src="vendor/datatables/jquery.dataTables.min.js"></script> -->
+  <script src="{{ url_for('static', filename='vendor/datatables/jquery.dataTables.min.js') }}"></script>
+  <!-- <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script> -->
+  <script src="{{ url_for('static', filename='vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
+
+  <!-- Page level custom scripts -->
+  <!-- <script src="js/demo/datatables-demo.js"></script> -->
+  <!-- <script src="{{ url_for('static', filename='js/demo/datatables-demo.js') }}"></script> -->
+
+{% endblock %}
