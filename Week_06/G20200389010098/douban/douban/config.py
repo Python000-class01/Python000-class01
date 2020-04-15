@@ -1,1 +1,1 @@
-mysql_config={"host":"swortect.mysql.rds.aliyuncs.com","port":"3306","user":"swortect","psw":"1q2w3e4r","db_name":"wordcloud","charset":"utf8mb4"}
+mysql_config={"host":"test.mysql.rds.aliyuncs.com","port":"3306","user":"test","psw":"test","db_name":"test","charset":"utf8mb4"}
