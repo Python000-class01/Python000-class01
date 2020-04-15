@@ -4,7 +4,8 @@ from app.models import *
 from app import db
 @home.route('/')
 def index():
-        return render_template('/home/index.html')
+        shorts = T1.query.all()[0:10]
+        return render_template('/home/index.html', shorts=shorts)
 
 @home.route('/index')
 def dashboard():
