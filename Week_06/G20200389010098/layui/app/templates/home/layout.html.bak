@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{{Document.pagename}}</title>
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<link rel="shortcut icon " type="images/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+{% for path in Document.mycss -%}
+<link rel="stylesheet" href="{{ url_for('static', filename=path+'.css') }}" media="all">
+{% endfor -%}
+{% for path in Document.myjs -%}
+<script src="{{ url_for('static', filename=path+'.js') }}"></script>
+{% endfor -%}
+<script>
+var LAYUI_BASE_PATH="{{ url_for('static', filename='layui.2.4.5/') }}",PUBLIC_URL="{{ url_for('static', filename='layui.2.4.5/') }}",layer=null,layform=null;
+</script>
+{% block body %}
+{% endblock %}
+{% if Document.hidecommonjs != True %}
+<script src = "{{ url_for('static', filename='js/admin/facebox.js') }}"></script>
+<script src = "{{ url_for('static', filename='js/admin/global.js') }}"></script>
+{% endif %}
+{% for path in Document.footerjs -%}
+<script src="{{ url_for('static', filename=path+'.js') }}"></script>
+{% endfor -%}
+</body>
+</html>
