@@ -1,0 +1,8 @@
+1. 爬虫图书短评
+cd book
+运行：scrapy crawl bookflask --nolog 如要调试，py文件中print(变量）
+爬虫结果存成csv (bookshorts.csv) <- 对应代码：pipelines.py
+
+2. book目录中，读取csv的数据存在mysql中  <- 对应代码：bookshorts_to_mysql.py
+
+3. flask_homework目录为flask应用，展示mysql中情感倾向最高的前十条短评。
