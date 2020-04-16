@@ -1,0 +1,4 @@
+.vscode
+.idea
+venv3.7
+src/backend/sentimentproject.egg-info
