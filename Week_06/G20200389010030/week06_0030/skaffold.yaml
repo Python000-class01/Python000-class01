@@ -1,0 +1,24 @@
+apiVersion: skaffold/v1beta15
+kind: Config
+build:
+  tagPolicy:
+    sha256: {}
+  # defines where to find the code at build time and where to push the resulting image
+  local:
+    push: true
+    useDockerCLI: true
+  artifacts:
+  - image: sentiment-backend
+    context: src/backend
+  - image: sentiment-frontend
+    context: src/frontend
+# defines the helm to deploy on each run
+deploy:
+  helm:
+    releases:
+    - name: sentiment
+      chartPath: sentiment
+      namespace: week06
+      valuesFiles:
+        - sentiment/values.yaml
+
