@@ -1,0 +1,18 @@
+# 使用 MySQL 将一本图书的短评、评分、情感分析结果进行储存，使用 Flask 展示 MySQL 中的情感倾向最高的前十条，进行展示。
+
+
+from sqlalchemy import BigInteger, Column, Float, Integer, String
+from sqlalchemy.schema import FetchedValue
+from flask_sqlalchemy import SQLAlchemy
+
+
+db = SQLAlchemy()
+
+
+class T1(db.Model):
+    __tablename__ = 'book'
+
+    id = db.Column(db.BigInteger, primary_key=True)
+    n_star = db.Column(db.Integer, nullable=False, server_default=db.FetchedValue())
+    short = db.Column(db.String(400), nullable=False, server_default=db.FetchedValue())
+    sentiment = db.Column(db.Float(12), nullable=False, server_default=db.FetchedValue())
