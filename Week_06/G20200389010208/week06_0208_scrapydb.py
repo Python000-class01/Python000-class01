@@ -85,5 +85,5 @@ if __name__ == "__main__":
     df = read_csvfile()
     word_cloud(df)
     df["sentiment"] = df.shorts.apply(_sentiment)
-    engine = create_engine("mysql+pymysql://root:rootroot@localhost:3306/test?charset=utf8", echo=True)
+    engine = create_engine("mysql+pymysql://root:password@localhost:3306/scrapydb?charset=utf8", echo=True)
     df.to_sql(name = 'sentiments', con = engine, if_exists = 'append', index = False, index_label = False)
