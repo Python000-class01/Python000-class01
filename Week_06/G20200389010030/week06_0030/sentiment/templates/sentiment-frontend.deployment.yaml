@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sentiment-frontend
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: sentiment
+    tier: frontend
+spec:
+  replicas: {{ .Values.frontendReplicas }}
+  selector:
+    matchLabels:
+      app: sentiment
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        app: sentiment
+        tier: frontend
+    spec:
+      containers:
+      - name: frontend
+        image: {{ .Values.container_repo }}/sentiment-frontend
+        ports:
+        - name: http-server
+          containerPort: 8080
+        env:
+        - name: PORT
+          value: "8080"
+        - name: API_ADDR
+          value: sentiment-backend:8080
