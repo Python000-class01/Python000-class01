@@ -151,7 +151,7 @@ Due to the time limit, there are a few things that can put into the to-do list i
 - Provide different parsing templates and strategies when crawling from different sources. So the code will be more generic.
 - The home page will display the collection of sources. By clicking each source, the bar chart view is directed.
 - For each source, provide month view against on number of comments.
-- The code is still need to be polished and reviewed, as some of them were not well organized.
+- The code is still need to be polished and reviewed, as some of them were not well organized, there are still quite a few duplicates in code.
 - Make more things to be configurable. Like data collection frequency, items per page, etc.
 - Manage and uplift the page templates, employs more MVC web framework together with Flask.
 - Bug fixing. Of course, the whole thing is not 100% well tested, there definitely will be bugs. But most of functions are runnable.
