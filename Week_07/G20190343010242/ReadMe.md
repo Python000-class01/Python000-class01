@@ -147,13 +147,15 @@ VS Code is quite similar, here is a [quickstart](https://cloud.google.com/code/d
 Due to the time limit, there are a few things that can put into the to-do list in the future.
 
 - Collect data from multiple sources, and classify them.
-- Provide different parsing templates when crawling from different sources. So the code will be more generic.
+- Use pandas to clean data if necessary. Currently there is no data needs to be cleaned.
+- Provide different parsing templates and strategies when crawling from different sources. So the code will be more generic.
 - The home page will display the collection of sources. By clicking each source, the bar chart view is directed.
 - For each source, provide month view against on number of comments.
 - The code is still need to be polished and reviewed, as some of them were not well organized.
 - Make more things to be configurable. Like data collection frequency, items per page, etc.
 - Manage and uplift the page templates, employs more MVC web framework together with Flask.
 - Bug fixing. Of course, the whole thing is not 100% well tested, there definitely will be bugs. But most of functions are runnable.
+- Train the data with higher accuracy. Currently it just simply uses SnowNLP to analyse the sentiment.
 - Other things when they are come up.
 
 

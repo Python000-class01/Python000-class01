@@ -11,10 +11,3 @@ class Comments(Base):
     comment_time = Column(DATETIME, nullable=False)
     sentiment = Column(FLOAT, nullable=False)
 
-    def to_dict(self):
-        return {'comment_id': self.comment_id,
-                'news_id': self.news_id,
-                'comment': self.comment,
-                'comment_time': self.comment_time,
-                'sentiment': self.sentiment
-                }

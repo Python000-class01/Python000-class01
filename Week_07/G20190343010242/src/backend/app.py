@@ -4,77 +4,6 @@ from services.newscomments_svc import NewsCommentsService
 
 app = Flask(__name__)
 
-def __get_comments(page, page_size):
-    try:
-        newscomments_service = NewsCommentsService()
-        results = newscomments_service.get_comments(page=page, page_size=page_size)
-        return jsonify(results), 200
-    except Exception as ex:
-        return jsonify({'error': ex}), 500
-
-
-@app.route('/comments/<int:page>', methods=['GET', 'POST'])
-def get_comments_by_page(page):
-    if page - 1 < 0:
-        page = 1
-    return __get_comments(page=page-1, page_size=25)
-
-
-@app.route('/comments', methods=['GET', 'POST'])
-def get_comments():
-    return __get_comments(page=None, page_size=None)
-
-
-@app.route('/comments/<string:date>/<int:page>', methods=['GET', 'POST'])
-def get_comments_by_date(date, page):
-    try:
-        newscomments_service = NewsCommentsService()
-        if page - 1 < 0:
-            page = 1
-        results = newscomments_service.get_comments_by_date(page=page-1, datestr=date)
-        return jsonify(results), 200
-    except Exception as ex:
-        return jsonify({'error': ex}), 500
-
-
-@app.route('/number-of-comments/<string:date>', methods=['GET', 'POST'])
-def get_number_of_comments_by_date(date):
-    try:
-        newscomments_service = NewsCommentsService()
-        result = newscomments_service.get_number_of_comments_by_date(date)
-        return jsonify(result), 200
-    except Exception as ex:
-        return jsonify({'error': ex}), 500
-
-
-@app.route('/number-of-comments', methods=['GET', 'POST'])
-def get_of_comments():
-    try:
-        newscomments_service = NewsCommentsService()
-        result = newscomments_service.get_number_of_comments()
-        return jsonify(result), 200
-    except Exception as ex:
-        return jsonify({'error': ex}), 500
-
-@app.route('/number-of-sentiments', methods=['GET', 'POST'])
-def get_number_of_sentiments():
-    try:
-        newscomments_service = NewsCommentsService()
-        result = newscomments_service.get_number_of_sentiments()
-        return jsonify(result), 200
-    except Exception as ex:
-        return jsonify({'error': ex}), 500
-
-
-@app.route('/number-of-sentiments/<string:date>', methods=['GET', 'POST'])
-def get_number_of_positive_by_date(date):
-    try:
-        newscomments_service = NewsCommentsService()
-        result = newscomments_service.get_number_of_sentiments_by_date(date)
-        return jsonify(result), 200
-    except Exception as ex:
-        return jsonify({'error': ex}), 500
-
 
 @app.route('/search/<int:page>', methods=['GET', 'POST'])
 def search_comments(page):
@@ -132,6 +61,4 @@ if __name__ == '__main__':
             print("error: {} environment variable not set".format(v))
             exit(1)
 
-    # start Flask server
-    # Flask's debug mode is unrelated to ptvsd debugger used by Cloud Code
     app.run(debug=False, port=os.environ.get('PORT'), host='0.0.0.0')

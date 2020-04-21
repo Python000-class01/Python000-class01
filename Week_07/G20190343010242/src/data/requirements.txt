@@ -5,3 +5,5 @@ scrapy
 sqlalchemy
 snownlp
 apscheduler
+pandas
+numpy

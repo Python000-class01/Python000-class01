@@ -9,8 +9,3 @@ class News(Base):
     news_name = Column(String(500), nullable=False)
     source = Column(String(500), nullable=False)
 
-    def to_dict(self):
-        return {'news_id': self.news_id,
-                'news_name': self.news_name,
-                'source': self.source
-                }

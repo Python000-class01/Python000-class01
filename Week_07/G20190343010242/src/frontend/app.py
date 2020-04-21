@@ -60,6 +60,4 @@ if __name__ == '__main__':
             print("error: {} environment variable not set".format(v))
             exit(1)
 
-    #start Flask server
-    #Flask's debug mode is unrelated to ptvsd debugger used by Cloud Code
     app.run(debug=False, port=os.environ.get('PORT'), host='0.0.0.0')
