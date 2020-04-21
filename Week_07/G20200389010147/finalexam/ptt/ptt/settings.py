@@ -103,5 +103,5 @@ MYSQL_DB_NAME = 'ptt'
 MYSQL_DB_HOST = '127.0.0.1'
 MYSQL_PORY = '3306'
 MYSQL_USER = 'root'
-MYSQL_PASSWORD = 'root'
+MYSQL_PASSWORD = ''
 print('Connect to db ::', MYSQL_DB_HOST, MYSQL_DB_NAME)

@@ -17,12 +17,17 @@ class PttGossipingSpider(scrapy.Spider):
 
     def parse(self, response):
         item = PttItem()
-        cmts = []
+        
+        # cmts = []
+
         selector = lxml.etree.HTML(response.text)
-        title = selector.xpath('//*[@id="main-content"]/div[3]/span[2]/text()')
-        for i in range(11,12):
-            cmt = selector.xpath('//*[@id="main-content"]/div['+str(i)+']/span[3]/text()')[0][2:]
-            cmts.append(cmt)
-        item['title'] = str(title)
-        item['cmt'] = str(cmts)
+        title = selector.xpath('//*[@id="main-content"]/div[3]/span[2]/text()')[0]
+        cmt = selector.xpath('//*[@id="main-content"]/div[11]/span[3]/text()')[0]
+        
+        # for i in range(11,12):
+        #     cmt = selector.xpath('//*[@id="main-content"]/div['+str(i)+']/span[3]/text()')[0][2:]
+        #     cmts.append(cmt)
+
+        item['title'] = title
+        item['cmt'] = cmt
         yield item

@@ -24,37 +24,68 @@ import pymysql
 
 class PttPipeline(object):
     # pass
-    def __init__(self):
-        pass
+    # def __init__(self):
+    #     pass
+    # def open_spider(self, spider):
+    #     # Database Settings
+    #     db = spider.settings.get('MYSQL_DB_NAME')
+    #     host = spider.settings.get('MYSQL_DB_HOST')
+    #     port = spider.settings.get('MYSQL_PORY')
+    #     user = spider.settings.get('MYSQL_USER')
+    #     password = spider.settings.get('MYSQL_PASSWORD')
+    #     # Database Connecting
+    #     self.connection = pymysql.connect(
+    #         host = host,
+    #         port = port,
+    #         user = user,
+    #         password= password,
+    #         db = db,
+    #         cursorclass= pymysql.cursors.DictCursor
+    #         )
 
+    # def close_spider(self, spider):
+    #     self.connection.close()
+
+    # def process_item(self, item, spider):
+    #     pass
+
+    # def insert_to_mysql(self, item):
+    #     values = (
+    #         item['title'],
+    #         item['cmt']
+    #         )
+    #     with self.connection.cursor() as cursor:
+    #         sql = 'INSERT INTO gossiping (title, cmt) VALUES (%s, %s)'
+    #         cursor.execute(sql, values)
+    #         self.connection.commit()
+
+    # 打开数据库
     def open_spider(self, spider):
-        # Database Settings
-        db = spider.settings.get('MYSQL_DB_NAME')
-        host = spider.settings.get('MYSQL_DB_HOST')
-        port = spider.settings.get('MYSQL_PORY')
-        user = spider.settings.get('MYSQL_USER')
-        password = spider.settings.get('MYSQL_PASSWORD')
-        # Database Connecting
-        self.connection = pymysql.connect(
-            host = host,
-            user = user,
-            password= password,
-            db = db,
-            cursorclass= pymysql.cursors.DictCursor
-            )
+        db = spider.settings.get('MYSQL_DB_NAME','ptt')
+        host = spider.settings.get('MYSQL_HOST', 'localhost')
+        port = spider.settings.get('MYSQL_PORT', 3306)
+        user = spider.settings.get('MYSQL_USER', 'root')
+        passwd = spider.settings.get('MYSQL_PASSWORD', '')
 
+        self.db_conn =pymysql.connect(host=host, port=port, db=db, user=user, passwd=passwd, charset='utf8')
+        self.db_cur = self.db_conn.cursor()
+
+    # 关闭数据库
     def close_spider(self, spider):
-        self.connection.close()
+        self.db_conn.commit()
+        self.db_conn.close()
 
+    # 对数据进行处理
     def process_item(self, item, spider):
-        pass
+        self.insert_db(item)
+        return item
 
-    def insert_to_mysql(self, item):
+    #插入数据
+    def insert_db(self, item):
         values = (
             item['title'],
-            item['cmt']
-            )
-        with self.connection.cursor as cursor:
-            sql = "INSERT INTO ptt.ptt_gossiping (title, cmt) VALUES (%s, %s)"
-            cursor.execute(sql, values)
-            self.connection.commit()
+            item['cmt'],
+        )
+
+        sql = 'INSERT INTO gossiping (title, cmt) VALUES (%s,%s)'
+        self.db_cur.execute(sql, values)
