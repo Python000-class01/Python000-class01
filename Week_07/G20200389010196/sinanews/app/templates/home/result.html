@@ -1,0 +1,85 @@
+{% extends "home/base_layout.html" %} {% block title %}Welcome{% endblock %} 
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/timeline.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/morris.css') }}">
+{% endblock %} 
+{% block content %}
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">新闻评论</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+<div class="row" style="margin-bottom: 10px;">
+    <form>
+        <div class="col-lg-6">
+            <div class="input-group custom-search-form">
+                <input type="text" class="form-control" name="keyword" placeholder="关键词搜索" value="{{keyword}}">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <!-- /.panel -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-bar-chart-o fa-fw"></i> 舆情数据展示
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 16%;">mid</th>
+                                        <th style="width: 50%;">评论</th>
+                                        <th style="width: 8%;">昵称</th>
+                                        <th style="width: 5%;">地区</th>
+                                        <th style="width: 12%;">情感倾向</th>
+                                        <th style="width: 9%;">时间</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for comment in comments %}
+                                        <tr>
+                                            <td>{{comment.mid}}</td>
+                                            <td>{{comment.content}}</td>
+                                            <td>{{comment.nick}}</td>
+                                            <td>{{comment.area}}</td>
+                                            <td>{{comment.sentiments}}</td>
+                                            <td>{{comment.time}}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.table-responsive -->
+                    </div>
+                    <!-- /.col-lg-4 (nested) -->
+
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-4 -->
+</div>
+<!-- /.row -->{% endblock %}
+{% block js %}
+    {{ super() }}
+    <script src="{{ url_for('static', filename='js/raphael-min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/morris.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/morris-data.js')}}"></script>
+{% endblock %}
