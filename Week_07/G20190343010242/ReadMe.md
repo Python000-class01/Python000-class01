@@ -17,7 +17,7 @@ configuration and kubernetes templates.
 - src: Include backend, frontend and data. The backend is used to create models, interact with database, and create 
 business logic. It provides the APIs for the frontend. The frontend is used to render the web pages, call the backend APIs and implement 
 the web logic. The data part is used to collect and manage data from the source. It crawls the web pages to collect the data and store it 
-in the database. The default frequency to collect data is is 10 seconds (This may be too often. 1 hr could be more reasonable). 
+in the database. The default frequency to collect data is is 10 seconds (This may be too often. 1 hr could be more reasonable).
 
 - skaffold.yaml: Skaffold configuration file. See [doc](https://skaffold.dev/docs/references/yaml/) here.
 
@@ -143,6 +143,13 @@ On top of the page, you will see the search bar that you can search text in the 
 By clicking each bar, you will be directed to the day view page. In this page, you will see a pie chart that gives you idea on 
 numbers of positive and negative comments. Like the main page, below the pie chart, there is the comments block with the date you pick up.
 Also, search bar on top of the pie chart that you can search the comments by the date you pick up. 
+
+** Data Collection ** 
+
+For the particular case in this project, it doesn't use pandas to clean and remove duplicate data. Instead, it uses the 
+comment id which is crawled from the source. The comment id is integer and unique, so you just need to anchor the max comment id each time before 
+you collect new data. You only need to insert into the database for the comments whose comment id are greater than the max one. For the empty database,
+the max comment id is 0. But you can still think about using pandas for other purposes.
 
 ### Screenshots
 
