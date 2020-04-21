@@ -1,0 +1,5 @@
+backendReplicas: 1
+frontendReplicas: 1
+container_repo: localhost:5000/week07
+frontendPort: 80
+mysqlPort: 3306

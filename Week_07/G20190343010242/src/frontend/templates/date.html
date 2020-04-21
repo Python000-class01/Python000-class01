@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Comments By Date</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/style.css" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <h2>
+                Comments Analytics for <a href="{{data.news.source}}" target="_blank">"{{data.news.news_name}}"</a>
+            </h2>
+        </div>
+    </div>
+
+    <div class="container posts mt-0">
+        <form class="form-inline" method="POST" action="/search/{{ data.date }}/1">
+            <label class="sr-only" for="search">Search comments</label>
+            <div class="input-group mb-2 mr-sm-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">Search comments</div>
+                </div>
+                <input type="text" class="form-control" id="search" name="search" required>
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">Submit</button>
+        </form>
+        <div class="card col-12">
+            <canvas id="pieChart"></canvas>
+            <script>
+                var ctx = document.getElementById('pieChart').getContext('2d');
+                var chart = new Chart(ctx, {
+                   type: 'pie',
+                   data: {
+                       datasets: [{
+                           label: 'Sentiment distribution',
+                           data: [{{data.positive}}, {{data.negative}}],
+                           backgroundColor:["rgb(255, 99, 132)","rgb(54, 162, 235)"]
+                       }],
+                       labels: ['Positive', 'Negative']
+                   },
+                   options: {}
+                });
+            </script>
+        </div>
+        <hr />
+        <div>
+            <h3>Comments on {{ data.date }}: </h3>
+            <div class="pages" align="right">
+                {% if data.pages > 1 %}
+                {% for i in range(data.pages) %}
+                <span><a href="/{{ data.date }}/{{ i+1 }}">{{i+1}}</a></span>&nbsp;&nbsp;
+                {% endfor %}
+                {% endif %}
+                <span class="mr-sm-2" align="right"><a href="/">All dates</a></span>
+            </div>
+        </div>
+        {% if data.comments %}
+            {% for result in data.comments %}
+            <div class="card my-3 col-12">
+                <div class="card-body">
+                    <div class="card-title">{{result.comment_time}}</div>
+                    <div class="card-subtitle mb-2 text-muted">
+                        {% if result.sentiment > 0.6 %}
+                        <div align="right"><span>{{result.sentiment}}&nbsp;&nbsp;</span><img src="/static/images/left.jpg" width="42px", height="42px"/></div>
+                        {% else %}
+                        <div align="right"><span>{{result.sentiment}}&nbsp;&nbsp;</span><img src="/static/images/right.jpg" width="42px", height="42px"/></div>
+                        {% endif %}
+                    </div>
+                    <br>
+                    <p class="card-text">
+                        {{result.comment}}
+                    </p>
+                </div>
+            </div>
+            {% endfor %}
+            <div class="pages" align="right">
+                {% if data.pages > 1 %}
+                {% for i in range(data.pages) %}
+                <span><a href="/{{ data.date }}/{{ i+1 }}">{{i+1}}</a></span>&nbsp;&nbsp;
+                {% endfor %}
+                {% endif %}
+                <span class="mr-sm-2" align="right"><a href="/">All dates</a></span>
+            </div>
+        {% else %}
+            <div class="alert alert-info" role="alert">
+                No data is found.
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
