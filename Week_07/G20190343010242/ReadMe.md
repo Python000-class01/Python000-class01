@@ -118,17 +118,17 @@ $ kubectl exec -it <pod id> -n <namespace> -- bash
 - You may encounter the situation that mysql fails to initialize the database. If that's the case,
 go to the mysql pod by running command below:
 ```bash
-kubectl exec -it mysql-0 -n <namespace> -- bash
+$ kubectl exec -it mysql-0 -n <namespace> -- bash
 ```
 then load initdb.sql to initialize the database.
 ```bash
-mysql -uroot -p < ./docker-entrypoint-initdb.d/initdb.sql
+$ mysql -uroot -p < ./docker-entrypoint-initdb.d/initdb.sql
 ```
 enter the password, then the database will be initialized.
 
 ** You may need to restart the application by stopping and running application again.
 
-### Debug on IDE
+### Run and Debug on IDE
 
 I will take [PyCharm](https://www.jetbrains.com/pycharm/) as an example.
 
