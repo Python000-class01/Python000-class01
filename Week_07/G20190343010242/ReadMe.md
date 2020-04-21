@@ -21,7 +21,63 @@ in the database. The default frequency to collect data is is 10 seconds (This ma
 
 - skaffold.yaml: Skaffold configuration file. See [doc](https://skaffold.dev/docs/references/yaml/) here.
 
-Skaffold will create images for backend and frontend respectively, and they will talk each other within the Kubernetes cluster.
+Skaffold will create images for backend, frontend and data respectively, and they will talk each other within the Kubernetes cluster.
+
+```
+Some of the folders/files are skipped.
+
+root
+  |- newscomments
+     |- files
+        |- initdb.sql
+        |- mysqld.cnf
+     |- templates
+        |- All k8s yaml templates go here
+     |- .helmignore
+     |- Chart.yaml
+     |- values.yaml
+  |- src
+     |- backend
+        |- models
+           |- base_model.py
+           |- comments.py
+           |- news.py
+        |- services
+           |- newscomments_svc.py
+        |- utils
+           |- db_helper.py
+        |- app.py (backend entrypoint)
+        |- Dockerfile
+        |- requirements.txt
+        |- setup.py
+     |- data
+        |- datamodels
+           |- base_model.py
+           |- comments.py
+           |- news.py
+        |- datautils
+           |- db_utils.py
+           |- helper.py
+        |- newscomments(scrapy project root)
+           |- scrapy clawler/spiders/items/pipelines etc.
+        |- data_pipeline.py (data entrypoint)
+        |- Dockerfile
+        |- requirements.txt
+        |- setup.py
+     |- frontend
+        |- static
+           |- images, css etc. 
+        |- templates
+           |- html templates go here
+        |- app.py (frontend entrypoint)
+        |- Dockerfile
+        |- requirements.txt
+  |- resources
+  |- .gitignore
+  |- pylintrc
+  |- ReadMe.md
+  |- skaffold.yaml
+```
 
 ### Prerequisites
 
@@ -84,9 +140,26 @@ the list of comments with details including the sentiment info. You can see pagi
 Each page displays 25 items by default.
 On top of the page, you will see the search bar that you can search text in the comments.  
 
-By clicking each bar, you will be directed to the date view page. In this page, you will see a pie chart that gives you idea on 
+By clicking each bar, you will be directed to the day view page. In this page, you will see a pie chart that gives you idea on 
 numbers of positive and negative comments. Like the main page, below the pie chart, there is the comments block with the date you pick up.
 Also, search bar on top of the pie chart that you can search the comments by the date you pick up. 
+
+### Screenshots
+
+- Main page:
+
+![main page](resources/main.png)
+
+- Day page (when you click each bar):
+
+![day page](resources/day.png)
+
+- Search page:
+  If you search on main page, it will return the results on all days comments.
+  While if you search on day page, it only return the results on that day.
+
+![search](resources/search.png)
+
 
 ### Troubleshooting
 
