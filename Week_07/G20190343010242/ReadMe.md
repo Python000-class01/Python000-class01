@@ -156,7 +156,7 @@ Also, search bar on top of the pie chart that you can search the comments by the
 
 - Search page:
   If you search on main page, it will return the results on all days comments.
-  While if you search on day page, it only return the results on that day.
+  While if you search on day page, it only returns the results on that day.
 
 ![search](resources/search.png)
 
