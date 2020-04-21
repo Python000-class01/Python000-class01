@@ -173,6 +173,3 @@ class NewsCommentsService:
         except Exception as ex:
             print(ex)
             return {'news': {}, 'comments': [], 'date': '', 'positive': 0, 'negative': 0, 'total': 0}
-
-#s = NewsCommentsService()
-#print(s.get_data_by_date(page_size=15, datestr='2020-04-19'))
