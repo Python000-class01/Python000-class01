@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+<!-- 载入文章头部页面，位置在/client文件夹下的header模板页面，模板名称th:fragment为header -->
+<!--<div th:replace="/client/header::header(null,null)" />-->
+<body>
+<div class="am-g am-g-fixed blog-fixed index-page">
+    <div class="am-u-md-8 am-u-sm-12">
+
+
+
+        <!-- 文章遍历并分页展示 : 需要同学们手动完成，基本样式已经给出，请使用th标签及表达式完成页面展示 -->
+        <div th:each="blog : ${pageResult.list}">
+            <article class="am-g blog-entry-article">
+
+                <div class="am-u-lg-6 am-u-md-12 am-u-sm-12 blog-entry-text">
+                    <!-- 文章分类 -->
+                    <span class="blog-color"style="font-size: 15px;"><a th:text="${blog.categories}">默认分类</a></span>
+                    <span>&nbsp;&nbsp;&nbsp;</span>
+                    <!-- 发布时间 -->
+                    <span style="font-size: 15px;" th:text="'发布于 '+ ${blog.created}" />
+                    <h2>
+                        <!-- 文章标题 -->
+                        <div><a style="color: #0f9ae0;font-size: 20px;" th:text="${blog.title}" />
+                        </div>
+                    </h2>
+                    <!-- 文章内容-->
+                    <div style="font-size: 16px;" th:text="${blog.content}" />
+                </div>
+            </article>
+        </div>
+        <div class="pages">
+            <div class="page_wrap">
+                <th:block th:if="${null != pageResult and !#lists.isEmpty(pageResult.list)}">
+            <span class="page_span1">
+                <a th:href="@{'/index?keyword='+${keyword==null?'':keyword}+'&page=1' +'&goodsCategoryId='+${goodsCategoryId==null?'':goodsCategoryId}+'&orderBy='+${orderBy==null?'':orderBy}}">
+                                    首页
+                                </a>
+                 <a th:href="@{${pageResult.currPage==1}?'##':'/index?keyword='+${keyword==null?'':keyword}+'&page=' + ${pageResult.currPage-1}+'&goodsCategoryId='+${goodsCategoryId==null?'':goodsCategoryId}+'&orderBy='+${orderBy==null?'':orderBy}}">
+                                    < 上一页
+                                </a>
+                <th:block th:if="${pageResult.currPage-2 >=1}"><a
+                        th:href="@{'/index?keyword='+${keyword==null?'':keyword}+'&page=' + ${pageResult.currPage-2}+'&goodsCategoryId='+${goodsCategoryId==null?'':goodsCategoryId}+'&orderBy='+${orderBy==null?'':orderBy}}"
+                        th:text="${pageResult.currPage -2}">1</a></th:block>
+                <th:block th:if="${pageResult.currPage-1 >=1}"><a
+                        th:href="@{'/index?keyword='+${keyword==null?'':keyword}+'&page=' + ${pageResult.currPage-1}+'&goodsCategoryId='+${goodsCategoryId==null?'':goodsCategoryId}+'&orderBy='+${orderBy==null?'':orderBy}}"
+                        th:text="${pageResult.currPage -1}">1</a></th:block>
+                <a href="##" class="active" th:text="${pageResult.currPage}">1</a>
+                <th:block th:if="${pageResult.currPage+1<=pageResult.totalPage}"><a
+                        th:href="@{'/index?keyword='+${keyword==null?'':keyword}+'&page=' + ${pageResult.currPage+1}+'&goodsCategoryId='+${goodsCategoryId==null?'':goodsCategoryId}+'&orderBy='+${orderBy==null?'':orderBy}}"
+                        th:text="${pageResult.currPage +1}">1</a></th:block>
+                <th:block th:if="${pageResult.currPage+2<=pageResult.totalPage}"><a
+                        th:href="@{'/index?keyword='+${keyword==null?'':keyword}+'&page=' + ${pageResult.currPage+2}+'&goodsCategoryId='+${goodsCategoryId==null?'':goodsCategoryId}+'&orderBy='+${orderBy==null?'':orderBy}}"
+                        th:text="${pageResult.currPage +2}">1</a></th:block>
+                 <a th:href="@{${pageResult.currPage>=pageResult.totalPage}?'##':'/index?keyword='+${keyword==null?'':keyword}+'&page=' + ${pageResult.currPage+1}+'&goodsCategoryId='+${goodsCategoryId==null?'':goodsCategoryId}+'&orderBy='+${orderBy==null?'':orderBy}}">
+                                    下一页 >
+                                </a>
+                <a th:href="@{'/index?keyword='+${keyword==null?'':keyword}+'&page=' + ${pageResult.totalPage}+'&goodsCategoryId='+${goodsCategoryId==null?'':goodsCategoryId}+'&orderBy='+${orderBy==null?'':orderBy}}">
+                                    尾页
+                                </a>
+					</span>
+                </th:block>
+            </div>
+        </div>
+    </div>
+    <!-- 博主信息描述 -->
+    <div class="am-u-md-4 am-u-sm-12 blog-sidebar">
+        <div class="blog-sidebar-widget blog-bor">
+            <h2 class="blog-text-center blog-title"><span>子慕</span></h2>
+            <img th:src="@{/assets/img/me.jpg}" alt="about me" class="blog-entry-img"/>
+            <p>
+                Java后台开发
+            </p>
+            <p>个人博客小站，主要发表关于Java、Spring、Docker等相关文章</p>
+        </div>
+        <div class="blog-sidebar-widget blog-bor">
+            <h2 class="blog-text-center blog-title"><span>联系我</span></h2>
+            <p>
+                <a><span class="am-icon-github am-icon-fw blog-icon"></span></a>
+                <a><span class="am-icon-weibo am-icon-fw blog-icon"></span></a>
+            </p>
+        </div>
+    </div>
+
+</div>
+</body>
+<!-- 载入文章尾部页面，位置在/client文件夹下的footer模板页面，模板名称th:fragment为footer -->
+<!--<div th:replace="/client/footer::footer" />-->
+</html>
