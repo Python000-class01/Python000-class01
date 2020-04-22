@@ -1,0 +1,7 @@
+{% extends "home/base_layout.html" %} {% block title %}Welcome{% endblock %} 
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/timeline.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/morris.css') }}">
+{% endblock %} 
+

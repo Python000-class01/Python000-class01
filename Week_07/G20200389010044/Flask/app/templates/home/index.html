@@ -1,0 +1,13 @@
+{% extends "home/base_layout.html" %} {% block title %}Homepage{% endblock %} 
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/timeline.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/morris.css') }}">
+{% endblock %} 
+
+{% block js %}
+    {{ super() }}
+    <script src="{{ url_for('static', filename='js/raphael-min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/morris.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/morris-data.js')}}"></script>
+{% endblock %}
