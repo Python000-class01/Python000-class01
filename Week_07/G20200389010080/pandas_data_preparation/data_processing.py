@@ -19,7 +19,7 @@ df_movie.columns = ['id1', 'comment']
 
 # 数据清洗
 df_movie.dropna()
-df_movie.drop_duplicates(subset=comment)
+df_movie.drop_duplicates(subset='comment')
 
 
 
