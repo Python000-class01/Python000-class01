@@ -1,0 +1,166 @@
+{% extends "base_layout.html" %} {% block title %}Welcome{% endblock %} 
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/timeline.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/morris.css') }}">
+{% endblock %} 
+{% block content %}
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Dashboard</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-8">
+      <script src="{{ url_for('static', filename='js/Chart.min.js')}}"></script>
+      <h2>评论搜索</h2>
+      
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <ul class="flashes">
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
+      {% from "_formhelpers.html" import render_field %}
+      <form method="post">
+          <p>
+          {{ render_field(form.search) }}
+        </p>
+        <p><input type="submit" value="Search">
+      </p></form>
+      
+        <!-- /.panel -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-bar-chart-o fa-fw"></i> SMZDM商品评论（部分）
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>id</th>
+                                        <th>Author</th>
+                                        <th>Date</th>
+                                        <th>Content</th>
+                                        <th>sentiment</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for comment in comments %}
+                                        <tr>
+                                            <td>{{comment.id}}</td>
+                                            <td>{{comment.author}}</td>
+                                            <td>{{comment.date}}</td>
+                                            <td>{{comment.content}}</td>
+                                            <td>{{comment.sentiment}}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.table-responsive -->
+                    </div>
+                    <!-- /.col-lg-4 (nested) -->
+
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+
+    </div>
+
+</div>
+
+
+
+<br>
+<br>
+
+<div class="container">
+    <h2>每日评论采集量</h2>
+    <div>
+      <canvas id="myChart"></canvas>
+    </div>
+  </div>
+
+
+  <script>
+  var ctx = document.getElementById("myChart").getContext('2d');
+var myChart = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: [{% for item in bar_chart_data %}
+               "{{ item[0] }}",
+              {% endfor %}],
+
+    datasets: [{
+      label: '评论数量',
+      data: [{% for item in bar_chart_data %}
+               {{ item[1] | int }},
+              {% endfor %}],
+      backgroundColor: "rgba(153,255,51,1)"
+    }]
+  }
+});
+
+</script>
+
+<br>
+<br>
+
+<div class="container">
+  <h2>舆情正负向</h2>
+  <div>
+    <canvas id="myChart2"></canvas>
+  </div>
+</div>
+
+<script>
+var ctx = document.getElementById("myChart2").getContext('2d');
+var myChart2 = new Chart(ctx, {
+  type: 'pie',
+  data: {
+    labels: [{% for item in pie_chart_data %}
+               "{{ item.type }}",
+              {% endfor %}],
+    datasets: [{
+      backgroundColor: [
+        "#2ecc71",
+        "#3498db",
+        "#95a5a6",
+        "#9b59b6",
+        "#f1c40f",
+        "#e74c3c",
+        "#34495e"
+      ],
+      data: [{% for item in pie_chart_data %}
+               "{{ item.count }}",
+              {% endfor %}],
+    }]
+  }
+});
+</script>
+
+
+<!-- /.row -->{% endblock %}
+{% block js %}
+    {{ super() }}
+    <script src="{{ url_for('static', filename='js/raphael-min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/morris.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/morris-data.js')}}"></script>
+{% endblock %}
+
+
