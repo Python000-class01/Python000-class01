@@ -12,3 +12,13 @@ class T1(db.Model):
     # time = db.Column(db.String(45))
     content = db.Column(db.String(800))
     sentiment = db.Column(db.String(45))
+
+
+class Figure():
+    
+    def histogram(dateLst, numLst):
+        pass
+
+
+    def pie(pos, neg):
+        pass

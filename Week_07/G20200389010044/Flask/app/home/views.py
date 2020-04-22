@@ -2,6 +2,8 @@ from flask import render_template
 from . import home
 from app.models import *
 from app import db
+import pandas
+
 @home.route('/')
 def index():
         return render_template('/home/index.html')
@@ -22,9 +24,8 @@ def result():
 @home.route('/histogram')
 def histogram():
         shorts = T1.query.all()
-        return render_template('/home/histogram.html', shorts=shorts)
+        return render_template('/home/histogram.html')
         
 @home.route('/pie')
 def pie():
-        shorts = T1.query.all()
-        return render_template('/home/pie.html', shorts=shorts)
+        return render_template('/home/pie.html')
