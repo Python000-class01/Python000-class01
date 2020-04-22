@@ -46,7 +46,7 @@ def echarts():
     return render_template('/echarts.html')
 
 @homeBP.route('/ai', methods=('GET', 'POST'))
-# @login_required
+@login_required
 def ai():
     page = 1
     pagesize = 10
@@ -71,17 +71,34 @@ def ai():
     return render_template('/ai.html')
 
 # 表格
-@homeBP.route('/api/newstable', methods=('GET', ))
-# @login_required
+@homeBP.route('/api/newstable', methods=('POST', 'GET'))
+@login_required
 def newstable():
-    page = int(request.args.get("page"))                 # 获取 get 参数
-    limit = int(request.args.get('limit'))
-    response = get_news(page, limit)
+    if request.method == 'GET':
+        # page = int(request.args.get("page"))                 # 获取 get 参数
+        # limit = int(request.args.get('limit'))
+        # search_key = request.args.get('search_key')
+        pass
+    if request.method == 'POST':
+        print('in to post')
+        import json
+        # data = json.loads(request.form['dataArray'])
+        # page = data["page"]
+        # limit = data["limit"]
+        # search_key = data["search_key"]
+        page = int(request.form['page'])
+        limit = int(request.form['limit'])
+        if 'search_key' in request.form:
+            search_key = request.form['search_key']
+        else:
+            search_key = None
+    response = get_news(page, limit, search_key)
     return jsonify(response)
 
 
 # 柱状图
 @homeBP.route("/barChart")
+@login_required
 def get_bar_chart():
     c = bar_base()
     return c.dump_options_with_quotes()
@@ -89,6 +106,7 @@ def get_bar_chart():
 
 # 饼图
 @homeBP.route("/pieChart")
+@login_required
 def get_pie_chart():
     c = pie_base()
     return c.dump_options_with_quotes()
@@ -96,6 +114,7 @@ def get_pie_chart():
 
 # 词云
 @homeBP.route("/wordcloud")
+@login_required
 def get_wordcloud_chart():
     c = wordcloud_base()
     return c.dump_options_with_quotes()
@@ -111,17 +130,13 @@ def login():
     loginForm = LoginForm()
 
     if request.method == 'POST':
-        # 验证form表单格式是否合法
         print(loginForm.validate_on_submit())
         if loginForm.validate_on_submit():
             username = loginForm.username.data
             password = loginForm.password.data
 
-            # 从db获取用户账号
             usr = User.query.filter(User.username == username).one_or_none()
-            # 判断用户
             if usr and usr.verify_password(password):
-                # 处理session及其他
                 login_user(usr, loginForm.remeberme.data)
                 return redirect(url_for("home.ai"))
             else:
@@ -137,9 +152,6 @@ from  flask_login import  logout_user
 @homeBP.route('/logout')
 @login_required
 def logout():
-    """
-    登出
-    """
     logout_user()
     return redirect(url_for('home.login'))
 
@@ -148,9 +160,6 @@ def logout():
 from .forms import RegisterForm
 @homeBP.route('/register', methods=['GET', 'POST'])
 def register():
-    """
-    注册
-    """
     registerForm = RegisterForm()
 
     if request.method == 'POST':

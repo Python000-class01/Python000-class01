@@ -14,10 +14,11 @@ from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 db.init_app(app)
 
-from . import models
+from . import models   
+app.cli.add_command(models.init_db_command) 
 
 login_manager.init_app(app)
-login_manager.session_protection = 'basic'
+login_manager.session_protection = 'basic' 
 login_manager.login_view = 'home.login'
 login_manager.login_message ='请先登录'
 

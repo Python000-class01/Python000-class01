@@ -64,11 +64,19 @@ DOWNLOADER_MIDDLEWARES = {
 #    'scrapy.extensions.telnet.TelnetConsole': None,
 #}
 
+
+MYSQL_HOST = '127.0.0.1'
+MYSQL_DBNAME = 'test'
+MYSQL_USER = 'root'
+MYSQL_PASSWD ='CTznwg17/8/31'
+MYSQL_PORT = 53306              # 是 int 型
+
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
 #    'News.pipelines.NewsPipeline': 300,
-   'News.pipelines.DbSqlitePipeline': 300,
+#    'News.pipelines.DbSqlitePipeline': 300,
+    'News.pipelines.MysqlPipeline': 301,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

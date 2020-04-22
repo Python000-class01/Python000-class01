@@ -18,13 +18,13 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="{{ url_for('home.index') }}" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
+              <a href="{{ url_for('home.index') }}" class="site_title"><i class="fa fa-paw"></i> <span>吧啦吧啦!</span></a>
             </div>
 
             <div class="clearfix"></div>
 
             <!-- menu profile quick info -->
-            <div class="profile clearfix">
+            <!-- <div class="profile clearfix">
               <div class="profile_pic">
                 <img src="{{ url_for('static', filename='images/img.jpg') }}" alt="..." class="img-circle profile_img">
               </div>
@@ -32,7 +32,7 @@
                 <span>Welcome,</span>
                 <h2>John Doe</h2>
               </div>
-            </div>
+            </div> -->
             <!-- /menu profile quick info -->
 
             <br />
@@ -70,7 +70,7 @@
               <ul class=" navbar-right">
                 <li class="nav-item dropdown open" style="padding-left: 15px;">
                   <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                    <img src="{{ url_for('static', filename='images/img.jpg') }}" alt="">John Doe
+                    <img src="{{ url_for('static', filename='images/img.jpg') }}" alt="">{{ current_user.username }}
                   </a>
                   <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item"  href="javascript:;"> Profile</a>
@@ -79,7 +79,7 @@
                         <span>Settings</span>
                       </a>
                   <a class="dropdown-item"  href="javascript:;">Help</a>
-                    <a class="dropdown-item"  href="{{ url_for('home.logout') }}"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                    <a class="dropdown-item"  href="{{ url_for('home.logout') }}"><i class="fa fa-sign-out pull-right"></i> 注销登录</a>
                   </div>
                 </li>
 

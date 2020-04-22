@@ -8,6 +8,7 @@ from app.models import User
 from app.models import User
 
 class LoginForm(FlaskForm):
+
     username = StringField(
         label=u"用户名",
         validators=[DataRequired(u"请输入用户名！")],
@@ -39,9 +40,6 @@ class LoginForm(FlaskForm):
 
 
 class RegisterForm(FlaskForm):
-    """
-    注册表单
-    """
     username = StringField(
         label='Username',
         validators=[
@@ -57,15 +55,9 @@ class RegisterForm(FlaskForm):
     submit = SubmitField(label=u'注册')
 
     def validate_email(self, field):
-        """
-        验证邮件地址是否已在库中
-        """
         if User.query.filter_by(email=field.data.lower()).first():
             raise ValidationError('The email is already in use.')
 
     def validate_username(self, field):
-        """
-        验证用户是否已在库中
-        """
         if User.query.filter_by(username=field.data).first():
             raise ValidationError('The username is already in use.')

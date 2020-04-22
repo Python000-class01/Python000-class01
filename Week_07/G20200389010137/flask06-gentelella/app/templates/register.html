@@ -12,28 +12,44 @@
       <div class="login_wrapper">
         <div class="animate form login_form">
           <section class="login_content">
-            <form action="/login", method="POST">
-              {% for msg in get_flashed_messages() %} {{ msg }} {% endfor %}
+            <form  action="/register"  method="POST">
               {{form.csrf_token}}
 
-              <h1>你来啦！</h1>
+              <h1>成为注册用户吧！</h1>
               <div>
+                <!-- <input type="text" class="form-control" placeholder="Username" required="" /> -->
                 {{form.username(class="form-control", placeholder="用户名...")}}
+                {% for message in form.username.errors %}
+                    {{ message }}
+                  {% endfor %}
               </div>
               <div>
+                <!-- <input type="password" class="form-control" placeholder="Password" required="" /> -->
                 {{form.password(class="form-control", placeholder="密码...")}}
+
               </div>
               <div>
-                <input type="submit" value="登录" class="btn btn-default submit">
+                <!-- <input type="password" class="form-control" placeholder="Password" required="" /> -->
+                {{form.reppassword(class="form-control", placeholder="确认密码...")}}
+                {% for message in form.password.errors %}
+                    {{ message }}
+                  {% endfor %}
+
+                  {% for msg in get_flashed_messages() %}
+                  <div>{{ msg }} </div>
+                  {% endfor %}
+              </div>
+              <div>
+                <!-- <a class="btn btn-default submit" href="index.html">Log in</a> -->
+                <input type="submit" value="注册" class="btn btn-default submit">
                 <a class="reset_pass" href="#">Lost your password?</a>
               </div>
 
               <div class="clearfix"></div>
 
               <div class="separator">
-                <p class="change_link">New to site?
-                  <!-- <a href="#signup" class="to_register"> Create Account </a> -->
-                  <a href="{{ url_for('home.register') }}" class="to_register"> Create Account </a>
+                <p class="change_link">有账号?
+                  <a href="{{ url_for('home.login') }}" class="to_register"> 去登录 </a>
                 </p>
 
                 <div class="clearfix"></div>

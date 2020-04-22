@@ -32,7 +32,7 @@ class WeitoutiaoSpider(scrapy.Spider):
         subRawDatasList = json.loads(content)["sub_raw_datas"]
         for i in subRawDatasList:
             item['content_id'] = i['raw_data']['content_id']
-            item['desc'] = i['raw_data']['desc']
+            item['ndesc'] = i['raw_data']['desc']
             item['event_time'] = i['raw_data']['event_time']
             item['event_date'] = datetime.datetime.fromtimestamp(item['event_time']).strftime('%Y-%m-%d')
             # print(content_id, event_time, desc)

@@ -1,6 +1,6 @@
 from app.models import *
 from app import db
-from sqlalchemy import distinct, func
+from sqlalchemy import distinct, func, or_
 
 from pyecharts.charts import Bar, Pie, WordCloud
 from pyecharts import options as opts
@@ -8,40 +8,61 @@ from pyecharts import options as opts
 import json, time
 import pandas as pd
 
-def get_news(page, limit) -> dict:
+def get_news(page, limit, search_key) -> dict:
+    """分页方式获取新闻纪录
+    :page: int
+    :limit: int
+    """
+    db.session.commit()
+    if search_key:
+        rule = f'%{search_key}%'
+        pagination = (
+            db.session
+            .query(News.content_id, News.ndesc, News.event_time, News.collect_time, Sentiments.sentiment)
+            .outerjoin(Sentiments)
+            .order_by(News.event_time.desc())
+            .filter(News.ndesc.like(rule))     # 多列搜索是用 or_ 实现的
+            .paginate(page=page, per_page=limit, error_out=False)
+        )
+    else:
+        pagination = (
+            db.session
+            .query(News.content_id, News.ndesc, News.event_time, News.collect_time, Sentiments.sentiment)
+            .outerjoin(Sentiments)  # 有 relationship 定义时简写
+            # .outerjoin(Sentiments, News.content_id==Sentiments.content_id)    #无relationship 定义时
+            .order_by(News.event_time.desc())
+            .paginate(page=page, per_page=limit, error_out=False)
+        )
 
-    pagination = (
-        db
-        .session
-        .query(News.content_id, News.desc, News.event_time, News.collect_time, Sentiments.sentiment)
-        .join(Sentiments, News.content_id==Sentiments.content_id)
-        .order_by(News.event_time.desc())
-        .paginate(page=page, per_page=limit, error_out=False)
-    )
-
-    cols = ['content_id', 'desc', 'sentiment', 'event_time', 'collect_time']
-    data = [{col: getattr(d, col) for col in cols} for d in pagination.items]
-
-    df = pd.DataFrame(data)
-    df['采集时间'] = (
-        df['collect_time']
-        .apply(lambda x:
-            time.strftime('%Y/%m/%d %H:%M:%S', time.localtime(float(x)))
-            )
-    )
-    df.drop(['collect_time'], inplace=True, axis=1)
-    df['发布时间'] = (
-        df['event_time']
-        .apply(lambda x:
-            time.strftime('%Y/%m/%d %H:%M:%S', time.localtime(float(x)))
-            )
-    )
-    df.drop(['event_time'], inplace=True, axis=1)
     response = dict()
-    response['data'] = df.to_dict(orient='records')     # 直接赋值data即可，这里 df 是用来处理时间戳转换
+
+    cols = ['content_id', 'ndesc', 'sentiment', 'event_time', 'collect_time']
+    data = [{col: getattr(d, col) for col in cols} for d in pagination.items]
+    df = pd.DataFrame(data)
+
+    if df.empty:
+        response['data'] = None
+    else:
+        df['采集时间'] = (
+            df['collect_time']
+            .apply(lambda x:
+                time.strftime('%Y/%m/%d %H:%M:%S', time.localtime(float(x)))
+                )
+        )
+        df.drop(['collect_time'], inplace=True, axis=1)
+        df['发布时间'] = (
+            df['event_time']
+            .apply(lambda x:
+                time.strftime('%Y/%m/%d %H:%M:%S', time.localtime(float(x)))
+                )
+        )
+        df.drop(['event_time'], inplace=True, axis=1)
+        response['data'] = df.to_dict(orient='records') 
+
     response['limt'] = limit
     response['total'] = pagination.total
     return response
+
 
 # 柱状图
 def bar_base() -> Bar:
@@ -57,12 +78,8 @@ def bar_base() -> Bar:
     yaxis = [ i[1] for i in data]
     c = (
         Bar()
-        # .add_xaxis(["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"])
         .add_xaxis(xaxis)
         .add_yaxis('采集数量(条)', yaxis, color='#26B99A')
-        # .add_yaxis('采集数量(条)', yaxis, temstyle_opts=opts.ItemStyleOpts(color='red'))
-        # .add_yaxis("商家A", [randrange(0, 100) for _ in range(len(xaxis))])
-        # .add_yaxis("商家B", [randrange(0, 100) for _ in range(len(xaxis))])
         .set_global_opts(title_opts=opts.TitleOpts(title="Bar-基本示例", subtitle="我是副标题"))
     )
     return c
@@ -78,18 +95,16 @@ def pie_base() -> Pie:
         Pie()
         .add("", [['正向', zheng], ['负向', fan]])
         .set_colors(["#E74C3C", "#3498DB"])
-        # .set_colors(["blue", "green", "yellow", "red", "pink", "orange", "purple"])
         .set_global_opts(title_opts=opts.TitleOpts(title="Pie-情感分析"))
-        # .set_series_opts(label_opts=opts.LabelOpts(formatter="{b}: {c}"))
         )
     return c
 
 # 词云
 def wordcloud_base() -> WordCloud:
     """词云"""
+    from sqlalchemy.orm import load_only
     data = (
-        User.query
-        .with_entities(News.desc)
+        db.session.query(News.ndesc)
         .order_by(News.event_time.desc())
         .limit(100)
         .all()
