@@ -1,0 +1,150 @@
+{% extends "home/base_layout.html" %} {% block title %}Welcome{% endblock %} 
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/timeline.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/morris.css') }}">
+{% endblock %} 
+{% block content %}
+
+
+
+<div class="row">
+    <div class="col-lg-8">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-bar-chart-o fa-fw"></i> 1小时内数据采集量统计图
+
+
+
+                <div class="pull-right">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                            Actions
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu pull-right" role="menu">
+                            <li><a href="#">Action</a>
+                            </li>
+                            <li><a href="#">Another action</a>
+                            </li>
+                            <li><a href="#">Something else here</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a href="#">Separated link</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- /.panel-heading -->
+
+            <form>
+                <input id="cnt0" type="hidden" value="{{ cnt[0] }}">
+                <input id="cnt1" type="hidden" value="{{ cnt[1] }}">
+                <input id="cnt2" type="hidden" value="{{ cnt[2] }}">
+                <input id="cnt3" type="hidden" value="{{ cnt[3] }}">
+                <input id="cnt4" type="hidden" value="{{ cnt[4] }}">
+                <input id="cnt5" type="hidden" value="{{ cnt[5] }}">
+            </form>
+
+            <div class="panel-body">
+                <div id="morris-bar-chart"></div>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-bar-chart-o fa-fw"></i> 舆情数据展示
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover table-striped">
+                                <thead>
+                                    {% if search_keyword %}
+                                        <tr>搜索关键词：{{ search_keyword }}</tr>
+                                    {% else %}
+                                        <tr>搜索关键词：None</tr>
+                                    {% endif %}
+
+                                    <tr>
+                                        <th>用户名</th>
+                                        <th>得分</th>
+                                        <th>评论</th>
+                                        <th>是否正向</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for comment in comments %}
+                                        <tr>
+                                            <td>{{ comment.user_name }}</td>
+                                            <td>{{ comment.score }}</td>
+                                            <td>{{ comment.content }}</td>
+                                            <td>{{ comment.positive }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.table-responsive -->
+                    </div>
+                    <!-- /.col-lg-4 (nested) -->
+
+                </div>
+                <!-- /.row -->
+            </div>
+
+            <div class="panel-body">
+                <form role="form" action="/search" method="POST">
+                    <fieldset>
+                        <div class="form-group">
+                            {{search_form.csrf_token}}
+                            {{ search_form.keyword.label }} : {{ search_form.keyword }}
+                        </div>
+
+                        <!-- Change this to a button or input when using this as a form -->
+                        <input type="submit" value="提交" />
+                    </fieldset>
+                </form>
+            </div>
+
+
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+
+    </div>
+    <!-- /.col-lg-8 -->
+    <div class="col-lg-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-bar-chart-o fa-fw"></i> 正负向情感比例图
+            </div>
+            <div class="panel-body">
+
+                <form>
+                    <input id="positive" type="hidden" value="{{ positive }}">
+                    <input id="negative" type="hidden" value="{{ negative }}">
+                </form>
+
+
+                <div id="morris-sentiment-chart"></div>
+                <a href="#" class="btn btn-default btn-block">View Details</a>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-4 -->
+</div>
+
+<!-- /.row -->{% endblock %}
+{% block js %}
+    {{ super() }}
+    <script src="{{ url_for('static', filename='js/raphael-min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/morris.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/morris-data.js')}}"></script>
+{% endblock %}
