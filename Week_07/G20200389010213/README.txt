@@ -1,0 +1,4 @@
+本文件夹包括三部分：
+1.zhihu_scrapy/是自动抓取知乎某问题评论，用scrapy和apscheduler实现，抓取的数据存入zhihu.db.
+2.analysis.py是用pandas和snowNLP来做的情感分析，然后再存入统一的sqlite3数据库中，数据库在camp/zhihu_scrapy/zhihu.db
+3.zhihu_flask是想用Flask把zhihu.db中的内容show出来，但没完成。
