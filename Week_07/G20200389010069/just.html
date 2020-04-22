@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="{{ url_for('static', filename='echarts.min.js') }}"></script>
+    <title></title>
+    <style>
+        *{
+            margin: 0; padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="top" style="width: 1200px; height: 400px; padding: 20px;"></div>
+    <div id="bottom" style="width: 1200px; height: 400px; padding: 20px;"></div>
+    <script type="text/javascript">
+        var myTop = echarts.init(document.getElementById('top'));
+        var myBottom = echarts.init(document.getElementById('bottom'));
+
+        optionTop = {
+            title: {
+                text: 'Top 10 Project By Date',
+                left: 0,
+                top: -5,
+                subtextStyle: {
+                    fontWeight: 'bolder'
+                },
+            },
+            toolbox: {
+                show: true,
+                right: 80,
+                feature: {
+                    saveAsImage: {}
+                }
+            },
+            legend: {
+                show: true,
+                data: ['', '', {% for p in ProductMName %}'{{ p }}', {% endfor %}],
+                right: 0
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            grid: {
+                bottom: 90
+            },
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                name: 'Month of FeedbackDate',
+                nameLocation: 'center',
+                nameGap: 22,
+                data: [{% for m in Month %}'{{ m }}', {% endfor %}],
+                silent: false,
+                splitLine: {
+                    show: false
+                },
+                splitArea: {
+                    show: false
+                },
+                nameTextStyle: {
+                    fontWeight: 'bolder'
+                }
+            },
+            yAxis: {
+                type: 'value',
+                name: 'FeedbackCnt',
+                nameLocation: 'center',
+                nameGap: 42,
+                splitArea: {
+                    show: false
+                },
+                nameTextStyle: {
+                    fontWeight: 'bolder'
+                }
+            },
+            series: [
+                {% for pr, cnt in ProductMName|zip(Count) %}{
+                name: '{{ pr }}',
+                type: 'line',
+                data: {{ cnt }},
+                symbol: 'circle',
+                symbolSize: 1
+                }, {% endfor %}
+            ]
+        };
+
+        optionBottom = {
+            title: {
+                text: 'Top 10 Project By Feedback Count',
+                left: 0,
+                top: -5,
+                subtextStyle: {
+                    fontWeight: 'bolder'
+                },
+            },
+            toolbox: {
+                show: true,
+                feature: {
+                    saveAsImage: {}
+                }
+            },
+            legend: {
+                show: false
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            grid: {
+                bottom: 90
+            },
+            xAxis: {
+                type: 'category',
+                data: [{% for p in ProductMName %}'{{ p }}', {% endfor %}],
+                name: 'Products',
+                nameLocation: 'center',
+                nameGap: 22,
+                silent: false,
+                splitLine: {
+                    show: false
+                },
+                splitArea: {
+                    show: false
+                },
+                nameTextStyle: {
+                    fontWeight: 'bolder'
+                },
+                axisLabel: {
+                    interval: 0,
+                    formatter:function(value){
+                        var ret = "";
+                        var maxLength = 18;
+                        var valLength = value.length;
+                        var rowN = Math.ceil(valLength / maxLength);
+                        if (rowN > 1)
+                        {
+                            for (var i=0; i<rowN; i++){
+                            var temp = "";
+                            var start = i * maxLength;
+                            var end = start + maxLength;
+                            temp = value.substring(start, end) + "\n";
+                            ret += temp;
+                            }
+                                return ret;
+                        }else{
+                            return value;
+                        }
+                    }
+                }
+            },
+            yAxis: {
+                type: 'value',
+                name: 'FeedbackCnt',
+                nameLocation: 'center',
+                nameGap: 42,
+                splitArea: {
+                    show: false
+                },
+                nameTextStyle: {
+                    fontWeight: 'bolder'
+                }
+            },
+            series: [
+                {
+                type: 'bar',
+                data: [{% for tcnt in TotleCount %}{{ tcnt }}, {% endfor %}]
+                }
+            ]
+        };
+
+        myTop.setOption(optionTop);
+        myBottom.setOption(optionBottom);
+
+    </script>
+</body>
+</html>
