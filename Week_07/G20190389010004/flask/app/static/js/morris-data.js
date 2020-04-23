@@ -92,7 +92,6 @@ $(function() {
 
     Morris.Bar({
         element: 'morris-bar-chart',
-        // data: showData,
         data: [{'day': '2020-04-19', 'sum': 23}, {'day': '2020-04-22', 'sum': 20}],
         xkey: 'day',
         ykeys: ['sum'],

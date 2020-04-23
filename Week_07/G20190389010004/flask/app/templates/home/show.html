@@ -44,20 +44,6 @@
         <!-- /.panel -->
     </div>
     <!-- /.col-lg-6 -->
-    <div class="col-lg-6">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                Area Chart Example
-            </div>
-            <!-- /.panel-heading -->
-            <div class="panel-body">
-                <div id="morris-area-chart"></div>
-            </div>
-            <!-- /.panel-body -->
-        </div>
-        <!-- /.panel -->
-    </div>
-    <!-- /.col-lg-6 -->
 </div>
 
 {% endblock %}
@@ -65,17 +51,27 @@
     {{ super() }}
     <script src="{{ url_for('static', filename='js/raphael-min.js')}}"></script>
     <script src="{{ url_for('static', filename='js/morris.min.js')}}"></script>
-    <script src="{{ url_for('static', filename='js/morris-data.js')}}"></script>
-    <!-- <script type="text/javascript">      
+    <!-- <script src="{{ url_for('static', filename='js/morris-data.js')}}"></script> -->
+    <script type="text/javascript">
+        var showData = JSON.parse('{{ showData|tojson }}');
+        var pn = JSON.parse('{{ pn|tojson }}');
+
         Morris.Bar({
-        element: 'morris-bar-chart',
-        // 不能显示原因，待排查
-        data: showData,
-        xkey: 'day',
-        ykeys: ['sum'],
-        labels: ['Data'],
-        hideHover: 'auto',
+            element: 'morris-bar-chart',
+            data: showData,
+            xkey: 'day',
+            ykeys: ['sum'],
+            labels: ['评论总数'],
+            hideHover: 'auto',
+            resize: true
+        });  
+
+        Morris.Donut({
+        element: 'morris-donut-chart',
+        data: pn,
         resize: true
-        }); 
-    </script> -->
+        });
+    </script>
+
+
 {% endblock %}

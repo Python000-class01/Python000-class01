@@ -3,6 +3,7 @@ from . import home
 from app.models import SinaCommentSentiment
 from app import session
 from sqlalchemy import func, extract
+import json
 
 @home.route('/')
 def index():
@@ -19,9 +20,10 @@ def result():
 
 @home.route('/show')
 def show():
-    # 分组统计
+    # 分组统计（每日采集数据）
     query_result = session.query(extract('day', SinaCommentSentiment.time).label('day'), func.count('day')).group_by('day').all()
     showData = tupleListToDictList(query_result)
+    # 情感分析
     sentiments = session.query(SinaCommentSentiment.sentiment).all()
     pn = process(sentiments)
     return render_template('/home/show.html', showData=showData, pn=pn)
@@ -39,9 +41,9 @@ def process(tupleList):
     positive = 0
     negative = 0
     for num in tupleList:
-        num0 = num[0]
-        if num0 < 0.5:
+        if num[0] < 0.5:
             negative += 1
         else:
             positive += 1
-    return [positive, negative]
+    return [{'label': 'positive', 'value': positive},
+            {'label': 'negative', 'value': negative}]
