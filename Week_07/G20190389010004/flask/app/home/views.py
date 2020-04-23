@@ -1,9 +1,12 @@
-from flask import render_template
+from flask import render_template, request
 from . import home
 from app.models import SinaCommentSentiment
 from app import session
-from sqlalchemy import func, extract
+from sqlalchemy import func, extract, or_
 import json
+
+from forms import SearchForm
+import jieba
 
 @home.route('/')
 def index():
@@ -29,10 +32,21 @@ def show():
     pn = process(sentiments)
     return render_template('/home/show.html', showData=showData, pn=pn)
 
-@home.route('/search')
+@home.route('/search', methods=['GET', 'POST'])
 def search():
-    # TODO
-    return render_template('/home/search.html')
+    form = SearchForm()
+    if request.method == "POST":
+        if form.validate_on_submit():
+            keyword = form.keyword.data
+            # 对关键词分词
+            cut_keywords = jieba.cut_for_search(keyword)
+            results = search_sql(cut_keywords)
+            return render_template('/home/search.html', form = form, results=results)
+        else:
+            from flask import flash
+            flash('关键词不能为空')
+    return render_template('/home/search.html', form = form)
+
 
 def tupleListToDictList(tupleList):
     names = 'day sum'.split()
@@ -48,3 +62,10 @@ def process(tupleList):
             positive += 1
     return [{'label': 'positive', 'value': positive},
             {'label': 'negative', 'value': negative}]
+
+
+def search_sql(keywords):
+    result = SinaCommentSentiment.query.filter(
+        or_(SinaCommentSentiment.content.like("%" + keyword + "%") for keyword in keywords)
+        ).all()
+    return result

@@ -1,10 +1,89 @@
 {% extends "home/base_layout.html" %} {% block title %}Sample{% endblock %} 
+
 {% block content %}
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">To Be Done</h1>
+    <!--保留自己的head块内容 -->
+    <!-- {{super()}} -->
+
+    <!-- <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">To Be Done</h1>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="login-panel panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Type keywords</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form" action="/search" method="POST">
+                            <fieldset>
+                                <div class="form-group">
+                                    {{form.csrf_token}}
+                                    {{form.keyword.label}} : {{form.keyword}}
+                                </div>
+                                <!-- Change this to a button or input when using this as a form -->
+                                <input type="submit" value="搜索" /> 
+                            </fieldset>
+                        </form>
+    
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+
+    <div class="row">
+        <!-- /.col-lg-12 -->
+        <div class="col-lg-12">
+            <!-- /.panel -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bar-chart-o fa-fw"></i> 搜索结果展示
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>评论编号</th>
+                                            <th>评论内容</th>
+                                            <th>情感评分</th>
+                                            <th>评论日期</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for result in results %}
+                                            <tr>
+                                                <td>{{result.mid}}</td>
+                                                <td>{{result.content}}</td>
+                                                <td>{{result.sentiment}}</td>
+                                                <td>{{result.date}}</td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.col-lg-4 (nested) -->
+    
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+    
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
 {% endblock %}

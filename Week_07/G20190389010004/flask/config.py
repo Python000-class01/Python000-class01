@@ -1,3 +1,5 @@
+from datetime import timedelta
+
 class Config(object):
     # MYSQL
     MYSQL_HOST = 'localhost'
@@ -10,3 +12,8 @@ class Config(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = True
 
     DEBUG = True
+
+    SECRET_KEY =  'KEY'
+
+    # session
+    PERMANENT_SESSION_LIFETIME = timedelta(days=7)
