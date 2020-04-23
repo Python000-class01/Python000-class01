@@ -30,11 +30,17 @@ comment["sentiment"] = comment.content.apply(_sentiment)
 mid = comment['mid'].values.tolist()
 content = comment['content'].values.tolist()
 sentiment = comment['sentiment'].values.tolist()
-time = comment['time'].values.tolist()
+# time时间形式转换为date形式
+date = comment['time'].str[0:10].values.tolist()
+# time = comment['time'].values.tolist()
 
-sql = 'insert into sina_comment_sentiment(mid, content, sentiment, time) values (%s, %s, %s, %s)'
-values = [i for i in zip(mid, content, sentiment, time)]
+clear_sql = 'truncate table sina_comment_sentiment'
+cursor.execute(clear_sql)
+
+sql = 'insert into sina_comment_sentiment(mid, content, sentiment, date) values (%s, %s, %s, %s)'
+values = [i for i in zip(mid, content, sentiment, date)]
 cursor.executemany(sql, values)
+
 
 
 # 关闭mysql连接

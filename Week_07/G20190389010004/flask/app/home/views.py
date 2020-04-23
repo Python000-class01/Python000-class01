@@ -21,7 +21,8 @@ def result():
 @home.route('/show')
 def show():
     # 分组统计（每日采集数据）
-    query_result = session.query(extract('day', SinaCommentSentiment.time).label('day'), func.count('day')).group_by('day').all()
+    # query_result = session.query(extract('day', SinaCommentSentiment.time).label('day'), func.count(SinaCommentSentiment.mid)).group_by('day').all()
+    query_result = session.query(SinaCommentSentiment.date, func.count(SinaCommentSentiment.mid)).group_by(SinaCommentSentiment.date).all()
     showData = tupleListToDictList(query_result)
     # 情感分析
     sentiments = session.query(SinaCommentSentiment.sentiment).all()
