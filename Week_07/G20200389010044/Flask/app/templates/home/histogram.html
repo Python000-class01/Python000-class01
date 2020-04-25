@@ -1,44 +1,101 @@
 {% extends "home/base_layout.html" %} {% block title %}Welcome{% endblock %} 
 {% block head %}
     {{ super() }}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/timeline.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/morris.css') }}">
+    <script src="https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>
 {% endblock %} 
 {% block content %}
 <div class="row">
     <div class="col-lg-12">
-        <h1 class="page-header">图表数据</h1>
+        <h1 class="page-header">舆情数据获取规模统计</h1>
     </div>
     <!-- /.col-lg-12 -->
 </div>
-
 <!-- /.row -->
 <div class="row">
     <div class="col-lg-12">
-
         <!-- /.panel -->
         <div class="panel panel-default">
             <div class="panel-heading">
-                <i class="fa fa-bar-chart-o fa-fw"></i> 数据爬取量柱状图
+                <i class="fa fa-bar-chart-o fa-fw"></i> 每日获取数量
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
                 <div class="row">
                     <div class="col-lg-12">
+                        <!-- 引入 echarts.js -->
+                        <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+                        <div id="main" style="width: 100%;height:400px;"></div>
+                        <script type="text/javascript">
+                            // 基于准备好的dom，初始化echarts实例
+                            var myChart = echarts.init(document.getElementById('main'));
+                            var dateLst = dates
+                            // 指定图表的配置项和数据
+                            var option = {
+                                xAxis: {
+                                    type: 'category',
+                                    data: dateLst
+                                },
+                                yAxis: {
+                                    type: 'value'
+                                },
+                                series: [{
+                                    data: [120, 200, 150, 80, 70, 110, 130],
+                                    type: 'bar',
+                                    showBackground: true,
+                                    backgroundStyle: {
+                                        color: 'rgba(220, 220, 220, 0.8)'
+                                    }
+                                }]
+                            };
+                            // 使用刚指定的配置项和数据显示图表。
+                            myChart.setOption(option);
+                            var dates = [];    //名称数组（实际用来盛放X轴坐标值）
+                            var vals = [];    //数量数组（实际用来盛放Y坐标值）
+                            $.ajax({
+                            type : "get",
+                            url : "http://127.0.0.1:5000/echarts",    //请求发送到Servlet处
+                            dataType : "json",        //返回数据形式为json
+                            success : function(result) {
+                                //请求成功时执行该函数内容，result即为服务器返回的json对象
+                                if (result) {
+                                        for(var i=0;i<result["data"].length;i++){
+                                            dates.push(result["data"][i]["date"]);    //挨个取出名称并填入类别数组
+                                        }
+                                        for(var i=0;i<result["data"].length;i++){
+                                            vals.push(result["data"][i]["val"]);    //挨个取出数量并填入销量数组
+                                        }
+                                        myChart.hideLoading();    //隐藏加载动画
+                                        myChart.setOption({        //加载数据图表
+                                            xAxis: {
+                                                data: dates
+                                            },
+                                            series: [{
+                                                // 根据名字对应到相应的系列
+                                                name: '数量',
+                                                data: vals
+                                            }]
+                                        });
+                                }
+                            },
+                            error : function(errorMsg) {
+                                //请求失败时执行该函数
+                            alert("图表请求数据失败!");
+                            myChart.hideLoading();
+                            }
+                        })
+                        </script>
+                        <!-- /.table-responsive -->
                     </div>
                     <!-- /.col-lg-4 (nested) -->
-
                 </div>
                 <!-- /.row -->
             </div>
             <!-- /.panel-body -->
         </div>
         <!-- /.panel -->
-
     </div>
     <!-- /.col-lg-8 -->
-    
 </div>
 <!-- /.row -->{% endblock %}
-
 

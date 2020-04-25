@@ -9,8 +9,9 @@ class T1(db.Model):
     uid = db.Column(db.String(45))
     nick = db.Column(db.String(45))
     area = db.Column(db.String(45))
-    # time = db.Column(db.String(45))
+    pub_time = db.Column(db.String(45))
     content = db.Column(db.String(800))
+    crawl_time = db.Column(db.String(45))
     sentiment = db.Column(db.String(45))
 
 

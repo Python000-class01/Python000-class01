@@ -3,23 +3,25 @@ import requests
 from bs4 import BeautifulSoup as bs
 import re
 import json
-from datetime import datetime
+import datetime
 from news.items import NewsItem
 import pandas
 from snownlp import SnowNLP
-
+# http://comment5.news.sina.com.cn/comment/skin/default.html?channel=jc&newsid=comos-irczymi7491452&group=0
+# http://comment5.news.sina.com.cn/page/info?format=json&channel=jc&newsid=comos-irczymi7491452
 # http://comment.sina.com.cn/page/info?version=1&format=json&channel=jc&newsid=comos-irczymi7491452&group=0&compress=0&ie=utf-8&oe=utf-8&page={pageNum}&page_size=10&t_size=3&h_size=3&thread=1&uid=unlogin_user
 class SinaNewsSpider(scrapy.Spider):
     name = 'sina_news'
-    custom_settings = {
-        'LOG_LEVEL': 'ERROR'
-    }
+    # custom_settings = {
+    #     'LOG_LEVEL': 'ERROR'
+    # }
 
-    start_urls = ["http://comment5.news.sina.com.cn/comment/skin/default.html?channel=jc&newsid=comos-irczymi7491452&group=0"]
+    start_urls = ["http://comment5.news.sina.com.cn/page/info?format=json&channel=jc&newsid=comos-irczymi7491452"]
     
     def parse(self, response):
-        totalNum = 127
-        pageNum = totalNum // 10 + 1
+        jd = json.loads(response.text)
+        totalNum = jd['result']['count']['show']
+        pageNum = totalNum // 10 + 1 if totalNum % 10 != 0 else totalNum // 10
         index = 1
         while index <= pageNum:
             url = f"http://comment.sina.com.cn/page/info?version=1&format=json&channel=jc&newsid=comos-irczymi7491452&group=0&compress=0&ie=utf-8&oe=utf-8&page={index}&page_size=10&t_size=3&h_size=3&thread=1&uid=unlogin_user"
@@ -51,7 +53,8 @@ class SinaNewsSpider(scrapy.Spider):
                     timeLst.append(time)
 
             # 用pandas导出csv
-            data = pandas.DataFrame({"uid":uidLst, 'nick':nickLst, "area":areaLst, "time":time, "content":contentLst})
+            crawl_timeLst = [datetime.date.strftime(datetime.date.today(), "%Y-%m-%d")] * len(contentLst)
+            data = pandas.DataFrame({"uid":uidLst, 'nick':nickLst, "area":areaLst, "pub_time":timeLst, "content":contentLst, "crawl_time":crawl_timeLst} )
             data["sentiment"] = data.content.apply(self._sentiment)
             data.to_csv("../commentsData.csv", mode='a', index=False, header=False, sep=',', encoding = 'utf-8')
         except Exception as e:

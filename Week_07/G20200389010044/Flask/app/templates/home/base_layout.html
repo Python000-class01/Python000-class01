@@ -10,6 +10,7 @@
     <meta name="author" content="Allenh">
     <title>{% block title %}{% endblock %}- Admin Panel</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <script src="https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts.min.js"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/metisMenu.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/sb-admin-2.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
@@ -300,6 +301,8 @@
     <script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
     <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
     <script src="{{ url_for('static', filename='js/BS.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/echarts.js')}}"></script>
+
     <script src="{{ url_for('static', filename='js/metisMenu.min.js')}}"></script>
     <script src="{{ url_for('static', filename='js/sb-admin-2.js')}}"></script>
     {% endblock %}

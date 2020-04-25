@@ -25,7 +25,7 @@ def read_csv_to_mysql(filename):
         print(head)
         conn = get_conn()
         cur = conn.cursor()
-        sql = 'insert into comments(uid, nick, area, content, sentiment) values(%s, %s, %s, %s, %s)'
+        sql = 'insert into comments(uid, nick, area, pub_time, content, crawl_time, sentiment) values(%s, %s, %s, %s, %s, %s, %s)'
         for item in reader:
             args = tuple(item)
             print(args)

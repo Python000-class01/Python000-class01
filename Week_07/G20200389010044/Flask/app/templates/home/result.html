@@ -133,6 +133,10 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <i class="fa fa-bar-chart-o fa-fw"></i> 舆情详情
+                <form method="POST" action="{{ url_for('result/') }}">
+                    {{ form.keyword.label }}: {{ form.keyword(size=20) }}
+                    <input type="submit" value="Submit">
+                </form>
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
@@ -146,6 +150,7 @@
                                         <th>uid</th>
                                         <th>昵称</th>
                                         <th>地区</th>
+                                        <th>评论时间</th>
                                         <th>评论</th>
                                         <th>情感倾向</th>
                                     </tr>
@@ -157,6 +162,7 @@
                                             <td>{{short.uid}}</td>
                                             <td>{{short.nick}}</td>
                                             <td>{{short.area}}</td>
+                                            <td>{{short.pub_time}}</td>
                                             <td>{{short.content}}</td>
                                             <td>{{short.sentiment}}</td>
                                         </tr>
