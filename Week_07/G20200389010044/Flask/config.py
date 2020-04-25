@@ -10,3 +10,6 @@ class Config(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = True
 
     DEBUG = True
+
+    WTF_CSRF_ENABLED = True
+    SECRET_KEY = 'you-will-never-guess'

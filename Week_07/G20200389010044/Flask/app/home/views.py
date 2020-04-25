@@ -1,8 +1,9 @@
 from flask import render_template
 from flask import Response
 from flask_wtf import Form
-from wtforms import StringField
+from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
+from wtforms import validators
 from . import home
 from app.models import *
 from app import db
@@ -23,21 +24,21 @@ def homepage():
 def dashboard():
         return render_template('/home/dashboard.html')
 
-class MyForm(Form):
-    user = StringField('keyword', validators=[DataRequired()])
-
-@home.route('/result', methods=('GET', 'POST'))
+class SearchForm(Form):
+        keyword = StringField(u'keyword', [validators.required(), validators.length(max=10)])
+        submit = SubmitField('Search')
+@home.route('/result', methods = ['GET', 'POST'])
 def result():
-        form = MyForm(csrf_enabled = False)
+        form = SearchForm(csrf_enabled = False)
         if form.validate_on_submit():
-                # if form.user.data == 'admin':
-                keyword =  form.data['keyword']
+                keyword = form.keyword.data
                 shorts = T1.query.filter(T1.content.like('%'+keyword+'%'))
                 return render_template('/home/result.html', shorts=shorts, form = form)
         else:
                 shorts = T1.query.all()
                 return render_template('/home/result.html', shorts=shorts, form = form)
-                
+
+
 
 @home.route('/histogram')
 def histogram():
