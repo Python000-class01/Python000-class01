@@ -23,11 +23,14 @@ class PttGossipingSpider(scrapy.Spider):
         selector = lxml.etree.HTML(response.text)
         title = selector.xpath('//*[@id="main-content"]/div[3]/span[2]/text()')[0]
         cmt = selector.xpath('//*[@id="main-content"]/div[11]/span[3]/text()')[0]
-        
+        time = selector.xpath('//*[@id="main-content"]/div[78]/span[4]/text()')[0]
+
         # for i in range(11,12):
         #     cmt = selector.xpath('//*[@id="main-content"]/div['+str(i)+']/span[3]/text()')[0][2:]
         #     cmts.append(cmt)
 
         item['title'] = title
         item['cmt'] = cmt
+        item['time'] = time
+
         yield item

@@ -80,12 +80,13 @@ class PttPipeline(object):
         self.insert_db(item)
         return item
 
-    #插入数据
+    # 插入数据
     def insert_db(self, item):
         values = (
             item['title'],
             item['cmt'],
+            item['time']
         )
-
-        sql = 'INSERT INTO gossiping (title, cmt) VALUES (%s,%s)'
+        # INSERT IGNORE INTO避免資料重複
+        sql = 'INSERT IGNORE INTO gossiping (title, cmt, time) VALUES (%s,%s,%s)'
         self.db_cur.execute(sql, values)

@@ -14,3 +14,4 @@ class PttItem(scrapy.Item):
     # pass
     title = scrapy.Field()
     cmt = scrapy.Field()
+    time = scrapy.Field()
