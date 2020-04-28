@@ -9,7 +9,7 @@ The task here is run on local environment.
 The name of the folders and project may be confusing. The actually source for this task is a douban book instead of a piece of news.
 But the project and code base is also adapted to news. 
 
-It's recommended run the application on Chrome browser, it hasn't been tested on other browsers.
+It's recommended to run the application on Chrome browser, it hasn't been tested on other browsers.
 
 ### Project Structure
 
