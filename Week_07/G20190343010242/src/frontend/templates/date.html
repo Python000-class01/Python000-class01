@@ -21,13 +21,21 @@
     </div>
 
     <div class="container posts mt-0">
-        <form class="form-inline" method="POST" action="/search/{{ data.date }}/1">
+        <form class="form-inline" method="POST" action="/search/1">
             <label class="sr-only" for="search">Search comments</label>
             <div class="input-group mb-2 mr-sm-2">
                 <div class="input-group-prepend">
                     <div class="input-group-text">Search comments</div>
                 </div>
                 <input type="text" class="form-control" id="search" name="search" required>
+                <div class="input-group-prepend">
+                    <div class="input-group-text">Start Date</div>
+                </div>
+                <input type="date" class="form-control" id="startdate" name="startdate">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">End Date</div>
+                </div>
+                <input type="date" class="form-control" id="enddate" name="enddate">
             </div>
             <button type="submit" class="btn btn-primary mb-2">Submit</button>
         </form>

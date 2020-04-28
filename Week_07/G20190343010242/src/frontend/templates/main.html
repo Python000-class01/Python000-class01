@@ -28,8 +28,18 @@
                     <div class="input-group-text">Search comments</div>
                 </div>
                 <input type="text" class="form-control" id="search" name="search" required>
+                <div class="input-group-prepend">
+                    <div class="input-group-text">Start Date</div>
+                </div>
+                <input type="date" class="form-control" id="startdate" name="startdate">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">End Date</div>
+                </div>
+                <input type="date" class="form-control" id="enddate" name="enddate">
             </div>
-            <button type="submit" class="btn btn-primary mb-2">Submit</button>
+            <div>
+                <button type="submit" class="btn btn-primary mb-2">Submit</button>
+            </div>
         </form>
         <div class="card col-12">
             <canvas id="barChart"></canvas>
@@ -51,7 +61,6 @@
                                   "{{item.count}}",
                                {% endfor %}
                            ],
-                           backgroundColor: ['rgb(255, 99, 132)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)'],
                            borderColor: 'rgb(255, 99, 132)'
                        }]
                    },

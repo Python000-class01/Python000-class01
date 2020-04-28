@@ -3,6 +3,7 @@ from newscomments.newscomments.items.comments_item import CommentsItem
 from datautils.helper import Helper
 from datautils.db_utils import DbUtils
 from datamodels.news import News
+import re
 
 
 class NewsCommentsSpider(scrapy.Spider):
@@ -11,6 +12,7 @@ class NewsCommentsSpider(scrapy.Spider):
     comments_url = "https://book.douban.com/subject/34786086/comments/new"
     name = "newscomments"
     start_urls = [url]
+    comments_per_page = 20
     dbUtils = DbUtils()
 
     def parse(self, response):
@@ -19,7 +21,12 @@ class NewsCommentsSpider(scrapy.Spider):
         self.__add_news(News(news_id=news_id, news_name=news_name, source=self.url))
         item = CommentsItem()
         item['news_id'] = news_id
-        yield scrapy.Request(self.comments_url, meta={'item': item}, callback=self.__parse_comments)
+        total_comments = int(re.findall(r'\d+', response.xpath("//div[@id='content']/div/div[@class='article']/div[@class='related_info']/div[@class='mod-hd']/h2[1]/span[@class='pl']/a/text()").extract_first().strip())[0])
+        pages = int(total_comments / self.comments_per_page) if total_comments % self.comments_per_page == 0 else int(total_comments / self.comments_per_page) + 1
+        # Get all comments in pages
+        urls = [f'{self.comments_url}?p={p+1}' for p in range(pages)]
+        for c_url in urls:
+            yield scrapy.Request(c_url, meta={'item': item}, callback=self.__parse_comments)
 
     def __parse_comments(self, response):
         for sel in response.xpath("//div[@id='comments']/ul/li"):

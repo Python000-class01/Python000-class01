@@ -13,14 +13,16 @@ class CommentsPipeline(object):
     def close_spider(self, spider):
         if len(self.data) > 0:
             latest_comment_id = self.__get_latest_comment_id(self.data[0].news_id)
-            print(f"id: {latest_comment_id}")
+            # Filter data
             data = list(filter(lambda c: c.comment_id > latest_comment_id, self.data))
             self.dbUtils.insert(data)
 
     def process_item(self, item, spider):
         if item:
-            sentiment = self.__sentiment(item['comment'])
-            self.data.append(Comments(comment=item['comment'], news_id=item['news_id'], comment_id=item['comment_id'], comment_time=item['comment_time'], sentiment=sentiment))
+            # Clean data
+            if item['comment'] and item['comment'] != '':
+                sentiment = self.__sentiment(item['comment'])
+                self.data.append(Comments(comment=item['comment'], news_id=item['news_id'], comment_id=item['comment_id'], comment_time=item['comment_time'], sentiment=sentiment))
         return item
 
     def __get_latest_comment_id(self, news_id):

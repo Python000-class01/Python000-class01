@@ -25,34 +25,27 @@ class NewsCommentsService:
             date = datetime.strptime(datestr, "%Y-%m-%d")
         return date
 
-    def search_comments(self, q, page=0, page_size=25):
+    def search_comments(self, q, page=0, page_size=25, startdate=None, enddate=None):
         try:
             session = self.db_helper.Session()
             news = session.query(News).filter(News.news_id == self.news_id).first()
-            query = session.query(Comments).filter(Comments.news_id == self.news_id).filter(Comments.comment.contains(q)).order_by(Comments.comment_time.desc())
+            query = session.query(Comments).filter(Comments.news_id == self.news_id).filter(Comments.comment.contains(q))
+            t_query = session.query(func.count('*').label('total')).filter(Comments.news_id == self.news_id).filter(
+                Comments.comment.contains(q))
+            if startdate and startdate != '':
+                query = query.filter(Comments.comment_time >= self.__get_date(startdate))
+                t_query = t_query.filter(Comments.comment_time >= self.__get_date(startdate))
+            if enddate and enddate != '':
+                query = query.filter(Comments.comment_time <= self.__get_date(enddate))
+                t_query = t_query.filter(Comments.comment_time <= self.__get_date(enddate))
+            query = query.order_by(Comments.comment_time.desc())
             results = self.db_helper.query(query, page=page, page_size=page_size)
-            total_comments = int(
-                session.query(func.count('*').label('total')).filter(Comments.news_id == self.news_id).filter(Comments.comment.contains(q))[0][0])
+            total_comments = int(t_query[0][0])
             pages = int(total_comments / page_size) if total_comments % page_size == 0 else int(
                 total_comments / page_size) + 1
             session.close()
-            return {'pages': pages, 'comments': [result.to_dict() for result in results], 'news': news.to_dict()}
-        except Exception as ex:
-            print(ex)
-            return {'pages': 0, 'comments': []}
-
-    def search_comments_by_date(self, q, page=0, page_size=25, datestr=None):
-        try:
-            session = self.db_helper.Session()
-            news = session.query(News).filter(News.news_id == self.news_id).first()
-            query = session.query(Comments).filter(Comments.news_id == self.news_id).filter(Comments.comment.contains(q)).filter(Comments.comment_time == self.__get_date(datestr)).order_by(Comments.comment_time.desc())
-            results = self.db_helper.query(query, page=page, page_size=page_size)
-            total_comments = int(
-                session.query(func.count('*').label('total')).filter(Comments.news_id == self.news_id).filter(Comments.comment.contains(q)).filter(Comments.comment_time == self.__get_date(datestr))[0][0])
-            pages = int(total_comments / page_size) if total_comments % page_size == 0 else int(
-                total_comments / page_size) + 1
-            session.close()
-            return {'date': self.__get_date(datestr).strftime('%Y-%m-%d'), 'pages': pages, 'comments': [result.to_dict() for result in results], 'news': news.to_dict()}
+            return {'dates': {'start': (self.__get_date(startdate).strftime('%Y-%m-%d') if startdate and startdate != '' else ''),
+                              'end': (self.__get_date(enddate).strftime('%Y-%m-%d') if enddate and enddate !='' else '')}, 'pages': pages, 'comments': [result.to_dict() for result in results], 'news': news.to_dict()}
         except Exception as ex:
             print(ex)
             return {'pages': 0, 'comments': []}

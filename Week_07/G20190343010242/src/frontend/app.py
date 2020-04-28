@@ -32,26 +32,21 @@ def go_date(datestr, page):
 def search(page):
     try:
         q = request.form['search']
+        startdate = request.form['startdate']
+        enddate = request.form['enddate']
         if not q or q == '':
             q = request.args.get('search')
+        if not startdate or startdate == '':
+            startdate = request.args.get('startdate', '')
+        if not enddate or enddate == '':
+            enddate = request.args.get('enddate', '')
     except:
         q = request.args.get('search')
-    url = f'{app.config["API_ADDR"]}/search/{page}?q={q}'
+        startdate = request.args.get('startdate', '')
+        enddate = request.args.get('enddate', '')
+    url = f'{app.config["API_ADDR"]}/search/{page}?q={q}&startdate={startdate}&enddate={enddate}'
     resp = json.loads(requests.get(url, timeout=3).text)
     return render_template('search.html', data=resp, page=page, search=q)
-
-
-@app.route('/search/<string:date>/<int:page>', methods=['GET', 'POST'])
-def search_by_date(date, page):
-    try:
-        q = request.form['search']
-        if not q or q == '':
-            q = request.args.get('search')
-    except:
-        q = request.args.get('search')
-    url = f'{app.config["API_ADDR"]}/search/{date}/{page}?q={q}'
-    resp = json.loads(requests.get(url, timeout=3).text)
-    return render_template('search.html', data=resp, page=page, search=q, date=date)
 
 
 if __name__ == '__main__':

@@ -19,34 +19,32 @@
     </div>
 
     <div class="container posts mt-0">
-        {% if date %}
-        <form class="form-inline" method="POST" action="/search/{{ date }}/1">
-        {% else %}
         <form class="form-inline" method="POST" action="/search/1">
-        {% endif %}
             <label class="sr-only" for="search">Search comments</label>
             <div class="input-group mb-2 mr-sm-2">
                 <div class="input-group-prepend">
                     <div class="input-group-text">Search comments</div>
                 </div>
                 <input type="text" class="form-control" id="search" name="search" value="{{ search }}" required>
+                <div class="input-group-prepend">
+                    <div class="input-group-text">Start Date</div>
+                </div>
+                <input type="date" class="form-control" id="startdate" name="startdate" value="{{ data.dates.start }}">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">End Date</div>
+                </div>
+                <input type="date" class="form-control" id="enddate" name="enddate" value="{{ data.dates.end }}">
             </div>
-            <button type="submit" class="btn btn-primary mb-2">Submit</button>
+            <div>
+                <button type="submit" class="btn btn-primary mb-2">Submit</button>
+            </div>
         </form>
         <div>
-            {% if date %}
-            <h3>Comments on {{ date }}: </h3>
-            {% else %}
             <h3>Comments: </h3>
-            {% endif %}
             <div class="pages" align="right">
                 {% if data.pages > 1 %}
                 {% for i in range(data.pages) %}
-                {% if date %}
-                <span><a href="/search/{{ date }}/{{ i+1 }}?search={{ search }}">{{i+1}}</a></span>
-                {% else %}
-                <span><a href="/search/{{ i+1 }}?search={{ search }}">{{i+1}}</a></span>
-                {% endif %}&nbsp;&nbsp;
+                <span><a href="/search/{{ i+1 }}?search={{ search }}&startdate={{ data.dates.start }}&enddate={{ data.dates.end }}">{{i+1}}</a></span>
                 {% endfor %}
                 {% endif %}
                 <span class="mr-sm-2" align="right"><a href="/">Back home</a></span>
@@ -74,11 +72,7 @@
             <div class="pages" align="right">
                 {% if data.pages > 1 %}
                 {% for i in range(data.pages) %}
-                {% if date %}
-                <span><a href="/search/{{ date }}/{{ i+1 }}?search={{ search }}">{{i+1}}</a></span>
-                {% else %}
-                <span><a href="/search/{{ i+1 }}?search={{ search }}">{{i+1}}</a></span>
-                {% endif %}&nbsp;&nbsp;&nbsp;
+                <span><a href="/search/{{ i+1 }}?search={{ search }}&startdate={{ data.dates.start }}&enddate={{ data.dates.end }}">{{i+1}}</a></span>
                 {% endfor %}
                 {% endif %}
                 <span class="mr-sm-2" align="right"><a href="/">Back home</a></span>

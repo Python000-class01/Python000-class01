@@ -12,20 +12,9 @@ def search_comments(page):
         q = request.args.get('q', '')
         if page - 1 <= 0:
             page = 1
-        result = newscomments_service.search_comments(q, page=page-1)
-        return jsonify(result), 200
-    except Exception as ex:
-        return jsonify({'error': ex}), 500
-
-
-@app.route('/search/<string:datestr>/<int:page>', methods=['GET', 'POST'])
-def search_comments_by_date(datestr, page):
-    try:
-        newscomments_service = NewsCommentsService()
-        q = request.args.get('q', '')
-        if page - 1 <= 0:
-            page = 1
-        result = newscomments_service.search_comments_by_date(q, page=page-1, datestr=datestr)
+        startdate = request.args.get('startdate')
+        enddate = request.args.get('enddate')
+        result = newscomments_service.search_comments(q, page=page-1, startdate=startdate, enddate=enddate)
         return jsonify(result), 200
     except Exception as ex:
         return jsonify({'error': ex}), 500

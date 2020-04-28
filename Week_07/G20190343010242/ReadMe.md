@@ -9,6 +9,8 @@ The task here is run on local environment.
 The name of the folders and project may be confusing. The actually source for this task is a douban book instead of a piece of news.
 But the project and code base is also adapted to news. 
 
+It's recommended run the application on Chrome browser, it hasn't been tested on other browsers.
+
 ### Project Structure
 
 - newscomments: This folder stores the [helm chart](https://helm.sh/docs/topics/charts/), which includes the 
@@ -17,7 +19,7 @@ configuration and kubernetes templates.
 - src: Include backend, frontend and data. The backend is used to create models, interact with database, and create 
 business logic. It provides the APIs for the frontend. The frontend is used to render the web pages, call the backend APIs and implement 
 the web logic. The data part is used to collect and manage data from the source. It crawls the web pages to collect the data and store it 
-in the database. The default frequency to collect data is is 10 seconds (This may be too often. 1 hr could be more reasonable).
+in the database. The default frequency to collect data is 10 seconds (This may be too often. 1 hr could be more reasonable).
 
 - skaffold.yaml: Skaffold configuration file. See [doc](https://skaffold.dev/docs/references/yaml/) here.
 
@@ -138,17 +140,16 @@ $ skaffold delete
 You will see the bar chart in the home page, which displays teh number of comments by date. Below the bar chart, you can see 
 the list of comments with details including the sentiment info. You can see pagination on top and bottom of the comments block.
 Each page displays 25 items by default.
-On top of the page, you will see the search bar that you can search text in the comments.  
+On top of the page, you will see the search bar that you can search text in the comments with the date ranges.  
 
 By clicking each bar, you will be directed to the day view page. In this page, you will see a pie chart that gives you idea on 
 numbers of positive and negative comments. Like the main page, below the pie chart, there is the comments block with the date you pick up.
-Also, search bar on top of the pie chart that you can search the comments by the date you pick up. 
+Also, search bar on top of the pie chart that you can search the comments with the date ranges. 
 
 ** Data Collection ** 
 
-For the particular case in this project, it doesn't use pandas to clean and remove duplicate data. Instead, it uses the 
-comment id which is crawled from the source. The comment id is integer and unique, so you just need to anchor the max comment id each time before 
-you collect new data. You only need to insert into the database for the comments whose comment id are greater than the max one. For the empty database,
+For the particular case in this project, it uses the comment id which is crawled from the source. The comment id is integer and unique, so you just need to anchor the max comment id each time before 
+you collect new data. Also, you need to clean the data whose comment is missing. You only need to insert into the database for the comments whose comment id are greater than the max one. For the empty database,
 the max comment id is 0. But you can still think about using pandas for other purposes.
 
 ### Screenshots
@@ -162,8 +163,7 @@ the max comment id is 0. But you can still think about using pandas for other pu
 ![day page](resources/day.png)
 
 - Search page:
-  If you search on main page, it will return the results on all days comments.
-  While if you search on day page, it only returns the results on that day.
+  Search by key words in comments, also support date ranges.
 
 ![search](resources/search.png)
 
@@ -227,13 +227,13 @@ VS Code is quite similar, here is a [quickstart](https://cloud.google.com/code/d
 Due to the time limit, there are a few things that can put into the to-do list in the future.
 
 - Collect data from multiple sources, and classify them.
-- Use pandas to clean data if necessary. Currently there is no data needs to be cleaned.
 - Provide different parsing templates and strategies when crawling from different sources. So the code will be more generic.
 - The home page will display the collection of sources. By clicking each source, the bar chart view is directed.
 - For each source, provide month view against on number of comments.
 - The code is still need to be polished and reviewed, as some of them were not well organized, there are still quite a few duplicates in code.
 - Make more things to be configurable. Like data collection frequency, items per page, etc.
 - Manage and uplift the page templates, employs more MVC web framework together with Flask.
+- Make the pagination more intelligent in case there are many pages to navigate.
 - Bug fixing. Of course, the whole thing is not 100% well tested, there definitely will be bugs. But most of functions are runnable.
 - Train the data with higher accuracy. Currently it just simply uses SnowNLP to analyse the sentiment.
 - Other things when they are come up.
