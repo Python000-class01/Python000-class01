@@ -2,6 +2,7 @@ from datautils.db_utils import DbUtils
 from datamodels.comments import Comments
 from sqlalchemy.sql.expression import func
 from snownlp import SnowNLP
+import pandas as pd
 
 
 class CommentsPipeline(object):
@@ -12,17 +13,18 @@ class CommentsPipeline(object):
 
     def close_spider(self, spider):
         if len(self.data) > 0:
-            latest_comment_id = self.__get_latest_comment_id(self.data[0].news_id)
-            # Filter data
-            data = list(filter(lambda c: c.comment_id > latest_comment_id, self.data))
+            latest_comment_id = self.__get_latest_comment_id(self.data[0]['news_id'])
+            # Handle data (update, filter, clean)
+            columns = ['comment_id', 'news_id', 'comment_time', 'comment']
+            df = pd.DataFrame(self.data, columns=columns)
+            df = df.dropna().drop_duplicates().query(f'comment_id > {latest_comment_id}')
+            df['sentiment'] = df['comment'].apply(self.__sentiment)
+            data = [Comments(comment=item['comment'], news_id=item['news_id'], comment_id=item['comment_id'], comment_time=item['comment_time'].to_pydatetime(), sentiment=item['sentiment']) for item in df.to_dict('records')]
             self.dbUtils.insert(data)
 
     def process_item(self, item, spider):
         if item:
-            # Clean data
-            if item['comment'] and item['comment'] != '':
-                sentiment = self.__sentiment(item['comment'])
-                self.data.append(Comments(comment=item['comment'], news_id=item['news_id'], comment_id=item['comment_id'], comment_time=item['comment_time'], sentiment=sentiment))
+            self.data.append(dict(item))
         return item
 
     def __get_latest_comment_id(self, news_id):

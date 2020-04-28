@@ -4,6 +4,7 @@ from datautils.helper import Helper
 from datautils.db_utils import DbUtils
 from datamodels.news import News
 import re
+from time import sleep
 
 
 class NewsCommentsSpider(scrapy.Spider):
@@ -26,6 +27,7 @@ class NewsCommentsSpider(scrapy.Spider):
         # Get all comments in pages
         urls = [f'{self.comments_url}?p={p+1}' for p in range(pages)]
         for c_url in urls:
+            sleep(5)
             yield scrapy.Request(c_url, meta={'item': item}, callback=self.__parse_comments)
 
     def __parse_comments(self, response):

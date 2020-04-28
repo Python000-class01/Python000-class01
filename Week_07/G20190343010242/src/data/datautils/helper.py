@@ -15,3 +15,4 @@ class Helper:
             return datetime.strptime(datetime_str, "%Y-%m-%d")
         except:
             return datetime.now()
+

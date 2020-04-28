@@ -2,6 +2,7 @@ from scrapy.crawler import CrawlerProcess
 from scrapy.utils.project import get_project_settings
 from apscheduler.schedulers.twisted import TwistedScheduler
 from newscomments.newscomments.spiders.newscomments_spider import NewsCommentsSpider
+from datetime import datetime
 
 
 settings = get_project_settings()
@@ -11,7 +12,7 @@ settings['ITEM_PIPELINES'] = {
 }
 process = CrawlerProcess(settings)
 scheduler = TwistedScheduler()
-scheduler.add_job(process.crawl, 'interval', args=[NewsCommentsSpider], seconds=10)
+scheduler.add_job(process.crawl, 'interval', args=[NewsCommentsSpider], seconds=3600, next_run_time=datetime.now())
 scheduler.start()
 process.start(False)
 
