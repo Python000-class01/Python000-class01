@@ -23,12 +23,8 @@ class HongloumengSpider(scrapy.Spider):
 
     def parse2(self, response):
         print('response.url: ', response.url)
-        i = 0
         commonitems = Selector(response=response).xpath('//li[@class="comment-item"]')
         for ci in commonitems:
-            if i >= 5:
-                break
-            i += 1
             short = ci.xpath(
                 './div[@class="comment"]/p[@class="comment-content"]/span[@class="short"]/text()').extract_first().strip()
             shorttime = ci.xpath(
