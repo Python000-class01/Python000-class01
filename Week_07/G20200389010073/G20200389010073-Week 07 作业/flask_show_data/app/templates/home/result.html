@@ -1,0 +1,153 @@
+{% extends "home/base_layout.html" %} {% block title %}Welcome{% endblock %}
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/timeline.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/morris.css') }}">
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Dashboard</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-bar-chart-o fa-fw"></i> 每日评论采集数
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div id="morris-bar-chart"></div>
+                    </div>
+                    <!-- /.col-lg-8 (nested) -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.panel-body -->
+        </div>
+    </div>
+    <!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+        <!-- /.panel -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-bar-chart-o fa-fw"></i> 正向、负向评论条数
+            </div>
+            <div class="panel-body">
+                <div id="morris-donut-chart"></div>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+        <!-- /.panel -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-bar-chart-o fa-fw"></i> 数据筛选
+            </div>
+            <div class="panel-body">
+                <div class="col-lg-12">
+                    <form role="form" action="/keyword" method="POST">
+                        <div class="form-group has-success">
+                            <label class="control-label">按关键词搜索：</label>
+                            <div>
+                                <div class="col-lg-8">
+                                    <input type="text" class="form-control" name="input_keyword">
+                                </div>
+                                <div class="col-lg-4">
+                                    <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div>&nbsp;</div>
+                <div class="col-lg-12">
+                    <form role="form2" action="/date" method="post">
+                        <div class="form-group input-group">
+                            <div class="form-group has-success">
+                                <label class="control-label">按评论时间筛选：</label>
+                            </div>
+                            <div class="col-lg-12">
+                                <div><label class="control-label">开始：</label><input type="date" class="form-control" name="startdate" ></div>
+                                <div><label class="control-label">截止：</label><input type="date" class="form-control" name="enddate" ></div>
+                                <div>&nbsp;</div>
+                                <div><button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-6 -->
+</div>
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-bar-chart-o fa-fw"></i>  新闻评论数据展示
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>序号</th>
+                                        <th>评论用户名</th>
+                                        <th>评论时间</th>
+                                        <th>评论分数</th>
+                                        <th>情感分数</th>
+                                        <th>评论内容</th>
+                                        <th>采集时间</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for short in shorts %}
+                                        <tr>
+                                            <td>{{loop.index}}</td>
+                                            <td>{{short.c_Name}}</td>
+                                            <td>{{short.c_Time}}</td>
+                                            <td>{{short.c_Mark}}</td>
+                                            <td>{{short.c_Sln_comment}}</td>
+                                            <td>{{short.c_Comment}}</td>
+                                             <td>{{short.created_at}}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.table-responsive -->
+                    </div>
+                    <!-- /.col-lg-4 (nested) -->
+
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+
+    </div>
+</div>
+<!-- /.row -->
+{% endblock %}
+{% block js %}
+    {{ super() }}
+    <script src="{{ url_for('static', filename='js/raphael-min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/morris.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/morris-data.js')}}"></script>
+{% endblock %}
