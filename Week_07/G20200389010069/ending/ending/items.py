@@ -12,3 +12,15 @@ class EndingItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
     movie = scrapy.Field()
+
+
+
+
+# CREATE TABLE doubanmovie (
+#     name VARCHAR(100) NOT NULL,
+#     info VARCHAR(150),
+#     rating VARCHAR(10),
+#     num VARCHAR(10),
+#     quote VARCHAR(100),
+#     img_url VARCHAR(100)
+# )

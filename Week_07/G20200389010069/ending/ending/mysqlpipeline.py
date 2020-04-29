@@ -1,4 +1,5 @@
 
+
 import pymysql
 
 
@@ -11,11 +12,11 @@ class MysqlPipeline(object):
             # mysql数据库的端口号
             port=3306,
             # 数据库的用户名
-            user='fang',
+            user='root',
             # 本地数据库密码
             passwd='123456',
             # 表名
-            db='movie',
+            db='fang',
             # 编码格式
             charset='utf8'
         )
@@ -23,8 +24,9 @@ class MysqlPipeline(object):
         self.cursor = self.connect.cursor()
 
     def process_item(self, item, spider):
-        # 3. 将Item数据放入数据库，默认是同步写入。
-        insert_sql = "INSERT INTO movie(info) VALUES ('%s')" % (item['movie'])
+        insert_sql="""
+        insert into info3(name) VALUES('%s')
+        """ % (str(item['movie']))
         self.cursor.execute(insert_sql)
 
         # 4. 提交操作

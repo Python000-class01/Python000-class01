@@ -1,19 +1,19 @@
-import os
-import time
-from scrapy import cmdline
-import datetime
-import time
-import shutil
-import os
-
-
-
-if __name__ == '__main__':
- #os.system('pwd')
-    while True:
-        os.system("scrapy crawl movice")
-#每２0s执行一次
-        time.sleep(20)
+# import os
+# import time
+# from scrapy import cmdline
+# import datetime
+# import time
+# import shutil
+# import os
+#
+#
+#
+# if __name__ == '__main__':
+#  #os.system('pwd')
+#     while True:
+#         os.system("scrapy crawl movice")
+# #每２0s执行一次
+#         time.sleep(20)
 
 from scrapy import cmdline
 import datetime

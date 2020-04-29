@@ -9,7 +9,7 @@
 
 class EndingPipeline(object):
     def process_item(self, item, spider):
-        print(item)
+        print(item['movie'])
         return item
 
 

@@ -10,9 +10,11 @@ class MoviceSpider(scrapy.Spider):
     def parse(self, response):
         urls = response.xpath('//ul[@id="commentList"]/li/div/p')
         for i  in urls:
-            moives = i.xpath('./text()').getall()
-            item = EndingItem(movie=moives)
-            print(item)
-            yield item
+            moives = i.xpath('./text()').extract()
+            for i in moives:
+                item = EndingItem(movie=i)
+                print(item['movie'])
+                yield item
+
 
 
