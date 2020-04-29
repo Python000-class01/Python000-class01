@@ -1,0 +1,191 @@
+2020-04-29 10:42:49 [scrapy.utils.log] INFO: Scrapy 2.0.0 started (bot: txnews)
+2020-04-29 10:42:49 [scrapy.utils.log] INFO: Versions: lxml 4.5.0.0, libxml2 2.9.5, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 19.10.0, Python 3.8.2 (tags/v3.8.2:7b3ab59, Feb 25 2020, 23:03:10) [MSC v.1916 64 bit (AMD64)], pyOpenSSL 19.1.0 (OpenSSL 1.1.1d  10 Sep 2019), cryptography 2.8, Platform Windows-10-10.0.17763-SP0
+2020-04-29 10:42:49 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.selectreactor.SelectReactor
+2020-04-29 10:42:49 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'txnews',
+ 'DOWNLOAD_DELAY': 1,
+ 'LOG_FILE': 'all.log',
+ 'NEWSPIDER_MODULE': 'txnews.spiders',
+ 'SPIDER_MODULES': ['txnews.spiders'],
+ 'USER_AGENT': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.3 (KHTML, '
+               'like Gecko) Chrome/19.0.1061.1 Safari/536.3'}
+2020-04-29 10:42:50 [scrapy.extensions.telnet] INFO: Telnet Password: 4f3875a332210e34
+2020-04-29 10:42:50 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2020-04-29 10:42:50 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-04-29 10:42:50 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-04-29 10:42:50 [scrapy.middleware] INFO: Enabled item pipelines:
+['txnews.pipelines.TxnewsPipeline']
+2020-04-29 10:42:50 [scrapy.core.engine] INFO: Spider opened
+2020-04-29 10:42:50 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-04-29 10:42:50 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2020-04-29 10:42:50 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://coral.qq.com/article/5158603687/comment/v2?callback=_article5158603687commentv2&orinum=10&oriorder=o&pageflag=1&cursor=0&scorecursor=0&orirepnum=2&reporder=o&reppageflag=1&source=1&_=1588123073357> (referer: None)
+2020-04-29 10:42:50 [scrapy.spidermiddlewares.offsite] DEBUG: Filtered offsite request to 'coral.qq.com': <GET https://coral.qq.com/article/5158603687/comment/v2?callback=_article5158603687commentv2&orinum=10&oriorder=o&pageflag=1&cursor=0&scorecursor=0&orirepnum=2&reporder=o&reppageflag=1&source=1&_=1588123073357>
+2020-04-29 10:42:50 [scrapy.core.engine] INFO: Closing spider (finished)
+2020-04-29 10:42:50 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 466,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 7602,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'elapsed_time_seconds': 0.250296,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2020, 4, 29, 2, 42, 50, 498354),
+ 'log_count/DEBUG': 2,
+ 'log_count/INFO': 10,
+ 'offsite/domains': 1,
+ 'offsite/filtered': 17,
+ 'request_depth_max': 1,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2020, 4, 29, 2, 42, 50, 248058)}
+2020-04-29 10:42:50 [scrapy.core.engine] INFO: Spider closed (finished)
+2020-04-29 11:01:17 [scrapy.utils.log] INFO: Scrapy 2.0.0 started (bot: txnews)
+2020-04-29 11:01:17 [scrapy.utils.log] INFO: Versions: lxml 4.5.0.0, libxml2 2.9.5, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 19.10.0, Python 3.8.2 (tags/v3.8.2:7b3ab59, Feb 25 2020, 23:03:10) [MSC v.1916 64 bit (AMD64)], pyOpenSSL 19.1.0 (OpenSSL 1.1.1d  10 Sep 2019), cryptography 2.8, Platform Windows-10-10.0.17763-SP0
+2020-04-29 11:01:17 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.selectreactor.SelectReactor
+2020-04-29 11:01:17 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'txnews',
+ 'DOWNLOAD_DELAY': 1,
+ 'LOG_FILE': 'all.log',
+ 'NEWSPIDER_MODULE': 'txnews.spiders',
+ 'SPIDER_MODULES': ['txnews.spiders'],
+ 'USER_AGENT': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/536.3 (KHTML, like '
+               'Gecko) Chrome/19.0.1061.1 Safari/536.3'}
+2020-04-29 11:01:17 [scrapy.extensions.telnet] INFO: Telnet Password: 0da64689f7b8273d
+2020-04-29 11:01:17 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2020-04-29 11:01:17 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-04-29 11:01:17 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-04-29 11:01:17 [scrapy.middleware] INFO: Enabled item pipelines:
+['txnews.pipelines.TxnewsPipeline']
+2020-04-29 11:01:17 [scrapy.core.engine] INFO: Spider opened
+2020-04-29 11:01:17 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-04-29 11:01:17 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2020-04-29 11:01:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://coral.qq.com/article/5158603687/comment/v2?callback=_article5158603687commentv2&orinum=10&oriorder=o&pageflag=1&cursor=0&scorecursor=0&orirepnum=2&reporder=o&reppageflag=1&source=1&_=1588123073357> (referer: None)
+2020-04-29 11:01:17 [scrapy.spidermiddlewares.offsite] DEBUG: Filtered offsite request to 'coral.qq.com': <GET https://coral.qq.com/article/5158603687/comment/v2?callback=_article5158603687commentv2&orinum=10&oriorder=o&pageflag=1&cursor=0&scorecursor=0&orirepnum=2&reporder=o&reppageflag=1&source=1&_=1588123073357>
+2020-04-29 11:01:17 [scrapy.core.engine] INFO: Closing spider (finished)
+2020-04-29 11:01:17 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 459,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 7858,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'elapsed_time_seconds': 0.482706,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2020, 4, 29, 3, 1, 17, 783568),
+ 'log_count/DEBUG': 2,
+ 'log_count/INFO': 10,
+ 'offsite/domains': 1,
+ 'offsite/filtered': 19,
+ 'request_depth_max': 1,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2020, 4, 29, 3, 1, 17, 300862)}
+2020-04-29 11:01:17 [scrapy.core.engine] INFO: Spider closed (finished)
+2020-04-29 11:01:44 [scrapy.utils.log] INFO: Scrapy 2.0.0 started (bot: txnews)
+2020-04-29 11:01:44 [scrapy.utils.log] INFO: Versions: lxml 4.5.0.0, libxml2 2.9.5, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 19.10.0, Python 3.8.2 (tags/v3.8.2:7b3ab59, Feb 25 2020, 23:03:10) [MSC v.1916 64 bit (AMD64)], pyOpenSSL 19.1.0 (OpenSSL 1.1.1d  10 Sep 2019), cryptography 2.8, Platform Windows-10-10.0.17763-SP0
+2020-04-29 11:01:44 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.selectreactor.SelectReactor
+2020-04-29 11:01:44 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'txnews',
+ 'DOWNLOAD_DELAY': 1,
+ 'LOG_FILE': 'all.log',
+ 'NEWSPIDER_MODULE': 'txnews.spiders',
+ 'SPIDER_MODULES': ['txnews.spiders'],
+ 'USER_AGENT': 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; 360SE)'}
+2020-04-29 11:01:44 [scrapy.extensions.telnet] INFO: Telnet Password: e8b59f3c7eeb97e9
+2020-04-29 11:01:44 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2020-04-29 11:01:44 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-04-29 11:01:44 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-04-29 11:01:44 [scrapy.middleware] INFO: Enabled item pipelines:
+['txnews.pipelines.TxnewsPipeline']
+2020-04-29 11:01:44 [scrapy.core.engine] INFO: Spider opened
+2020-04-29 11:01:44 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-04-29 11:01:44 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2020-04-29 11:01:44 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://coral.qq.com/article/5158603687/comment/v2?callback=_article5158603687commentv2&orinum=10&oriorder=o&pageflag=1&cursor=0&scorecursor=0&orirepnum=2&reporder=o&reppageflag=1&source=1&_=1588123073357> (referer: None)
+2020-04-29 11:01:44 [scrapy.spidermiddlewares.offsite] DEBUG: Filtered offsite request to 'coral.qq.com': <GET https://coral.qq.com/article/5158603687/comment/v2?callback=_article5158603687commentv2&orinum=10&oriorder=o&pageflag=1&cursor=0&scorecursor=0&orirepnum=2&reporder=o&reppageflag=1&source=1&_=1588123073357>
+2020-04-29 11:01:44 [scrapy.core.engine] INFO: Closing spider (finished)
+2020-04-29 11:01:44 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 418,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 7861,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'elapsed_time_seconds': 0.257837,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2020, 4, 29, 3, 1, 44, 825910),
+ 'log_count/DEBUG': 2,
+ 'log_count/INFO': 10,
+ 'offsite/domains': 1,
+ 'offsite/filtered': 19,
+ 'request_depth_max': 1,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2020, 4, 29, 3, 1, 44, 568073)}
+2020-04-29 11:01:44 [scrapy.core.engine] INFO: Spider closed (finished)
