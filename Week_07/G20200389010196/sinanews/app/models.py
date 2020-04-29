@@ -16,7 +16,4 @@ class NewsModel(db.Model):
     time = db.Column(db.Date)
     sentiments = db.Column(db.DECIMAL)
     keywords = db.Column(db.String)
-    # id = db.Column(db.Integer, primary_key=True)
-    # n_star = db.Column(db.Integer)
-    # short = db.Column(db.String(255))
-    # sentiment = db.Column(db.Float)
+    input_time = db.Column(db.Date)

@@ -14,9 +14,33 @@
 <!-- /.row -->
 <div class="row" style="margin-bottom: 10px;">
     <form>
-        <div class="col-lg-6">
+        <div class="col-lg-2">
             <div class="input-group custom-search-form">
                 <input type="text" class="form-control" name="keyword" placeholder="关键词搜索" value="{{keyword}}">
+            </div>
+        </div>
+        <div class="col-lg-2">
+            <div class="input-group custom-search-form">
+                <input type="text" class="form-control hasDatetimepicker" name="input_time_from" placeholder="Input Time From" value="{{input_time_from}}" autocomplete="off">
+            </div>
+        </div>
+        <div class="col-lg-2">
+            <div class="input-group custom-search-form">
+                <input type="text" class="form-control hasDatetimepicker" name="input_time_to" placeholder="Input Time To" value="{{input_time_to}}" autocomplete="off">
+            </div>
+        </div>
+        <div class="col-lg-2">
+            <div class="input-group custom-search-form">
+                <input type="text" class="form-control hasDatetimepicker" name="comment_time_from" placeholder="Comment Time From" value="{{comment_time_from}}" autocomplete="off">
+            </div>
+        </div>
+        <div class="col-lg-2">
+            <div class="input-group custom-search-form">
+                <input type="text" class="form-control hasDatetimepicker" name="comment_time_to" placeholder="Comment Time To" value="{{comment_time_to}}" autocomplete="off">
+            </div>
+        </div>
+        <div class="col-lg-1">
+            <div>
                 <span class="input-group-btn">
                     <button class="btn btn-default" type="submit">
                         <i class="fa fa-search"></i>
@@ -42,11 +66,12 @@
                                 <thead>
                                     <tr>
                                         <th style="width: 16%;">mid</th>
-                                        <th style="width: 50%;">评论</th>
+                                        <th style="width: 41%;">评论</th>
                                         <th style="width: 8%;">昵称</th>
                                         <th style="width: 5%;">地区</th>
                                         <th style="width: 12%;">情感倾向</th>
-                                        <th style="width: 9%;">时间</th>
+                                        <th style="width: 9%;">评论时间</th>
+                                        <th style="width: 9%;">录入时间</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -58,6 +83,7 @@
                                             <td>{{comment.area}}</td>
                                             <td>{{comment.sentiments}}</td>
                                             <td>{{comment.time}}</td>
+                                            <td>{{comment.input_time}}</td>
                                         </tr>
                                     {% endfor %}
                                 </tbody>
@@ -82,4 +108,13 @@
     <script src="{{ url_for('static', filename='js/raphael-min.js')}}"></script>
     <script src="{{ url_for('static', filename='js/morris.min.js')}}"></script>
     <script src="{{ url_for('static', filename='js/morris-data.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap-datetimepicker.js')}}"></script>
+    <script type="text/javascript">
+        $(".hasDatetimepicker").datetimepicker({
+            format: "yyyy-mm-dd hh:ii:00",
+            minuteStep:1,
+            autoclose: true,
+            todayBtn: false
+        });
+    </script>
 {% endblock %}

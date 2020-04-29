@@ -17,14 +17,33 @@ def dashboard():
 
 @home.route('/result')
 def result():
-        keyword = request.args.get('keyword')
-        #模糊查询
-        if (keyword) :
-                comments = NewsModel.query.filter(NewsModel.keywords.like("%" + keyword + "%")).all()
-        else :
-                comments = NewsModel.query.all()
-                keyword = ''
-        return render_template('/home/result.html', comments=comments, keyword=keyword)
+        keyword = request.args.get("keyword") or ""
+        input_time_from = request.args.get('input_time_from') or ""
+        input_time_to = request.args.get('input_time_to') or ""
+        comment_time_from = request.args.get('comment_time_from') or ""
+        comment_time_to = request.args.get('comment_time_to') or ""
+
+        news_filter = []
+        if keyword != "":
+                news_filter.append(NewsModel.keywords.like("%" + keyword + "%"))
+        if input_time_from != "":
+                news_filter.append(NewsModel.input_time >= input_time_from)
+        if input_time_to != "":
+                news_filter.append(NewsModel.input_time <= input_time_to)
+        if comment_time_from != "":
+                news_filter.append(NewsModel.time >= comment_time_from)
+        if comment_time_to != "":
+                news_filter.append(NewsModel.time <= comment_time_to)
+        #查询
+        comments = NewsModel.query.filter(*news_filter).all()
+        
+        return render_template('/home/result.html', 
+                comments=comments, 
+                keyword=keyword, 
+                input_time_from=input_time_from, 
+                input_time_to=input_time_to, 
+                comment_time_from=comment_time_from, 
+                comment_time_to=comment_time_to)
 
 @home.route('/charts')
 def charts():

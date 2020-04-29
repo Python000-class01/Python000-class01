@@ -4,6 +4,7 @@ import pymysql
 from sqlalchemy import create_engine
 from sqlalchemy.types import VARCHAR, Float, Integer, TEXT, DATETIME, DECIMAL
 import jieba.analyse
+import datetime
 
 #提取关键词
 def getKeyWord(comment):
@@ -18,6 +19,7 @@ def run():
     df = pd.read_csv('./cleanfile.csv', encoding='utf-8',sep=',')
     df["sentiments"]= df["content"].map(lambda c : snownlp.SnowNLP(c).sentiments)
     df["keywords"]=df["content"].map(getKeyWord)
+    df["input_time"]=datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
     #engine = create_engine('mysql+pymysql://root:@127.0.0.1:3306/sina')
     engine = create_engine('mysql+mysqlconnector://root:@127.0.0.1:3306/sina')
@@ -34,6 +36,7 @@ def run():
         'time' : DATETIME(),
         'sentiments' : DECIMAL('10,10'),
         'keywords' : VARCHAR(length=100),
+        'input_time' : DATETIME(),
     }
     df.to_sql(name='news', con=engine, chunksize=100000, if_exists='replace', index=True, index_label='id', dtype=dtypedict)
 
