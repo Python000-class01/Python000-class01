@@ -1,0 +1,2 @@
+在shell中执行crontab -e输入：
+1 0 * * * /root/www/cron.sh >> /root/www/logging.log 2>&1
