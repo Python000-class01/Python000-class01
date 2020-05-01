@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>评论情感分析</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>
+                <a href="/">
+                    "{{item_name}}" 情感倾向分析
+                </a>
+            </h1>
+        </div>
+    </div>
+
+    <div class="container posts mt-0">
+        <form class="form-inline" method="POST" action="/post">
+            <label class="sr-only" for="pageSize">Items in Page</label>
+            <div class="input-group mb-2 mr-sm-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">页面大小</div>
+                </div>
+                <input type="text" class="form-control" id="pageSize" name="pageSize" value={{page_size}} >
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">提交</button>
+        </form>
+        {% if results %}
+            {% for result in results %}
+            <div class="card my-3 col-12">
+                <div class="card-body">
+                    <h5 class="card-title">评分: {{result.rank}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">情感倾向: {{ result.sentiments }}</h6>
+                    <br>
+                    <p class="card-text">
+                        {{result.comment}}
+                    </p>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <div class="alert alert-info" role="alert">
+                No data is found.
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
