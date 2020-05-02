@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: newscomments-data
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: newscomments
+    tier: data
+spec:
+  replicas: {{ .Values.backendReplicas }}
+  selector:
+    matchLabels:
+      app: newscomments
+      tier: data
+  template:
+    metadata:
+      labels:
+        app: newscomments
+        tier: data
+    spec:
+      initContainers:
+      - name: init-db-ready
+        image: busybox
+        command: ['/bin/sh', '-c']
+        args:
+          - echo "Waiting for mysql at mysql-service to go live...";
+          - until (nslookup mysql-service > /dev/null) do echo "Waiting for mysql."; sleep 2; done
+      containers:
+      - name: backend
+        image: {{ .Values.container_repo }}/newscomments-data
+        ports:
+        - name: http-server
+          containerPort: 9090
+        env:
+        - name: PORT
+          value: "9090"
+        - name: DB_ADDR
+          value: "mysql-service:3306"
+        - name: DB_USER
+          valueFrom:
+            secretKeyRef:
+              key: db_username
+              name: newscomments-secrets
+        - name: DB_PASS
+          valueFrom:
+            secretKeyRef:
+              key: db_password
+              name: newscomments-secrets
+

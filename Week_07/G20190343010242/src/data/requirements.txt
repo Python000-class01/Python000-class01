@@ -1,0 +1,8 @@
+sqlalchemy
+pymysql
+requests
+scrapy
+snownlp
+apscheduler
+pandas
+numpy

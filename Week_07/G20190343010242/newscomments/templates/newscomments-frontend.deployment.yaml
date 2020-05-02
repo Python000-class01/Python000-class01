@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: newscomments-frontend
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: newscomments
+    tier: frontend
+spec:
+  replicas: {{ .Values.frontendReplicas }}
+  selector:
+    matchLabels:
+      app: newscomments
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        app: newscomments
+        tier: frontend
+    spec:
+      containers:
+      - name: frontend
+        image: {{ .Values.container_repo }}/newscomments-frontend
+        ports:
+        - name: http-server
+          containerPort: 8080
+        env:
+        - name: PORT
+          value: "8080"
+        - name: API_ADDR
+          value: newscomments-backend:8080

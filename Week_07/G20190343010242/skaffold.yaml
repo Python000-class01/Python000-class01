@@ -1,0 +1,27 @@
+apiVersion: skaffold/v1beta15
+kind: Config
+build:
+  tagPolicy:
+    sha256: {}
+  # defines where to find the code at build time and where to push the resulting image
+  local:
+    push: true
+    useDockerCLI: true
+  artifacts:
+  - image: newscomments-backend
+    context: src/backend
+  - image: newscomments-frontend
+    context: src/frontend
+  - image: newscomments-data
+    context: src/data
+
+# defines the helm to deploy on each run
+deploy:
+  helm:
+    releases:
+    - name: newscomments
+      chartPath: newscomments
+      namespace: week07
+      valuesFiles:
+        - newscomments/values.yaml
+
