@@ -40,32 +40,26 @@ root
      |- values.yaml
   |- src
      |- backend
+        |- services
+           |- newscomments_svc.py
+        |- app.py (backend entrypoint)
+        |- Dockerfile
+        |- requirements.txt
+     |- common
         |- models
            |- base_model.py
            |- comments.py
            |- news.py
-        |- services
-           |- newscomments_svc.py
         |- utils
            |- db_helper.py
-        |- app.py (backend entrypoint)
-        |- Dockerfile
-        |- requirements.txt
-        |- setup.py
-     |- data
-        |- datamodels
-           |- base_model.py
-           |- comments.py
-           |- news.py
-        |- datautils
-           |- db_utils.py
            |- helper.py
+           |- logger.py
+     |- data
         |- newscomments(scrapy project root)
            |- scrapy clawler/spiders/items/pipelines etc.
         |- data_pipeline.py (data entrypoint)
         |- Dockerfile
         |- requirements.txt
-        |- setup.py
      |- frontend
         |- static
            |- images, css etc. 
@@ -74,6 +68,7 @@ root
         |- app.py (frontend entrypoint)
         |- Dockerfile
         |- requirements.txt
+     |- setup.py
   |- resources
   |- .gitignore
   |- pylintrc

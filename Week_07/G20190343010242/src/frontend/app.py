@@ -2,6 +2,8 @@ import json
 import os
 from flask import Flask, render_template, redirect, url_for, request
 import requests
+from werkzeug.exceptions import HTTPException
+
 
 app = Flask(__name__)
 app.config["API_ADDR"] = 'http://{}'.format(os.environ.get('API_ADDR'))
@@ -47,6 +49,13 @@ def search(page):
     url = f'{app.config["API_ADDR"]}/search/{page}?q={q}&startdate={startdate}&enddate={enddate}'
     resp = json.loads(requests.get(url, timeout=3).text)
     return render_template('search.html', data=resp, page=page, search=q)
+
+
+@app.errorhandler(Exception)
+def handle_exception(e):
+    app.logger.error("Exception occurred on front-end: ", e)
+    code = e.code if isinstance(e, HTTPException) else 500
+    return render_template("error.html", e=e), code
 
 
 if __name__ == '__main__':

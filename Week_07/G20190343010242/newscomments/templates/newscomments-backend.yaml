@@ -1,3 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: backend-config
+  namespace: {{ .Release.Namespace }}
+data:
+  page_size: "{{ .Values.page_size }}"
+  ok_code: "{{ .Values.ok_code }}"
+  positive_threshold: "{{ .Values.positive_threshold }}"
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -46,4 +56,31 @@ spec:
             secretKeyRef:
               key: db_password
               name: newscomments-secrets
+        - name: PAGE_SIZE
+          valueFrom:
+            configMapKeyRef:
+              key: page_size
+              name: backend-config
+        - name: OK_CODE
+          valueFrom:
+            configMapKeyRef:
+              key: ok_code
+              name: backend-config
+        - name: POSITIVE_THRESHOLD
+          valueFrom:
+            configMapKeyRef:
+              key: positive_threshold
+              name: backend-config
+        - name: LOG_LEVEL
+          valueFrom:
+            configMapKeyRef:
+              key: log_level
+              name: common-config
+        - name: LOG_FORMAT
+          valueFrom:
+            configMapKeyRef:
+              key: log_format
+              name: common-config
+
+
 

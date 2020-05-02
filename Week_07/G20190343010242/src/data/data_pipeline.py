@@ -1,19 +1,26 @@
-from scrapy.crawler import CrawlerProcess
-from scrapy.utils.project import get_project_settings
+import os
 from apscheduler.schedulers.twisted import TwistedScheduler
-from newscomments.newscomments.spiders.newscomments_spider import NewsCommentsSpider
-from datetime import datetime
+from scrapy.crawler import CrawlerProcess
+from scrapy.settings import Settings
+from newscomments.newscomments import settings as news_comments_settings
+from newscomments.newscomments.spiders.news_comments_spider import NewsCommentsSpider
+from utils.logger import get_logger
 
 
-settings = get_project_settings()
-settings['USER_AGENT'] = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36"
-settings['ITEM_PIPELINES'] = {
-   'newscomments.newscomments.pipelines.comments_pipeline.CommentsPipeline': 300,
-}
-process = CrawlerProcess(settings)
-scheduler = TwistedScheduler()
-scheduler.add_job(process.crawl, 'interval', args=[NewsCommentsSpider], seconds=3600, next_run_time=datetime.now())
-scheduler.start()
-process.start(False)
+logger = get_logger('data_pipeline')
+try:
+   interval = int(os.getenv("PROCESS_INTERVAL", "3600"))
 
+   settings = Settings()
+   settings.setmodule(news_comments_settings)
+   process = CrawlerProcess(settings)
+   scheduler = TwistedScheduler()
+   scheduler.add_job(process.crawl, 'interval', args=[NewsCommentsSpider.name], seconds=interval, id="regular_job")
+   logger.info("===== Start data pipeline =====")
+   # The scheduler doesn't run immediately, so need manually run it for the first time, then start the scheduler
+   process.crawl(NewsCommentsSpider.name)
+   scheduler.start()
+   process.start(False)
+except Exception as ex:
+   logger.error("Exception occurred on data pipeline. ", ex)
 

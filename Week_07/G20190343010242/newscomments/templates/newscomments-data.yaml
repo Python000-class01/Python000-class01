@@ -1,0 +1,97 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: data-config
+  namespace: {{ .Release.Namespace }}
+data:
+  news_url: "{{ .Values.news_url }}"
+  comments_url: "{{ .Values.comments_url }}"
+  comments_per_page: "{{ .Values.comments_per_page }}"
+  download_delay: "{{ .Values.download_delay }}"
+  process_interval: "{{ .Values.process_interval }}"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: newscomments-data
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: newscomments
+    tier: data
+spec:
+  replicas: {{ .Values.backendReplicas }}
+  selector:
+    matchLabels:
+      app: newscomments
+      tier: data
+  template:
+    metadata:
+      labels:
+        app: newscomments
+        tier: data
+    spec:
+      initContainers:
+      - name: init-db-ready
+        image: busybox
+        command: ['/bin/sh', '-c']
+        args:
+          - echo "Waiting for mysql at mysql-service to go live...";
+          - until (nslookup mysql-service > /dev/null) do echo "Waiting for mysql."; sleep 2; done
+      containers:
+      - name: backend
+        image: {{ .Values.container_repo }}/newscomments-data
+        ports:
+        - name: http-server
+          containerPort: 9090
+        env:
+        - name: PORT
+          value: "9090"
+        - name: DB_ADDR
+          value: "mysql-service:3306"
+        - name: DB_USER
+          valueFrom:
+            secretKeyRef:
+              key: db_username
+              name: newscomments-secrets
+        - name: DB_PASS
+          valueFrom:
+            secretKeyRef:
+              key: db_password
+              name: newscomments-secrets
+        - name: NEWS_URL
+          valueFrom:
+            configMapKeyRef:
+              key: news_url
+              name: data-config
+        - name: COMMENTS_URL
+          valueFrom:
+            configMapKeyRef:
+              key: comments_url
+              name: data-config
+        - name: COMMENTS_PER_PAGE
+          valueFrom:
+            configMapKeyRef:
+              key: comments_per_page
+              name: data-config
+        - name: DOWNLOAD_DELAY
+          valueFrom:
+            configMapKeyRef:
+              key: download_delay
+              name: data-config
+        - name: PROCESS_INTERVAL
+          valueFrom:
+            configMapKeyRef:
+              key: process_interval
+              name: data-config
+        - name: LOG_LEVEL
+          valueFrom:
+            configMapKeyRef:
+              key: log_level
+              name: common-config
+        - name: LOG_FORMAT
+          valueFrom:
+            configMapKeyRef:
+              key: log_format
+              name: common-config
+
+

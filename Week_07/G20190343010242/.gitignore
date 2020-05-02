@@ -1,5 +1,4 @@
 .vscode
 .idea
 venv3.7
-src/backend/newscommentsproject.egg-info
-src/data/newscommentsdata.egg-info
+newscommentsproject.egg-info
