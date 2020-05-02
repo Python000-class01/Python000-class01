@@ -19,7 +19,7 @@ configuration and kubernetes templates.
 - src: Include backend, frontend and data. The backend is used to create models, interact with database, and create 
 business logic. It provides the APIs for the frontend. The frontend is used to render the web pages, call the backend APIs and implement 
 the web logic. The data part is used to collect and manage data from the source. It crawls the web pages to collect the data and store it 
-in the database. The default frequency to collect data is 1 hour.
+in the database. The default frequency to collect data is 1 hour (Configure it from `process_interval` property in newscomments/values.yaml).
 
 - skaffold.yaml: Skaffold configuration file. See [doc](https://skaffold.dev/docs/references/yaml/) here.
 
