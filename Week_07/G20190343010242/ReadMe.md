@@ -1,15 +1,18 @@
 # Week07 Assignment
 
 ## Table of Contents
-1. [Project Structure](#project_structure)
-2. [Prerequisites](#prerequisites)
-3. [Setup and Run](#setup_and_run)
-4. [Features](#features)
-5. [Screenshots](#screenshots)
-6. [Troubleshooting](#troubleshooting)
-7. [Run and Debug on IDE](#run_and_debug_on_ide)
-8. [To-Do](#todo)
+1. [Introduction](#introduction)
+2. [Project Structure](#project_structure)
+3. [Prerequisites](#prerequisites)
+4. [Setup and Run](#setup_and_run)
+5. [Features](#features)
+6. [Screenshots](#screenshots)
+7. [Troubleshooting](#troubleshooting)
+8. [Run and Debug on IDE](#run_and_debug_on_ide)
+9. [To-Do](#todo)
 
+
+### Introduction <a name="introduction"></a>
 
 See [here](https://u.geekbang.org/lesson/8?article=223248) for details of requirements of the task.
 
