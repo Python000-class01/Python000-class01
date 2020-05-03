@@ -4,6 +4,6 @@ metadata:
   name: common-config
   namespace: {{ .Release.Namespace }}
 data:
-  log_level: "{{ .Values.log_level }}"
-  log_format: "{{ .Values.log_format }}"
-
+{{- range $key, $value := .Values.common }}
+  {{ $key }}: {{ $value | quote }}
+{{- end }}

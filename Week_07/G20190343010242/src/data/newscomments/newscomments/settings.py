@@ -30,6 +30,11 @@ ROBOTSTXT_OBEY = False
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
 DOWNLOAD_DELAY = int(os.getenv("DOWNLOAD_DELAY", "5"))
+
+LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO")
+
+LOG_FORMAT = os.getenv("LOG_FORMAT", "%(asctime)-15s - %(name)s - %(levelname)s  %(message)s")
+
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16

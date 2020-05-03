@@ -1,12 +1,14 @@
 import json
 import os
-from flask import Flask, render_template, redirect, url_for, request
+from flask import Flask, logging, render_template, request
 import requests
 from werkzeug.exceptions import HTTPException
 
 
 app = Flask(__name__)
 app.config["API_ADDR"] = 'http://{}'.format(os.environ.get('API_ADDR'))
+app.logger.setLevel(os.getenv("LOG_LEVEL", "INFO"))
+logging.default_handler.setFormatter(os.getenv("LOG_FORMAT", "%(asctime)-15s - %(name)s - %(levelname)s  %(message)s"))
 
 
 @app.route('/')

@@ -4,11 +4,9 @@ metadata:
   name: data-config
   namespace: {{ .Release.Namespace }}
 data:
-  news_url: "{{ .Values.news_url }}"
-  comments_url: "{{ .Values.comments_url }}"
-  comments_per_page: "{{ .Values.comments_per_page }}"
-  download_delay: "{{ .Values.download_delay }}"
-  process_interval: "{{ .Values.process_interval }}"
+{{- range $key, $value := .Values.data_config }}
+  {{ $key }}: {{ $value | quote }}
+{{- end }}
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -58,40 +56,19 @@ spec:
             secretKeyRef:
               key: db_password
               name: newscomments-secrets
-        - name: NEWS_URL
+        {{- range $key, $value := .Values.data_config }}
+        - name: {{ $key | upper }}
           valueFrom:
             configMapKeyRef:
-              key: news_url
+              key: {{ $key }}
               name: data-config
-        - name: COMMENTS_URL
+        {{- end }}
+        {{- range $key, $value := .Values.common }}
+        - name: {{ $key | upper }}
           valueFrom:
             configMapKeyRef:
-              key: comments_url
-              name: data-config
-        - name: COMMENTS_PER_PAGE
-          valueFrom:
-            configMapKeyRef:
-              key: comments_per_page
-              name: data-config
-        - name: DOWNLOAD_DELAY
-          valueFrom:
-            configMapKeyRef:
-              key: download_delay
-              name: data-config
-        - name: PROCESS_INTERVAL
-          valueFrom:
-            configMapKeyRef:
-              key: process_interval
-              name: data-config
-        - name: LOG_LEVEL
-          valueFrom:
-            configMapKeyRef:
-              key: log_level
+              key: {{ $key }}
               name: common-config
-        - name: LOG_FORMAT
-          valueFrom:
-            configMapKeyRef:
-              key: log_format
-              name: common-config
+        {{- end }}
 
 

@@ -29,3 +29,10 @@ spec:
           value: "8080"
         - name: API_ADDR
           value: newscomments-backend:8080
+        {{- range $key, $value := .Values.common }}
+        - name: {{ $key | upper }}
+          valueFrom:
+            configMapKeyRef:
+              key: {{ $key }}
+              name: common-config
+        {{- end }}

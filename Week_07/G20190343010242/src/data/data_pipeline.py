@@ -17,7 +17,7 @@ try:
    scheduler = TwistedScheduler()
    scheduler.add_job(process.crawl, 'interval', args=[NewsCommentsSpider.name], seconds=interval, id="regular_job")
    logger.info("===== Start data pipeline =====")
-   # The scheduler doesn't run immediately, so need manually run it for the first time, then start the scheduler
+   # The scheduler doesn't run immediately, so need to explicitly run it for the first time, then start the scheduler
    process.crawl(NewsCommentsSpider.name)
    scheduler.start()
    process.start(False)

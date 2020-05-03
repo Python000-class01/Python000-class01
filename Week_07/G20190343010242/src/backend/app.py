@@ -1,11 +1,14 @@
 import json
 import os
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, logging, request
 from services.news_comments_svc import NewsCommentsService
 from werkzeug.exceptions import HTTPException
 
 
 app = Flask(__name__)
+app.logger.setLevel(os.getenv("LOG_LEVEL", "INFO"))
+logging.default_handler.setFormatter(os.getenv("LOG_FORMAT", "%(asctime)-15s - %(name)s - %(levelname)s  %(message)s"))
+
 service = NewsCommentsService()
 ok_code = int(os.getenv("OK_CODE", "200"))
 

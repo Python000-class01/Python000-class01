@@ -17,6 +17,7 @@ class NewsCommentsSpider(scrapy.Spider):
     comments_per_page = int(os.getenv("COMMENTS_PER_PAGE", "20"))
     dbUtils = DbHelper()
     logger = get_logger('news_comments_spider')
+    max_pages = int(os.getenv("MAX_PAGES", "10"))
 
     def parse(self, response):
         try:
@@ -27,7 +28,9 @@ class NewsCommentsSpider(scrapy.Spider):
             item['news_id'] = news_id
             total_comments = int(re.findall(r'\d+', response.xpath("//div[@id='content']/div/div[@class='article']/div[@class='related_info']/div[@class='mod-hd']/h2[1]/span[@class='pl']/a/text()").extract_first().strip())[0])
             pages = int(total_comments / self.comments_per_page) if total_comments % self.comments_per_page == 0 else int(total_comments / self.comments_per_page) + 1
-            # Get all comments in pages
+            # Get all comments in pages, but crawl up to max_pages
+            if pages > self.max_pages:
+                pages = self.max_pages
             urls = [f'{self.comments_url}?p={p+1}' for p in range(pages)]
             for c_url in urls:
                 yield scrapy.Request(c_url, meta={'item': item}, callback=self.__parse_comments)
