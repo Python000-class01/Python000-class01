@@ -1,4 +1,15 @@
-## Week07 Assignment
+# Week07 Assignment
+
+## Table of Contents
+1. [Project Structure](#project_structure)
+2. [Prerequisites](#prerequisites)
+3. [Setup and Run](#setup_and_run)
+4. [Features](#features)
+5. [Screenshots](#screenshots)
+6. [Troubleshooting](#troubleshooting)
+7. [Run and Debug on IDE](#run_and_debug_on_ide)
+8. [To-Do](#todo)
+
 
 See [here](https://u.geekbang.org/lesson/8?article=223248) for details of requirements of the task.
 
@@ -11,7 +22,7 @@ But the project and code base is also adapted to news.
 
 It's recommended to run the application on Chrome browser, it hasn't been tested on other browsers.
 
-### Project Structure
+### Project Structure <a name="project_structure"></a>
 
 - newscomments: This folder stores the [helm chart](https://helm.sh/docs/topics/charts/), which includes the 
 configuration and kubernetes templates.
@@ -76,7 +87,7 @@ root
   |- skaffold.yaml
 ```
 
-### Prerequisites
+### Prerequisites <a name="prerequisites"></a>
 
 You need to get below applications installed before kicking off the app.
 
@@ -90,7 +101,7 @@ You need to get below applications installed before kicking off the app.
 - [docker hub](https://hub.docker.com/) account or accounts on other popular public container registry which hosts most common images, like [gcr(Google)](https://cloud.google.com/container-registry), [ecr(Amazon)](https://aws.amazon.com/ecr/).
 - Python3.7 and pip (Best tested). This is only required if you need to run from IDE without using skaffold.
 
-### Setup and Run
+### Setup and Run <a name="setup_and_run"></a>
 
 a) Setup local container registry.
 ```bash
@@ -130,7 +141,7 @@ e) Stop application
 $ skaffold delete
 ```
 
-### Features
+### Features <a name="features"></a>
 
 You will see the bar chart in the home page, which displays teh number of comments by date. Below the bar chart, you can see 
 the list of comments with details including the sentiment info. You can see pagination on top and bottom of the comments block.
@@ -147,7 +158,7 @@ For the particular case in this project, it uses the comment id which is crawled
 you collect new data. Also, you need to clean the data whose comment is missing. You only need to insert into the database for the comments whose comment id are greater than the max one. For the empty database,
 the max comment id is 0.
 
-### Screenshots
+### Screenshots <a name="screenshots"></a>
 
 - Main page:
 
@@ -163,7 +174,7 @@ the max comment id is 0.
 ![search](resources/search.png)
 
 
-### Troubleshooting
+### Troubleshooting <a name="troubleshooting"></a>
 
 - Monitor all resources under your namespace.
 ```bash
@@ -203,7 +214,7 @@ enter the password, then the database will be initialized.
 
 ** You may need to restart the application by stopping and running application again.
 
-### Run and Debug on IDE
+### Run and Debug on IDE <a name="run_and_debug_on_ide"></a>
 
 I will take [PyCharm](https://www.jetbrains.com/pycharm/) as an example.
 
@@ -217,7 +228,7 @@ cloud code will keep watching your changes, and automatically sync your changes 
 
 VS Code is quite similar, here is a [quickstart](https://cloud.google.com/code/docs/vscode/quickstart) doc from google cloud.
 
-### To-Do
+### To-Do <a name="todo"></a>
 
 Due to the time limit, there are a few things that can put into the to-do list in the future.
 
