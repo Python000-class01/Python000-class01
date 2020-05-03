@@ -1,0 +1,219 @@
+{% set Document={"pagename":"评论管理", 
+                 "mycss":["layui.2.4.5/css/layui","css/layuiadmin/admin","css/layuiadmin/fonts","css/layuiadmin/style"],
+                 "myjs":["js/global/jquery-1.9.0.min","js/admin/msgbox","layui.2.4.5/layui","js/echarts/echarts.min"],
+                 "footerjs":[],
+				 "hidecommonjs":True
+				 } 
+%}
+{% extends "home/layout.html" %}
+{% block body %}
+<style>
+.header-input{ width:180px; height:28px; position:absolute; right:10px; top:6px;}
+
+.header-input-close {
+ position:absolute; right:15px; top:12px; width:16px; height:16px; opacity: .2; background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAKlBMVEUAAACKioqJiYmKioqJiYmKioqKioqKioqKioqJiYmJiYmLi4uKioqKiorl1wIDAAAADXRSTlMAMPDv0JBgwOBQ30C/2TmDLQAAAOBJREFUKM+NkTEKwkAQRV0Q0W6JtUVqSWFpEfACW9soeAlLwQvY6AW8gOAlPEDiiiL8u/hnnE2aFPlNMrMv8zLJoGfcJsSHb+vRDcx315wHaGJiLrAs//UETe7amLaNhTYCYiFVzRtVAKtMGvkQENEYqFxBwM+AKxu8PH1GwJU8YmMrw1xRexn+YuMARRTAWyWKKKAaQBECEmtQQZHEHqGCIibaUCookqGmpYIi084UABSp0quXIuLR0ZYjQESWs/UJEJH1JRma5B2fUHJO9bz7N4joJPVHFIlZh7jnea/8ACRv0bOj1ZcRAAAAAElFTkSuQmCC"); background-size:100% 100%;
+}
+.header-input-close:hover{
+ opacity: .5;
+}
+</style>
+</head>
+<!--主体 开始-->
+<body> 
+  <div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+    
+    
+    
+    
+    
+      <div class="layui-col-md8">
+      
+      
+      
+<div class="layui-card">
+<div class="layui-card-header">
+<div class="layui-col-md6">
+    评论列表
+</div>
+<div class="layui-col-md6">
+    <form action="{{ url_for('special.comment') }}" id="form1" name="form1">
+        <input type="text" name="q" id="q" placeholder="请输入关键字" value="{{q}}" autocomplete="off" class="layui-input header-input">
+        <input type="hidden" name="id" value="{{id}}">
+        {% if q %}
+            <a class="header-input-close" href="{{ url_for('special.comment', id=id) }}"></a>
+        {% endif %}
+    </form>
+</div>
+             
+</div>
+    <div class="layui-card-body">
+<div class="row">
+<div class="main-part col">
+
+
+<table class="layui-table">
+<thead>
+	<tr>
+    <th width="700">评论内容</th>
+    <th>评论情感</th>
+    <th>评论时间</th>
+	<th width="100">操作</th>
+	</tr>
+</thead>
+<tbody>
+      {% for i in rs -%}
+      <tr>
+        <td>{{i.comment}}</td>
+        <td>{{i.score1}}</td>
+        <td>{{i.info_time | outTime}}</td>
+        <td></td>
+      </tr>
+      {% endfor -%}
+    </tbody>
+
+<tfoot>
+	<tr>
+	<th colspan="4" style="text-align:right;">
+    <select  onchange="window.location=this.value;">
+    <option value="{{ url_for('special.comment', id=id, p=1) }}">1</option>
+    <option value="{{ url_for('special.comment', id=id, p=2) }}">2</option>
+    <option value="{{ url_for('special.comment', id=id, p=3) }}">3</option>
+    </select>
+    </th>
+	</tr>
+</tfoot>
+</table>
+</div>
+</div>
+</div>
+</div>
+      </div>
+      
+
+
+
+
+
+
+        <div class="layui-col-md4">
+<div class="layui-card">
+    <div class="layui-card-body">
+    
+    <div id="main" style="width: 100%;height:300px;"></div>
+    <script type="text/javascript">
+	    var xAxis={{xAxis}};
+	    var series={{series|tojson}};
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: '每日采集数量'
+            },
+            tooltip: {},
+            xAxis: {
+                data: series
+            },
+            yAxis: {},
+            series: [{
+                name: '数量',
+                type: 'bar',
+                data: xAxis
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+    
+    
+    
+    </div>
+    </div>
+<div class="layui-card">
+    <div class="layui-card-body">
+    
+    
+    <div id="main2" style="width: 300px;height:300px; margin:0 auto;"></div>
+    <script type="text/javascript">
+	var aa={{aa}};
+	var bb={{bb}};
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main2'));
+
+        // 指定图表的配置项和数据
+        var option = {
+    title: {
+        text: '舆情情感分布',
+        subtext: '正向为情感得分大于0.5',
+        left: 'center'
+    },
+	color:['red', 'green'],
+    tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{b} : {c} ({d}%)'
+    },
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+        data: ['正向', '负向']
+    },
+    series: [
+        {
+            name: '访问来源',
+            type: 'pie',
+            radius: '55%',
+            center: ['50%', '60%'],
+            data: [
+                {value: aa, name: '正向'},
+                {value: bb, name: '负向'},
+            ],
+            emphasis: {
+                itemStyle: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            }
+        }
+    ]
+};
+
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+    
+    
+    </div>
+    </div>
+    </div>
+
+
+
+
+
+
+      
+    </div>
+  </div>
+<script>
+var spiderUrl="{{url_for('special.spider')}}";
+$(function(){
+	$("#main").css("width",'100%');
+    $(".runSpider").click(function(){
+		$.ajax({
+		  url: spiderUrl,
+		  async:true,
+		  success: function(data){
+			console.log(123123)
+			flag=false;
+		  } 
+		});
+	});
+})
+</script>
+<!--主体 结束-->
+{% endblock %}

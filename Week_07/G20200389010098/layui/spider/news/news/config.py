@@ -1,0 +1,1 @@
+mysql_config={"host":"test.mysql.rds.aliyuncs.com","port":"3306","user":"test","psw":"test","db_name":"wordcloud","charset":"utf8mb4"}

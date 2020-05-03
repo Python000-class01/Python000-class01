@@ -1,0 +1,72 @@
+{% set Document={"pagename":"链接管理",
+                 "mycss":["layui.2.4.5/css/layui","css/layuiadmin/admin","css/layuiadmin/fonts","css/layuiadmin/style"],
+                 "myjs":["js/global/jquery-1.9.0.min","js/admin/msgbox","layui.2.4.5/layui"],
+                 "footerjs":[],
+				 "hidecommonjs":True 
+				 } 
+%}
+{% extends "home/layout.html" %}
+{% block body %}
+</head>
+<!--主体 开始-->
+<body> 
+  <div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md12">
+<div class="layui-card">
+    <div class="layui-card-body">
+<div class="row">
+<div class="main-part col">
+
+
+<table class="layui-table">
+<thead>
+	<tr>
+    <th width="30">ID</th>
+	<th width="400">链接</th>
+    <th>来源</th>
+    <th>外部ID</th>
+    <th>更新时间</th>
+	<th>操作</th>
+	</tr>
+</thead>
+<tbody>
+      {% for i in rs -%}
+      <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.special_url}}</td>
+        <td>{{i.spider_name}}</td>
+        <td>{{i.spider_key}}</td>
+        <td> </td>
+        <td><a class="layui-btn layui-btn-sm">手动采集</a></td>
+      </tr>
+      {% endfor -%}
+    </tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+      </div>
+      
+
+      
+    </div>
+  </div>
+<script>
+var spiderUrl="{{url_for('special.spider')}}";
+$(function(){
+    $(".runSpider").click(function(){
+		$.ajax({
+		  url: spiderUrl,
+		  async:true,
+		  success: function(data){
+			console.log(123123)
+			flag=false;
+		  } 
+		});
+	});
+})
+</script>
+<!--主体 结束-->
+{% endblock %}
