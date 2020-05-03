@@ -2,10 +2,10 @@ import os
 import re
 import scrapy
 from models.news import News
+from newscomments.newscomments.items.comments_item import CommentsItem
 from utils.db_helper import DbHelper
 from utils.helper import Helper
 from utils.logger import get_logger
-from newscomments.newscomments.items.comments_item import CommentsItem
 
 
 class NewsCommentsSpider(scrapy.Spider):
