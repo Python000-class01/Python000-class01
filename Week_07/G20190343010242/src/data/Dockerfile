@@ -5,7 +5,7 @@ FROM python:3.7
 WORKDIR /app
 
 # copy the requirements file used for dependencies
-COPY requirements.txt .
+COPY data/requirements.txt .
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --trusted-host pypi.python.org -r requirements.txt
@@ -14,9 +14,11 @@ RUN pip install --trusted-host pypi.python.org -r requirements.txt
 RUN pip install ptvsd
 
 # Copy the rest of the working directory contents into the container at /app
-COPY . .
+COPY data/. .
 
-RUN rm -rf newscommentsdata.egg-info || true
+COPY common/. .
+
+COPY setup.py .
 
 RUN pip install -e .
 

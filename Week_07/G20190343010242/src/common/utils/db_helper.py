@@ -1,10 +1,10 @@
 import os
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
 from sqlalchemy.event import listen
+from sqlalchemy.orm import sessionmaker
 
 
-class DbUtils:
+class DbHelper:
 
     def __init__(self):
         host = os.getenv("DB_ADDR")
@@ -18,9 +18,13 @@ class DbUtils:
 
     def insert(self, objects):
         session = self.Session()
-        session.add_all(objects)
-        session.commit()
-        session.close()
+        try:
+            session.add_all(objects)
+            session.commit()
+        except Exception as ex:
+            raise ex
+        finally:
+            session.close()
 
     def query(self, q, page=0, page_size=25):
         listen(q, 'before_compile', self.apply_limit(page, page_size), retval=True)
@@ -34,4 +38,3 @@ class DbUtils:
                     query = query.offset(page * page_size)
             return query
         return wrapped
-

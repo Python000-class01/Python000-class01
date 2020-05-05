@@ -1,5 +1,5 @@
-import hashlib
 from datetime import datetime
+import hashlib
 
 
 class Helper:
@@ -15,4 +15,13 @@ class Helper:
             return datetime.strptime(datetime_str, "%Y-%m-%d")
         except:
             return datetime.now()
+
+    @staticmethod
+    def get_date(date_str):
+        if not date_str:
+            date = datetime.now().strftime("%Y-%m-%d")
+        else:
+            date = datetime.strptime(date_str, "%Y-%m-%d")
+        return date
+
 

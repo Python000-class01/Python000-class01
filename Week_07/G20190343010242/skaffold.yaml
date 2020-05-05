@@ -9,11 +9,25 @@ build:
     useDockerCLI: true
   artifacts:
   - image: newscomments-backend
-    context: src/backend
+    context: src
+    sync:
+      infer:
+        - backend/**/*
+        - common/**/*
+        - setup.py
+    docker:
+      dockerfile: backend/Dockerfile
+  - image: newscomments-data
+    context: src
+    sync:
+      infer:
+        - data/**/*
+        - common/**/*
+        - setup.py
+    docker:
+      dockerfile: data/Dockerfile
   - image: newscomments-frontend
     context: src/frontend
-  - image: newscomments-data
-    context: src/data
 
 # defines the helm to deploy on each run
 deploy:

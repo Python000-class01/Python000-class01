@@ -1,22 +1,32 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: data-config
+  namespace: {{ .Release.Namespace }}
+data:
+{{- range $key, $value := .Values.data_config }}
+  {{ $key }}: {{ $value | quote }}
+{{- end }}
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: newscomments-backend
+  name: newscomments-data
   namespace: {{ .Release.Namespace }}
   labels:
     app: newscomments
-    tier: backend
+    tier: data
 spec:
   replicas: {{ .Values.backendReplicas }}
   selector:
     matchLabels:
       app: newscomments
-      tier: backend
+      tier: data
   template:
     metadata:
       labels:
         app: newscomments
-        tier: backend
+        tier: data
     spec:
       initContainers:
       - name: init-db-ready
@@ -27,15 +37,15 @@ spec:
           - until (nslookup mysql-service > /dev/null) do echo "Waiting for mysql."; sleep 2; done
       containers:
       - name: backend
-        image: {{ .Values.container_repo }}/newscomments-backend
+        image: {{ .Values.container_repo }}/newscomments-data
         ports:
         - name: http-server
-          containerPort: 8080
+          containerPort: 9090
         env:
         - name: PORT
-          value: "8080"
+          value: "9090"
         - name: DB_ADDR
-          value: "mysql-service:{{ .Values.mysqlPort }}"
+          value: "mysql-service:3306"
         - name: DB_USER
           valueFrom:
             secretKeyRef:
@@ -46,4 +56,19 @@ spec:
             secretKeyRef:
               key: db_password
               name: newscomments-secrets
+        {{- range $key, $value := .Values.data_config }}
+        - name: {{ $key | upper }}
+          valueFrom:
+            configMapKeyRef:
+              key: {{ $key }}
+              name: data-config
+        {{- end }}
+        {{- range $key, $value := .Values.common }}
+        - name: {{ $key | upper }}
+          valueFrom:
+            configMapKeyRef:
+              key: {{ $key }}
+              name: common-config
+        {{- end }}
+
 

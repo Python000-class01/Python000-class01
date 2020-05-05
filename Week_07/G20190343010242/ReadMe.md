@@ -1,4 +1,18 @@
-## Week07 Assignment
+# Week07 Assignment
+
+## Table of Contents
+1. [Introduction](#introduction)
+2. [Project Structure](#project_structure)
+3. [Prerequisites](#prerequisites)
+4. [Setup and Run](#setup_and_run)
+5. [Features](#features)
+6. [Screenshots](#screenshots)
+7. [Troubleshooting](#troubleshooting)
+8. [Run and Debug on IDE](#run_and_debug_on_ide)
+9. [To-Do](#todo)
+
+
+### Introduction <a name="introduction"></a>
 
 See [here](https://u.geekbang.org/lesson/8?article=223248) for details of requirements of the task.
 
@@ -11,7 +25,7 @@ But the project and code base is also adapted to news.
 
 It's recommended to run the application on Chrome browser, it hasn't been tested on other browsers.
 
-### Project Structure
+### Project Structure <a name="project_structure"></a>
 
 - newscomments: This folder stores the [helm chart](https://helm.sh/docs/topics/charts/), which includes the 
 configuration and kubernetes templates.
@@ -19,7 +33,7 @@ configuration and kubernetes templates.
 - src: Include backend, frontend and data. The backend is used to create models, interact with database, and create 
 business logic. It provides the APIs for the frontend. The frontend is used to render the web pages, call the backend APIs and implement 
 the web logic. The data part is used to collect and manage data from the source. It crawls the web pages to collect the data and store it 
-in the database. The default frequency to collect data is 1 hour.
+in the database. The default frequency to collect data is 1 hour (Configure it from `process_interval` property in newscomments/values.yaml).
 
 - skaffold.yaml: Skaffold configuration file. See [doc](https://skaffold.dev/docs/references/yaml/) here.
 
@@ -40,32 +54,26 @@ root
      |- values.yaml
   |- src
      |- backend
+        |- services
+           |- newscomments_svc.py
+        |- app.py (backend entrypoint)
+        |- Dockerfile
+        |- requirements.txt
+     |- common
         |- models
            |- base_model.py
            |- comments.py
            |- news.py
-        |- services
-           |- newscomments_svc.py
         |- utils
            |- db_helper.py
-        |- app.py (backend entrypoint)
-        |- Dockerfile
-        |- requirements.txt
-        |- setup.py
-     |- data
-        |- datamodels
-           |- base_model.py
-           |- comments.py
-           |- news.py
-        |- datautils
-           |- db_utils.py
            |- helper.py
+           |- logger.py
+     |- data
         |- newscomments(scrapy project root)
            |- scrapy clawler/spiders/items/pipelines etc.
         |- data_pipeline.py (data entrypoint)
         |- Dockerfile
         |- requirements.txt
-        |- setup.py
      |- frontend
         |- static
            |- images, css etc. 
@@ -74,6 +82,7 @@ root
         |- app.py (frontend entrypoint)
         |- Dockerfile
         |- requirements.txt
+     |- setup.py
   |- resources
   |- .gitignore
   |- pylintrc
@@ -81,7 +90,7 @@ root
   |- skaffold.yaml
 ```
 
-### Prerequisites
+### Prerequisites <a name="prerequisites"></a>
 
 You need to get below applications installed before kicking off the app.
 
@@ -95,7 +104,7 @@ You need to get below applications installed before kicking off the app.
 - [docker hub](https://hub.docker.com/) account or accounts on other popular public container registry which hosts most common images, like [gcr(Google)](https://cloud.google.com/container-registry), [ecr(Amazon)](https://aws.amazon.com/ecr/).
 - Python3.7 and pip (Best tested). This is only required if you need to run from IDE without using skaffold.
 
-### Setup and Run
+### Setup and Run <a name="setup_and_run"></a>
 
 a) Setup local container registry.
 ```bash
@@ -135,7 +144,7 @@ e) Stop application
 $ skaffold delete
 ```
 
-### Features
+### Features <a name="features"></a>
 
 You will see the bar chart in the home page, which displays teh number of comments by date. Below the bar chart, you can see 
 the list of comments with details including the sentiment info. You can see pagination on top and bottom of the comments block.
@@ -152,7 +161,7 @@ For the particular case in this project, it uses the comment id which is crawled
 you collect new data. Also, you need to clean the data whose comment is missing. You only need to insert into the database for the comments whose comment id are greater than the max one. For the empty database,
 the max comment id is 0.
 
-### Screenshots
+### Screenshots <a name="screenshots"></a>
 
 - Main page:
 
@@ -168,7 +177,7 @@ the max comment id is 0.
 ![search](resources/search.png)
 
 
-### Troubleshooting
+### Troubleshooting <a name="troubleshooting"></a>
 
 - Monitor all resources under your namespace.
 ```bash
@@ -208,7 +217,7 @@ enter the password, then the database will be initialized.
 
 ** You may need to restart the application by stopping and running application again.
 
-### Run and Debug on IDE
+### Run and Debug on IDE <a name="run_and_debug_on_ide"></a>
 
 I will take [PyCharm](https://www.jetbrains.com/pycharm/) as an example.
 
@@ -222,7 +231,7 @@ cloud code will keep watching your changes, and automatically sync your changes 
 
 VS Code is quite similar, here is a [quickstart](https://cloud.google.com/code/docs/vscode/quickstart) doc from google cloud.
 
-### To-Do
+### To-Do <a name="todo"></a>
 
 Due to the time limit, there are a few things that can put into the to-do list in the future.
 

@@ -8,8 +8,10 @@
 #     https://docs.scrapy.org/en/latest/topics/settings.html
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
+import os
 
-BOT_NAME = 'newscomments'
+
+BOT_NAME = 'news_comments'
 
 SPIDER_MODULES = ['newscomments.newscomments.spiders']
 NEWSPIDER_MODULE = 'newscomments.newscomments.spiders'
@@ -27,7 +29,12 @@ ROBOTSTXT_OBEY = False
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-#DOWNLOAD_DELAY = 3
+DOWNLOAD_DELAY = int(os.getenv("DOWNLOAD_DELAY", "5"))
+
+LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO")
+
+LOG_FORMAT = os.getenv("LOG_FORMAT", "%(asctime)-15s - %(name)s - %(levelname)s  %(message)s")
+
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16

@@ -1,22 +1,32 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: backend-config
+  namespace: {{ .Release.Namespace }}
+data:
+{{- range $key, $value := .Values.backend_config }}
+  {{ $key }}: {{ $value | quote }}
+{{- end }}
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: newscomments-data
+  name: newscomments-backend
   namespace: {{ .Release.Namespace }}
   labels:
     app: newscomments
-    tier: data
+    tier: backend
 spec:
   replicas: {{ .Values.backendReplicas }}
   selector:
     matchLabels:
       app: newscomments
-      tier: data
+      tier: backend
   template:
     metadata:
       labels:
         app: newscomments
-        tier: data
+        tier: backend
     spec:
       initContainers:
       - name: init-db-ready
@@ -27,15 +37,15 @@ spec:
           - until (nslookup mysql-service > /dev/null) do echo "Waiting for mysql."; sleep 2; done
       containers:
       - name: backend
-        image: {{ .Values.container_repo }}/newscomments-data
+        image: {{ .Values.container_repo }}/newscomments-backend
         ports:
         - name: http-server
-          containerPort: 9090
+          containerPort: 8080
         env:
         - name: PORT
-          value: "9090"
+          value: "8080"
         - name: DB_ADDR
-          value: "mysql-service:3306"
+          value: "mysql-service:{{ .Values.mysqlPort }}"
         - name: DB_USER
           valueFrom:
             secretKeyRef:
@@ -46,4 +56,20 @@ spec:
             secretKeyRef:
               key: db_password
               name: newscomments-secrets
+        {{- range $key, $value := .Values.backend_config }}
+        - name: {{ $key | upper }}
+          valueFrom:
+            configMapKeyRef:
+              key: {{ $key }}
+              name: backend-config
+        {{- end }}
+        {{- range $key, $value := .Values.common }}
+        - name: {{ $key | upper }}
+          valueFrom:
+            configMapKeyRef:
+              key: {{ $key }}
+              name: common-config
+        {{- end }}
+
+
 
