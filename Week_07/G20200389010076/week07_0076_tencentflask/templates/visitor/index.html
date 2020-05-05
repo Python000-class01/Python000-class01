@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="jumbotron">
+          <h1>欢迎来到评论分析中心</h1>
+            <p><a href="#" > 本评论分析中心</a> 分析<a href="https://news.qq.com/"> 腾讯新闻 </a>中一则标题为<a href="http://pythonhosted.org/Flask-Bootstrap">
+          浙江大学党委副书记郑强履新太原理工大学党委书记 </a>的新闻。</p>
+          <p>
+            <a class="btn btn-lg btn-default" role="button" href="{{ url_for('visitor.analyze') }}" >查看分析结果</a>
+          </p>
+        </div>
+    </div>
+{% endblock %}

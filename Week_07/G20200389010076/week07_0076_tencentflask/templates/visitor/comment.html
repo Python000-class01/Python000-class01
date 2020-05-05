@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+
+{% block styles %}
+    {{ super() }}
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+{% endblock styles %}
+
+{% block scripts %}
+    {{ super() }}
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/moment.js/2.24.0/moment-with-locales.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+    <script>
+       $(function () {
+            $('#datetimepicker1').datetimepicker({
+                format: 'YYYY-MM-DD',
+                locale: moment.locale('zh-cn')
+            });
+        });
+    </script>
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body" style="height: 128px">
+                        <form class="form-horizontal" method="get" action="{{ url_for('visitor.comment') }}">
+                            <div class="form-group" style="float:right;">
+
+                                <label style="font-size:16px;Width: 100px;margin-top:7px;float: left;">选择日期：</label>
+                                <!--指定 date标记-->
+                                <div class='input-group date' id='datetimepicker1' style="font-size:16px;Width: 200px;float: left">
+                                    <input type='text' name="datetext" class="form-control" value="{% if datetext %}{{ datetext }}{% endif %}" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+
+
+                                <label style="font-size:16px;Width: 100px;margin-top:7px;float: left;">&nbsp;&nbsp;&nbsp;&nbsp;关键字:&nbsp;&nbsp;</label>
+                                <input class="form-control" style="font-size:16px;Width: 200px;float: left"
+                                       type="text" id="text1" name="keywordtext" value="{% if keywordtext %}{{ keywordtext }}{% endif %}"
+                                       maxlength=20 placeholder="输入内容">
+                                <button class="btn btn-primary" style="margin-left: 10px; float: left" type="submit" style="" id='search'>查询</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>评论</th>
+                                    <th>情感分析</th>
+                                    <th>情感正负</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for comm in comms %}
+                                    <tr>
+                                      <th>{{ comm.id }}</th>
+                                      <td>{{ comm.comment }}</td>
+                                      <td>{{ comm.sentiment }}</td>
+                                      <td>{{ comm.sort_sentiment }}</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ul class="pagination">
+            {% set offset = (offset)|int %}
+            {% set limit = (limit)|int %}
+            {% set count = (count)|int %}
+            {% set current_page = (offset/limit)|int + (1 if offset%limit else 0) %}
+            {% set total_page = (count/limit)|int + (1 if count%limit else 0) %}
+            <li class="{{ 'disabled' if current_page - 1 <= 0 else '' }}">
+                <a href="{% if current_page>1 %}
+                            {{ url_for('visitor.comment', text1=text1, offset=(current_page-1)*limit, limit=limit) }}
+                         {% endif %}">
+                    &laquo;
+                </a>
+            </li>
+
+            {% set prev=0 %}
+            {% for i in range(0, (total_page)|int) %}
+                {% if (i-0)|abs < 2 or (i-total_page)|abs < 3 or -2 < i-current_page < 5 %}
+                    {% set prev=i %}
+                    <li class="{% if i == current_page %}active{% endif %}">
+                        <a href="{{ url_for('visitor.comment', text1=text1, offset=i*limit, limit=limit) }}">{{ i + 1 }}</a>
+                    </li>
+                {% elif prev==(i-1) %}
+                    <li class="disabled"><a>…</a></li>
+                {% endif %}
+            {% endfor %}
+
+            <li class="{{ 'disabled' if current_page + 1 >= total_page else '' }}">
+                <a href="
+                        {% if current_page + 1<total_page %}
+                            {{ url_for('visitor.comment', text1=text1, offset=(current_page + 1)*limit, limit=limit) }}
+                        {% endif %}">
+                    &raquo;
+                </a>
+            </li>
+        </ul>
+    </div>
+{% endblock %}
