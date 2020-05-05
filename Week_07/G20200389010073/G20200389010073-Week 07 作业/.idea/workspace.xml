@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="49cf43dc-82f4-4d96-9ca6-f93211851f34" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1atZQNf1brW85c0XqeiQbABQ3Qf" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/new_reviews/new_reviews" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Python Class\G20200389010073-Week 07 作业\new_reviews\new_reviews\db" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Python Class\G20200389010073-Week 07 作业\new_reviews\new_reviews" />
+      <recent name="D:\Python Class\G20200389010073-Week 07 作业\new_reviews\new_reviews\spiders" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.runflask">
+    <configuration name="reviews" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="G20200389010073-Week 07 作业" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="E:\python\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/new_reviews/new_reviews/spiders" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/new_reviews/new_reviews/spiders/reviews.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="G20200389010073-Week 07 作业" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="E:\python\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/new_reviews/new_reviews" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/new_reviews/new_reviews/run.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="runflask" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="G20200389010073-Week 07 作业" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/flask_show_data" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/flask_show_data/runflask.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.runflask" />
+        <item itemvalue="Python.run" />
+        <item itemvalue="Python.reviews" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="49cf43dc-82f4-4d96-9ca6-f93211851f34" name="Default Changelist" comment="" />
+      <created>1587556839024</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1587556839024</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="519" y="46" key="#reviews" timestamp="1587557014291">
+      <screen x="0" y="0" width="1600" height="870" />
+    </state>
+    <state x="519" y="46" key="#reviews/0.0.1600.870@0.0.1600.870" timestamp="1587557014291" />
+    <state x="919" y="46" key="#run" timestamp="1587559863886">
+      <screen x="0" y="0" width="1600" height="870" />
+    </state>
+    <state x="919" y="46" key="#run/0.0.1600.870@0.0.1600.870" timestamp="1587559863886" />
+    <state x="0" y="187" key="#xdebugger.XInspectDialog" timestamp="1587561054958">
+      <screen x="0" y="0" width="1600" height="870" />
+    </state>
+    <state x="0" y="187" key="#xdebugger.XInspectDialog/0.0.1600.870@0.0.1600.870" timestamp="1587561054958" />
+    <state width="1202" height="438" key="DebuggerActiveHint" timestamp="1588066371936">
+      <screen x="0" y="0" width="1600" height="870" />
+    </state>
+    <state width="1202" height="438" key="DebuggerActiveHint/0.0.1600.870@0.0.1600.870" timestamp="1588066371936" />
+    <state x="900" y="100" width="600" height="670" key="DiffContextDialog" timestamp="1587569443679">
+      <screen x="0" y="0" width="1600" height="870" />
+    </state>
+    <state x="900" y="100" width="600" height="670" key="DiffContextDialog/0.0.1600.870@0.0.1600.870" timestamp="1587569443679" />
+    <state x="580" y="175" key="FileChooserDialogImpl" timestamp="1587873606033">
+      <screen x="0" y="0" width="1600" height="870" />
+    </state>
+    <state x="580" y="175" key="FileChooserDialogImpl/0.0.1600.870@0.0.1600.870" timestamp="1587873606033" />
+    <state width="982" height="272" key="GridCell.Tab.0.bottom" timestamp="1588176667698">
+      <screen x="0" y="0" width="1600" height="870" />
+    </state>
+    <state width="982" height="272" key="GridCell.Tab.0.bottom/0.0.1600.870@0.0.1600.870" timestamp="1588176667698" />
+    <state width="982" height="272" key="GridCell.Tab.0.center" timestamp="1588176667698">
+      <screen x="0" y="0" width="1600" height="870" />
+    </state>
+    <state width="982" height="272" key="GridCell.Tab.0.center/0.0.1600.870@0.0.1600.870" timestamp="1588176667698" />
+    <state width="982" height="272" key="GridCell.Tab.0.left" timestamp="1588176667698">
+      <screen x="0" y="0" width="1600" height="870" />
+    </state>
+    <state width="982" height="272" key="GridCell.Tab.0.left/0.0.1600.870@0.0.1600.870" timestamp="1588176667698" />
+    <state width="982" height="272" key="GridCell.Tab.0.right" timestamp="1588176667698">
+      <screen x="0" y="0" width="1600" height="870" />
+    </state>
+    <state width="982" height="272" key="GridCell.Tab.0.right/0.0.1600.870@0.0.1600.870" timestamp="1588176667698" />
+    <state width="982" height="272" key="GridCell.Tab.1.bottom" timestamp="1588176667698">
+      <screen x="0" y="0" width="1600" height="870" />
+    </state>
+    <state width="982" height="272" key="GridCell.Tab.1.bottom/0.0.1600.870@0.0.1600.870" timestamp="1588176667698" />
+    <state width="982" height="272" key="GridCell.Tab.1.center" timestamp="1588176667698">
+      <screen x="0" y="0" width="1600" height="870" />
+    </state>
+    <state width="982" height="272" key="GridCell.Tab.1.center/0.0.1600.870@0.0.1600.870" timestamp="1588176667698" />
+    <state width="982" height="272" key="GridCell.Tab.1.left" timestamp="1588176667698">
+      <screen x="0" y="0" width="1600" height="870" />
+    </state>
+    <state width="982" height="272" key="GridCell.Tab.1.left/0.0.1600.870@0.0.1600.870" timestamp="1588176667698" />
+    <state width="982" height="272" key="GridCell.Tab.1.right" timestamp="1588176667698">
+      <screen x="0" y="0" width="1600" height="870" />
+    </state>
+    <state width="982" height="272" key="GridCell.Tab.1.right/0.0.1600.870@0.0.1600.870" timestamp="1588176667698" />
+    <state x="19" y="0" key="SettingsEditor" timestamp="1587873608136">
+      <screen x="0" y="0" width="1600" height="870" />
+    </state>
+    <state x="19" y="0" key="SettingsEditor/0.0.1600.870@0.0.1600.870" timestamp="1587873608136" />
+    <state width="808" height="443" key="XDebugger.FullValuePopup" timestamp="1588062040455">
+      <screen x="0" y="0" width="1600" height="870" />
+    </state>
+    <state width="808" height="443" key="XDebugger.FullValuePopup/0.0.1600.870@0.0.1600.870" timestamp="1588062040455" />
+    <state x="463" y="182" width="672" height="678" key="search.everywhere.popup" timestamp="1587825609112">
+      <screen x="0" y="0" width="1600" height="870" />
+    </state>
+    <state x="463" y="182" width="672" height="678" key="search.everywhere.popup/0.0.1600.870@0.0.1600.870" timestamp="1587825609112" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/new_reviews/new_reviews/pipelines.py</url>
+          <line>24</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
