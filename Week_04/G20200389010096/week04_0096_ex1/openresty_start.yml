@@ -1,0 +1,12 @@
+#!/usr/bin/env ansible-playbook
+
+- name: Start Openresty
+  hosts: front_end
+  tasks:
+    - name: Execute start command
+      shell: start-stop-daemon --start --quiet --exec /usr/local/openresty/nginx/sbin/nginx
+    - name: Check nginx processes
+      shell: ps -ef | grep [n]ginx
+      register: ps_output
+    - name: Show output
+      debug: var=ps_output.stdout

@@ -1,0 +1,63 @@
+configs:
+  max_threads: 20
+  log_level: info
+  log_format: "%(asctime)-15s - %(name)s - %(levelname)s  %(message)s"
+
+targets:
+  douban_movie:
+    url: https://movie.douban.com/top250
+    page_size: 25
+    total_items: 250
+    page_param: start
+    sleep: 5
+    item_type: div
+    item_attr: item
+    info_attr: hd
+    enable_output: true
+    output_file_name: douban_movies_top250
+    output_encoding: utf-8
+    item_properties:
+    - name: Title
+      xpath: "[@id=\"content\"]/h1/span[1]/text()"
+    - name: Year
+      xpath: "[@id=\"content\"]/h1/span[2]/text()"
+    - name: Directors
+      xpath: "[@id=\"info\"]/span[1]/span[@class=\"attrs\"]/a//text()"
+    - name: ScriptWriters
+      xpath: "[@id=\"info\"]/span[2]/span[@class=\"attrs\"]/a//text()"
+    - name: Actors
+      xpath: "[@id=\"info\"]/span[3]/span[@class=\"attrs\"]/a//text()"
+    - name: Rating
+      xpath: "[@id=\"interest_sectl\"]/div/div[2]/strong/text()"
+    - name: Reviewers
+      xpath: "[@id=\"interest_sectl\"]/div/div[2]/div/div[2]/a/span/text()"
+    - name: HotComments
+      xpath: "[@id=\"hot-comments\"]/div[@class=\"comment-item\"]/div/p/span//text()" 
+    - name: Link
+      xpath: ~
+
+  douban_book:
+    url: https://book.douban.com/top250
+    page_size: 25
+    total_items: 250
+    page_param: start
+    sleep: 5
+    item_type: tr
+    item_attr: item
+    info_attr: pl2
+    enable_output: true
+    output_file_name: douban_books_top250
+    output_encoding: utf-8
+    item_properties:
+    - name: Title
+      xpath: "[@id=\"wrapper\"]/h1/span[1]/text()"
+    - name: Authors
+      xpath: "[@id=\"info\"]/span[1]/a//text()"
+    - name: Rating
+      xpath: "[@id=\"interest_sectl\"]/div/div[2]/strong/text()"
+    - name: Reviewers
+      xpath: "[@id=\"interest_sectl\"]/div[1]/div[2]/div[1]/div[2]/span/a/span/text()"
+    - name: HotComments
+      xpath: "[@id=\"comments\"]/ul/li[@class=\"comment-item\"]/div/p/span//text()" 
+    - name: Link
+      xpath: ~

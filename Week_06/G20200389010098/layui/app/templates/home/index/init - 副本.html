@@ -1,0 +1,87 @@
+{% set Document={"pagename":"首页",
+                 "mycss":["layui.2.4.5/css/layui","css/layuiadmin/admin","css/layuiadmin/fonts","css/layuiadmin/style"],
+                 "myjs":["js/global/jquery-1.9.0.min","js/admin/msgbox","layui.2.4.5/layui"],
+                 "footerjs":[],
+				 "hidecommonjs":True
+				 } 
+%}
+{% extends "home/layout.html" %}
+{% block body %}
+</head>
+<!--主体 开始-->
+<body class="children-body"> 
+    <div class="layui-card">
+    <div class="layui-card-body">
+    <blockquote class="layui-elem-quote">
+    <ul>
+        <li class="f-20 text-success">欢迎使用 太乙康<span class="f-14">v1.5</span> 管理系统</li>
+        <li>【品牌管理员】 admin</li>
+        <li>登录次数：42</li>
+    </ul>
+    </blockquote>
+<div class="row">
+<div class="main-part col">
+
+<blockquote class="layui-elem-quote title">系统基本参数</blockquote>
+<table class="layui-table">
+<thead>
+	<tr><th colspan="2" scope="col">服务器信息</th></tr>
+</thead>
+<tbody>
+      <tr>
+        <td width="200">系统类型及版本号</td>
+        <td>Windows NT I9UK4E2OAC97I23 6.1 build 7601 (Windows 7 Ultimate Edition Service Pack 1) AMD64</td>
+      </tr>
+      <tr>
+        <td>服务器IP</td>
+        <td>192.168.17.23</td>
+      </tr>
+      <tr>
+        <td>服务器解译引擎</td>
+        <td>kangle/3.5.8.2</td>
+      </tr>
+      <tr>
+        <td>服务器CPU数量</td>
+        <td>Intel64 Family 6 Model 60 Stepping 3, GenuineIntel</td>
+      </tr>
+      <tr>
+        <td>服务器Web端口</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>GD库版本</td>
+        <td>bundled (2.1.0 compatible)</td>
+      </tr>
+      <tr>
+        <td>FreeType</td>
+        <td>支持</td>
+      </tr>
+      <tr>
+        <td>远程文件获取</td>
+        <td>支持</td>
+      </tr>
+      <tr>
+        <td>最大上传限制</td>
+        <td>300M</td>
+      </tr>
+      <tr>
+        <td>最大执行时间</td>
+        <td>300秒</td>
+      </tr>
+      <tr>
+        <td>服务器时间</td>
+        <td>2020-04-13 09:13:05</td>
+      </tr>
+    </tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<script>
+$(function(){
+
+})
+</script>
+<!--主体 结束-->
+{% endblock %}

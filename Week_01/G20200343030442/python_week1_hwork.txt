@@ -1,0 +1,103 @@
+import requests
+from bs4 import BeautifulSoup as bs
+from time import sleep
+import lxml.etree
+import re
+import pandas as pd
+
+def get_url_info(myurl):
+    res = [] 
+    # 定义要爬取的网站地址变量
+    ##反爬虫设置
+    # 设置模拟浏览器的请求：user_agent 变量
+    # 定义浏览器的请求header变量并赋值为user_agent
+    user_agent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'
+    header = {}
+    header['user-agent'] = user_agent
+
+    #使用requests 模拟浏览器发起网页请求，并返回网页的全部内容
+    response = requests.get(myurl,headers=header)
+    # print(response.text)
+     
+    #使用BeautifulSoup处理requests获取的网页的返回信息
+    bs_info = bs(response.text, 'html.parser')
+
+    # selctor = lxml.etree.HTML(response.text)
+    # bookinfos = selctor.xpath('//div[@class="hd"]/a/span/text()') # 使用 +/text() 方式处理xpath
+    # print(bs_info.find_all('div', attrs={'class': 'pl2'})[1])
+    
+    # 循环获取前250部电影的名称、评分、短评数量、和前五热门短评
+    for tags in bs_info.find_all('div',attrs={'class':'hd'}):
+         
+        for atag in tags.find_all('a',):
+            # 获取电影的评论链接网址
+            # print(atag.get('href'))
+
+            film_adtrees_url = str(atag.get('href'))
+            response_film = requests.get(film_adtrees_url,headers=header)
+            # print(response_film.text)
+            selctor = lxml.etree.HTML(response_film.text)
+            # 获取电影名称
+            film_name = selctor.xpath('//h1/span[text()][1]/text()')
+            # print(film_name)
+            res.append(film_name)
+            # 获取评分
+            film_average = selctor.xpath('//div[@class="rating_wrap clearbox"]/div/strong[text()]/text()')
+            # print(film_average)
+            res.append(film_average)
+            # 获取短评数量
+            film_comments_num = selctor.xpath('//div[@id="comments-section"]/descendant::span[@class="pl"]/a[text()]/text()')
+            # print(film_comments_num)
+            res.append(film_comments_num)
+            # 获取前 5 条热门短评
+            xpaths = tuple(f'(//div[@class="comment"]/descendant::span[@class="short"][text()])[{num}]/text()'for num in range(1,6))
+            for  xpath_info in  xpaths :
+                film_comments = selctor.xpath(xpath_info)
+                # print(film_comments)
+                res.append(film_comments)
+
+    films = pd.DataFrame(data = res )
+    films.to_csv('./films.to_csv',encoding ='utf-8')
+                
+
+urls = tuple(f'https://movie.douban.com/top250?start={page * 25}&filter='for page in range(1))
+
+if __name__ == '__main__':
+    for page_url in urls:
+        get_url_info(page_url)
+        sleep(5)
+
+
+*******************************************************************
+import requests
+import json
+
+user_agent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'
+header = {}
+header['user-agent'] = user_agent
+
+
+url = 'http://httpbin.org/get'
+# response = requests.get(url)
+# print(response.text)
+# print(response.status_code)
+# print(response.text)
+# print(response.headers['content-type'])
+# print(response.encoding)
+# print(response.json())
+
+myurl = 'http://httpbin.org/post'
+
+addinfo = {'username':'tom','password':'123456'}
+
+# r = requests.post(myurl,data = {'key':'value'})
+# r = requests.post(myurl,data = addinfo)
+r = requests.post(myurl, headers = header, data = addinfo)
+# r = requests.post(myurl, headers = header, json = addinfo)
+
+print(r.json())
+
+
+
+
+

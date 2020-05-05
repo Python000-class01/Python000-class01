@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3db00322-7a96-4da7-8b4a-e10c2dab7421" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ending/spiders/pandasneed.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Week_01/G20200389010069/week01_0069_ex_1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Week_01/G20200389010069/week01_0069_ex_2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Week_03/G20200389010069/dianyingwang/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Week_03/G20200389010069/dianyingwang/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Week_03/G20200389010069/dianyingwang/dianyingwang/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Week_03/G20200389010069/dianyingwang/dianyingwang/items.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Week_03/G20200389010069/dianyingwang/dianyingwang/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Week_03/G20200389010069/dianyingwang/dianyingwang/pipelines.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Week_03/G20200389010069/dianyingwang/dianyingwang/spiders/zuoye.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Week_03/G20200389010069/dianyingwang/dianyingwang/spiders/zuoye.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Week_04/G20200389010069/week04_0069_ex.py.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ending/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/ending/items.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ending/mysqlpipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/ending/mysqlpipeline.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ending/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/ending/pipelines.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ending/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ending/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ending/spiders/TSE[.py" beforeDir="false" afterPath="$PROJECT_DIR$/ending/spiders/TSE[.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ending/spiders/dingshi.py" beforeDir="false" afterPath="$PROJECT_DIR$/ending/spiders/dingshi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ending/spiders/movice.py" beforeDir="false" afterPath="$PROJECT_DIR$/ending/spiders/movice.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ending/spiders/starts2.py" beforeDir="false" afterPath="$PROJECT_DIR$/ending/spiders/starts2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pandasrun.py" beforeDir="false" afterPath="$PROJECT_DIR$/../pandasrun.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="1aoBfgc7NTXrjVDUzGLmfwB2zek" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager" selected="Python.pandasneed">
+    <configuration name="TSE[" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ending" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ending/spiders" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ending/spiders/TSE[.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="dingshi" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ending" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ending/spiders" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ending/spiders/dingshi.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="mysqlpipeline" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ending" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ending" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ending/mysqlpipeline.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pandasneed" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ending" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ending/spiders" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ending/spiders/pandasneed.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="starts2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ending" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ending/spiders" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ending/spiders/starts2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.pandasneed" />
+        <item itemvalue="Python.dingshi" />
+        <item itemvalue="Python.starts2" />
+        <item itemvalue="Python.TSE[" />
+        <item itemvalue="Python.mysqlpipeline" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3db00322-7a96-4da7-8b4a-e10c2dab7421" name="Default Changelist" comment="" />
+      <created>1587392170365</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1587392170365</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="484" y="61" key="#starts2" timestamp="1587557014556">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="484" y="61" key="#starts2/0.0.1536.824@0.0.1536.824" timestamp="1587557014556" />
+    <state width="1515" height="261" key="GridCell.Tab.0.bottom" timestamp="1588003751862">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="261" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588003751862" />
+    <state width="1515" height="261" key="GridCell.Tab.0.center" timestamp="1588003751862">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="261" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588003751862" />
+    <state width="1515" height="261" key="GridCell.Tab.0.left" timestamp="1588003751862">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="261" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588003751862" />
+    <state width="1515" height="261" key="GridCell.Tab.0.right" timestamp="1588003751862">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="261" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588003751862" />
+    <state width="1515" height="261" key="GridCell.Tab.1.bottom" timestamp="1588003751863">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588003751863" />
+    <state width="1515" height="261" key="GridCell.Tab.1.center" timestamp="1588003751863">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1588003751863" />
+    <state width="1515" height="261" key="GridCell.Tab.1.left" timestamp="1588003751862">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1588003751862" />
+    <state width="1515" height="261" key="GridCell.Tab.1.right" timestamp="1588003751863">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1588003751863" />
+    <state x="461" y="240" key="com.intellij.ide.util.TipDialog" timestamp="1587990528395">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="461" y="240" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1587990528395" />
+    <state x="738" y="61" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1588001769560">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="738" y="61" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1588001769560" />
+  </component>
+</project>

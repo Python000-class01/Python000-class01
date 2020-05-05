@@ -1,0 +1,7 @@
+locale: zh_CN
+vip_discount: 0.8
+vip_threshold: 200.0
+vip_item_threshold: 10
+vip_item_discount: 0.85
+generic_threshold: 200.0
+generic_discount: 0.9

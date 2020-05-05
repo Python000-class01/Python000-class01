@@ -1,0 +1,8 @@
+---
+- hosts: webserver
+  remote_user: root
+  tasks:
+    - name: start nginx
+      service: name=nginx state=started
+    - name: stop nginx
+      service: name=nginx state=stoped

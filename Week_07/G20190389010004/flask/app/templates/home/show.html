@@ -1,0 +1,78 @@
+{% extends "home/base_layout.html" %} {% block title %}Flot{% endblock %} 
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/morris.css') }}">
+{% endblock %} 
+{% block content %}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">图展示</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+
+<div class="row">
+       <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                每日采集数量
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div id="morris-bar-chart"></div>
+                <div>{{showData}}</div>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-6 -->
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                舆情分析
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+
+                <div id="morris-donut-chart"></div>
+                <div>{{pn}}</div>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-6 -->
+</div>
+
+{% endblock %}
+{% block js %}
+    {{ super() }}
+    <script src="{{ url_for('static', filename='js/raphael-min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/morris.min.js')}}"></script>
+    <!-- <script src="{{ url_for('static', filename='js/morris-data.js')}}"></script> -->
+    <script type="text/javascript">
+        var showData = JSON.parse('{{ showData|tojson }}');
+        var pn = JSON.parse('{{ pn|tojson }}');
+
+        Morris.Bar({
+            element: 'morris-bar-chart',
+            data: showData,
+            xkey: 'day',
+            ykeys: ['sum'],
+            labels: ['评论总数'],
+            hideHover: 'auto',
+            resize: true,
+            barColors: ['#10c469']
+        });  
+
+        Morris.Donut({
+        element: 'morris-donut-chart',
+        data: pn,
+        resize: true
+        });
+    </script>
+
+
+{% endblock %}

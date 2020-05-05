@@ -1,0 +1,12 @@
+#!/usr/bin/env ansible-playbook
+
+- name: Stop Openresty
+  hosts: front_end
+  tasks:
+    - name: Execute stop command
+      shell: start-stop-daemon --stop --quiet --oknodo --retry=TERM/30/KILL/5 --pidfile /usr/local/openresty/nginx/logs/nginx.pid
+    - name: Check nginx processes
+      shell: ps -ef | grep [n]ginx
+      register: ps_output
+    - name: Show output
+      debug: var=ps_output.stdout

@@ -1,0 +1,65 @@
+{% set Document={"pagename":"首页",
+                 "mycss":["layui.2.4.5/css/layui","css/layuiadmin/admin","css/layuiadmin/fonts","css/layuiadmin/style"],
+                 "myjs":["js/global/jquery-1.9.0.min","js/admin/msgbox","layui.2.4.5/layui"],
+                 "footerjs":[],
+				 "hidecommonjs":True
+				 } 
+%}
+{% extends "home/layout.html" %}
+{% block body %}
+</head>
+<!--主体 开始-->
+<body> 
+  <div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md12">
+        <div class="layui-row layui-col-space15">
+        
+
+          <div class="layui-col-md12">
+            <div class="layui-card">
+              <div class="layui-tab layui-tab-brief layadmin-latestData">
+                <ul class="layui-tab-title">
+                  <li class="layui-this">薛兆丰经济学讲义 短评分析{{appname}}</li>
+                </ul>
+                <div class="layui-tab-content">
+                  <div class="layui-tab-item layui-show">
+                    <table  class="layui-table">
+<thead>
+    <tr>
+      <th width="700">评论内容</th>
+      <th>评分</th>
+      <th>情感分析值</th>
+	  <th>评论时间</th>
+    </tr> 
+  </thead>
+  <tbody>
+    {% for i in rs -%}
+    <tr>
+      <td>{{i.comment}}</td>
+      <td>{{i.star}}</td>
+      <td>{{i.score1}}</td>
+	  <td>{{i.info_time | outTime}}</td>
+    </tr>
+    {% endfor -%}
+  </tbody>
+					</table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+      
+    </div>
+  </div>
+<script>
+$(function(){
+
+})
+</script>
+<!--主体 结束-->
+{% endblock %}

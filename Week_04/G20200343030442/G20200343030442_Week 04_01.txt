@@ -1,0 +1,26 @@
+---
+- hosts: group1
+   remote_user: root
+   tasks:
+   - name: start nginx
+      shell:  /user/local/webserver/nginx/sbin/nginx
+   - name: check nginx status running
+     shell: ps -ef | grep nginx
+     register: service_check_result
+   - name: show
+      debug: var=service_check-result.stdout verbosity=0
+
+
+---
+- hosts: group1
+   remote_user: root
+   tasks:
+   - name: stop nginx
+      shell:  /user/local/webserver/nginx/sbin/nginx -s stop
+   - name: check nginx status stop 
+     shell: ps -ef | grep nginx
+     register: service_check_result
+   - name: show
+      debug: var=service_check-result.stdout verbosity=0
+
+  

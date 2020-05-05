@@ -1,0 +1,66 @@
+{% set Document={"pagename":"热点管理",
+                 "mycss":["layui.2.4.5/css/layui","css/layuiadmin/admin","css/layuiadmin/fonts","css/layuiadmin/style"],
+                 "myjs":["js/global/jquery-1.9.0.min","js/admin/msgbox","layui.2.4.5/layui"],
+                 "footerjs":[],
+				 "hidecommonjs":Flase
+				 } 
+%}
+{% extends "home/layout.html" %}
+{% block body %}
+</head>
+<!--主体 开始-->
+<body> 
+  <div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md12">
+<div class="layui-card">
+    <div class="layui-card-body">
+<div class="row">
+<div class="main-part col">
+
+
+<table class="layui-table">
+<thead>
+	<tr>
+	<th>热点名</th>
+	<th width="400">操作</th>
+	</tr>
+</thead>
+<tbody>
+      {% for i in rs -%}
+      <tr>
+        <td>{{i.special_name}}</td>
+        <td><a class="layui-btn layui-btn-sm openWinPop" data-width="960" data-height="600" data-url="{{ url_for('special.urls', id=i.id) }}">新闻链接</a>
+            <a class="layui-btn layui-btn-sm openWinFull" data-url="{{ url_for('special.comment', id=i.id) }}">图表与评论</a>
+        </td>
+      </tr>
+      {% endfor -%}
+    </tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+      </div>
+      
+
+      
+    </div>
+  </div>
+<script>
+var spiderUrl="{{url_for('special.spider')}}";
+$(function(){
+    $(".runSpider").click(function(){
+		$.ajax({
+		  url: spiderUrl,
+		  async:true,
+		  success: function(data){
+			console.log(123123)
+			flag=false;
+		  } 
+		});
+	});
+})
+</script>
+<!--主体 结束-->
+{% endblock %}

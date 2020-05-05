@@ -1,0 +1,17 @@
+Linux端安装ansible后，打开hosts文件，将其他主机的地址写入并命名。
+[group1]
+192.168.2.19
+然后生成rsa密钥，公钥，ssh-keygen -t rsa
+ssh-copy-id 192.168.2.19可以实现免密登录
+编写playbook：
+---
+- hosts:group1
+  remote_user:root
+  tasks:
+  - name:Start openresty
+    shell: /usr/local/openresty/nginx/sbin/nginx
+  - name: stop nginx
+    shell: /usr/local/openresty/nginx/sbin/nginx -s stop
+
+存为playbook.yml
+运行 ansible-playbook playbook.yml执行

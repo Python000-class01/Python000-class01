@@ -1,0 +1,15 @@
+configs:
+  log_level: info
+  log_format: "%(asctime)-15s - %(name)s - %(levelname)s  %(message)s"
+task1:
+  review_url: https://book.douban.com/subject/1068920/reviews
+  topK: 10
+task2:
+  db:
+    host: localhost
+    name: douban
+    user: root
+    password: root
+    charset: utf8mb4
+    use_unicode: false
+  comment_url: https://book.douban.com/subject/6082808/comments/

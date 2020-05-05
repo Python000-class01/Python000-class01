@@ -1,0 +1,22 @@
+# host:192.168.0.2
+# apt install ansible
+# ssh-keygen -t rsa -C "ssh control nginx"
+# ssh-copy-id -i /root/.ssh/id_rsa root@192.168.0.2
+# ssh root@192.168.0.2 -i /root/.ssh/id_rsa
+# vi /etc/ansible/hosts
+# [web]
+# 192.168.0.2
+---
+- hosts: 192.168.0.2
+  remote_user: root 
+  tasks:
+    - name: install nginx
+      apt: name=nginx state=latest
+    - name: start nginx
+      service:
+          name: nginx
+          state: started
+    - name: stop nginx
+      service:
+          name: nginx
+          state: stopped

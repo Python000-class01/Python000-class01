@@ -1,0 +1,245 @@
+{% set Document={"pagename":"首页",
+                 "mycss":["layui.2.4.5/css/layui","css/layuiadmin/admin","css/layuiadmin/fonts","css/layuiadmin/style"],
+                 "myjs":["js/global/jquery-1.9.0.min","js/admin/msgbox","layui.2.4.5/layui"],
+                 "footerjs":[]
+				 } 
+%}
+{% extends "home/layout.html" %}
+{% block body %}
+</head>
+<!--主体 开始-->
+<body class="layui-layout-body">
+<!-- loading  B-->
+<div class="loading" id="init-loading" style="display: block;">
+  <div class="loading-spinner">
+    <div class="rect1"></div>
+    <div class="rect2"></div>
+    <div class="rect3"></div>
+    <div class="rect4"></div>
+    <div class="rect5"></div>
+  </div>
+  <p>63%</p>
+</div>
+<!-- loading  E-->
+  <div id="LAY_app" class="layadmin-tabspage-none hide">
+    <div class="layui-layout layui-layout-admin">
+      <div class="layui-header" id="LAY-system-topnav-menu">
+        <!-- 头部区域 -->
+        <ul class="layui-nav layui-layout-left">
+          <li class="layui-nav-item layadmin-flexible" lay-unselect>
+            <a href="javascript:;" layadmin-event="flexible" title="侧边伸缩">
+              <i class="layui-icon layui-icon-shrink-right" id="LAY_app_flexible"></i>
+            </a>
+          </li>
+                    
+          
+        </ul>
+        <ul class="layui-nav layui-layout-right" lay-filter="layadmin-layout-right">
+
+          <li class="layui-nav-item layui-hide-xs" lay-unselect>
+            <a href="javascript:;" layadmin-event="note" title="便签" class="pl-10 pr-10">
+              <i class="layui-icon layui-icon-note"></i>
+              <cite>便签{{name}}</cite>
+            </a>
+          </li>
+          <!--
+          <li class="layui-nav-item layui-hide-xs" lay-unselect>
+            <a href="javascript:;" id="lock-sys" title="锁定屏幕" class="pl-10 pr-10">
+            <i class="layui-icon layui-icon-password"></i>
+            <cite>锁屏</cite>
+            </a>
+          </li>
+          -->
+          <li class="layui-nav-item layui-hide-xs" lay-unselect>
+            <a href="javascript:;" layadmin-event="fullscreen" title="全屏/正常" class="pl-10 pr-10">
+              <i class="layui-icon layui-icon-screen-full"></i>
+              <cite>全屏</cite>
+            </a>
+          </li>
+          <!--
+          <li class="layui-nav-item layui-hide-xs" lay-unselect>
+            <a data-data_url="http://192.168.17.23/event/salon/pub/system/message.html" layadmin-event="sysMessage" lay-text="消息中心" title="消息中心" class="pl-10 pr-10">
+              <i class="layui-icon layui-icon-notice"></i>
+              <cite>消息</cite>
+              <!-- 如果有新消息，则显示小圆点 -->
+              <span id="LAY-topnav-new-message-tips" class="layui-badge-dot PHP Notice:  Undefined variable: messageCounts in H:\PHP\event\salon\app\tpl\default\pub\index\index_tpl.php on line 82
+<br />
+<b>Notice</b>:  Undefined variable: messageCounts in <b>H:\PHP\event\salon\app\tpl\default\pub\index\index_tpl.php</b> on line <b>82</b><br />
+hide"></span>
+            </a>
+          </li>
+          -->
+          <li class="layui-nav-item" style="margin-right:15px;"  lay-unselect>
+            <a href="javascript:;" title="当前帐号" class="pl-0">
+              <cite>swortect</cite>
+            </a>
+            <dl class="layui-nav-child">
+                        <dd><a href="javascript:;" class="openWinPop" data-url="http://192.168.17.23/event/salon/pub/index/login_auth.html" data-title="角色切换" data-width="350" data-height="400"><i class="layui-icon layui-icon-auz" data-icon="layui-icon-auz"></i> 角色切换</a></dd>
+            
+			            
+                <dd><a href="javascript:;" class="" id="hash-my-info" data-hash="my-info" data-url="http://192.168.17.23/event/salon/pub/my/info.html" data-title="个人信息"><i class="iconfont icon-zhanghu" data-icon="icon-zhanghu"></i> 个人信息</a></dd>
+                <dd><a href="javascript:;" class="openWinPop" id="hash-my-edit" data-hash="my-edit" data-url="http://192.168.17.23/event/salon/pub/my/edit.html" data-title="修改密码" data-width="500" data-height="300"><i class="iconfont icon-shezhi1" data-icon="icon-shezhi1"></i> 修改密码</a></dd>
+                <hr><dd><a href="javascript:;" class="logout" id="hash-login-logout" data-hash="login-logout" data-url="{{url_for('login.logout')}}" data-title="退出"><i class="iconfont icon-loginout" data-icon="icon-loginout"></i> 退出</a></dd>
+            </dl>
+          </li>
+          <!--
+          <li class="layui-nav-item layui-hide-xs" lay-unselect>
+            <a href="javascript:;" data-data_url="http://192.168.17.23/event/salon/pub/system/more.html" layadmin-event="more" title="更多">
+            <i class="layui-icon layui-icon-more-vertical"></i>
+
+            </a>
+          </li>
+          -->
+        </ul>
+      </div>
+      
+      <!-- 侧边菜单 -->
+      <div class="layui-side layui-side-menu">
+        <div class="layui-side-scroll">
+          <div class="layui-logo" lay-href="{{ url_for('index._index') }}">
+            <span>MySpider</span>
+          </div>
+          <div class="user-photo">
+            <a class="img" title="MySpider" ><img src="{{ url_for('static', filename='images/logo.png') }}"></a>
+            <p><span class="userName">swortect</span></p>
+        </div>
+          <ul class="layui-nav layui-nav-tree" lay-shrink="all" id="LAY-system-side-menu" lay-filter="layadmin-system-side-menu">
+                   
+{% for i in sysMenu.main -%}
+<li data-name="tools" class="layui-nav-item">
+{% if sysMenu.main[i]['items'] %}
+                    <a href="javascript:;" lay-tips="{{sysMenu.main[i].title}}" lay-direction="2"><i class="layui-icon {{sysMenu.main[i].icon}}"></i><cite>{{sysMenu.main[i].title}}</cite></a>
+                    
+                    <dl class="layui-nav-child">
+                          {% set menuItems=sysMenu.main[i]['items'] %}
+                          {% for j in menuItems -%}
+                          <dd data-name="user-index" class="">
+                                <a href="javascript:;" class="" id="hash-{{j.url}}" data-hash="{{j.url}}" data-url="{{ url_for(j.url) }}" data-title="{{j.title}}"><i class="layui-icon {{j.icon}}"></i><cite>{{j.title}}</cite></a>
+                          </dd>
+                          {% endfor -%}  
+                    </dl>
+{% else %}
+<a href="javascript:;" class="" id="hash-{{sysMenu.main[i].url}}" data-hash="{{sysMenu.main[i].url}}" data-url="{{ url_for(sysMenu.main[i].url) }}" lay-tips="{{sysMenu.main[i].title}}" lay-direction="2" data-title="{{sysMenu.main[i].title}}"><i class="layui-icon {{sysMenu.main[i].icon}}"></i><cite>{{sysMenu.main[i].title}}</cite></a>
+{% endif %}
+</li>
+{% endfor -%}
+          </ul>
+        </div>
+      </div>
+
+      <!-- 页面标签 -->
+            <div class="layadmin-pagetabs">
+        <div class="layui-tab" lay-unauto lay-allowClose="true" lay-filter="layadmin-layout-tabs">
+          <ul class="layui-tab-title" id="LAY_app_tabsheader" style="display:inline">
+            <li id="LAY_app_tab" class="layui-this"><i class="layui-icon layui-icon-app"></i> <span>首页</span></li>
+          </ul>
+          <ul class="layui-nav closeBox" style="display:inline">
+              <li class="layui-nav-item layui-hide-xs" lay-unselect>
+                <a href="javascript:;" id="top-menu-goback" class="" title="后退"><i class="layui-icon layui-icon-prev"></i> 后退</a>
+              </li>
+              <li class="layui-nav-item layui-hide-xs" lay-unselect>
+              <a href="javascript:;" id="top-menu-forward" class="" title="前进">前进 <i class="layui-icon layui-icon-next"></i></a>
+              </li>
+              <li class="layui-nav-item" lay-unselect>
+                <a href="javascript:;" layadmin-event="refresh" title="刷新">
+                  <i class="layui-icon layui-icon-refresh-3"></i> 刷新
+                </a>
+              </li>
+            </ul>
+          
+        </div>
+      </div>
+      <!-- 主体内容 -->
+      <div class="layui-body" id="LAY_app_body">
+        <div class="layadmin-tabsbody-item layui-show">
+        <div class="loading" id="iframe-loading" style="">
+              <div class="loading-spinner">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div class="rect3"></div>
+                <div class="rect4"></div>
+                <div class="rect5"></div>
+              </div>
+        </div>
+          <iframe scrolling="yes" id="mainframe" name="mainframe" src="{{ url_for('special._index') }}" frameborder="0" class="layadmin-iframe"></iframe>
+        </div>
+      </div>
+      <!-- 辅助元素，一般用于移动设备下遮罩 -->
+      <div class="layadmin-body-shade" layadmin-event="shade"></div>
+    </div>
+  </div>
+<!-- 锁屏 -->
+<div class="lock-screen" id="lock-box" style="display: none;">
+  <div class="lock-wrapper" id="lock-screen">
+    <div id="show-lock-time"></div>
+    <div class="lock-box"><img src="{{ url_for('static', filename='images/logo.png') }}"/>
+      <h1>admin</h1>
+      <form action="" class="layui-form lock-form" id="lock-form">
+        <div class="layui-form-item">
+          <input type="password" id="lockPwd" name="lockPwd" lay-verify="pass" placeholder="锁屏状态，请输入密码解锁" autocomplete="off" class="layui-input" autofocus/>
+        </div>
+        <div class="layui-form-item"><a href="javascript:;" class="layui-btn larry-btn" id="unlock">立即解锁</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- 音乐 -->
+<div style="display:none">
+  <audio src="{{ url_for('static', filename='sounds/sound1.mp3') }}" loop autobuffer id="audio"></audio>
+  <link rel="prefetch" href="{{ url_for('static', filename='sounds/sound1.mp3') }}" />
+</div>
+<script>
+var tab,
+lockUrl = 'http://192.168.17.23/event/salon/pub/login/lock.html',
+unLockUrl = 'http://192.168.17.23/event/salon/pub/login/unlock.html',
+sysLockStatus = 1,
+lastDocUrl = null,
+sys_default_music_path = '/event/salon/statics/default/sounds/123';
+var socketConfig = {
+	"getSocketUrl":'wss://socket.51jhome.com',
+	"authCode":'1e1aftHBCOMphFTL/bv4BUZ61DW9zuXAZaOxRAt89f/OTh0P+4LzGWxiZLlBiAq7pKVPW7wDpQnBZeXRE8+TPk4jsCduRl+NzFcp6iC7Vw',
+	"joinGroup":'',
+	"path":'/shehui/socket.io'
+};
+function refreshTimer() {
+  var d = new Date(),
+      getHours = d.getHours(),
+      getMinutes = d.getMinutes(),
+      getSeconds = d.getSeconds(),
+      showTime = [];
+  if (getHours < 10) {
+      getHours = '0' + getHours;
+  }
+  if (getSeconds < 10) {
+      getSeconds = '0' + getSeconds;
+  }
+  if (getMinutes < 10) {
+      getMinutes = '0' + getMinutes;
+  }
+  showTime = [getHours, getMinutes, getSeconds];
+  $("#show-lock-time").text(showTime.join(':'));
+}
+function showPic(picUrl) {
+  $.facebox({
+      "image": picUrl
+  });
+}
+if (top.location != location){
+    top.location.href = location.href;
+}
+layui.config({
+    base: LAYUI_BASE_PATH
+  }).extend({
+    index: 'lib/index'
+}).use('index');
+
+$(function(){
+    $(".no-urlRole").click(function(){
+				window.sessionStorage.setItem('curmenu', '');
+				window.sessionStorage.setItem('system_url_role', '');
+	});
+
+});
+</script>
+{% endblock %}

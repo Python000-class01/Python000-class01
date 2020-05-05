@@ -1,0 +1,29 @@
+---
+- hosts: '{{ host_name }}'
+  vars:
+    openresty_version: "openresty-1.15.8.2"
+  tasks: 
+  - name: Download OpenResty source code
+    get_url:
+      url: https://openresty.org/download/{{ openresty_version }}.tar.gz
+      dest: /root/{{ openresty_version }}.tar.gz
+
+  - name: tar 
+    shell: cd /root;tar -zxvf {{ openresty_version }}.tar.gz
+ 
+  - name: yum install  
+    yum: name={{ item }} state=latest  
+    with_items:  
+      - gcc
+      - gcc-c++
+      - readline-devel
+      - pcre-devel
+      - openssl-devel
+      - tcl
+      - perl  
+
+  - name: install
+    shell: cd /root/{{ openresty_version }};./configure --prefix=/usr/local/openresty --with-http_stub_status_module --with-http_gzip_static_module --with-luajit;make && make install
+
+
+ 

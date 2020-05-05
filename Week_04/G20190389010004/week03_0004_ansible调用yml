@@ -1,0 +1,2 @@
+# ansible调用停启openresty的命令
+ansible-playbook openresty_start_stop.yml

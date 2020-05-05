@@ -1,0 +1,1 @@
+$(function(){Morris.Bar({'element': 'morris-bar-chart', 'xkey': 'x', 'ykeys': ['y'], 'labels': ['采集评论数量'], 'hideHover': 'auto', 'resize': true, 'data': [{'y': 10, 'x': '4-28'}, {'y': 10, 'x': '4-28'}]});Morris.Donut({'element': 'morris-donut-chart', 'resize': true, 'data': [{'label': '正向评论数', 'value': 100}, {'label': '负面评论数', 'value': 20}]});});

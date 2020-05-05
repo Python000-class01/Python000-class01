@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>评论情感分析</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="static/js/echarts.min.js"></script>
+    <script src="static/js/jquery-3.4.1/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+<div class="header">
+    <div class="container">
+        <h1>
+            <a href="/">
+                "{{item_name}}" 情感倾向分析
+            </a>
+        </h1>
+    </div>
+</div>
+<div class="content" style="height: 100%">
+    <div class="left" style="width: 39%;height: 100%;float: left">
+        <div>
+            <span>数据统计</span>
+            <form>
+                <input id="statistic" type="hidden" value="{{ statistic }}">
+                <!--<input id="values" type="hidden" value="{{ values }}">-->
+            </form>
+            <div id="zzt" class="leftTop" style="width: 100%;height: 350px;">
+            </div>
+        </div>
+        <div>
+            <span>情感分析</span>
+            <form>
+                <input id="positive" type="hidden" value="{{ positive }}">
+                <input id="negative" type="hidden" value="{{ negative }}">
+            </form>
+            <div id="bzt" class="leftDown" style="width: 100%;height: 350px;">
+
+            </div>
+        </div>
+    </div>
+    <div class="right" style="width: 60%;float: left">
+        <div class="container posts mt-0">
+            <form class="form-inline" method="POST" action="/post">
+                <label class="sr-only" for="pageSize">Items in Page</label>
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">页面大小</div>
+                    </div>
+                    <input type="text" class="form-control" id="pageSize" name="pageSize" value={{page_size}}>
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">关键词</div>
+                    </div>
+                    <input type="text" class="form-control" id="keyword" name="keyword" value={{keyword}}>
+                </div>
+                <button type="submit" class="btn btn-primary mb-2">提交</button>
+            </form>
+            {% if results %}
+            {% for result in results %}
+            <div class="card my-3 col-12">
+                <div class="card-body">
+                    <h5 class="card-title">用户: {{result.user_name}} &nbsp;</h5>
+                    <h5 class="card-title">评分: {{result.score}} &nbsp;</h5>
+                    <h5 class="card-title">评论时间: {{result.time}} &nbsp;</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">情感倾向: {{ result.atti }}</h6>
+                    <br>
+                    <p class="card-text">
+                        {{result.comment}}
+                    </p>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <div class="alert alert-info" role="alert">
+                No data is found.
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<div id="main" style="width: 600px;height:400px;"></div>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var zzt = echarts.init(document.getElementById('zzt'));
+    //
+    // myChart.setOption({
+    //     series : [
+    //         {
+    //             name: '访问来源',
+    //             type: 'pie',    // 设置图表类型为饼图
+    //             radius: '55%',  // 饼图的半径，外半径为可视区尺寸（容器高宽中较小一项）的 55% 长度。
+    //             data:[          // 数据数组，name 为数据项名称，value 为数据项值
+    //                 {value:235, name:'视频广告'},
+    //                 {value:274, name:'联盟广告'},
+    //                 {value:310, name:'邮件营销'},
+    //                 {value:335, name:'直接访问'},
+    //                 {value:400, name:'搜索引擎'}
+    //             ]
+    //         }
+    //     ]
+    // });
+
+    var statistic = document.getElementById('statistic').getAttribute('value');
+    // var values = document.getElementById('values').getAttribute('value');
+    //     console.log(labels);
+        console.log(statistic);
+    data = JSON.parse(statistic)
+    console.log(data)
+    var labels = data.labels;
+    var values = data.values;
+    // $.get('../zzt', function (data) {
+        zzt.setOption({
+            title: {
+                text: '每日评论数统计'
+            },
+            tooltip: {},
+            legend: {
+                data:'评论统计'
+            },
+            xAxis: {
+                data: labels
+            },
+            yAxis: {},
+            series: [{
+                name: '评论数',
+                type: 'bar',
+                data: values
+            }]
+        });
+    // }, 'json')
+
+    // 情感倾向统计
+    var bzt = echarts.init(document.getElementById('bzt'));
+    var pos = document.getElementById('positive').getAttribute('value');
+    var neg = document.getElementById('negative').getAttribute('value');
+    console.log(neg);
+    console.log(pos);
+    bzt.setOption({
+        series: [
+            {
+                name: '访问来源',
+                type: 'pie',    // 设置图表类型为饼图
+                radius: '70%',  // 饼图的半径，外半径为可视区尺寸（容器高宽中较小一项）的 55% 长度。
+                data: [          // 数据数组，name 为数据项名称，value 为数据项值
+                    {value: pos, name: '正向'},
+                    {value: neg, name: '负向'}
+                ]
+            }
+        ]
+    });
+</script>
+</body>
+</html>

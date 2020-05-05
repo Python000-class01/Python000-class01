@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: newscomments-backend
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: newscomments
+    tier: backend
+spec:
+  type: ClusterIP
+  selector:
+    app: newscomments
+    tier: backend
+  ports:
+  - port: 8080
+    targetPort: http-server

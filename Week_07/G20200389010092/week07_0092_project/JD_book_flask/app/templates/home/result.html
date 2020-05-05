@@ -1,0 +1,161 @@
+{% extends "home/base_layout.html" %} {% block title %}Welcome{% endblock %} 
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/timeline.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/morris.css') }}">
+{% endblock %} 
+{% block content %}
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">《娜是光照亮的地方》评论分析</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+
+
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <meta charset="utf-8">
+                <!-- 引入 echarts.js -->
+                <script src="{{ url_for('static', filename='js/echarts.min.js')}}"></script>
+            
+                <div class="row">
+                    <div class="col-lg-6">
+               <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+            <div id="local1" style="width: 500px;height:300px;"></div>
+            <script type="text/javascript">
+                // 基于准备好的dom，初始化echarts实例
+                var myChart = echarts.init(document.getElementById('local1'));
+                var num_count = {{ num_count|tojson }};
+
+                // 指定图表的配置项和数据
+                var option = {
+                    barWidth : 50,
+                    title: {
+                        text: '有效评论数量'
+                    },
+                    tooltip: {},
+                    legend: {
+                        data:['数量']
+                    },
+                    xAxis: {
+                        data: ["总数", "前日", "昨日", "今日"]
+                    },
+                    yAxis: {},
+                    series: [{
+                        name: '数量',
+                        type: 'bar',
+                        data: [num_count.num, num_count.the_day_before_yesterday, num_count.yesterday, num_count.today]
+                    }]
+                };
+
+                // 使用刚指定的配置项和数据显示图表。
+                myChart.setOption(option);
+            </script>
+            </div>
+</div>
+            </div>
+        </div>
+        <!-- /.panel -->
+</div>
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <meta charset="utf-8">
+                <!-- 引入 echarts.js -->
+                <script src="{{ url_for('static', filename='js/echarts.min.js')}}"></script>
+                <div class="row">
+                    <div class="col-lg-6">
+                <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+                    <div id="local2" style="width: 500px;height:300px;"></div>
+                        <script type="text/javascript">
+                            // 基于准备好的dom，初始化echarts实例
+                            var myChart = echarts.init(document.getElementById('local2'));
+                            var sentiment_count_num = {{ sentiment_count|tojson }};
+                    
+                            myChart.setOption({
+                                title: {
+                                        text: '情感倾向分析'
+                                        },
+                                series : [
+                                    {
+                                        name: '情感倾向',
+                                        type: 'pie',    // 设置图表类型为饼图
+                                        radius: '55%',  // 饼图的半径，外半径为可视区尺寸（容器高宽中较小一项）的 55% 长度。
+                                        data:[          // 数据数组，name 为数据项名称，value 为数据项值
+                                            {value:sentiment_count_num.high, name:'正向'},
+                                            {value:sentiment_count_num.low, name:'负向'},
+                                            {value:sentiment_count_num.middle, name:'中向'},
+                                        ]
+                                    }
+                                ],
+                                tooltip: {
+                                    trigger: 'item',
+                                    formatter: '{a} <br/>{b}: {c} ({d}%)'
+                                }
+                            })
+                        </script>
+                    </div>
+                </div>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-bar-chart-o fa-fw"></i> 近十条有效评价数据展示
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>日期</th>
+                                        <th>评分</th>
+                                        <th>评论</th>
+                                        <th>情感倾向</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for short in shorts_detail %}
+                                        <tr>
+                                            <td>{{short.date}}</td>
+                                            <td>{{short.score}}</td>
+                                            <td>{{short.comment}}</td>
+                                            <td>{{short.sentiment}}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.table-responsive -->
+                    </div>
+                    <!-- /.col-lg-4 (nested) -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-8 -->
+    
+    <!-- /.col-lg-4 -->
+</div>
+<!-- /.row -->{% endblock %}
+{% block js %}
+    {{ super() }}
+    <script src="{{ url_for('static', filename='js/raphael-min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/morris.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/morris-data.js')}}"></script>
+{% endblock %}

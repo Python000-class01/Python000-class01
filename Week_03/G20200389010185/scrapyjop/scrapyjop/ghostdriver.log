@@ -1,0 +1,37 @@
+[INFO  - 2020-03-22T15:18:42.916Z] GhostDriver - Main - running on port 59837
+[INFO  - 2020-03-22T15:18:44.995Z] Session [6bc97610-6c50-11ea-b75d-e3f581e6a757] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2020-03-22T15:18:44.995Z] Session [6bc97610-6c50-11ea-b75d-e3f581e6a757] - page.customHeaders:  - {}
+[INFO  - 2020-03-22T15:18:44.995Z] Session [6bc97610-6c50-11ea-b75d-e3f581e6a757] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-10-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2020-03-22T15:18:44.995Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 6bc97610-6c50-11ea-b75d-e3f581e6a757
+[ERROR - 2020-03-22T15:18:47.774Z] Session [6bc97610-6c50-11ea-b75d-e3f581e6a757] - page.onError - msg: TypeError: undefined is not a constructor (evaluating '$("#ec-erweima").slider')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-03-22T15:18:47.774Z] Session [6bc97610-6c50-11ea-b75d-e3f581e6a757] - page.onError - stack:
+  callback (https://www.vmall.com/help/faq-833.html?cid=10000090&wi=mid:147,fid:146,cid:10000090,wi:002l1378f1252736054d:1841)
+  ready (https://res9.vmallres.com/20200122/js/common/jsapi.js?20141025:3)
+  success (https://res9.vmallres.com/20200122/js/common/jsapi.js?20141025:3)
+  s (https://res9.vmallres.com/20200122/js/common/jsapi.js?20141025:3)
+  onreadystatechange (https://res9.vmallres.com/20200122/js/common/jsapi.js?20141025:3)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-03-22T15:18:47.775Z] Session [6bc97610-6c50-11ea-b75d-e3f581e6a757] - page.onError - msg: TypeError: undefined is not a constructor (evaluating '$("#search-kw").autocomplete({serviceUrl:"/search_keywords",minChars:1,maxHeight:400,deferRequestBy:100})')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-03-22T15:18:47.775Z] Session [6bc97610-6c50-11ea-b75d-e3f581e6a757] - page.onError - stack:
+  callback (https://res9.vmallres.com/20200122/js/echannel/base.min.js?20200311:1)
+  ready (https://res9.vmallres.com/20200122/js/common/jsapi.js?20141025:3)
+  success (https://res9.vmallres.com/20200122/js/common/jsapi.js?20141025:3)
+  s (https://res9.vmallres.com/20200122/js/common/jsapi.js?20141025:3)
+  onreadystatechange (https://res9.vmallres.com/20200122/js/common/jsapi.js?20141025:3)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-03-22T15:18:47.801Z] Session [6bc97610-6c50-11ea-b75d-e3f581e6a757] - page.onError - msg: TypeError: undefined is not a constructor (evaluating '$("#ec-erweima").slider')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-03-22T15:18:47.801Z] Session [6bc97610-6c50-11ea-b75d-e3f581e6a757] - page.onError - stack:
+  callback (https://www.vmall.com/help/faq-833.html?cid=10000090&wi=mid:147,fid:146,cid:10000090,wi:002l1378f1252736054d:3085)
+  ready (https://res9.vmallres.com/20200122/js/common/jsapi.js?20141025:3)
+  success (https://res9.vmallres.com/20200122/js/common/jsapi.js?20141025:3)
+  q (https://res9.vmallres.com/20200122/js/common/jsapi.js?20141025:3)
+
+  phantomjs://platform/console++.js:263 in error

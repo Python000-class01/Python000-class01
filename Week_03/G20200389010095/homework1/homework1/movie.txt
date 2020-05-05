@@ -1,0 +1,26 @@
+[<Selector xpath='./a/text()' data='西部世界'>]	http://rrys2019.com//resource/33701	[<Selector xpath='//div[@class="fl view-left"]//div[@class="level-item"]//img/@src' data='http://js.jstucdn.com/images/level-ic...'>]	[<Selector xpath='//div[@class="fl view-left"]//div[@class="imglink"]//img/@src' data='http://tu.jstucdn.com/ftp/2020/0213/b...'>]
+
+[<Selector xpath='./a/text()' data='良医'>]	http://rrys2019.com//resource/35493	[<Selector xpath='//div[@class="fl view-left"]//div[@class="level-item"]//img/@src' data='http://js.jstucdn.com/images/level-ic...'>]	[<Selector xpath='//div[@class="fl view-left"]//div[@class="imglink"]//img/@src' data='http://tu.jstucdn.com/ftp/2019/1008/b...'>]
+
+[<Selector xpath='./a/text()' data='狩猎'>]	http://rrys2019.com//resource/39711	[<Selector xpath='//div[@class="fl view-left"]//div[@class="level-item"]//img/@src' data='http://js.jstucdn.com/images/level-ic...'>]	[<Selector xpath='//div[@class="fl view-left"]//div[@class="imglink"]//img/@src' data='http://tu.jstucdn.com/ftp/2020/0323/b...'>]
+
+[<Selector xpath='./a/text()' data='李尸朝鲜'>]	http://rrys2019.com//resource/37366	[<Selector xpath='//div[@class="fl view-left"]//div[@class="level-item"]//img/@src' data='http://js.jstucdn.com/images/level-ic...'>]	[<Selector xpath='//div[@class="fl view-left"]//div[@class="imglink"]//img/@src' data='http://tu.jstucdn.com/ftp/2020/0227/b...'>]
+
+[<Selector xpath='./a/text()' data='回归之路'>]	http://rrys2019.com//resource/39718	[<Selector xpath='//div[@class="fl view-left"]//div[@class="level-item"]//img/@src' data='http://js.jstucdn.com/images/level-ic...'>]	[<Selector xpath='//div[@class="fl view-left"]//div[@class="imglink"]//img/@src' data='http://tu.jstucdn.com/ftp/2020/0324/b...'>]
+
+[<Selector xpath='./a/text()' data='反美阴谋'>]	http://rrys2019.com//resource/39526	[<Selector xpath='//div[@class="fl view-left"]//div[@class="level-item"]//img/@src' data='http://js.jstucdn.com/images/level-ic...'>]	[<Selector xpath='//div[@class="fl view-left"]//div[@class="imglink"]//img/@src' data='http://tu.jstucdn.com/ftp/2020/0223/b...'>]
+
+[<Selector xpath='./a/text()' data='喋血战士'>]	http://rrys2019.com//resource/38944	[<Selector xpath='//div[@class="fl view-left"]//div[@class="level-item"]//img/@src' data='http://js.jstucdn.com/images/level-ic...'>]	[<Selector xpath='//div[@class="fl view-left"]//div[@class="imglink"]//img/@src' data='http://tu.jstucdn.com/ftp/2019/1021/b...'>]
+
+[<Selector xpath='./a/text()' data='绝命47小时'>]	http://rrys2019.com//resource/39707	[<Selector xpath='//div[@class="fl view-left"]//div[@class="level-item"]//img/@src' data='http://js.jstucdn.com/images/level-ic...'>]	[<Selector xpath='//div[@class="fl view-left"]//div[@class="imglink"]//img/@src' data='http://tu.jstucdn.com/ftp/2020/0322/b...'>]
+
+[<Selector xpath='./a/text()' data='银行家'>]	http://rrys2019.com//resource/39739	[<Selector xpath='//div[@class="fl view-left"]//div[@class="level-item"]//img/@src' data='http://js.jstucdn.com/images/level-ic...'>]	[<Selector xpath='//div[@class="fl view-left"]//div[@class="imglink"]//img/@src' data='http://tu.jstucdn.com/ftp/2020/0329/b...'>]
+
+[<Selector xpath='./a/text()' data='国土安全'>]	http://rrys2019.com//resource/11088	[<Selector xpath='//div[@class="fl view-left"]//div[@class="level-item"]//img/@src' data='http://js.jstucdn.com/images/level-ic...'>]	[<Selector xpath='//div[@class="fl view-left"]//div[@class="imglink"]//img/@src' data='http://tu.jstucdn.com/ftp/2019/1208/b...'>]
+
+[<Selector xpath='./a/text()' data='2020年3月新剧'>]	http://rrys2019.com//resource/39743	[]	[<Selector xpath='//div[@class="fl view-left"]//div[@class="imglink"]//img/@src' data='http://tu.jstucdn.com/ftp/2020/0331/b...'>]
+
+[<Selector xpath='./a/text()' data='绝命律师'>]	http://rrys2019.com//resource/33190	[<Selector xpath='//div[@class="fl view-left"]//div[@class="level-item"]//img/@src' data='http://js.jstucdn.com/images/level-ic...'>]	[<Selector xpath='//div[@class="fl view-left"]//div[@class="imglink"]//img/@src' data='http://tu.jstucdn.com/ftp/2020/0111/b...'>]
+
+[<Selector xpath='./a/text()' data='2020年3月电影合集'>]	http://rrys2019.com//resource/39742	[]	[<Selector xpath='//div[@class="fl view-left"]//div[@class="imglink"]//img/@src' data='http://tu.jstucdn.com/ftp/2020/0331/b...'>]
+

@@ -1,0 +1,9 @@
+/etc/ansible/hosts   
+[webserver]
+112.41.62.96:22
+
+命令（自己服务器上现成的nginx，先完成作业，再研究docker和openresty，协程和pandas还要复习）
+ansible webserver -m shell -a '/usr/local/nginx/sbin/nginx -s stop'
+ansible webserver -m shell -a '/usr/local/nginx/sbin/nginx'
+ansible webserver -m shell -a '/usr/local/nginx/sbin/nginx -s reload'
+

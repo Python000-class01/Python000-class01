@@ -1,0 +1,1884 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans" class="ua-windows ua-webkit">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="renderer" content="webkit">
+    <meta name="referrer" content="always">
+    <meta name="google-site-verification" content="ok0wCgT20tBBgo9_zat2iAcimtN4Ftf5ccsh092Xeyw" />
+    <title>
+  
+    饥饿站台的影评 (804)
+</title>
+    
+  <meta name="baidu-site-verification" content="cZdR4xxR7RxmM4zE" />
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="Sun, 6 Mar 2005 01:00:00 GMT">
+  
+  
+  <meta name="keywords" content="El hoyo,影评,评论,观后感,饥饿站台">
+  <meta name="description" content="饥饿站台最新影评, 热门影评">
+  <link rel="alternate" href="/feed/subject/34805219/reviews" type="application/rss+xml" title="RSS">
+
+  <link href="https://img3.doubanio.com/f/shire/3e5dfc68b0f376484c50cf08a58bbca3700911dc/css/douban.css" rel="stylesheet" type="text/css">
+  <link href="https://img3.doubanio.com/f/shire/ae3f5a3e3085968370b1fc63afcecb22d3284848/css/separation/_all.css" rel="stylesheet" type="text/css">
+  <link href="https://img3.doubanio.com/f/zerkalo/4b7b75331a86c9c8275ac6b7306e820fc072e09a/css/init.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://img3.doubanio.com/misc/mixed_static/3a7e20bb41dc8092.css">
+  <style type="text/css"></style>
+
+  <script type="text/javascript">var _head_start = new Date();</script>
+  <script type="text/javascript" src="https://img3.doubanio.com/f/shire/7cdd59e1378f9ccea648a083fecf12d71ed66c2b/js/jquery-1.8.3.js"></script>
+  <script type="text/javascript" src="https://img3.doubanio.com/f/shire/77323ae72a612bba8b65f845491513ff3329b1bb/js/do.js" data-cfg-autoload="false"></script>
+
+  <script type="text/javascript" src="https://img3.doubanio.com/f/shire/5ecaf46d6954d5a30bc7d99be86ae34031646e00/js/douban.js"></script>
+  <script type="text/javascript" src="https://img3.doubanio.com/f/shire/afb2e24c7be373fa64d49d28de42719ec2262e1c/js/lib/moreurl.js"></script>
+  <script type="text/javascript" src="https://img3.doubanio.com/f/zerkalo/faf4e3047552fe4c8a20b9a9dafab7088b4f71c3/dist/js/base.js"></script>
+  <script type="text/javascript" src="https://img3.doubanio.com/f/shire/0efdc63b77f895eaf85281fb0e44d435c6239a3f/js/separation/_all.js"></script>
+  
+  <link rel="stylesheet" href="https://img3.doubanio.com/f/zerkalo/9bc6d8688bf8583f6970e9bbf50fff27676c0919/css/review/list.css" />
+  <link rel="stylesheet" href="https://img3.doubanio.com/dae/cdnlib/libs/LikeButton/1.0.5/style.min.css">
+
+  <script type="text/javascript"></script>
+
+    <link rel="shortcut icon" href="https://img3.doubanio.com/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+  
+  
+  <script type="text/javascript">var _body_start = new Date();</script>
+
+  
+
+    
+
+
+
+    <link href="//img3.doubanio.com/dae/accounts/resources/f5f3d66/shire/bundle.css" rel="stylesheet" type="text/css">
+
+
+
+<div id="db-global-nav" class="global-nav">
+  <div class="bd">
+    
+<div class="top-nav-info">
+  <a href="https://accounts.douban.com/passport/login?source=main" class="nav-login" rel="nofollow">登录/注册</a>
+</div>
+
+
+    <div class="top-nav-doubanapp">
+  <a href="https://www.douban.com/doubanapp/app?channel=top-nav" class="lnk-doubanapp">下载豆瓣客户端</a>
+  <div id="doubanapp-tip">
+    <a href="https://www.douban.com/doubanapp/app?channel=qipao" class="tip-link">豆瓣 <span class="version">6.0</span> 全新发布</a>
+    <a href="javascript: void 0;" class="tip-close">×</a>
+  </div>
+  <div id="top-nav-appintro" class="more-items">
+    <p class="appintro-title">豆瓣</p>
+    <p class="qrcode">扫码直接下载</p>
+    <div class="download">
+      <a href="https://www.douban.com/doubanapp/redirect?channel=top-nav&direct_dl=1&download=iOS">iPhone</a>
+      <span>·</span>
+      <a href="https://www.douban.com/doubanapp/redirect?channel=top-nav&direct_dl=1&download=Android" class="download-android">Android</a>
+    </div>
+  </div>
+</div>
+
+    
+
+
+<div class="global-nav-items">
+  <ul>
+    <li class="on">
+      <a href="https://www.douban.com"  data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-main&quot;,&quot;uid&quot;:&quot;0&quot;}">豆瓣</a>
+    </li>
+    <li class="">
+      <a href="https://book.douban.com" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-book&quot;,&quot;uid&quot;:&quot;0&quot;}">读书</a>
+    </li>
+    <li class="">
+      <a href="https://movie.douban.com" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-movie&quot;,&quot;uid&quot;:&quot;0&quot;}">电影</a>
+    </li>
+    <li class="">
+      <a href="https://music.douban.com" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-music&quot;,&quot;uid&quot;:&quot;0&quot;}">音乐</a>
+    </li>
+    <li class="">
+      <a href="https://www.douban.com/location" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-location&quot;,&quot;uid&quot;:&quot;0&quot;}">同城</a>
+    </li>
+    <li class="">
+      <a href="https://www.douban.com/group" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-group&quot;,&quot;uid&quot;:&quot;0&quot;}">小组</a>
+    </li>
+    <li class="">
+      <a href="https://read.douban.com&#47;?dcs=top-nav&amp;dcm=douban" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-read&quot;,&quot;uid&quot;:&quot;0&quot;}">阅读</a>
+    </li>
+    <li class="">
+      <a href="https://douban.fm&#47;?from_=shire_top_nav" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-fm&quot;,&quot;uid&quot;:&quot;0&quot;}">FM</a>
+    </li>
+    <li class="">
+      <a href="https://time.douban.com&#47;?dt_time_source=douban-web_top_nav" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-time&quot;,&quot;uid&quot;:&quot;0&quot;}">时间</a>
+    </li>
+    <li class="">
+      <a href="https://market.douban.com&#47;?utm_campaign=douban_top_nav&amp;utm_source=douban&amp;utm_medium=pc_web" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-market&quot;,&quot;uid&quot;:&quot;0&quot;}">豆品</a>
+    </li>
+    <li>
+      <a href="#more" class="bn-more"><span>更多</span></a>
+      <div class="more-items">
+        <table cellpadding="0" cellspacing="0">
+          <tbody>
+            <tr>
+              <td>
+                <a href="https://ypy.douban.com" target="_blank" data-moreurl-dict="{&quot;from&quot;:&quot;top-nav-click-ypy&quot;,&quot;uid&quot;:&quot;0&quot;}">豆瓣摄影</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </li>
+  </ul>
+</div>
+
+  </div>
+</div>
+<script>
+  ;window._GLOBAL_NAV = {
+    DOUBAN_URL: "https://www.douban.com",
+    N_NEW_NOTIS: 0,
+    N_NEW_DOUMAIL: 0
+  };
+</script>
+
+
+
+    <script src="//img3.doubanio.com/dae/accounts/resources/f5f3d66/shire/bundle.js" defer="defer"></script>
+
+
+
+
+
+      
+
+
+
+    <link href="//img3.doubanio.com/dae/accounts/resources/f5f3d66/movie/bundle.css" rel="stylesheet" type="text/css">
+
+
+
+
+<div id="db-nav-movie" class="nav">
+  <div class="nav-wrap">
+  <div class="nav-primary">
+    <div class="nav-logo">
+      <a href="https:&#47;&#47;movie.douban.com">豆瓣电影</a>
+    </div>
+    <div class="nav-search">
+      <form action="https:&#47;&#47;search.douban.com&#47;movie/subject_search" method="get">
+        <fieldset>
+          <legend>搜索：</legend>
+          <label for="inp-query">
+          </label>
+          <div class="inp"><input id="inp-query" name="search_text" size="22" maxlength="60" placeholder="搜索电影、电视剧、综艺、影人" value=""></div>
+          <div class="inp-btn"><input type="submit" value="搜索"></div>
+          <input type="hidden" name="cat" value="1002" />
+        </fieldset>
+      </form>
+    </div>
+  </div>
+  </div>
+  <div class="nav-secondary">
+    
+
+<div class="nav-items">
+  <ul>
+    <li    ><a href="https://movie.douban.com/cinema/nowplaying/"
+     >影讯&购票</a>
+    </li>
+    <li    ><a href="https://movie.douban.com/explore"
+     >选电影</a>
+    </li>
+    <li    ><a href="https://movie.douban.com/tv/"
+     >电视剧</a>
+    </li>
+    <li    ><a href="https://movie.douban.com/chart"
+     >排行榜</a>
+    </li>
+    <li    ><a href="https://movie.douban.com/tag/"
+     >分类</a>
+    </li>
+    <li    ><a href="https://movie.douban.com/review/best/"
+     >影评</a>
+    </li>
+    <li    ><a href="https://movie.douban.com/annual/2019?source=navigation"
+     >2019年度榜单</a>
+    </li>
+    <li    ><a href="https://m.douban.com/standbyme/annual2019?source=navigation"
+            target="_blank"
+     >2019书影音报告</a>
+    </li>
+  </ul>
+</div>
+
+    <a href="https://movie.douban.com/annual/2019?source=movie_navigation" class="movieannual"></a>
+  </div>
+</div>
+
+<script id="suggResult" type="text/x-jquery-tmpl">
+  <li data-link="{{= url}}">
+            <a href="{{= url}}" onclick="moreurl(this, {from:'movie_search_sugg', query:'{{= keyword }}', subject_id:'{{= id}}', i: '{{= index}}', type: '{{= type}}'})">
+            <img src="{{= img}}" width="40" />
+            <p>
+                <em>{{= title}}</em>
+                {{if year}}
+                    <span>{{= year}}</span>
+                {{/if}}
+                {{if sub_title}}
+                    <br /><span>{{= sub_title}}</span>
+                {{/if}}
+                {{if address}}
+                    <br /><span>{{= address}}</span>
+                {{/if}}
+                {{if episode}}
+                    {{if episode=="unknow"}}
+                        <br /><span>集数未知</span>
+                    {{else}}
+                        <br /><span>共{{= episode}}集</span>
+                    {{/if}}
+                {{/if}}
+            </p>
+        </a>
+        </li>
+  </script>
+
+
+
+
+    <script src="//img3.doubanio.com/dae/accounts/resources/f5f3d66/movie/bundle.js" defer="defer"></script>
+
+
+
+
+
+
+  
+  <div id="wrapper" class="movie-content review-wrapper">
+    
+
+    
+  <div id="content">
+    
+    <h1>饥饿站台的影评 (804)</h1>
+
+    <div class="grid-16-8 clearfix">
+      
+      
+      <div class="article">
+        
+  
+    <ul class="top-tab clearfix">
+              
+  
+  <li class=" selected">    <a href="javascript:;">      <span>最受欢迎的</span>    </a>  </li>
+
+              
+  
+  <li class="">    <a href="?sort=time">      <span>最新发布的</span>    </a>  </li>
+
+
+      
+        <li class="dropdown">          <a href="javascript:;" class=""><span>按评星查看</span></a>
+          <ul class="droplist">
+            <li class="rating">              <a href="?rating=">                全部 (804)              </a>            </li>
+            <li class="rating5">              <a href="?rating=5">                给5星的评论 (202)              </a>            </li>
+            <li class="rating4">              <a href="?rating=4">                给4星的评论 (306)              </a>            </li>
+            <li class="rating3">              <a href="?rating=3">                给3星的评论 (85)              </a>            </li>
+            <li class="rating2">              <a href="?rating=2">                给2星的评论 (9)              </a>            </li>
+            <li class="rating1">              <a href="?rating=1">                给1星的评论 (9)              </a>            </li>
+          </ul>
+        </li>
+
+    </ul>
+  
+
+
+
+<div class="review-list  ">
+        
+    
+
+        
+    
+    <div data-cid="12460825">
+        <div class="main review-item" id="12460825">
+
+            
+    
+    <header class="main-hd">
+        <a href="https://www.douban.com/people/kingedward/" class="avator">
+            <img width="24" height="24" src="https://img9.doubanio.com/icon/u3744974-245.jpg">
+        </a>
+
+        <a href="https://www.douban.com/people/kingedward/" class="name">KinG羽</a>
+
+            <span class="allstar30 main-title-rating" title="还行"></span>
+
+        <span content="2020-04-01" class="main-meta">2020-04-01 14:11:16</span>
+
+
+    </header>
+
+
+            <div class="main-bd">
+
+                <h2><a href="https://movie.douban.com/review/12460825/">阶级禁闭试验室</a></h2>
+
+                <div id="review_12460825_short" class="review-short" data-rid="12460825">
+                    <div class="short-content">
+
+                        这座监狱被称为“垂直管理中心”，里面的人每隔一个月会随机换一层住，顶层的可能调至底层，屁股的可能升到脑袋，这非但没让他们将心比心，反倒加剧了今朝有酒今朝醉。不过在现实世界里，傻子都知道，底层每上升一个等级都可能要耗费毕生勤奋和运气，更不必说麻雀变凤凰级别的...
+
+                        &nbsp;(<a href="javascript:;" id="toggle-12460825-copy" class="unfold" title="展开">展开</a>)
+                    </div>
+                </div>
+
+                <div id="review_12460825_full" class="hidden">
+                    <div id="review_12460825_full_content" class="full-content"></div>
+                </div>
+
+                <div class="action">
+                    <a href="javascript:;" class="action-btn up" data-rid="12460825" title="有用">
+                        <img src="https://img3.doubanio.com/f/zerkalo/536fd337139250b5fb3cf9e79cb65c6193f8b20b/pics/up.png" />
+                        <span id="r-useful_count-12460825">
+                                2
+                        </span>
+                    </a>
+                    <a href="javascript:;" class="action-btn down" data-rid="12460825" title="没用">
+                        <img src="https://img3.doubanio.com/f/zerkalo/68849027911140623cf338c9845893c4566db851/pics/down.png" />
+                        <span id="r-useless_count-12460825">
+                                1
+                        </span>
+                    </a>
+                    <a href="https://movie.douban.com/review/12460825/#comments" class="reply ">0回应</a>
+
+                    <a href="javascript:;;" class="fold hidden">收起</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        
+    
+    <div data-cid="12480429">
+        <div class="main review-item" id="12480429">
+
+            
+    
+    <header class="main-hd">
+        <a href="https://www.douban.com/people/150363422/" class="avator">
+            <img width="24" height="24" src="https://img3.doubanio.com/icon/u150363422-1.jpg">
+        </a>
+
+        <a href="https://www.douban.com/people/150363422/" class="name">欧比万</a>
+
+            <span class="allstar30 main-title-rating" title="还行"></span>
+
+        <span content="2020-04-06" class="main-meta">2020-04-06 22:52:48</span>
+
+
+    </header>
+
+
+            <div class="main-bd">
+
+                <h2><a href="https://movie.douban.com/review/12480429/">这个B级片的错误，为什么它的所谓隐喻不成立</a></h2>
+
+                <div id="review_12480429_short" class="review-short" data-rid="12480429">
+                    <div class="short-content">
+
+                        感觉就是个一般的B级片，被吹的有些过了。 首先，它的立意似乎是人性本恶。证明的过程存在偏见。整个平台的设定就在限制人们发扬善，比如不能存食物，人们就不得不在平台到达的时候即刻进食，没有存粮，就是一般情况下大部分人都不太能坚持行善，更别提这种极端情况。又如，每...
+
+                        &nbsp;(<a href="javascript:;" id="toggle-12480429-copy" class="unfold" title="展开">展开</a>)
+                    </div>
+                </div>
+
+                <div id="review_12480429_full" class="hidden">
+                    <div id="review_12480429_full_content" class="full-content"></div>
+                </div>
+
+                <div class="action">
+                    <a href="javascript:;" class="action-btn up" data-rid="12480429" title="有用">
+                        <img src="https://img3.doubanio.com/f/zerkalo/536fd337139250b5fb3cf9e79cb65c6193f8b20b/pics/up.png" />
+                        <span id="r-useful_count-12480429">
+                                2
+                        </span>
+                    </a>
+                    <a href="javascript:;" class="action-btn down" data-rid="12480429" title="没用">
+                        <img src="https://img3.doubanio.com/f/zerkalo/68849027911140623cf338c9845893c4566db851/pics/down.png" />
+                        <span id="r-useless_count-12480429">
+                                1
+                        </span>
+                    </a>
+                    <a href="https://movie.douban.com/review/12480429/#comments" class="reply ">3回应</a>
+
+                    <a href="javascript:;;" class="fold hidden">收起</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        
+    
+    <div data-cid="12463011">
+        <div class="main review-item" id="12463011">
+
+            
+    
+    <header class="main-hd">
+        <a href="https://www.douban.com/people/1413100/" class="avator">
+            <img width="24" height="24" src="https://img9.doubanio.com/icon/u1413100-14.jpg">
+        </a>
+
+        <a href="https://www.douban.com/people/1413100/" class="name">文森特</a>
+
+            <span class="allstar40 main-title-rating" title="推荐"></span>
+
+        <span content="2020-04-02" class="main-meta">2020-04-02 01:30:46</span>
+
+
+    </header>
+
+
+            <div class="main-bd">
+
+                <h2><a href="https://movie.douban.com/review/12463011/">一场关于社会分配制度改革的思想实验</a></h2>
+
+                <div id="review_12463011_short" class="review-short" data-rid="12463011">
+                    <div class="short-content">
+
+                        这部电影确实给人惊喜。拍摄手法并不复杂，却比较深入的探讨了一个关于社会分配制度以及如何改革的大命题，同时给出了鲜明的态度，一点不暧昧。上一次给我这样惊喜的西班牙影片是《潘神的迷宫》，所以从侧面看出西班牙艺术家的脑回路确实极富创造力和想象力，如高迪、毕加索、...
+
+                        &nbsp;(<a href="javascript:;" id="toggle-12463011-copy" class="unfold" title="展开">展开</a>)
+                    </div>
+                </div>
+
+                <div id="review_12463011_full" class="hidden">
+                    <div id="review_12463011_full_content" class="full-content"></div>
+                </div>
+
+                <div class="action">
+                    <a href="javascript:;" class="action-btn up" data-rid="12463011" title="有用">
+                        <img src="https://img3.doubanio.com/f/zerkalo/536fd337139250b5fb3cf9e79cb65c6193f8b20b/pics/up.png" />
+                        <span id="r-useful_count-12463011">
+                                13
+                        </span>
+                    </a>
+                    <a href="javascript:;" class="action-btn down" data-rid="12463011" title="没用">
+                        <img src="https://img3.doubanio.com/f/zerkalo/68849027911140623cf338c9845893c4566db851/pics/down.png" />
+                        <span id="r-useless_count-12463011">
+                        </span>
+                    </a>
+                    <a href="https://movie.douban.com/review/12463011/#comments" class="reply ">4回应</a>
+
+                    <a href="javascript:;;" class="fold hidden">收起</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        
+    
+    <div data-cid="12441643">
+        <div class="main review-item" id="12441643">
+
+            
+    
+    <header class="main-hd">
+        <a href="https://www.douban.com/people/199235031/" class="avator">
+            <img width="24" height="24" src="https://img1.doubanio.com/icon/user_normal.jpg">
+        </a>
+
+        <a href="https://www.douban.com/people/199235031/" class="name">春秋</a>
+
+            <span class="allstar50 main-title-rating" title="力荐"></span>
+
+        <span content="2020-03-27" class="main-meta">2020-03-27 03:30:24</span>
+
+
+    </header>
+
+
+            <div class="main-bd">
+
+                <h2><a href="https://movie.douban.com/review/12441643/">阶层与资源分配的寓言</a></h2>
+
+                <div id="review_12441643_short" class="review-short" data-rid="12441643">
+                    <div class="short-content">
+
+                        社会寓言式的电影，设计算是十分精细了。 1.资源本来就是稀缺的，无论怎样分配也满足不了所有人口。 2.人自私的本性是尽可能大的满足自己的欲望。当资源自上而下分配的时候，当然是越往下越稀缺。 3.资源的充分和稀缺会造成不同阶层完全不同的价值观念和行为方式。也就是说道德...
+
+                        &nbsp;(<a href="javascript:;" id="toggle-12441643-copy" class="unfold" title="展开">展开</a>)
+                    </div>
+                </div>
+
+                <div id="review_12441643_full" class="hidden">
+                    <div id="review_12441643_full_content" class="full-content"></div>
+                </div>
+
+                <div class="action">
+                    <a href="javascript:;" class="action-btn up" data-rid="12441643" title="有用">
+                        <img src="https://img3.doubanio.com/f/zerkalo/536fd337139250b5fb3cf9e79cb65c6193f8b20b/pics/up.png" />
+                        <span id="r-useful_count-12441643">
+                                7
+                        </span>
+                    </a>
+                    <a href="javascript:;" class="action-btn down" data-rid="12441643" title="没用">
+                        <img src="https://img3.doubanio.com/f/zerkalo/68849027911140623cf338c9845893c4566db851/pics/down.png" />
+                        <span id="r-useless_count-12441643">
+                        </span>
+                    </a>
+                    <a href="https://movie.douban.com/review/12441643/#comments" class="reply ">2回应</a>
+
+                    <a href="javascript:;;" class="fold hidden">收起</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        
+    
+    <div data-cid="12439909">
+        <div class="main review-item" id="12439909">
+
+            
+    
+    <header class="main-hd">
+        <a href="https://www.douban.com/people/167748320/" class="avator">
+            <img width="24" height="24" src="https://img3.doubanio.com/icon/u167748320-2.jpg">
+        </a>
+
+        <a href="https://www.douban.com/people/167748320/" class="name">jojo我不做人啦</a>
+
+            <span class="allstar50 main-title-rating" title="力荐"></span>
+
+        <span content="2020-03-26" class="main-meta">2020-03-26 17:36:46</span>
+
+
+    </header>
+
+
+            <div class="main-bd">
+
+                <h2><a href="https://movie.douban.com/review/12439909/">全面解读充满象征的《饥饿站台》——人类的赞歌就是勇气的赞歌</a></h2>
+
+                <div id="review_12439909_short" class="review-short" data-rid="12439909">
+                    <div class="short-content">
+                            <p class="spoiler-tip">这篇影评可能有剧透</p>
+
+                        本来看这部电影就图这idea很有趣，没想到看完之后让我苦思不已，反乌托邦的故事本身就挺精彩也很惊悚，还有各种明喻暗喻目接不暇，我绞尽脑汁还是不得其解，看了评论和区各大神的解读，似懂非懂又总觉得哪里不满意，所以还是要尝试记录一下自己的想法，独立思考的能力很重要，...
+
+                        &nbsp;(<a href="javascript:;" id="toggle-12439909-copy" class="unfold" title="展开">展开</a>)
+                    </div>
+                </div>
+
+                <div id="review_12439909_full" class="hidden">
+                    <div id="review_12439909_full_content" class="full-content"></div>
+                </div>
+
+                <div class="action">
+                    <a href="javascript:;" class="action-btn up" data-rid="12439909" title="有用">
+                        <img src="https://img3.doubanio.com/f/zerkalo/536fd337139250b5fb3cf9e79cb65c6193f8b20b/pics/up.png" />
+                        <span id="r-useful_count-12439909">
+                                17
+                        </span>
+                    </a>
+                    <a href="javascript:;" class="action-btn down" data-rid="12439909" title="没用">
+                        <img src="https://img3.doubanio.com/f/zerkalo/68849027911140623cf338c9845893c4566db851/pics/down.png" />
+                        <span id="r-useless_count-12439909">
+                        </span>
+                    </a>
+                    <a href="https://movie.douban.com/review/12439909/#comments" class="reply ">20回应</a>
+
+                    <a href="javascript:;;" class="fold hidden">收起</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        
+    
+    <div data-cid="12470930">
+        <div class="main review-item" id="12470930">
+
+            
+    
+    <header class="main-hd">
+        <a href="https://www.douban.com/people/45525786/" class="avator">
+            <img width="24" height="24" src="https://img3.doubanio.com/icon/u45525786-2.jpg">
+        </a>
+
+        <a href="https://www.douban.com/people/45525786/" class="name">T!n@</a>
+
+            <span class="allstar30 main-title-rating" title="还行"></span>
+
+        <span content="2020-04-04" class="main-meta">2020-04-04 12:32:04</span>
+
+
+    </header>
+
+
+            <div class="main-bd">
+
+                <h2><a href="https://movie.douban.com/review/12470930/">人性的炼狱  &amp;  冲不破的阶级牢笼</a></h2>
+
+                <div id="review_12470930_short" class="review-short" data-rid="12470930">
+                    <div class="short-content">
+                            <p class="spoiler-tip">这篇影评可能有剧透</p>
+
+                        三星半。 架空的反乌托邦国度，类似监狱和实验基地一样的饥饿站台，恐怖的不是有酷刑或虐待，而是人性最最阴暗的一面全部被挖掘出来，你不知道你会有多恶，是因为还没遇到真正的绝境。 首先因为科幻标签被吸引进来，但发现除了站台中间那个没有任何支点就能自己上下移动的方块...
+
+                        &nbsp;(<a href="javascript:;" id="toggle-12470930-copy" class="unfold" title="展开">展开</a>)
+                    </div>
+                </div>
+
+                <div id="review_12470930_full" class="hidden">
+                    <div id="review_12470930_full_content" class="full-content"></div>
+                </div>
+
+                <div class="action">
+                    <a href="javascript:;" class="action-btn up" data-rid="12470930" title="有用">
+                        <img src="https://img3.doubanio.com/f/zerkalo/536fd337139250b5fb3cf9e79cb65c6193f8b20b/pics/up.png" />
+                        <span id="r-useful_count-12470930">
+                                1
+                        </span>
+                    </a>
+                    <a href="javascript:;" class="action-btn down" data-rid="12470930" title="没用">
+                        <img src="https://img3.doubanio.com/f/zerkalo/68849027911140623cf338c9845893c4566db851/pics/down.png" />
+                        <span id="r-useless_count-12470930">
+                        </span>
+                    </a>
+                    <a href="https://movie.douban.com/review/12470930/#comments" class="reply ">0回应</a>
+
+                    <a href="javascript:;;" class="fold hidden">收起</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        
+    
+    <div data-cid="12458385">
+        <div class="main review-item" id="12458385">
+
+            
+    
+    <header class="main-hd">
+        <a href="https://www.douban.com/people/82817700/" class="avator">
+            <img width="24" height="24" src="https://img3.doubanio.com/icon/u82817700-22.jpg">
+        </a>
+
+        <a href="https://www.douban.com/people/82817700/" class="name">行走的影碟机</a>
+
+            <span class="allstar40 main-title-rating" title="推荐"></span>
+
+        <span content="2020-03-31" class="main-meta">2020-03-31 20:41:08</span>
+
+
+    </header>
+
+
+            <div class="main-bd">
+
+                <h2><a href="https://movie.douban.com/review/12458385/">一切都是主人公的一场梦</a></h2>
+
+                <div id="review_12458385_short" class="review-short" data-rid="12458385">
+                    <div class="short-content">
+                            <p class="spoiler-tip">这篇影评可能有剧透</p>
+
+                        在《饥饿站台》中，跟随主人公睁开眼的瞬间，像《移动迷宫》，不知道自己在哪里，也不知道每个人的背景是什么。这种感受，又像极了每一个从睡梦中醒来的午后，更像每一个仔细思索生命与宇宙的瞬间。 跟《饥饿游戏》不一样，《饥饿站台》不是通过正面对抗来杀人，而是通过吃掉别...
+
+                        &nbsp;(<a href="javascript:;" id="toggle-12458385-copy" class="unfold" title="展开">展开</a>)
+                    </div>
+                </div>
+
+                <div id="review_12458385_full" class="hidden">
+                    <div id="review_12458385_full_content" class="full-content"></div>
+                </div>
+
+                <div class="action">
+                    <a href="javascript:;" class="action-btn up" data-rid="12458385" title="有用">
+                        <img src="https://img3.doubanio.com/f/zerkalo/536fd337139250b5fb3cf9e79cb65c6193f8b20b/pics/up.png" />
+                        <span id="r-useful_count-12458385">
+                                2
+                        </span>
+                    </a>
+                    <a href="javascript:;" class="action-btn down" data-rid="12458385" title="没用">
+                        <img src="https://img3.doubanio.com/f/zerkalo/68849027911140623cf338c9845893c4566db851/pics/down.png" />
+                        <span id="r-useless_count-12458385">
+                        </span>
+                    </a>
+                    <a href="https://movie.douban.com/review/12458385/#comments" class="reply ">0回应</a>
+
+                    <a href="javascript:;;" class="fold hidden">收起</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        
+    
+    <div data-cid="12453178">
+        <div class="main review-item" id="12453178">
+
+            
+    
+    <header class="main-hd">
+        <a href="https://www.douban.com/people/toddzhou/" class="avator">
+            <img width="24" height="24" src="https://img9.doubanio.com/icon/u3662309-16.jpg">
+        </a>
+
+        <a href="https://www.douban.com/people/toddzhou/" class="name">第7放映师</a>
+
+            <span class="allstar40 main-title-rating" title="推荐"></span>
+
+        <span content="2020-03-30" class="main-meta">2020-03-30 11:46:52</span>
+
+
+    </header>
+
+
+            <div class="main-bd">
+
+                <h2><a href="https://movie.douban.com/review/12453178/">“灭霸”打无数个响指，也无法消除人间地狱！</a></h2>
+
+                <div id="review_12453178_short" class="review-short" data-rid="12453178">
+                    <div class="short-content">
+                            <p class="spoiler-tip">这篇影评可能有剧透</p>
+
+                        《饥饿站台》最近被很多人推荐说好看，查看影片类型是科幻后，作为科幻迷的我狠狠期待了一把。 谁知看完后发现，这不过是个披着科幻外衣的寓言，把社会阶层、人与自然的关系浓缩成了一个困在333层人造牢笼中666个蝼蚁一样的人类为争夺一份食物和活下去的机会的互相残杀的故事。...
+
+                        &nbsp;(<a href="javascript:;" id="toggle-12453178-copy" class="unfold" title="展开">展开</a>)
+                    </div>
+                </div>
+
+                <div id="review_12453178_full" class="hidden">
+                    <div id="review_12453178_full_content" class="full-content"></div>
+                </div>
+
+                <div class="action">
+                    <a href="javascript:;" class="action-btn up" data-rid="12453178" title="有用">
+                        <img src="https://img3.doubanio.com/f/zerkalo/536fd337139250b5fb3cf9e79cb65c6193f8b20b/pics/up.png" />
+                        <span id="r-useful_count-12453178">
+                                2
+                        </span>
+                    </a>
+                    <a href="javascript:;" class="action-btn down" data-rid="12453178" title="没用">
+                        <img src="https://img3.doubanio.com/f/zerkalo/68849027911140623cf338c9845893c4566db851/pics/down.png" />
+                        <span id="r-useless_count-12453178">
+                        </span>
+                    </a>
+                    <a href="https://movie.douban.com/review/12453178/#comments" class="reply ">2回应</a>
+
+                    <a href="javascript:;;" class="fold hidden">收起</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        
+    
+    <div data-cid="12452452">
+        <div class="main review-item" id="12452452">
+
+            
+    
+    <header class="main-hd">
+        <a href="https://www.douban.com/people/91143946/" class="avator">
+            <img width="24" height="24" src="https://img3.doubanio.com/icon/u91143946-3.jpg">
+        </a>
+
+        <a href="https://www.douban.com/people/91143946/" class="name">火锅菇凉迷影记</a>
+
+            <span class="allstar50 main-title-rating" title="力荐"></span>
+
+        <span content="2020-03-30" class="main-meta">2020-03-30 02:15:44</span>
+
+
+    </header>
+
+
+            <div class="main-bd">
+
+                <h2><a href="https://movie.douban.com/review/12452452/">血腥而又绝望的惊悚片</a></h2>
+
+                <div id="review_12452452_short" class="review-short" data-rid="12452452">
+                    <div class="short-content">
+                            <p class="spoiler-tip">这篇影评可能有剧透</p>
+
+                        “上面的人不会搭理你的。” “为什么？” “因为他们是上层人，显而易见。” “喂！下面的人能听到吗？” “别冲他们喊。” “为什么？” “因为他们是下层人。” 细数电影史上“反乌托邦”类型的影片，多以描写末世、后现代社会为主，强调资源短缺或其他既定情况下人民不屈的...
+
+                        &nbsp;(<a href="javascript:;" id="toggle-12452452-copy" class="unfold" title="展开">展开</a>)
+                    </div>
+                </div>
+
+                <div id="review_12452452_full" class="hidden">
+                    <div id="review_12452452_full_content" class="full-content"></div>
+                </div>
+
+                <div class="action">
+                    <a href="javascript:;" class="action-btn up" data-rid="12452452" title="有用">
+                        <img src="https://img3.doubanio.com/f/zerkalo/536fd337139250b5fb3cf9e79cb65c6193f8b20b/pics/up.png" />
+                        <span id="r-useful_count-12452452">
+                                4
+                        </span>
+                    </a>
+                    <a href="javascript:;" class="action-btn down" data-rid="12452452" title="没用">
+                        <img src="https://img3.doubanio.com/f/zerkalo/68849027911140623cf338c9845893c4566db851/pics/down.png" />
+                        <span id="r-useless_count-12452452">
+                        </span>
+                    </a>
+                    <a href="https://movie.douban.com/review/12452452/#comments" class="reply ">2回应</a>
+
+                    <a href="javascript:;;" class="fold hidden">收起</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        
+    
+    <div data-cid="12441915">
+        <div class="main review-item" id="12441915">
+
+            
+    
+    <header class="main-hd">
+        <a href="https://www.douban.com/people/128559321/" class="avator">
+            <img width="24" height="24" src="https://img3.doubanio.com/icon/u128559321-3.jpg">
+        </a>
+
+        <a href="https://www.douban.com/people/128559321/" class="name">坠落的伊卡洛斯</a>
+
+            <span class="allstar50 main-title-rating" title="力荐"></span>
+
+        <span content="2020-03-27" class="main-meta">2020-03-27 09:30:15</span>
+
+
+    </header>
+
+
+            <div class="main-bd">
+
+                <h2><a href="https://movie.douban.com/review/12441915/">饥饿站台——欲望深渊下会有一律曙光吗</a></h2>
+
+                <div id="review_12441915_short" class="review-short" data-rid="12441915">
+                    <div class="short-content">
+                            <p class="spoiler-tip">这篇影评可能有剧透</p>
+
+                        饥饿站台于2020年3月20日由网飞出品 从概念预告公布开始，就有不少朋友将其与《雪国列车》相比,他们的确使用了相同的载体——阶级分化，或者说资源分配不均，但是侧重表达的内核确是不同的，雪国列车更多的表达了生态平衡，以及社会作为一个大型机器是如何运行的，饥饿站台更多...
+
+                        &nbsp;(<a href="javascript:;" id="toggle-12441915-copy" class="unfold" title="展开">展开</a>)
+                    </div>
+                </div>
+
+                <div id="review_12441915_full" class="hidden">
+                    <div id="review_12441915_full_content" class="full-content"></div>
+                </div>
+
+                <div class="action">
+                    <a href="javascript:;" class="action-btn up" data-rid="12441915" title="有用">
+                        <img src="https://img3.doubanio.com/f/zerkalo/536fd337139250b5fb3cf9e79cb65c6193f8b20b/pics/up.png" />
+                        <span id="r-useful_count-12441915">
+                                7
+                        </span>
+                    </a>
+                    <a href="javascript:;" class="action-btn down" data-rid="12441915" title="没用">
+                        <img src="https://img3.doubanio.com/f/zerkalo/68849027911140623cf338c9845893c4566db851/pics/down.png" />
+                        <span id="r-useless_count-12441915">
+                                1
+                        </span>
+                    </a>
+                    <a href="https://movie.douban.com/review/12441915/#comments" class="reply ">0回应</a>
+
+                    <a href="javascript:;;" class="fold hidden">收起</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        
+    
+    <div data-cid="12431048">
+        <div class="main review-item" id="12431048">
+
+            
+    
+    <header class="main-hd">
+        <a href="https://www.douban.com/people/160465671/" class="avator">
+            <img width="24" height="24" src="https://img3.doubanio.com/icon/u160465671-1.jpg">
+        </a>
+
+        <a href="https://www.douban.com/people/160465671/" class="name">爱屋及乌_</a>
+
+            <span class="allstar30 main-title-rating" title="还行"></span>
+
+        <span content="2020-03-24" class="main-meta">2020-03-24 12:05:13</span>
+
+
+    </header>
+
+
+            <div class="main-bd">
+
+                <h2><a href="https://movie.douban.com/review/12431048/">影片所阐述的，实现共产主义的要求</a></h2>
+
+                <div id="review_12431048_short" class="review-short" data-rid="12431048">
+                    <div class="short-content">
+
+                        · 要靠革命者带领 · 要走群众路线 · 要有属于自己的军事武装 · 要强制性剥夺大地主、大资产家的财产 · 要把财产资源公有化 · 要及时清理掉流氓无产阶级 · 要永远抱有希望 · 要认清现实、放弃幻想 · 要有革命乐观主义精神 简直就是把毛概直接搬了过来。 不明白为什么有...
+
+                        &nbsp;(<a href="javascript:;" id="toggle-12431048-copy" class="unfold" title="展开">展开</a>)
+                    </div>
+                </div>
+
+                <div id="review_12431048_full" class="hidden">
+                    <div id="review_12431048_full_content" class="full-content"></div>
+                </div>
+
+                <div class="action">
+                    <a href="javascript:;" class="action-btn up" data-rid="12431048" title="有用">
+                        <img src="https://img3.doubanio.com/f/zerkalo/536fd337139250b5fb3cf9e79cb65c6193f8b20b/pics/up.png" />
+                        <span id="r-useful_count-12431048">
+                                4
+                        </span>
+                    </a>
+                    <a href="javascript:;" class="action-btn down" data-rid="12431048" title="没用">
+                        <img src="https://img3.doubanio.com/f/zerkalo/68849027911140623cf338c9845893c4566db851/pics/down.png" />
+                        <span id="r-useless_count-12431048">
+                        </span>
+                    </a>
+                    <a href="https://movie.douban.com/review/12431048/#comments" class="reply ">4回应</a>
+
+                    <a href="javascript:;;" class="fold hidden">收起</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        
+    
+    <div data-cid="12426429">
+        <div class="main review-item" id="12426429">
+
+            
+    
+    <header class="main-hd">
+        <a href="https://www.douban.com/people/56213865/" class="avator">
+            <img width="24" height="24" src="https://img9.doubanio.com/icon/u56213865-5.jpg">
+        </a>
+
+        <a href="https://www.douban.com/people/56213865/" class="name">水岛</a>
+
+            <span class="allstar30 main-title-rating" title="还行"></span>
+
+        <span content="2020-03-23" class="main-meta">2020-03-23 11:33:34</span>
+
+
+    </header>
+
+
+            <div class="main-bd">
+
+                <h2><a href="https://movie.douban.com/review/12426429/">对人性抱有希望的结局</a></h2>
+
+                <div id="review_12426429_short" class="review-short" data-rid="12426429">
+                    <div class="short-content">
+                            <p class="spoiler-tip">这篇影评可能有剧透</p>
+
+                        首先说明，这电影结局很明确，没有开放，没有藏——靠小女孩打破了“管理者”对人性预设好的局。 简单说一下几个想法： 1. 布丁之前就在智者的建议下被送上去过一次了。之前布丁里挑头发并不是“结尾一”的提前展示，而是一次历史回顾。挑头发是为了展示，这次message送失败了...
+
+                        &nbsp;(<a href="javascript:;" id="toggle-12426429-copy" class="unfold" title="展开">展开</a>)
+                    </div>
+                </div>
+
+                <div id="review_12426429_full" class="hidden">
+                    <div id="review_12426429_full_content" class="full-content"></div>
+                </div>
+
+                <div class="action">
+                    <a href="javascript:;" class="action-btn up" data-rid="12426429" title="有用">
+                        <img src="https://img3.doubanio.com/f/zerkalo/536fd337139250b5fb3cf9e79cb65c6193f8b20b/pics/up.png" />
+                        <span id="r-useful_count-12426429">
+                                13
+                        </span>
+                    </a>
+                    <a href="javascript:;" class="action-btn down" data-rid="12426429" title="没用">
+                        <img src="https://img3.doubanio.com/f/zerkalo/68849027911140623cf338c9845893c4566db851/pics/down.png" />
+                        <span id="r-useless_count-12426429">
+                                3
+                        </span>
+                    </a>
+                    <a href="https://movie.douban.com/review/12426429/#comments" class="reply ">3回应</a>
+
+                    <a href="javascript:;;" class="fold hidden">收起</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        
+    
+    <div data-cid="12463494">
+        <div class="main review-item" id="12463494">
+
+            
+    
+    <header class="main-hd">
+        <a href="https://www.douban.com/people/167071520/" class="avator">
+            <img width="24" height="24" src="https://img9.doubanio.com/icon/u167071520-4.jpg">
+        </a>
+
+        <a href="https://www.douban.com/people/167071520/" class="name">酒仙桥14号</a>
+
+
+        <span content="2020-04-02" class="main-meta">2020-04-02 10:26:48</span>
+
+
+    </header>
+
+
+            <div class="main-bd">
+
+                <h2><a href="https://movie.douban.com/review/12463494/">近期最惊喜的R级新片来了，生猛的不仅仅是尺度</a></h2>
+
+                <div id="review_12463494_short" class="review-short" data-rid="12463494">
+                    <div class="short-content">
+                            <p class="spoiler-tip">这篇影评可能有剧透</p>
+
+                        近年来，西班牙惊悚片屡出佳作。 从早期的《黑暗面》《蛮荒故事》，到口碑大爆的《看不见的客人》，再到去年国内上映的《海市蜃楼》等等。 它们无一不在荒诞诡谲的故事里，折射出最赤裸的人性。 最近，又有一部新出的西班牙惊悚片，在生猛的故事背后让人细思极恐。 今天就来说...
+
+                        &nbsp;(<a href="javascript:;" id="toggle-12463494-copy" class="unfold" title="展开">展开</a>)
+                    </div>
+                </div>
+
+                <div id="review_12463494_full" class="hidden">
+                    <div id="review_12463494_full_content" class="full-content"></div>
+                </div>
+
+                <div class="action">
+                    <a href="javascript:;" class="action-btn up" data-rid="12463494" title="有用">
+                        <img src="https://img3.doubanio.com/f/zerkalo/536fd337139250b5fb3cf9e79cb65c6193f8b20b/pics/up.png" />
+                        <span id="r-useful_count-12463494">
+                                5
+                        </span>
+                    </a>
+                    <a href="javascript:;" class="action-btn down" data-rid="12463494" title="没用">
+                        <img src="https://img3.doubanio.com/f/zerkalo/68849027911140623cf338c9845893c4566db851/pics/down.png" />
+                        <span id="r-useless_count-12463494">
+                        </span>
+                    </a>
+                    <a href="https://movie.douban.com/review/12463494/#comments" class="reply ">0回应</a>
+
+                    <a href="javascript:;;" class="fold hidden">收起</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        
+    
+    <div data-cid="12459791">
+        <div class="main review-item" id="12459791">
+
+            
+    
+    <header class="main-hd">
+        <a href="https://www.douban.com/people/gionlau/" class="avator">
+            <img width="24" height="24" src="https://img3.doubanio.com/icon/u38422663-2.jpg">
+        </a>
+
+        <a href="https://www.douban.com/people/gionlau/" class="name">小弟震</a>
+
+            <span class="allstar40 main-title-rating" title="推荐"></span>
+
+        <span content="2020-04-01" class="main-meta">2020-04-01 05:43:44</span>
+
+
+    </header>
+
+
+            <div class="main-bd">
+
+                <h2><a href="https://movie.douban.com/review/12459791/">由男主和黑人在下降过程中诉诸暴力想到的</a></h2>
+
+                <div id="review_12459791_short" class="review-short" data-rid="12459791">
+                    <div class="short-content">
+                            <p class="spoiler-tip">这篇影评可能有剧透</p>
+
+                        这里我只截取《为什么说自由主义意味着帝国》的片段，希望能给大家带来一些启发。 *注：原作者并非反对民主自由，既不是帝国主义、霸权主义支持者，也不是反美人士。 以下是截取自原文： 民主不是历史的终点，它是实力的产物。 …… 当今的自由派反帝国主义者，无论是自由意志...
+
+                        &nbsp;(<a href="javascript:;" id="toggle-12459791-copy" class="unfold" title="展开">展开</a>)
+                    </div>
+                </div>
+
+                <div id="review_12459791_full" class="hidden">
+                    <div id="review_12459791_full_content" class="full-content"></div>
+                </div>
+
+                <div class="action">
+                    <a href="javascript:;" class="action-btn up" data-rid="12459791" title="有用">
+                        <img src="https://img3.doubanio.com/f/zerkalo/536fd337139250b5fb3cf9e79cb65c6193f8b20b/pics/up.png" />
+                        <span id="r-useful_count-12459791">
+                                2
+                        </span>
+                    </a>
+                    <a href="javascript:;" class="action-btn down" data-rid="12459791" title="没用">
+                        <img src="https://img3.doubanio.com/f/zerkalo/68849027911140623cf338c9845893c4566db851/pics/down.png" />
+                        <span id="r-useless_count-12459791">
+                        </span>
+                    </a>
+                    <a href="https://movie.douban.com/review/12459791/#comments" class="reply ">0回应</a>
+
+                    <a href="javascript:;;" class="fold hidden">收起</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        
+    
+    <div data-cid="12452953">
+        <div class="main review-item" id="12452953">
+
+            
+    
+    <header class="main-hd">
+        <a href="https://www.douban.com/people/64990268/" class="avator">
+            <img width="24" height="24" src="https://img3.doubanio.com/icon/u64990268-2.jpg">
+        </a>
+
+        <a href="https://www.douban.com/people/64990268/" class="name">形影</a>
+
+            <span class="allstar40 main-title-rating" title="推荐"></span>
+
+        <span content="2020-03-30" class="main-meta">2020-03-30 10:31:49</span>
+
+
+    </header>
+
+
+            <div class="main-bd">
+
+                <h2><a href="https://movie.douban.com/review/12452953/">饥饿游戏</a></h2>
+
+                <div id="review_12452953_short" class="review-short" data-rid="12452953">
+                    <div class="short-content">
+                            <p class="spoiler-tip">这篇影评可能有剧透</p>
+
+                        故事发生在一个直上直下的空间里，333层高的楼层里每层有两个人两张床，一个水槽一个镜子，每层中间一个方形的洞。在这里楼层是向下数的，每天会有一顿精心准备的盛宴从0层送下来，一层停留一会。下降了了一百多层食物就所剩无几了，人要活下来就只能开始互相残杀。每个人来的...
+
+                        &nbsp;(<a href="javascript:;" id="toggle-12452953-copy" class="unfold" title="展开">展开</a>)
+                    </div>
+                </div>
+
+                <div id="review_12452953_full" class="hidden">
+                    <div id="review_12452953_full_content" class="full-content"></div>
+                </div>
+
+                <div class="action">
+                    <a href="javascript:;" class="action-btn up" data-rid="12452953" title="有用">
+                        <img src="https://img3.doubanio.com/f/zerkalo/536fd337139250b5fb3cf9e79cb65c6193f8b20b/pics/up.png" />
+                        <span id="r-useful_count-12452953">
+                                1
+                        </span>
+                    </a>
+                    <a href="javascript:;" class="action-btn down" data-rid="12452953" title="没用">
+                        <img src="https://img3.doubanio.com/f/zerkalo/68849027911140623cf338c9845893c4566db851/pics/down.png" />
+                        <span id="r-useless_count-12452953">
+                        </span>
+                    </a>
+                    <a href="https://movie.douban.com/review/12452953/#comments" class="reply ">0回应</a>
+
+                    <a href="javascript:;;" class="fold hidden">收起</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        
+    
+    <div data-cid="12451593">
+        <div class="main review-item" id="12451593">
+
+            
+    
+    <header class="main-hd">
+        <a href="https://www.douban.com/people/155666888/" class="avator">
+            <img width="24" height="24" src="https://img3.doubanio.com/icon/u155666888-3.jpg">
+        </a>
+
+        <a href="https://www.douban.com/people/155666888/" class="name">芝芝Tarot🌙</a>
+
+            <span class="allstar40 main-title-rating" title="推荐"></span>
+
+        <span content="2020-03-29" class="main-meta">2020-03-29 22:20:42</span>
+
+
+    </header>
+
+
+            <div class="main-bd">
+
+                <h2><a href="https://movie.douban.com/review/12451593/">凄凄惨惨戚戚</a></h2>
+
+                <div id="review_12451593_short" class="review-short" data-rid="12451593">
+                    <div class="short-content">
+
+                        电影开头有句话大概是这个世界上存在三种人，上层人，下层人和不断下坠的人。前两种人很好理解，第三种人除了表面意思从监狱坑坠落也许还有另一种意思，就是在这个机制里面，只有不断堕落的过程，良知慢慢磨灭，上层人自私自利，下层人互相厮杀，还有一群正在腐败的人，全员恶...
+
+                        &nbsp;(<a href="javascript:;" id="toggle-12451593-copy" class="unfold" title="展开">展开</a>)
+                    </div>
+                </div>
+
+                <div id="review_12451593_full" class="hidden">
+                    <div id="review_12451593_full_content" class="full-content"></div>
+                </div>
+
+                <div class="action">
+                    <a href="javascript:;" class="action-btn up" data-rid="12451593" title="有用">
+                        <img src="https://img3.doubanio.com/f/zerkalo/536fd337139250b5fb3cf9e79cb65c6193f8b20b/pics/up.png" />
+                        <span id="r-useful_count-12451593">
+                                2
+                        </span>
+                    </a>
+                    <a href="javascript:;" class="action-btn down" data-rid="12451593" title="没用">
+                        <img src="https://img3.doubanio.com/f/zerkalo/68849027911140623cf338c9845893c4566db851/pics/down.png" />
+                        <span id="r-useless_count-12451593">
+                        </span>
+                    </a>
+                    <a href="https://movie.douban.com/review/12451593/#comments" class="reply ">0回应</a>
+
+                    <a href="javascript:;;" class="fold hidden">收起</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        
+    
+    <div data-cid="12441159">
+        <div class="main review-item" id="12441159">
+
+            
+    
+    <header class="main-hd">
+        <a href="https://www.douban.com/people/154647976/" class="avator">
+            <img width="24" height="24" src="https://img3.doubanio.com/icon/u154647976-1.jpg">
+        </a>
+
+        <a href="https://www.douban.com/people/154647976/" class="name">奇风少年</a>
+
+            <span class="allstar50 main-title-rating" title="力荐"></span>
+
+        <span content="2020-03-26" class="main-meta">2020-03-26 23:19:05</span>
+
+
+    </header>
+
+
+            <div class="main-bd">
+
+                <h2><a href="https://movie.douban.com/review/12441159/">关于人性：生而为人 真是没办法。</a></h2>
+
+                <div id="review_12441159_short" class="review-short" data-rid="12441159">
+                    <div class="short-content">
+
+                        显而易见，改变不会自发到来 上面的人不会在乎下面人的生死 更不要说痛苦的感受 他们甚至于不屑一顾；他们只会竭尽所能、不择手段地去占有所有他们能够触及的社会资源。 上面的人也不会无缘无故拉你一把 everything is business.他们为什么要耗费时间成本和精力 不计代价、甚至...
+
+                        &nbsp;(<a href="javascript:;" id="toggle-12441159-copy" class="unfold" title="展开">展开</a>)
+                    </div>
+                </div>
+
+                <div id="review_12441159_full" class="hidden">
+                    <div id="review_12441159_full_content" class="full-content"></div>
+                </div>
+
+                <div class="action">
+                    <a href="javascript:;" class="action-btn up" data-rid="12441159" title="有用">
+                        <img src="https://img3.doubanio.com/f/zerkalo/536fd337139250b5fb3cf9e79cb65c6193f8b20b/pics/up.png" />
+                        <span id="r-useful_count-12441159">
+                                3
+                        </span>
+                    </a>
+                    <a href="javascript:;" class="action-btn down" data-rid="12441159" title="没用">
+                        <img src="https://img3.doubanio.com/f/zerkalo/68849027911140623cf338c9845893c4566db851/pics/down.png" />
+                        <span id="r-useless_count-12441159">
+                        </span>
+                    </a>
+                    <a href="https://movie.douban.com/review/12441159/#comments" class="reply ">3回应</a>
+
+                    <a href="javascript:;;" class="fold hidden">收起</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        
+    
+    <div data-cid="12484629">
+        <div class="main review-item" id="12484629">
+
+            
+    
+    <header class="main-hd">
+        <a href="https://www.douban.com/people/201192802/" class="avator">
+            <img width="24" height="24" src="https://img3.doubanio.com/icon/u201192802-3.jpg">
+        </a>
+
+        <a href="https://www.douban.com/people/201192802/" class="name">Yuer</a>
+
+            <span class="allstar40 main-title-rating" title="推荐"></span>
+
+        <span content="2020-04-08" class="main-meta">2020-04-08 09:31:49</span>
+
+
+    </header>
+
+
+            <div class="main-bd">
+
+                <h2><a href="https://movie.douban.com/review/12484629/">“要么毁灭，要么与毁灭对抗生存下去”</a></h2>
+
+                <div id="review_12484629_short" class="review-short" data-rid="12484629">
+                    <div class="short-content">
+                            <p class="spoiler-tip">这篇影评可能有剧透</p>
+
+                        科幻杂志里有句话写道：“在重大灾难面前，最先被人们抛弃或衰败的很可能是&#39;毫无用处’的人文科学。” 这让我联想到《饥饿站台》。 “垂直自我管理中心” 理想，秩序，规则，人性在监狱坑里毫无意义。理想主义者亦或是超理想主义者溃败于真实的饥饿。红灯睡觉，绿灯进食。在极...
+
+                        &nbsp;(<a href="javascript:;" id="toggle-12484629-copy" class="unfold" title="展开">展开</a>)
+                    </div>
+                </div>
+
+                <div id="review_12484629_full" class="hidden">
+                    <div id="review_12484629_full_content" class="full-content"></div>
+                </div>
+
+                <div class="action">
+                    <a href="javascript:;" class="action-btn up" data-rid="12484629" title="有用">
+                        <img src="https://img3.doubanio.com/f/zerkalo/536fd337139250b5fb3cf9e79cb65c6193f8b20b/pics/up.png" />
+                        <span id="r-useful_count-12484629">
+                                2
+                        </span>
+                    </a>
+                    <a href="javascript:;" class="action-btn down" data-rid="12484629" title="没用">
+                        <img src="https://img3.doubanio.com/f/zerkalo/68849027911140623cf338c9845893c4566db851/pics/down.png" />
+                        <span id="r-useless_count-12484629">
+                        </span>
+                    </a>
+                    <a href="https://movie.douban.com/review/12484629/#comments" class="reply ">0回应</a>
+
+                    <a href="javascript:;;" class="fold hidden">收起</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        
+    
+    <div data-cid="12476348">
+        <div class="main review-item" id="12476348">
+
+            
+    
+    <header class="main-hd">
+        <a href="https://www.douban.com/people/182034910/" class="avator">
+            <img width="24" height="24" src="https://img3.doubanio.com/icon/u182034910-1.jpg">
+        </a>
+
+        <a href="https://www.douban.com/people/182034910/" class="name">诚哥崽</a>
+
+            <span class="allstar50 main-title-rating" title="力荐"></span>
+
+        <span content="2020-04-05" class="main-meta">2020-04-05 21:24:31</span>
+
+
+    </header>
+
+
+            <div class="main-bd">
+
+                <h2><a href="https://movie.douban.com/review/12476348/">细思极恐的细节与暗喻</a></h2>
+
+                <div id="review_12476348_short" class="review-short" data-rid="12476348">
+                    <div class="short-content">
+
+                        看完电影后我脑子里冒出了几个疑惑： 1、为什么这么血腥的“垂直管理监狱”能够存在这么长的时间？刑满释放的人不会到外界曝光它吗？ 2、为什么每个人需要在监狱里待的时间不一样？ 3、男主来监狱所想要获取的“文凭”究竟是什么？ 4、层数随机分配是不是真随机？ 5、监狱的目...
+
+                        &nbsp;(<a href="javascript:;" id="toggle-12476348-copy" class="unfold" title="展开">展开</a>)
+                    </div>
+                </div>
+
+                <div id="review_12476348_full" class="hidden">
+                    <div id="review_12476348_full_content" class="full-content"></div>
+                </div>
+
+                <div class="action">
+                    <a href="javascript:;" class="action-btn up" data-rid="12476348" title="有用">
+                        <img src="https://img3.doubanio.com/f/zerkalo/536fd337139250b5fb3cf9e79cb65c6193f8b20b/pics/up.png" />
+                        <span id="r-useful_count-12476348">
+                                1
+                        </span>
+                    </a>
+                    <a href="javascript:;" class="action-btn down" data-rid="12476348" title="没用">
+                        <img src="https://img3.doubanio.com/f/zerkalo/68849027911140623cf338c9845893c4566db851/pics/down.png" />
+                        <span id="r-useless_count-12476348">
+                        </span>
+                    </a>
+                    <a href="https://movie.douban.com/review/12476348/#comments" class="reply ">0回应</a>
+
+                    <a href="javascript:;;" class="fold hidden">收起</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        
+    
+    <div data-cid="12475985">
+        <div class="main review-item" id="12475985">
+
+            
+    
+    <header class="main-hd">
+        <a href="https://www.douban.com/people/203136363/" class="avator">
+            <img width="24" height="24" src="https://img1.doubanio.com/icon/u203136363-8.jpg">
+        </a>
+
+        <a href="https://www.douban.com/people/203136363/" class="name">拯救星星</a>
+
+
+        <span content="2020-04-05" class="main-meta">2020-04-05 19:58:18</span>
+
+
+    </header>
+
+
+            <div class="main-bd">
+
+                <h2><a href="https://movie.douban.com/review/12475985/">掠夺是永恒的主题</a></h2>
+
+                <div id="review_12475985_short" class="review-short" data-rid="12475985">
+                    <div class="short-content">
+
+                        《饥饿站台》是2019年当中为数不多的高质量惊悚悬疑片之一，在2019年里似乎并没有出现绝对的爆款与经典，当然这并不代表《饥饿站台》就是一只普通的鹤立在了鸡群所以才使得电影为众人热议，所以如果对此类型感兴趣的朋友大可在一个舒适寂静的时间段里进行观看，不过这虽然被归...
+
+                        &nbsp;(<a href="javascript:;" id="toggle-12475985-copy" class="unfold" title="展开">展开</a>)
+                    </div>
+                </div>
+
+                <div id="review_12475985_full" class="hidden">
+                    <div id="review_12475985_full_content" class="full-content"></div>
+                </div>
+
+                <div class="action">
+                    <a href="javascript:;" class="action-btn up" data-rid="12475985" title="有用">
+                        <img src="https://img3.doubanio.com/f/zerkalo/536fd337139250b5fb3cf9e79cb65c6193f8b20b/pics/up.png" />
+                        <span id="r-useful_count-12475985">
+                                2
+                        </span>
+                    </a>
+                    <a href="javascript:;" class="action-btn down" data-rid="12475985" title="没用">
+                        <img src="https://img3.doubanio.com/f/zerkalo/68849027911140623cf338c9845893c4566db851/pics/down.png" />
+                        <span id="r-useless_count-12475985">
+                        </span>
+                    </a>
+                    <a href="https://movie.douban.com/review/12475985/#comments" class="reply ">0回应</a>
+
+                    <a href="javascript:;;" class="fold hidden">收起</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    
+
+    
+
+    <script type="text/javascript" src="https://img3.doubanio.com/misc/mixed_static/54ae6dc90023bcc0.js"></script>
+    <!-- COLLECTED CSS -->
+</div>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+    
+
+    
+        <div class="paginator">
+        <span class="prev">
+            <link rel="prev" href="?start=0"/>
+            <a href="?start=0" >&lt;前页</a>
+        </span>
+        
+        
+
+                
+            <a href="?start=0" >1</a>
+        
+                <span class="thispage" data-total-page="41">2</span>
+                
+            <a href="?start=40" >3</a>
+        
+                
+            <a href="?start=60" >4</a>
+        
+                
+            <a href="?start=80" >5</a>
+        
+                
+            <a href="?start=100" >6</a>
+        
+                
+            <a href="?start=120" >7</a>
+        
+                
+            <a href="?start=140" >8</a>
+        
+                
+            <a href="?start=160" >9</a>
+        
+            <span class="break">...</span>
+                
+            <a href="?start=780" >40</a>
+        
+            <a href="?start=800" >41</a>
+        
+        <span class="next">
+            <link rel="next" href="?start=40"/>
+            <a href="?start=40" >后页&gt;</a>
+        </span>
+
+            <span class="count">(共804条)</span>
+        </div>
+
+
+
+      </div>
+      <div class="aside">
+        
+  
+
+
+
+
+  <div class="sidebar-info-wrapper">
+    <div class="sidebar-copy">
+      
+
+
+
+
+  <p>如果你觉得一篇评论对你有帮助，请你点击“有用”。你的投票直接决定哪些评论出现在豆瓣首页和“豆瓣最受欢迎的评论”里，以及在书、电影和音乐介绍页里评论的排序。</p>
+  <p>所有“没用”的点击都是匿名的。</p>
+
+    </div>
+
+      
+  <div class="subject-title">
+    <a href="https://movie.douban.com/subject/34805219/">&gt;&nbsp;饥饿站台</a>
+  </div>
+
+  <div class="subject-img">
+    <a href="https://movie.douban.com/subject/34805219/">
+      <img alt="饥饿站台" title="饥饿站台"
+           src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2566870171.jpg" rel="v:image">
+    </a>
+  </div>
+
+    <div class="subject-info movie-info">
+      <ul class="info-list">
+          
+  
+  <li class="info-item">
+    <span class="info-item-key">导演:</span>
+    <span class="info-item-val">加尔德·加兹特鲁·乌鲁蒂亚</span>
+  </li>
+
+          
+  
+  <li class="info-item">
+    <span class="info-item-key">主演:</span>
+    <span class="info-item-val">伊万·马萨戈 / 佐里昂·伊圭里奥尔 / 安东尼亚·圣胡安</span>
+  </li>
+
+          
+  
+  <li class="info-item">
+    <span class="info-item-key">类型:</span>
+    <span class="info-item-val">科幻 / 惊悚</span>
+  </li>
+
+          
+  
+  <li class="info-item">
+    <span class="info-item-key">地区:</span>
+    <span class="info-item-val">西班牙</span>
+  </li>
+
+          
+  
+  <li class="info-item">
+    <span class="info-item-key">上映:</span>
+    <span class="info-item-val">2019-09-06(多伦多电影节) / 2019-11-08(西班牙)</span>
+  </li>
+
+      </ul>
+    </div>
+
+
+  </div>
+
+    <!-- douban ad begin -->
+    <div id="dale_movie_subject_reviews_middle_right"></div>
+    <!-- douban ad end -->
+
+    
+  
+  
+<p class="pl">
+  <span class="feed">    <a href="/feed/subject/34805219/reviews">订阅饥饿站台的影评</a>  </span>
+</p>
+
+
+
+    <!-- douban ad begin -->
+    
+
+
+
+
+
+<div class="mobile-app-entrance block5 app-movie">
+    <a class="entrance-link" href="https://www.douban.com/doubanapp/frodo">
+        <div class="entrance-qrcode">
+            <img src="https://img3.doubanio.com/f/zerkalo/a02f6ed325fc52e220f299d51e730c422e2bcd16/pics/douban_app_ad/qrcode.png" alt="扫码下载豆瓣 App" width="80" height="80" />
+        </div>
+        <div class="entrance-info">
+            <span class="app-icon icon-movie"></span>
+            <span class="main-title">豆瓣</span>
+            <span class="sub-title">膝盖献给神点评</span>
+        </div>
+    </a>
+</div>
+
+    <!-- douban ad end -->
+
+
+
+
+      </div>
+      <div class="extra">
+        
+      </div>
+    </div>
+  </div>
+
+    
+  <div id="footer">
+      <div class="footer-extra"></div>
+    
+<span id="icp" class="fleft gray-link">
+    &copy; 2005－2020 douban.com, all rights reserved 北京豆网科技有限公司
+</span>
+
+<a href="https://www.douban.com/hnypt/variformcyst.py" style="display: none;"></a>
+
+<span class="fright">
+    <a href="https://www.douban.com/about">关于豆瓣</a>
+    · <a href="https://www.douban.com/jobs">在豆瓣工作</a>
+    · <a href="https://www.douban.com/about?topic=contactus">联系我们</a>
+    · <a href="https://www.douban.com/about/legal">法律声明</a>
+    
+    · <a href="https://help.douban.com/?app=movie" target="_blank">帮助中心</a>
+    · <a href="https://www.douban.com/doubanapp/">移动应用</a>
+    · <a href="https://www.douban.com/partner/">豆瓣广告</a>
+</span>
+
+  </div>
+
+  </div>
+    
+  
+  
+  
+
+  
+  
+
+  
+
+
+
+
+  
+    
+
+  <!-- COLLECTED JS -->
+  
+  <!-- douban ad begin -->
+  
+  
+
+
+
+
+    
+<script type="text/javascript">
+    (function (global) {
+        var newNode = global.document.createElement('script'),
+            existingNode = global.document.getElementsByTagName('script')[0],
+            adSource = '//erebor.douban.com/',
+            userId = '',
+            browserId = 'QfypJenn4jM',
+            criteria = '3:/subject/34805219/reviews?start=20',
+            preview = '',
+            debug = false,
+            adSlots = ['dale_movie_subject_reviews_middle_right'];
+
+        global.DoubanAdRequest = {src: adSource, uid: userId, bid: browserId, crtr: criteria, prv: preview, debug: debug};
+        global.DoubanAdSlots = (global.DoubanAdSlots || []).concat(adSlots);
+
+        newNode.setAttribute('type', 'text/javascript');
+        newNode.setAttribute('src', '//img1.doubanio.com/eDRjYjNvdi9mL2FkanMvZTQ2YTNkMjgwYjBiMzc2OWE4YTI3MWFhMzI0NTQwMTBlMWY3OTYzMy9hZC5yZWxlYXNlLmpz');
+        newNode.setAttribute('async', true);
+        existingNode.parentNode.insertBefore(newNode, existingNode);
+    })(this);
+</script>
+
+
+
+
+
+
+
+
+
+
+  <!-- douban ad end -->
+
+  
+  
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+var _paq = _paq || [];
+_paq.push(['trackPageView']);
+_paq.push(['enableLinkTracking']);
+(function() {
+    var p=(('https:' == document.location.protocol) ? 'https' : 'http'), u=p+'://fundin.douban.com/';
+    _paq.push(['setTrackerUrl', u+'piwik']);
+    _paq.push(['setSiteId', '100001']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript';
+    g.defer=true;
+    g.async=true;
+    g.src=p+'://img3.doubanio.com/dae/fundin/piwik.js';
+    s.parentNode.insertBefore(g,s);
+})();
+</script>
+
+<script type="text/javascript">
+var setMethodWithNs = function(namespace) {
+  var ns = namespace ? namespace + '.' : ''
+    , fn = function(string) {
+        if(!ns) {return string}
+        return ns + string
+      }
+  return fn
+}
+
+var gaWithNamespace = function(fn, namespace) {
+  var method = setMethodWithNs(namespace)
+  fn.call(this, method)
+}
+
+var _gaq = _gaq || []
+  , accounts = [
+      { id: 'UA-7019765-1', namespace: 'douban' }
+    , { id: 'UA-7019765-19', namespace: '' }
+    ]
+  , gaInit = function(account) {
+      gaWithNamespace(function(method) {
+        gaInitFn.call(this, method, account)
+      }, account.namespace)
+    }
+  , gaInitFn = function(method, account) {
+      _gaq.push([method('_setAccount'), account.id]);
+      _gaq.push([method('_setSampleRate'), '5']);
+
+      
+  _gaq.push([method('_addOrganic'), 'google', 'q'])
+  _gaq.push([method('_addOrganic'), 'baidu', 'wd'])
+  _gaq.push([method('_addOrganic'), 'soso', 'w'])
+  _gaq.push([method('_addOrganic'), 'youdao', 'q'])
+  _gaq.push([method('_addOrganic'), 'so.360.cn', 'q'])
+  _gaq.push([method('_addOrganic'), 'sogou', 'query'])
+  if (account.namespace) {
+    _gaq.push([method('_addIgnoredOrganic'), '豆瓣'])
+    _gaq.push([method('_addIgnoredOrganic'), 'douban'])
+    _gaq.push([method('_addIgnoredOrganic'), '豆瓣网'])
+    _gaq.push([method('_addIgnoredOrganic'), 'www.douban.com'])
+  }
+
+      if (account.namespace === 'douban') {
+        _gaq.push([method('_setDomainName'), '.douban.com'])
+      }
+
+        _gaq.push([method('_setCustomVar'), 1, 'responsive_view_mode', 'desktop', 3])
+
+        _gaq.push([method('_setCustomVar'), 2, 'login_status', '0', 2]);
+
+      _gaq.push([method('_trackPageview')])
+    }
+
+for(var i = 0, l = accounts.length; i < l; i++) {
+  var account = accounts[i]
+  gaInit(account)
+}
+
+
+;(function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+})()
+</script>
+
+
+
+
+
+
+
+
+  <!-- dae-web-zerkalo--default-98d78b495-zmjmw-->
+
+  <script>_SPLITTEST=''</script>
+</body>
+
+</html>
+
+
