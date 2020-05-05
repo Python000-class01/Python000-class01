@@ -1,0 +1,71 @@
+{% extends "home/base_layout.html" %} {% block title %}Welcome{% endblock %}
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/timeline.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/morris.css') }}">
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">{{title}}</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-bar-chart-o fa-fw"></i>  新闻评论数据展示
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>序号</th>
+                                        <th>评论用户名</th>
+                                        <th>评论内容</th>
+                                        <th>情感分数</th>
+                                        <th>评论时间</th>
+                                        <th>采集时间</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for short in shorts %}
+                                        <tr>
+                                            <td>{{loop.index}}</td>
+                                            <td>{{short.nc_nickname}}</td>
+                                            <td>{{short.nc_content}}</td>
+                                            <td>{{short.nc_sentiment}}</td>
+                                            <td>{{short.nc_time}}</td>
+                                            <td>{{short.nc_utime}}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.table-responsive -->
+                    </div>
+                    <!-- /.col-lg-4 (nested) -->
+
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+
+    </div>
+</div>
+<!-- /.row -->
+{% endblock %}
+{% block js %}
+    {{ super() }}
+    <script src="{{ url_for('static', filename='js/raphael-min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/morris.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/morris-data.js')}}"></script>
+{% endblock %}
