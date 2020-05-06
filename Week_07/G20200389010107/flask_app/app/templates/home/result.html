@@ -1,0 +1,82 @@
+{% extends "home/base_layout.html" %} {% block title %}Hello{% endblock %} 
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/timeline.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/morris.css') }}">
+    <meta http-equiv="refresh" content="11">
+    <script src="https://cdn.bootcdn.net/ajax/libs/echarts/4.7.0/echarts-en.min.js"></script>
+{% endblock %} 
+{% block content %}
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">吃瓜情绪分析</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+
+<div class="row">
+    <div class="col-lg-12">
+        {{sentiment_pie|safe}}
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-8">
+  
+        <!-- /.panel -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-bar-chart-o fa-fw"></i> 吃瓜群众评论
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>评论ID</th>
+                                        <th>评论原文</th>
+                                        <th>情感倾向</th>
+                                        <th>评论时间</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for comment in comments_data %}
+                                        <tr>
+                                            <td>{{comment.user_id}}</td>
+                                            <td>{{comment.raw_text}}</td>
+                                            <td>{{comment.sentiment_score}}</td>
+                                            <td>{{comment.time_stamp}}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.table-responsive -->
+                    </div>
+                    <!-- /.col-lg-4 (nested) -->
+
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+
+    </div>
+    <!-- /.col-lg-8 -->
+
+    <!-- /.col-lg-4 -->
+</div>
+<!-- /.row -->{% endblock %}
+{% block js %}
+    {{ super() }}
+    <script src="{{ url_for('static', filename='js/raphael-min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/morris.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/morris-data.js')}}"></script>
+{% endblock %}
