@@ -15,7 +15,7 @@ class SinanewsSpider(scrapy.Spider):
     # 引擎再指挥其他组件向网站服务器发送请求，下载网页
     
     def start_requests(self):
-        urls = tuple(f'http://comment.sina.com.cn/page/info?version=1&format=json&channel=gn&newsid=comos-irczymi9667485&group=0&compress=0&ie=utf-8&oe=utf-8&page={ i + 1 }&page_size=10&t_size=3&h_size=3&thread=1&uid=unlogin_user' for i in range(1))
+        urls = tuple(f'http://comment.sina.com.cn/page/info?version=1&format=json&channel=gn&newsid=comos-irczymi9667485&group=0&compress=0&ie=utf-8&oe=utf-8&page={ i + 1 }&page_size=10&t_size=3&h_size=3&thread=1&uid=unlogin_user' for i in range(10))
         for url in urls:
             yield scrapy.Request(url=url, callback=self.parse)
         # url 请求访问的网址
