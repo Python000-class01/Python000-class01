@@ -18,7 +18,7 @@ itsdangerous==1.1.0
 Jinja2==2.11.2
 lxml==4.5.0
 MarkupSafe==1.1.1
-numpy==1.17.4
+numpy==1.22.0
 pandas==1.0.3
 parsel==1.5.2
 Protego==0.1.16
