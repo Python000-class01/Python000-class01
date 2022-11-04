@@ -27,7 +27,7 @@ queuelib==1.5.0
 Scrapy==2.0.1
 service-identity==18.1.0
 six==1.14.0
-Twisted==20.3.0
+Twisted==22.10.0
 w3lib==1.21.0
 xmltodict==0.12.0
 yq==2.10.0
